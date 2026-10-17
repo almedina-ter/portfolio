@@ -8,7 +8,7 @@ export function Availability({ className = '' }: { className?: string }) {
   if (!site.availability) return null
   return (
     <p className={`flex items-start gap-2 text-sm leading-snug text-ink-muted ${className}`}>
-      <span aria-hidden="true" className="mt-[0.4em] size-2 shrink-0 rounded-full bg-positive" />
+      <span aria-hidden="true" className="pulse-dot mt-[0.4em] size-2 shrink-0 rounded-full bg-positive" />
       {site.availability}
     </p>
   )

@@ -1,8 +1,11 @@
+import type { CSSProperties } from 'react'
 import { site } from '../content/site'
 import { EmailLink, LinkedInLink, OtherLinks, ResumeLink } from '../components/ContactLinks'
 import { ContactForm } from '../components/ContactForm'
 import { CopyEmailButton } from '../components/CopyEmailButton'
 import { LocalTime } from '../components/LocalTime'
+import { Reveal } from '../components/Reveal'
+import { SplitHeading } from '../components/SplitHeading'
 import { Availability } from '../components/SiteNav'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 
@@ -11,17 +14,15 @@ export function Contact() {
 
   return (
     <div className="container-page pt-14 pb-section lg:pt-24">
-      <p className="eyebrow">Contact</p>
-      <h1 className="mt-6 max-w-[16ch] font-display text-display text-balance">
-        Let&rsquo;s <em>talk</em>.
-      </h1>
-      <p className="mt-8 max-w-prose text-lede text-ink-muted">
+      <p className="eyebrow load-in">Contact</p>
+      <SplitHeading text="Let’s *talk*." className="mt-6 max-w-[16ch] font-display text-display text-balance" />
+      <p className="mt-8 max-w-prose text-lede text-ink-muted load-in" style={{ '--load-delay': '300ms' } as CSSProperties}>
         I&rsquo;m glad to hear about product design roles and collaborations. Email is the quickest way to reach me.
       </p>
-      <Availability className="mt-6" />
+      <Availability className="mt-6 load-in [--load-delay:400ms]" />
 
       <div className={`mt-16 grid gap-16 ${site.contactFormEndpoint ? 'lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]' : ''}`}>
-        <dl className="divide-y divide-line self-start border-y border-line">
+        <Reveal as="dl" variant="stagger" delay={350} className="divide-y divide-line self-start border-y border-line">
           <div className="grid gap-3 py-6 sm:grid-cols-[10rem_minmax(0,1fr)]">
             <dt className="eyebrow pt-1">Email</dt>
             <dd className="flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -58,7 +59,7 @@ export function Contact() {
               </dd>
             </div>
           )}
-        </dl>
+        </Reveal>
 
         {site.contactFormEndpoint ? (
           <ContactForm />

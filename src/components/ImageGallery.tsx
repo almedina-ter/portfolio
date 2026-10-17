@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react'
 import type { MediaAsset } from '../content/types'
 import { assetUrl } from '../lib/assets'
 import { Media } from './Media'
+import { Reveal } from './Reveal'
 
 interface ImageGalleryProps {
   images: MediaAsset[]
@@ -39,21 +40,29 @@ export function ImageGallery({ images, layout = 'grid', hintBase }: ImageGallery
           return (
             <li key={index} className={wide ? 'sm:col-span-2' : undefined}>
               <figure>
-                {image.src ? (
-                  <button
-                    type="button"
-                    onClick={() => open(index)}
-                    className="group relative block w-full cursor-zoom-in rounded-lg text-left"
-                  >
-                    <Media asset={image} sizes={layout === 'grid' && !wide ? '(min-width: 640px) 40vw, 100vw' : '80vw'} />
-                    <span className="absolute top-3 right-3 inline-flex size-9 items-center justify-center rounded-full bg-paper/90 text-ink shadow-sm">
-                      <Maximize2 aria-hidden="true" className="size-4" />
-                    </span>
-                    <span className="sr-only">View larger: {image.alt}</span>
-                  </button>
-                ) : (
-                  <Media asset={image} hint={hintBase ? `public/${hintBase}/image-${index + 1}.webp` : undefined} />
-                )}
+                <Reveal variant="media" delay={layout === 'grid' ? (index % 2) * 120 : 0} className="rounded-lg">
+                  <div className="reveal-zoom">
+                    {image.src ? (
+                      <button
+                        type="button"
+                        onClick={() => open(index)}
+                        className="group relative block w-full cursor-zoom-in rounded-lg text-left"
+                      >
+                        <Media
+                          asset={image}
+                          sizes={layout === 'grid' && !wide ? '(min-width: 640px) 40vw, 100vw' : '80vw'}
+                          imgClassName="transition-[scale] duration-(--duration-large) ease-out motion-safe:group-hover:scale-[1.03]"
+                        />
+                        <span className="absolute top-3 right-3 inline-flex size-9 items-center justify-center rounded-full bg-paper/90 text-ink shadow-sm transition-[scale] duration-(--duration-micro) ease-out group-hover:scale-110">
+                          <Maximize2 aria-hidden="true" className="size-4" />
+                        </span>
+                        <span className="sr-only">View larger: {image.alt}</span>
+                      </button>
+                    ) : (
+                      <Media asset={image} hint={hintBase ? `public/${hintBase}/image-${index + 1}.webp` : undefined} />
+                    )}
+                  </div>
+                </Reveal>
                 {image.caption && <figcaption className="mt-3 text-sm text-ink-muted">{image.caption}</figcaption>}
               </figure>
             </li>

@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link, useLocation } from 'react-router'
 import { Menu, X } from 'lucide-react'
 import { site } from '../content/site'
+import { subscribeScroll } from '../lib/motion'
 import { EmailLink, LinkedInLink, ResumeLink } from './ContactLinks'
 import { Availability } from './SiteNav'
 import { navItems } from './navigation'
@@ -20,6 +21,10 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
   const { pathname } = useLocation()
   const toggleRef = useRef<HTMLButtonElement>(null)
   const firstLinkRef = useRef<HTMLAnchorElement>(null)
+  const [scrolled, setScrolled] = useState(false)
+
+  // The header gains its rule and a firmer background once the page moves under it.
+  useEffect(() => subscribeScroll(() => setScrolled(window.scrollY > 8)), [])
 
   useEffect(() => {
     if (!open) return
@@ -53,7 +58,11 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
   // become the containing block for the fixed panel and clip it.
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-md lg:hidden">
+      <header
+        className={`sticky top-0 z-40 border-b backdrop-blur-md transition-[background-color,border-color] duration-(--duration-ui) lg:hidden ${
+          scrolled || open ? 'border-line bg-paper/90' : 'border-transparent bg-paper/0'
+        }`}
+      >
         <div className="flex h-16 items-center justify-between px-gutter">
           <Link to="/" onClick={close} className="flex min-h-11 min-w-0 flex-col justify-center">
             <span className="truncate font-display text-xl leading-none">{site.name}</span>
@@ -83,26 +92,30 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
             {navItems.map((item, index) => {
               const active = item.matches(pathname)
               return (
-                <li key={item.to}>
+                <li key={item.to} className="menu-item" style={{ '--i': index } as CSSProperties}>
                   <Link
                     ref={index === 0 ? firstLinkRef : undefined}
                     to={item.to}
                     onClick={close}
                     aria-current={active ? 'page' : undefined}
-                    className={`flex min-h-14 items-center font-display text-[2.5rem] leading-none ${active ? 'text-ink' : 'text-ink-muted'}`}
+                    className={`flex min-h-14 items-center gap-4 font-display text-[2.5rem] leading-none ${active ? 'text-ink' : 'text-ink-muted'}`}
                   >
                     {item.label}
+                    {active && <span aria-hidden="true" className="size-2 rounded-full bg-accent" />}
                   </Link>
                 </li>
               )
             })}
-            <li>
+            <li className="menu-item" style={{ '--i': navItems.length } as CSSProperties}>
               <ResumeLink className="flex min-h-14 items-center gap-2 font-display text-[2.5rem] leading-none text-ink-muted">
                 Resume
               </ResumeLink>
             </li>
           </ul>
-          <div className="mt-12 space-y-4 border-t border-line pt-6 text-sm">
+          <div
+            className="menu-item mt-12 space-y-4 border-t border-line pt-6 text-sm"
+            style={{ '--i': navItems.length + 1 } as CSSProperties}
+          >
             <Availability />
             <div className="flex flex-col items-start gap-2">
               <EmailLink className="link-underline break-all" />

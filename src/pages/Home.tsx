@@ -9,6 +9,7 @@ import { ExperienceTimeline } from '../components/ExperienceTimeline'
 import { Hero } from '../components/Hero'
 import { Media } from '../components/Media'
 import { ProjectCard } from '../components/ProjectCard'
+import { Reveal } from '../components/Reveal'
 import { SampleTag } from '../components/SampleTag'
 import { SectionHeader } from '../components/SectionHeader'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
@@ -23,7 +24,7 @@ export function Home() {
     <>
       <Hero />
 
-      <section id="work" aria-labelledby="work-heading" className="container-page scroll-mt-20 py-section pt-0">
+      <section id="work" aria-labelledby="work-heading" className="relative container-page scroll-mt-20 py-section pt-0 lg:pt-6">
         <SectionHeader
           id="work-heading"
           eyebrow="Selected work"
@@ -34,9 +35,10 @@ export function Home() {
           <div className="space-y-16 lg:space-y-24">
             <ProjectCard project={lead} index={0} size="large" />
             {rest.length > 0 && (
-              <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
+              <div className="grid gap-x-10 gap-y-16 md:grid-cols-2 lg:gap-x-16">
                 {rest.map((project, i) => (
-                  <ProjectCard key={project.slug} project={project} index={i + 1} />
+                  // Every second card sits lower for an editorial, staggered rhythm.
+                  <ProjectCard key={project.slug} project={project} index={i + 1} className={i % 2 === 1 ? 'md:mt-28' : ''} />
                 ))}
               </div>
             )}
@@ -49,13 +51,19 @@ export function Home() {
       <section aria-labelledby="about-preview-heading" className="container-page py-section pt-0">
         <SectionHeader id="about-preview-heading" eyebrow="About" title={about.heading} aside={<SampleTag show={about.sample} />} />
         <div className="grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-16">
-          <Media asset={site.portrait} sizes="(min-width: 768px) 30vw, 100vw" className="max-w-sm" hint="public/images/portrait.webp" />
-          <div>
+          <Reveal variant="media" className="max-w-sm overflow-hidden rounded-lg">
+            <div className="reveal-zoom">
+              <Media asset={site.portrait} parallax="shift" sizes="(min-width: 768px) 30vw, 100vw" hint="public/images/portrait.webp" />
+            </div>
+          </Reveal>
+          <Reveal variant="stagger" delay={150} className="md:pt-10">
             <p className="text-lede">{about.preview}</p>
-            <Link to="/about" className="btn-secondary mt-8">
-              More about me <ArrowRight aria-hidden="true" className="size-4" />
-            </Link>
-          </div>
+            <div>
+              <Link to="/about" className="btn-secondary mt-8">
+                More about me <ArrowRight aria-hidden="true" className="size-4" />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

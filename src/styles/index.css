@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+
+/* ---------- Design tokens ----------
+   Change colours, fonts and spacing here; components use these names. */
+@theme {
+  --font-sans: 'Inter Tight Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
+
+  --color-paper: #f5f3ef;
+  --color-surface: #ebe8e2;
+  --color-surface-strong: #e1ddd5;
+  --color-ink: #161513;
+  --color-ink-muted: #55514b; /* 7.0:1 on paper */
+  --color-ink-subtle: #6b665f; /* 5.2:1 on paper */
+  --color-line: #d9d4cb;
+  --color-line-strong: #b9b2a6;
+  --color-accent: #a83f1c; /* 5.6:1 on paper */
+  --color-positive: #2f7a4b;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.875rem;
+
+  --spacing-gutter: clamp(1.25rem, 0.75rem + 2.5vw, 3.5rem);
+  --spacing-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --container-content: 76rem;
+  --container-prose: 40rem;
+  --sidebar-width: 17.5rem;
+
+  --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 6.25rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.02em;
+  --text-title: clamp(2rem, 1.4rem + 2.4vw, 3.75rem);
+  --text-title--line-height: 1.05;
+  --text-title--letter-spacing: -0.015em;
+  --text-heading: clamp(1.625rem, 1.3rem + 1.2vw, 2.375rem);
+  --text-heading--line-height: 1.12;
+  --text-lede: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+  --text-lede--line-height: 1.55;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.08em;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-paper font-sans text-[1.0625rem] leading-relaxed text-ink antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+  img {
+    @apply block max-w-full;
+  }
+}
+
+@utility eyebrow {
+  @apply font-sans text-eyebrow font-medium uppercase text-ink-subtle;
+}
+@utility container-page {
+  @apply mx-auto w-full max-w-content px-gutter;
+}
+@utility link-underline {
+  @apply underline decoration-line-strong decoration-1 underline-offset-[0.25em] transition-colors hover:decoration-ink;
+}
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-[0.9375rem] font-medium whitespace-nowrap transition-colors;
+}
+@utility btn-primary {
+  @apply btn bg-ink text-paper hover:bg-ink/85;
+}
+@utility btn-secondary {
+  @apply btn border border-line-strong text-ink hover:border-ink hover:bg-surface;
+}
+@utility placeholder-chip {
+  @apply inline-flex items-center rounded-sm border border-dashed border-line-strong px-2 py-0.5 text-sm text-ink-subtle;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter {
+    animation: page-enter 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes page-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

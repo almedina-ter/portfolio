@@ -6,7 +6,7 @@ The site builds and works today, but it is filled with clearly labelled placehol
 
 | Field | Currently | What to add |
 | --- | --- | --- |
-| `name` | `[Your Name]` | Your name as you want it shown |
+| `name` | Almedina Termkolli (set) | Done |
 | `location` | `[City, Country]` | City and country, or `null` to hide |
 | `email` | `null` (shows "Email not added yet") | Your contact email. Turns on every mailto link and the "Copy email" button |
 | `linkedin` | `null` | Full `https://www.linkedin.com/in/…` URL |

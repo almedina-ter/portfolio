@@ -6,7 +6,7 @@ import type { SiteConfig } from './types'
  * so nothing ever links to a page or file that does not exist.
  */
 export const site: SiteConfig = {
-  name: '[Your Name]',
+  name: 'Almedina Termkolli',
   role: 'Product Designer',
   location: '[City, Country]',
   // e.g. 'Europe/Berlin'. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -36,10 +36,10 @@ export const site: SiteConfig = {
 
   portrait: {
     // e.g. 'images/portrait.webp'
-    alt: 'Portrait of [Your Name]',
+    alt: 'Portrait of Almedina Termkolli',
     aspect: '4 / 5',
   },
 
   description:
-    'Portfolio of [Your Name], a product designer working across UX research, interaction design, visual design and design systems.',
+    'Portfolio of Almedina Termkolli, a product designer working across UX research, interaction design, visual design and design systems.',
 }

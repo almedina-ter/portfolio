@@ -25,7 +25,7 @@ export const site: SiteConfig = {
   otherLinks: [],
 
   // Put your PDF in public/ and set this to its file name, e.g. 'resume.pdf'.
-  resume: null,
+  resume: 'Almedina-Termkolli-CV.pdf',
 
   // e.g. 'https://username.github.io/portfolio'. Leave null until you know it.
   url: null,

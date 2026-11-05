@@ -10,7 +10,7 @@ The site builds and works today, but it is filled with clearly labelled placehol
 | `location` | `[City, Country]` | City and country, or `null` to hide |
 | `email` | `null` (shows "Email not added yet") | Your contact email. Turns on every mailto link and the "Copy email" button |
 | `linkedin` | `null` | Full `https://www.linkedin.com/in/…` URL |
-| `resume` | `null` | Put your PDF in `public/` and set its file name, e.g. `resume.pdf` |
+| `resume` | `Almedina-Termkolli-CV.pdf` (set) | Done. To update, replace `public/Almedina-Termkolli-CV.pdf` with a new PDF of the same name |
 | `headline` | Placeholder positioning line | One sentence in your own voice. `*asterisks*` set words in italics |
 | `intro` | Placeholder | Two sentences: what you design, for whom, what you care about |
 | `availability` | "Open to remote and international product design roles" | Confirm or rewrite, or `null` to hide |

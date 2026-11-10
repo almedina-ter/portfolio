@@ -1,16 +1,10 @@
-import { Link } from 'react-router'
-import { ArrowRight } from 'lucide-react'
 import { about, experience } from '../content/about'
 import { publishedProjects } from '../content/projects'
-import { site } from '../content/site'
 import { Capabilities } from '../components/Capabilities'
 import { ContactSection } from '../components/ContactSection'
 import { ExperienceTimeline } from '../components/ExperienceTimeline'
 import { Hero } from '../components/Hero'
-import { Media } from '../components/Media'
 import { ProjectCard } from '../components/ProjectCard'
-import { Reveal } from '../components/Reveal'
-import { SampleTag } from '../components/SampleTag'
 import { SectionHeader } from '../components/SectionHeader'
 import { useDocumentMeta } from '../lib/useDocumentMeta'
 
@@ -46,25 +40,6 @@ export function Home() {
         ) : (
           <p className="text-ink-muted">Case studies are on their way.</p>
         )}
-      </section>
-
-      <section aria-labelledby="about-preview-heading" className="container-page py-section pt-0">
-        <SectionHeader id="about-preview-heading" eyebrow="About" title={about.heading} aside={<SampleTag show={about.sample} />} />
-        <div className="grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-16">
-          <Reveal variant="media" className="max-w-sm overflow-hidden rounded-lg">
-            <div className="reveal-zoom">
-              <Media asset={site.portrait} parallax="shift" sizes="(min-width: 768px) 30vw, 100vw" hint="public/images/portrait.webp" />
-            </div>
-          </Reveal>
-          <Reveal variant="stagger" delay={150} className="md:pt-10">
-            <p className="text-lede">{about.preview}</p>
-            <div>
-              <Link to="/about" className="btn-secondary mt-8">
-                More about me <ArrowRight aria-hidden="true" className="size-4" />
-              </Link>
-            </div>
-          </Reveal>
-        </div>
       </section>
 
       <section aria-labelledby="experience-heading" className="container-page py-section pt-0">

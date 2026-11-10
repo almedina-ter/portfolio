@@ -8,7 +8,7 @@ import type { SiteConfig } from './types'
 export const site: SiteConfig = {
   name: 'Almedina Termkolli',
   role: 'Product Designer',
-  location: '[City, Country]',
+  location: 'Prishtine, Kosovo',
   // e.g. 'Europe/Berlin'. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   timeZone: null,
   availability: 'Open to remote and international product design roles',
@@ -19,9 +19,9 @@ export const site: SiteConfig = {
     '[Placeholder intro. In two sentences, say what kind of products you design, who you design for, and what you care about in your work.]',
 
   // e.g. 'hello@yourname.com'
-  email: null,
+  email: 'termkollialmedina01@gmail.com',
   // e.g. 'https://www.linkedin.com/in/your-profile'
-  linkedin: null,
+  linkedin: 'https://www.linkedin.com/in/almedina-termkolli-a11359230/',
   otherLinks: [],
 
   // Put your PDF in public/ and set this to its file name, e.g. 'resume.pdf'.

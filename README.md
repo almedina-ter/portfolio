@@ -2,7 +2,7 @@
 
 A fast, static portfolio site for a product designer, built with React, TypeScript, Vite and Tailwind CSS. It is designed to be hosted for free on GitHub Pages and maintained without a backend, database or paid service.
 
-- **Pages:** Home, case studies (`/#/work/<slug>`), About, Contact, plus a "page not found" page.
+- **Pages:** Home, case studies (`/#/work/<slug>`), Contact, plus a "page not found" page.
 - **Content lives in four files** in `src/content/`. You never need to touch the components to add or edit work.
 - **Every push to `main` deploys automatically** through GitHub Actions.
 
@@ -121,11 +121,13 @@ Name, role, location, headline, intro, email, LinkedIn, resume, time zone and si
 2. Put it in the `public/` folder.
 3. In `site.ts`, set `resume: 'resume.pdf'`.
 
-The links in the sidebar, menu, footer, About and Contact pages appear automatically. You can also use a full `https://` link to a hosted file.
+The links in the sidebar, menu, footer and Contact page appear automatically. You can also use a full `https://` link to a hosted file.
 
-### About and experience: `src/content/about.ts`
+### Experience and capabilities: `src/content/about.ts`
 
-Bio paragraphs, homepage preview, working principles, capabilities, tools, education and work history. When you've replaced the sample text, set `sample: false` (and remove `sample: true` from each experience entry) to hide the "Sample content" tags.
+Work history and capabilities, shown on the homepage. When you've replaced the sample text, remove `sample: true` from each experience entry to hide the "Sample content" tags.
+
+The About page (and the About preview on the homepage) was removed in November 2026. The bio, principles, tools and education fields in `about.ts` are kept but not shown. To bring the page back, restore `src/pages/About.tsx`, its route in `App.tsx` and its item in `components/navigation.ts` from the Git history (search the commit messages for "Remove About page").
 
 ### Case studies: `src/content/projects.ts`
 
@@ -236,7 +238,7 @@ Usually a wrong base path. Open the browser's developer tools (F12) → Console.
 The `slug` in `projects.ts` doesn't match the link, the project has `draft: true`, or the slug contains capitals or spaces. Slugs must be lowercase letters, numbers and dashes.
 
 **Refreshing a page or opening a shared link gives a GitHub 404.**
-Links should contain `/#/`, e.g. `…/portfolio/#/about`. Links without it are redirected automatically by the generated `404.html`. If that doesn't happen, check the deploy used the GitHub Action.
+Links should contain `/#/`, e.g. `…/portfolio/#/contact`. Links without it are redirected automatically by the generated `404.html`. If that doesn't happen, check the deploy used the GitHub Action.
 
 **Images don't show.**
 Paths in `projects.ts` are relative to `public/` and must not start with `/` or `public/`. File names are case-sensitive on GitHub (`Hero.webp` is not `hero.webp`). The build tells you about missing files; read the error in the Actions log.
@@ -266,7 +268,7 @@ Check the latest Actions run finished green, then hard-refresh. Browsers and Git
 │   │   ├── projects.ts            Case studies
 │   │   └── types.ts               The shape of the content (with explanations)
 │   ├── components/                Reusable UI (navigation, cards, sections, gallery, footer…)
-│   ├── pages/                     Home, CaseStudy, About, Contact, NotFound
+│   ├── pages/                     Home, CaseStudy, Contact, NotFound
 │   ├── lib/                       Small helpers (asset paths, page titles, scrolling)
 │   ├── styles/index.css           Design tokens and base styles
 │   ├── App.tsx                    Routes

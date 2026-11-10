@@ -7,9 +7,9 @@ The site builds and works today, but it is filled with clearly labelled placehol
 | Field | Currently | What to add |
 | --- | --- | --- |
 | `name` | Almedina Termkolli (set) | Done |
-| `location` | `[City, Country]` | City and country, or `null` to hide |
-| `email` | `null` (shows "Email not added yet") | Your contact email. Turns on every mailto link and the "Copy email" button |
-| `linkedin` | `null` | Full `https://www.linkedin.com/in/…` URL |
+| `location` | Prishtine, Kosovo (set) | Done |
+| `email` | termkollialmedina01@gmail.com (set) | Done. Turns on every mailto link and the "Copy email" button |
+| `linkedin` | linkedin.com/in/almedina-termkolli-a11359230 (set) | Done |
 | `resume` | `Almedina-Termkolli-CV.pdf` (set) | Done. To update, replace `public/Almedina-Termkolli-CV.pdf` with a new PDF of the same name |
 | `headline` | Placeholder positioning line | One sentence in your own voice. `*asterisks*` set words in italics |
 | `intro` | Placeholder | Two sentences: what you design, for whom, what you care about |
@@ -32,15 +32,13 @@ The three projects are **samples** that explain what to write in each section. F
 
 Then delete the sample projects, or remove `sample: true` once rewritten.
 
-## 3. About and experience (`src/content/about.ts`)
+## 3. Experience (`src/content/about.ts`)
 
-- Homepage preview paragraph and About bio (three short paragraphs)
-- Three working principles in your own words
+The About page has been removed, so the bio, principles, tools and education in this file are not shown on the site. What still appears on the homepage:
+
 - Work history: company, job title, dates, location, one or two sentences each
 - Capabilities: the starter list is generic product-design skills. Keep only what applies to you
-- Tools you actually use (replace `[Tool]`)
-- Education or courses
-- Set `sample: false` and remove `sample: true` from experience entries when done
+- Remove `sample: true` from experience entries when done
 
 ## 4. Configuration
 

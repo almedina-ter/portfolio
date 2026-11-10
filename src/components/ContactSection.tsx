@@ -5,7 +5,7 @@ import { EmailLink, LinkedInLink, ResumeLink } from './ContactLinks'
 import { Reveal } from './Reveal'
 
 /**
- * Closing call to action used on the homepage, About and case studies.
+ * Closing call to action used on the homepage and case studies.
  * Pages end their last section with bottom spacing, so this only adds its own below;
  * pass `className="pt-section"` where nothing above provides it.
  */

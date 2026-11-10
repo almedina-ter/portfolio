@@ -1,4 +1,142 @@
-import type { Project } from './types'
+import type { CaseStudySection, Project } from './types'
+
+/**
+ * The case-study structure every project follows: overview and role, background and
+ * problem, research, challenges and opportunities, the previous experience, the design
+ * process, the final design, screens and outcomes. Text in [brackets] is a prompt
+ * for what to write. Replace it with your own content, and delete any section you
+ * don't need.
+ */
+function caseStudyStructure(): CaseStudySection[] {
+  return [
+    {
+      kind: 'list',
+      id: 'overview',
+      label: 'Overview',
+      heading: 'Project overview and my role',
+      intro: '[Two or three sentences: what the product is, who it is for and what you were asked to do.]',
+      items: [
+        '[Responsibility, e.g. Led the design from research to hand-off]',
+        '[Responsibility, e.g. Planned and ran user interviews]',
+        '[Responsibility, e.g. Designed and tested the high-fidelity prototype]',
+      ],
+    },
+    {
+      kind: 'text',
+      id: 'background',
+      label: 'Background',
+      heading: 'Background and problem',
+      body: [
+        '[What was happening before this project, and why it mattered to users and to the business.]',
+        '[The problem in one sentence, e.g. "People could not … because …".]',
+      ],
+    },
+    {
+      kind: 'insights',
+      id: 'research',
+      label: 'Research',
+      heading: 'Research and insights',
+      intro: '[The methods you used, e.g. interviews, surveys, competitor review or analytics, and with how many people.]',
+      items: [
+        { title: '[Insight one]', detail: '[What you found and the evidence behind it.]' },
+        { title: '[Insight two]', detail: '[What you found and the evidence behind it.]' },
+        { title: '[Insight three]', detail: '[What you found and the evidence behind it.]' },
+      ],
+    },
+    {
+      kind: 'challenges',
+      id: 'challenges',
+      label: 'Challenges',
+      heading: 'Challenges and opportunities',
+      intro: '[The main obstacles you faced, and the opportunity each one opened.]',
+      items: [
+        { challenge: '[Challenge one]', opportunity: '[The opportunity, e.g. "How might we …?"]' },
+        { challenge: '[Challenge two]', opportunity: '[The opportunity, e.g. "How might we …?"]' },
+        { challenge: '[Challenge three]', opportunity: '[The opportunity, e.g. "How might we …?"]' },
+      ],
+    },
+    {
+      kind: 'decisions',
+      id: 'previous',
+      label: 'Previous experience',
+      heading: 'The previous experience and its issues',
+      intro: '[Show the product before your work and the issues you found in it.]',
+      items: [
+        {
+          title: '[Issue one]',
+          rationale: '[What was wrong, and how you knew, e.g. from research or analytics.]',
+          media: { alt: '[Screenshot of the previous design]', aspect: '16 / 10' },
+        },
+        {
+          title: '[Issue two]',
+          rationale: '[What was wrong, and how you knew, e.g. from research or analytics.]',
+          media: { alt: '[Screenshot of the previous design]', aspect: '16 / 10' },
+        },
+      ],
+    },
+    {
+      kind: 'process',
+      id: 'process',
+      label: 'Process',
+      heading: 'Design process and iterations',
+      intro: '[How the design evolved, from first ideas to the final version.]',
+      steps: [
+        { title: '[Step one, e.g. User flows and sketches]', detail: '[What you did and what you learned.]', media: { alt: '[Sketch or user flow]', aspect: '4 / 3' } },
+        { title: '[Step two, e.g. Wireframes]', detail: '[What you did and what you learned.]', media: { alt: '[Wireframes]', aspect: '4 / 3' } },
+        { title: '[Step three, e.g. Testing and iteration]', detail: '[What changed after testing, and why.]', media: { alt: '[Before and after an iteration]', aspect: '4 / 3' } },
+      ],
+    },
+    {
+      kind: 'decisions',
+      id: 'solution',
+      label: 'Final design',
+      heading: 'Final design solutions',
+      intro: '[Walk through the key parts of the final design and the decision behind each one.]',
+      items: [
+        {
+          title: '[Solution one]',
+          rationale: '[What it does and how it solves the problem.]',
+          media: { alt: '[Final screen]', aspect: '16 / 10' },
+        },
+        {
+          title: '[Solution two]',
+          rationale: '[What it does and how it solves the problem.]',
+          media: { alt: '[Final screen]', aspect: '16 / 10' },
+        },
+        {
+          title: '[Solution three]',
+          rationale: '[What it does and how it solves the problem.]',
+          media: { alt: '[Final screen]', aspect: '16 / 10' },
+        },
+      ],
+    },
+    {
+      kind: 'gallery',
+      id: 'screens',
+      label: 'Screens',
+      heading: 'Screens and mockups',
+      layout: 'grid',
+      images: [
+        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
+        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
+        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
+        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
+      ],
+    },
+    {
+      kind: 'outcomes',
+      id: 'outcomes',
+      label: 'Outcomes',
+      heading: 'Outcomes and results',
+      intro: '[Only results you can verify. Qualitative feedback is fine when numbers are not available.]',
+      items: [
+        { value: '[Metric]', detail: '[What the number measures and over what period]' },
+        { value: '[Metric]', detail: '[What the number measures and over what period]' },
+        { detail: '[Feedback or another outcome]' },
+      ],
+    },
+  ]
+}
 
 /**
  * Your case studies. The order of this list is the order on the site.
@@ -7,12 +145,56 @@ import type { Project } from './types'
  * and put its images in public/images/projects/<slug>/.
  * To hide a project without deleting it, set `draft: true`.
  *
- * The three projects below are SAMPLES. They show how the template works and
- * describe what to write in each section. They are not real client work.
+ * Projects 01 to 03 are your three Selected Work slots. Add a description, timeline and
+ * images for each, then replace the prompts in caseStudyStructure() with real content.
+ * The SAMPLE projects after them are hidden with `draft: true` and kept as examples.
  */
 export const projects: Project[] = [
   {
+    featured: true,
+    slug: 'project-01',
+    title: 'Project 01',
+    client: '',
+    summary: '',
+    type: '',
+    year: '',
+    role: 'UI/UX Designer',
+    timeline: '',
+    thumbnail: { alt: 'Project 01 preview', aspect: '4 / 3' },
+    hero: { alt: 'Project 01 hero image', aspect: '16 / 9' },
+    sections: caseStudyStructure(),
+  },
+  {
+    featured: true,
+    slug: 'project-02',
+    title: 'Project 02',
+    client: '',
+    summary: '',
+    type: '',
+    year: '',
+    role: 'UI/UX Designer',
+    timeline: '',
+    thumbnail: { alt: 'Project 02 preview', aspect: '4 / 3' },
+    hero: { alt: 'Project 02 hero image', aspect: '16 / 9' },
+    sections: caseStudyStructure(),
+  },
+  {
+    featured: true,
+    slug: 'project-03',
+    title: 'Project 03',
+    client: '',
+    summary: '',
+    type: '',
+    year: '',
+    role: 'UI/UX Designer',
+    timeline: '',
+    thumbnail: { alt: 'Project 03 preview', aspect: '4 / 3' },
+    hero: { alt: 'Project 03 hero image', aspect: '16 / 9' },
+    sections: caseStudyStructure(),
+  },
+  {
     sample: true,
+    draft: true,
     featured: true,
     slug: 'sample-onboarding-redesign',
     title: 'Sample case study: onboarding redesign',
@@ -127,6 +309,7 @@ export const projects: Project[] = [
   },
   {
     sample: true,
+    draft: true,
     featured: true,
     slug: 'sample-design-system',
     title: 'Sample case study: design system foundations',
@@ -191,6 +374,7 @@ export const projects: Project[] = [
   },
   {
     sample: true,
+    draft: true,
     featured: true,
     slug: 'sample-mobile-app',
     title: 'Sample case study: mobile app concept',

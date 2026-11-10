@@ -21,16 +21,27 @@ The site builds and works today, but it is filled with clearly labelled placehol
 
 ## 2. Case studies (`src/content/projects.ts`)
 
-The three projects are **samples** that explain what to write in each section. For each real project (3–5 is a good number), supply:
+Selected Work shows three project slots, **Project 01 to 03** (role: UI/UX Designer). Their description and timeline are empty, so the cards say "Description coming soon" and the timeline shows a dash. Every case study uses the same structure (`caseStudyStructure()` in the same file), with prompts in [brackets]:
 
-- Title, client or company (or "Confidential client"), one-sentence summary, project type, year
-- Your role, team, timeline, platform, tools
-- Problem and context, your responsibilities, research and insights, key decisions and trade-offs, final solution, outcomes you can verify, lessons learned
+1. Overview and my role
+2. Background and problem
+3. Research and insights
+4. Challenges and opportunities
+5. The previous experience and its issues
+6. Design process and iterations
+7. Final design solutions
+8. Screens and mockups
+9. Outcomes and results
+
+For each project, supply:
+
+- Title, one-sentence description (`summary`), timeline, and optionally client, project type and year
+- The content for each section above. Delete any section you don't need
 - A confidentiality note if the work is under NDA
-- Images: a thumbnail (16:10), a hero (16:9), and gallery or decision images. WebP, about 2000px wide for full-width and 1200px for grid images
+- Images in `public/images/projects/<slug>/`: a card preview (4:3), a hero (16:9), and section images. WebP, about 2000px wide for full-width and 1200px for grid images. The placeholder on the page shows the suggested file name
 - Alt text for every image
 
-Then delete the sample projects, or remove `sample: true` once rewritten.
+The older sample projects are hidden with `draft: true` and kept as examples.
 
 ## 3. Experience (`src/content/about.ts`)
 

@@ -12,7 +12,6 @@ export function Home() {
   useDocumentMeta(null)
   const featured = publishedProjects.filter((project) => project.featured)
   const work = featured.length ? featured : publishedProjects
-  const [lead, ...rest] = work
 
   return (
     <>
@@ -25,18 +24,14 @@ export function Home() {
           title="Case studies"
           aside={<p className="text-sm text-ink-subtle tabular-nums">{String(work.length).padStart(2, '0')} projects</p>}
         />
-        {lead ? (
-          <div className="space-y-16 lg:space-y-24">
-            <ProjectCard project={lead} index={0} size="large" />
-            {rest.length > 0 && (
-              <div className="grid gap-x-10 gap-y-16 md:grid-cols-2 lg:gap-x-16">
-                {rest.map((project, i) => (
-                  // Every second card sits lower for an editorial, staggered rhythm.
-                  <ProjectCard key={project.slug} project={project} index={i + 1} className={i % 2 === 1 ? 'md:mt-28' : ''} />
-                ))}
-              </div>
-            )}
-          </div>
+        {work.length ? (
+          <ul className="grid gap-6 md:grid-cols-2 lg:gap-8 xl:grid-cols-3">
+            {work.map((project, i) => (
+              <li key={project.slug}>
+                <ProjectCard project={project} index={i} />
+              </li>
+            ))}
+          </ul>
         ) : (
           <p className="text-ink-muted">Case studies are on their way.</p>
         )}

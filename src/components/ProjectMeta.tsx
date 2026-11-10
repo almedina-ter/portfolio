@@ -4,7 +4,8 @@ export function ProjectMeta({ project }: { project: Project }) {
   const rows = [
     ['Role', project.role],
     ['Team', project.team],
-    ['Timeline', project.timeline],
+    // An empty timeline ('') still shows the field, with a dash, until it is filled in.
+    ['Timeline', project.timeline === '' ? '—' : project.timeline],
     ['Year', project.year],
     ['Platform', project.platform],
     ['Tools', project.tools?.join(', ')],

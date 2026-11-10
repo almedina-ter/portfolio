@@ -1,8 +1,5 @@
-import { about, experience } from '../content/about'
 import { publishedProjects } from '../content/projects'
-import { Capabilities } from '../components/Capabilities'
 import { ContactSection } from '../components/ContactSection'
-import { ExperienceTimeline } from '../components/ExperienceTimeline'
 import { Hero } from '../components/Hero'
 import { ProjectCard } from '../components/ProjectCard'
 import { SectionHeader } from '../components/SectionHeader'
@@ -35,15 +32,6 @@ export function Home() {
         ) : (
           <p className="text-ink-muted">Case studies are on their way.</p>
         )}
-      </section>
-
-      <section aria-labelledby="experience-heading" className="container-page py-section pt-0">
-        <SectionHeader id="experience-heading" eyebrow="Experience" title="Where I&rsquo;ve worked" />
-        <ExperienceTimeline entries={experience} />
-        <div className="mt-section">
-          <SectionHeader id="capabilities-heading" eyebrow="Skills" title="Capabilities" />
-          <Capabilities capabilities={about.capabilities} />
-        </div>
       </section>
 
       <ContactSection />

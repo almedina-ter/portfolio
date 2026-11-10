@@ -45,11 +45,7 @@ The older sample projects are hidden with `draft: true` and kept as examples.
 
 ## 3. Experience (`src/content/about.ts`)
 
-The About page has been removed, so the bio, principles, tools and education in this file are not shown on the site. What still appears on the homepage:
-
-- Work history: company, job title, dates, location, one or two sentences each
-- Capabilities: the starter list is generic product-design skills. Keep only what applies to you
-- Remove `sample: true` from experience entries when done
+Nothing in this file is shown on the site right now. The About page and the homepage's "Where I've worked" and "Capabilities" sections have been removed. If you bring them back, update the work history and capabilities first and remove `sample: true` from the experience entries.
 
 ## 4. Configuration
 

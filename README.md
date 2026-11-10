@@ -125,7 +125,7 @@ The links in the sidebar, menu, footer and Contact page appear automatically. Yo
 
 ### Experience and capabilities: `src/content/about.ts`
 
-Work history and capabilities, shown on the homepage. When you've replaced the sample text, remove `sample: true` from each experience entry to hide the "Sample content" tags.
+The "Where I've worked" and "Capabilities" sections were removed from the homepage in November 2026. Their content in `about.ts` and the `ExperienceTimeline` and `Capabilities` components are kept but not shown. To bring them back, restore the section in `src/pages/Home.tsx` from the Git history (search the commit messages for "Remove Experience and Capabilities").
 
 The About page (and the About preview on the homepage) was removed in November 2026. The bio, principles, tools and education fields in `about.ts` are kept but not shown. To bring the page back, restore `src/pages/About.tsx`, its route in `App.tsx` and its item in `components/navigation.ts` from the Git history (search the commit messages for "Remove About page").
 

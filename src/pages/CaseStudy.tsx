@@ -27,27 +27,88 @@ export function CaseStudy() {
   const position = publishedProjects.indexOf(project)
   const next = publishedProjects.length > 1 ? publishedProjects[(position + 1) % publishedProjects.length] : null
   const delay = (ms: number) => ({ '--load-delay': `${ms}ms` }) as CSSProperties
+  const number = (index: number) => String(index + 1).padStart(2, '0')
+  const subtitle = [project.client, project.type].filter(Boolean).join(' · ')
 
   return (
     <article>
       <ReadingProgress target={storyRef} />
-      <header className="container-page pt-10 lg:pt-16">
-        <Link to="/" className="inline-flex min-h-11 items-center gap-2 text-sm text-ink-muted transition-colors hover:text-ink">
-          <ArrowLeft aria-hidden="true" className="size-4" /> All work
-        </Link>
+      <header className="container-page pt-6 lg:pt-12">
+        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+          <nav aria-label="Breadcrumb">
+            <ol className="flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
+              <li>
+                <Link to="/" className="inline-flex min-h-11 items-center transition-colors hover:text-ink">
+                  Portfolio
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-line-strong">
+                /
+              </li>
+              <li>
+                <Link to="/" state={{ scrollTo: 'work' }} className="inline-flex min-h-11 items-center transition-colors hover:text-ink">
+                  Selected work
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-line-strong">
+                /
+              </li>
+              <li aria-current="page" className="text-ink">
+                {project.title}
+              </li>
+            </ol>
+          </nav>
+          {publishedProjects.length > 1 && (
+            <nav aria-label="Projects" className="flex items-center gap-1.5">
+              <span className="mr-2 text-sm text-ink-subtle tabular-nums">
+                Project {number(position)} of {String(publishedProjects.length).padStart(2, '0')}
+              </span>
+              {publishedProjects.map((item, i) => {
+                const current = item.slug === project.slug
+                return (
+                  <Link
+                    key={item.slug}
+                    to={`/work/${item.slug}`}
+                    aria-label={item.title}
+                    aria-current={current ? 'page' : undefined}
+                    className={`inline-flex size-10 items-center justify-center rounded-full border font-mono text-xs transition-colors duration-(--duration-micro) ${
+                      current ? 'border-ink bg-ink text-paper' : 'border-line-strong text-ink-muted hover:border-ink hover:text-ink'
+                    }`}
+                  >
+                    {number(i)}
+                  </Link>
+                )
+              })}
+            </nav>
+          )}
+        </div>
         <div className="mt-10 flex flex-wrap items-center gap-3 load-in">
-          <p className="eyebrow">
-            {project.client} · {project.type}
-          </p>
-          <SampleTag show={project.sample} />
+          <p className="eyebrow">{subtitle || `Case study ${number(position)}`}</p>
+          <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{project.role}</span>
+          <SampleTag show={project.sample === true} />
         </div>
         <SplitHeading text={project.title} delay={100} className="mt-5 max-w-[20ch] font-display text-title text-balance" />
-        <p className="mt-6 max-w-prose text-lede text-ink-muted load-in" style={delay(380)}>
-          {project.summary}
+        <p className={`mt-6 max-w-prose text-lede load-in ${project.summary ? 'text-ink-muted' : 'text-ink-subtle italic'}`} style={delay(380)}>
+          {project.summary || 'Description coming soon.'}
         </p>
         <div className="mt-12 load-in" style={delay(500)}>
           <ProjectMeta project={project} />
         </div>
+        <nav aria-label="Sections" className="-mx-gutter mt-6 overflow-x-auto px-gutter [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
+          <ul className="flex gap-2 pb-1">
+            {project.sections.map((section) => (
+              <li key={section.id} className="shrink-0">
+                <button
+                  type="button"
+                  onClick={() => scrollToId(section.id)}
+                  className="min-h-10 rounded-full border border-line-strong px-4 text-sm text-ink-muted transition-colors hover:border-ink hover:text-ink"
+                >
+                  {section.label ?? section.heading}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </header>
 
       <Reveal variant="media" className="container-page mt-10" delay={250}>
@@ -63,7 +124,9 @@ export function CaseStudy() {
       <div ref={storyRef} className="container-page mt-section grid gap-12 lg:grid-cols-[11rem_minmax(0,1fr)] xl:gap-16">
         <nav aria-label="On this page" className="hidden lg:block">
           <div className="sticky top-10">
-            <p className="eyebrow mb-4">On this page</p>
+            <p className="font-mono text-xs text-ink-subtle">{number(position)}</p>
+            <p className="mt-1 font-display text-xl leading-tight">{project.title}</p>
+            <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
               {project.sections.map((section) => (
                 <li key={section.id}>
@@ -107,7 +170,7 @@ export function CaseStudy() {
       </div>
 
       {next && (
-        <nav aria-label="Next case study" className="container-page mt-section">
+        <nav aria-label="Next project" className="container-page mt-section">
           <Link
             to={`/work/${next.slug}`}
             className="group rule-draw rule-draw-top grid gap-8 border-b border-line py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] md:items-center lg:py-14"
@@ -118,7 +181,7 @@ export function CaseStudy() {
                   aria-hidden="true"
                   className="h-px w-3 bg-line-strong transition-all duration-(--duration-ui) ease-out group-hover:w-8 group-hover:bg-accent"
                 />
-                Next case study
+                Next project
               </span>
               <span className="mt-4 block font-display text-title text-balance">
                 <span className="title-sweep">{next.title}</span>
@@ -141,6 +204,12 @@ export function CaseStudy() {
           </Link>
         </nav>
       )}
+
+      <div className="container-page mt-10">
+        <Link to="/" state={{ scrollTo: 'work' }} className="btn-secondary">
+          <ArrowLeft aria-hidden="true" className="size-4" /> Back to Selected work
+        </Link>
+      </div>
 
       <ContactSection className="pt-section" />
     </article>

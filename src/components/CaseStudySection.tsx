@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import type { CaseStudySection as Section } from '../content/types'
 import { ImageGallery } from './ImageGallery'
 import { Media } from './Media'
@@ -80,6 +81,56 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
           </>
         )}
 
+        {section.kind === 'challenges' && (
+          <>
+            <div className="max-w-prose">
+              <Intro text={section.intro} />
+            </div>
+            <Reveal as="ol" variant="stagger" className="divide-y divide-line border-y border-line">
+              {section.items.map((item, i) => (
+                <li key={i} className="grid gap-4 py-6 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-8">
+                  <div>
+                    <p className="eyebrow">
+                      <span aria-hidden="true" className="mr-3 font-mono">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      Challenge
+                    </p>
+                    <p className="mt-2 text-lg">{item.challenge}</p>
+                  </div>
+                  <ArrowRight aria-hidden="true" className="hidden size-5 text-accent md:mt-7 md:block" />
+                  <div className="rounded-lg bg-surface/60 p-4 md:-my-1">
+                    <p className="eyebrow">Opportunity</p>
+                    <p className="mt-2 text-lg text-ink-muted">{item.opportunity}</p>
+                  </div>
+                </li>
+              ))}
+            </Reveal>
+          </>
+        )}
+
+        {section.kind === 'process' && (
+          <>
+            <div className="max-w-prose">
+              <Intro text={section.intro} />
+            </div>
+            <Reveal as="ol" variant="stagger" className="grid gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
+              {section.steps.map((step, i) => (
+                <li key={i} className="border-t-2 border-ink pt-5">
+                  <p className="font-mono text-xs text-ink-subtle">Step {String(i + 1).padStart(2, '0')}</p>
+                  <h3 className="mt-3 text-xl font-medium">{step.title}</h3>
+                  <p className="mt-2 text-ink-muted">{step.detail}</p>
+                  {step.media && (
+                    <div className="mt-6">
+                      <Media asset={step.media} sizes="(min-width: 1280px) 25vw, (min-width: 768px) 40vw, 100vw" hint={`public/${assetFolder}/process-${i + 1}.webp`} />
+                    </div>
+                  )}
+                </li>
+              ))}
+            </Reveal>
+          </>
+        )}
+
         {section.kind === 'decisions' && (
           <>
             <div className="max-w-prose">
@@ -103,7 +154,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                         <Media
                           asset={item.media}
                           sizes="(min-width: 768px) 45vw, 100vw"
-                          hint={`public/${assetFolder}/decision-${i + 1}.webp`}
+                          hint={`public/${assetFolder}/${section.id}-${i + 1}.webp`}
                         />
                       </div>
                     </Reveal>

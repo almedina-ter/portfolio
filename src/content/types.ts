@@ -121,7 +121,29 @@ export interface OutcomesSection extends SectionBase {
   items: { value?: string; detail: string }[]
 }
 
-export type CaseStudySection = TextSection | ListSection | InsightsSection | DecisionsSection | GallerySection | OutcomesSection
+/** Pairs each challenge you found with the opportunity it opened. */
+export interface ChallengesSection extends SectionBase {
+  kind: 'challenges'
+  intro?: string
+  items: { challenge: string; opportunity: string }[]
+}
+
+/** The design process as numbered steps, each with an optional image (sketches, wireframes, iterations). */
+export interface ProcessSection extends SectionBase {
+  kind: 'process'
+  intro?: string
+  steps: { title: string; detail: string; media?: MediaAsset }[]
+}
+
+export type CaseStudySection =
+  | TextSection
+  | ListSection
+  | InsightsSection
+  | ChallengesSection
+  | DecisionsSection
+  | ProcessSection
+  | GallerySection
+  | OutcomesSection
 
 export interface Project {
   slug: string

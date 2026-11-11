@@ -21,7 +21,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
 
   return (
     <section id={section.id} aria-labelledby={headingId} className="scroll-mt-24">
-      <Reveal variant="stagger" className="rule-draw rule-draw-top pt-10 lg:pt-14">
+      <Reveal variant="stagger" className="rule-draw rule-draw-top pt-8 lg:pt-10">
         <p className="eyebrow flex gap-3">
           <span aria-hidden="true" className="font-mono">
             {String(index + 1).padStart(2, '0')}
@@ -33,7 +33,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
         </h2>
       </Reveal>
 
-      <Reveal delay={160} className="mt-8 space-y-8">
+      <Reveal delay={160} className="mt-8 space-y-8 lg:mt-10">
         {section.kind === 'text' && (
           <div className="max-w-prose space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
             {section.body.map((paragraph, i) => (
@@ -44,14 +44,27 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
 
         {section.kind === 'list' && (
           <div className="max-w-prose space-y-6">
-            <Intro text={section.intro} />
-            <ul className="divide-y divide-line border-y border-line">
+            {section.body?.length ? (
+              <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
+                {section.body.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
+            ) : null}
+            {section.body?.length ? section.intro && <p className="font-medium">{section.intro}</p> : <Intro text={section.intro} />}
+            <ul className="divide-y divide-line">
               {section.items.map((item, i) => (
-                <li key={i} className="flex gap-4 py-4">
+                <li key={i} className="flex gap-4 py-4 first:pt-0 last:pb-0">
                   <span aria-hidden="true" className="mt-1 font-mono text-xs text-ink-subtle">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  {item}
+                  {typeof item === 'string' ? (
+                    <span>{item}</span>
+                  ) : (
+                    <span className="text-ink-muted">
+                      <strong className="font-medium text-ink">{item.title}:</strong> {item.detail}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -86,9 +99,9 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <div className="max-w-prose">
               <Intro text={section.intro} />
             </div>
-            <Reveal as="ol" variant="stagger" className="divide-y divide-line border-y border-line">
+            <Reveal as="ol" variant="stagger" className="divide-y divide-line">
               {section.items.map((item, i) => (
-                <li key={i} className="grid gap-4 py-6 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-8">
+                <li key={i} className="grid gap-4 py-6 first:pt-0 last:pb-0 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-8">
                   <div>
                     <p className="eyebrow">
                       <span aria-hidden="true" className="mr-3 font-mono">
@@ -118,12 +131,12 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <Reveal
               as="ol"
               variant="stagger"
-              className={section.steps.some((step) => step.media) ? 'space-y-14' : 'grid gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-3'}
+              className={section.steps.some((step) => step.media) ? 'space-y-12' : 'grid gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-3'}
             >
               {section.steps.map((step, i) => (
                 <li
                   key={i}
-                  className={`border-t-2 border-ink pt-5 ${step.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : ''}`}
+                  className={step.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : ''}
                 >
                   <div>
                     <p className="font-mono text-xs text-ink-subtle">Step {String(i + 1).padStart(2, '0')}</p>
@@ -193,9 +206,9 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <div className="max-w-prose">
               <Intro text={section.intro} />
             </div>
-            <Reveal as="ul" variant="stagger" className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            <Reveal as="ul" variant="stagger" className="grid items-end gap-6 sm:grid-cols-2 xl:grid-cols-3">
               {section.items.map((item, i) => (
-                <li key={i} className="border-t-2 border-ink pt-5">
+                <li key={i}>
                   {item.value && <p className="font-display text-[2.75rem] leading-none">{item.value}</p>}
                   <p className={`${item.value ? 'mt-3' : ''} text-ink-muted`}>{item.detail}</p>
                 </li>

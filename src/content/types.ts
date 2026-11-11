@@ -91,8 +91,12 @@ export interface TextSection extends SectionBase {
 
 export interface ListSection extends SectionBase {
   kind: 'list'
+  /** Optional paragraphs before the list. The first one is set larger. */
+  body?: string[]
+  /** A lead-in for the list, e.g. "My role covered:". */
   intro?: string
-  items: string[]
+  /** Plain items, or items with a bold label, e.g. { title: 'Logo design', detail: '…' }. */
+  items: (string | { title: string; detail: string })[]
 }
 
 export interface InsightsSection extends SectionBase {

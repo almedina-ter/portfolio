@@ -156,7 +156,7 @@ export const projects: Project[] = [
     title: 'Branding',
     client: 'Cloudtech',
     summary:
-      'A new brand identity for Cloudtech, a technology company: a logo built from Morse code, a visual language for its website and social media, and a website built in Framer.',
+      'A complete brand identity for Cloudtech, a technology company. The project included a Morse code-inspired logo, a visual language for digital platforms, and a company website designed and built in Framer.',
     type: 'Brand identity · Website',
     year: '',
     role: 'Graphic Designer',
@@ -183,31 +183,48 @@ export const projects: Project[] = [
         id: 'overview',
         label: 'Overview',
         heading: 'Project overview and my role',
-        intro:
-          'Cloudtech is a technology company with offices in New York, Düsseldorf, Tirana and Prishtina. It builds software and offers cloud, DevOps, mobile, security, AI and consulting services to businesses going through digital transformation. They came to me for a brand identity that could finally show that work to the market.',
+        body: [
+          'Cloudtech is a technology company with offices in New York, Düsseldorf, Tirana, and Prishtina. It provides software development, cloud, DevOps, mobile, security, AI, and consulting services to businesses navigating digital transformation.',
+          'The company needed a visual identity that better represented its expertise and established a consistent presence across its digital platforms.',
+        ],
+        intro: 'My role covered the full branding process:',
         items: [
-          'Designed a new logo. The client wanted a fresh mark that felt clean and technical, and looked different from everyone else in their space.',
-          'Created wireframes for the company website, turning the new brand into a clear page structure.',
-          'Delivered a usable design system for the brand: logo versions, colours, social media templates, banners and profile pictures, plus a website we built in Framer.',
+          {
+            title: 'Logo design',
+            detail: "Developed a new visual mark that reflected the company's technical background while giving it a distinctive identity.",
+          },
+          {
+            title: 'Website structure',
+            detail: 'Created wireframes to establish the content hierarchy, layout, and overall user experience.',
+          },
+          {
+            title: 'Brand system',
+            detail: 'Defined the visual direction, including logo variations, colour palette, social media templates, banners, and profile assets.',
+          },
+          {
+            title: 'Website design and development',
+            detail: 'Applied the new identity to the company website and brought it to life using Framer.',
+          },
         ],
       },
       {
         kind: 'text',
         id: 'background',
         label: 'Background',
-        heading: 'Background and problem',
+        heading: 'The starting point',
         body: [
-          'Cloudtech had the idea, the team and the services, but nothing that presented them. There was no recognisable logo and no consistent look across the website and social media.',
-          'The problem was easy to say and hard to solve: how do you show a technology company to the market when every competitor already looks “techy”?',
+          "Cloudtech had an established team and a range of services, but its visual identity didn't communicate the full scope of what the company offered.",
+          'There was no recognisable logo or consistent visual language across its website and social media channels.',
+          'The main challenge was to create an identity that positioned Cloudtech as a modern technology company without relying on the visual conventions already common in the industry.',
         ],
       },
       {
         kind: 'insights',
         id: 'research',
         label: 'Research',
-        heading: 'Research and insights',
+        heading: 'Research and key insights',
         intro:
-          'I started with a competitor review and a look at the wider market: how cloud and software companies present themselves, which symbols and colours they use, and where Cloudtech could stand apart.',
+          'I started by reviewing competitors and exploring how technology companies communicate their services visually. I looked at common logo styles, colour choices, and visual elements to identify opportunities for Cloudtech to take a different direction.',
         items: [
           {
             title: 'Everyone looks the same',

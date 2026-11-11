@@ -121,7 +121,7 @@ export function CaseStudy() {
         />
       </Reveal>
 
-      <div ref={storyRef} className="container-page mt-section grid gap-12 lg:grid-cols-[11rem_minmax(0,1fr)] xl:gap-16">
+      <div ref={storyRef} className="container-page mt-16 grid gap-12 lg:mt-24 lg:grid-cols-[11rem_minmax(0,1fr)] xl:gap-16">
         <nav aria-label="On this page" className="hidden lg:block">
           <div className="sticky top-10">
             <p className="font-mono text-xs text-ink-subtle">{number(position)}</p>
@@ -152,7 +152,7 @@ export function CaseStudy() {
           </div>
         </nav>
 
-        <div className="min-w-0 space-y-20 lg:space-y-28">
+        <div className="min-w-0 space-y-16 lg:space-y-24">
           {project.confidentiality && (
             <Reveal
               as="aside"
@@ -170,7 +170,7 @@ export function CaseStudy() {
       </div>
 
       {next && (
-        <nav aria-label="Next project" className="container-page mt-section">
+        <nav aria-label="Next project" className="container-page mt-16 lg:mt-24">
           <Link
             to={`/work/${next.slug}`}
             className="group rule-draw rule-draw-top grid gap-8 border-b border-line py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] md:items-center lg:py-14"

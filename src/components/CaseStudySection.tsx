@@ -114,16 +114,28 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <div className="max-w-prose">
               <Intro text={section.intro} />
             </div>
-            <Reveal as="ol" variant="stagger" className="grid gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
+            {/* Steps with images run as full-width rows so sketches and wireframes stay large; text-only steps sit in columns. */}
+            <Reveal
+              as="ol"
+              variant="stagger"
+              className={section.steps.some((step) => step.media) ? 'space-y-14' : 'grid gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-3'}
+            >
               {section.steps.map((step, i) => (
-                <li key={i} className="border-t-2 border-ink pt-5">
-                  <p className="font-mono text-xs text-ink-subtle">Step {String(i + 1).padStart(2, '0')}</p>
-                  <h3 className="mt-3 text-xl font-medium">{step.title}</h3>
-                  <p className="mt-2 text-ink-muted">{step.detail}</p>
+                <li
+                  key={i}
+                  className={`border-t-2 border-ink pt-5 ${step.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : ''}`}
+                >
+                  <div>
+                    <p className="font-mono text-xs text-ink-subtle">Step {String(i + 1).padStart(2, '0')}</p>
+                    <h3 className="mt-3 text-xl font-medium">{step.title}</h3>
+                    <p className="mt-2 text-ink-muted">{step.detail}</p>
+                  </div>
                   {step.media && (
-                    <div className="mt-6">
-                      <Media asset={step.media} sizes="(min-width: 1280px) 25vw, (min-width: 768px) 40vw, 100vw" hint={`public/${assetFolder}/process-${i + 1}.webp`} />
-                    </div>
+                    <Reveal variant="media" className="overflow-hidden rounded-lg">
+                      <div className="reveal-zoom">
+                        <Media asset={step.media} sizes="(min-width: 768px) 45vw, 100vw" hint={`public/${assetFolder}/process-${i + 1}.webp`} />
+                      </div>
+                    </Reveal>
                   )}
                 </li>
               ))}

@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '../content/types'
 
 export function ProjectMeta({ project }: { project: Project }) {
@@ -19,6 +20,18 @@ export function ProjectMeta({ project }: { project: Project }) {
           <dd className="mt-2 text-[0.9375rem] leading-snug break-words">{value}</dd>
         </div>
       ))}
+      {project.website && (
+        <div className="min-w-0">
+          <dt className="eyebrow">Website</dt>
+          <dd className="mt-2 text-[0.9375rem] leading-snug">
+            <a href={project.website} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex items-center gap-1 break-all">
+              {project.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+              <ArrowUpRight aria-hidden="true" className="size-3.5 shrink-0" />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
+          </dd>
+        </div>
+      )}
     </dl>
   )
 }

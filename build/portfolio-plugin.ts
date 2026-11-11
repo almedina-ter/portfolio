@@ -39,6 +39,8 @@ function validateContent(publicDir: string): string[] {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.slug))
       problems.push(`Project slug "${project.slug}" should use lowercase letters, numbers and dashes only.`)
     if (slugs.has(project.slug)) problems.push(`Two projects share the slug "${project.slug}".`)
+    if (project.website && !/^https:\/\//.test(project.website))
+      problems.push(`Project "${project.slug}" website should start with https://`)
     slugs.add(project.slug)
     const ids = new Set<string>()
     for (const section of project.sections) {

@@ -152,17 +152,253 @@ function caseStudyStructure(): CaseStudySection[] {
 export const projects: Project[] = [
   {
     featured: true,
-    slug: 'project-01',
-    title: 'Project 01',
-    client: '',
-    summary: '',
-    type: '',
+    slug: 'cloudtech-branding',
+    title: 'Branding',
+    client: 'Cloudtech',
+    summary:
+      'A new brand identity for Cloudtech, a technology company: a logo built from Morse code, a visual language for its website and social media, and a website built in Framer.',
+    type: 'Brand identity · Website',
     year: '',
-    role: 'UI/UX Designer',
-    timeline: '',
-    thumbnail: { alt: 'Project 01 preview', aspect: '4 / 3' },
-    hero: { alt: 'Project 01 hero image', aspect: '16 / 9' },
-    sections: caseStudyStructure(),
+    role: 'Graphic Designer',
+    timeline: '2 weeks',
+    website: 'https://www.cloudtechnology.us/',
+    tools: ['Figma', 'Framer'],
+    thumbnail: {
+      src: 'images/projects/cloudtech-branding/thumbnail.webp',
+      alt: 'Cloudtech logo: a mark made of rounded bars and dots above the Cloudtech wordmark, on a dark navy background',
+      width: 1600,
+      height: 1200,
+      aspect: '4 / 3',
+    },
+    hero: {
+      src: 'images/projects/cloudtech-branding/hero.webp',
+      alt: 'Cloudtech logo: a mark made of rounded bars and dots above the Cloudtech wordmark, on a dark navy background',
+      width: 2400,
+      height: 1350,
+      aspect: '16 / 9',
+    },
+    sections: [
+      {
+        kind: 'list',
+        id: 'overview',
+        label: 'Overview',
+        heading: 'Project overview and my role',
+        intro:
+          'Cloudtech is a technology company with offices in New York, Düsseldorf, Tirana and Prishtina. It builds software and offers cloud, DevOps, mobile, security, AI and consulting services to businesses going through digital transformation. They came to me for a brand identity that could finally show that work to the market.',
+        items: [
+          'Designed a new logo. The client wanted a fresh mark that felt clean and technical, and looked different from everyone else in their space.',
+          'Created wireframes for the company website, turning the new brand into a clear page structure.',
+          'Delivered a usable design system for the brand: logo versions, colours, social media templates, banners and profile pictures, plus a website we built in Framer.',
+        ],
+      },
+      {
+        kind: 'text',
+        id: 'background',
+        label: 'Background',
+        heading: 'Background and problem',
+        body: [
+          'Cloudtech had the idea, the team and the services, but nothing that presented them. There was no recognisable logo and no consistent look across the website and social media.',
+          'The problem was easy to say and hard to solve: how do you show a technology company to the market when every competitor already looks “techy”?',
+        ],
+      },
+      {
+        kind: 'insights',
+        id: 'research',
+        label: 'Research',
+        heading: 'Research and insights',
+        intro:
+          'I started with a competitor review and a look at the wider market: how cloud and software companies present themselves, which symbols and colours they use, and where Cloudtech could stand apart.',
+        items: [
+          {
+            title: 'Everyone looks the same',
+            detail: 'Most brands in the space use abstract geometric marks, clouds, circuits and blue gradients. Looking technical was not enough to be remembered.',
+          },
+          {
+            title: 'Clean marks travel further',
+            detail: 'The logo had to work everywhere, from a website favicon to a LinkedIn banner. Simple, bold shapes stay readable at every size.',
+          },
+          {
+            title: 'A story makes it stick',
+            detail: 'A mark with an idea behind it is easier to remember and easier for the team to explain. Cloudtech needed a meaning, not just a shape.',
+          },
+        ],
+      },
+      {
+        kind: 'challenges',
+        id: 'challenges',
+        label: 'Challenges',
+        heading: 'Challenges and opportunities',
+        intro: 'Two challenges shaped the brief.',
+        items: [
+          {
+            challenge: 'Be clean: the identity had to stay simple and readable without losing character.',
+            opportunity: 'Design a clean logo from a few bold, rounded shapes that work at any size.',
+          },
+          {
+            challenge: 'Be tech, without looking like every other tech brand.',
+            opportunity: 'Find a technical idea that belongs only to Cloudtech: its initials, written in Morse code.',
+          },
+        ],
+      },
+      {
+        kind: 'process',
+        id: 'process',
+        label: 'Process',
+        heading: 'Design process and iterations',
+        intro: 'The design moved from sketches and research, to wireframes, to a cleaner final version after testing.',
+        steps: [
+          {
+            title: 'Sketches',
+            detail:
+              'I sketched ideas and collected inspiration from technology brands online. Morse code stood out: one of the first ways people sent messages electronically, built from just dots and dashes. I studied how it works and wrote out Cloudtech’s initials. C is dash, dot, dash, dot. T is a single dash.',
+            media: {
+              src: 'images/projects/cloudtech-branding/process-sketches.webp',
+              alt: 'Hand-drawn sketches in blue pen: rounded bars and dots combined into early versions of the Cloudtech mark',
+              width: 1600,
+              height: 1200,
+              aspect: '4 / 3',
+            },
+          },
+          {
+            title: 'Wireframes',
+            detail:
+              'Once the logo was settled, I wireframed the website. The wireframes brought the idea to life as a page: a bold hero with one clear message, the company’s expertise as cards, its services at a glance, and its offices to build trust.',
+            media: {
+              src: 'images/projects/cloudtech-branding/process-wireframes.webp',
+              alt: 'Low-fidelity desktop wireframe of the Cloudtech homepage: hero, partners, expertise cards and services',
+              width: 1600,
+              height: 1200,
+              aspect: '4 / 3',
+            },
+          },
+          {
+            title: 'Testing and iteration',
+            detail:
+              'The first logos placed the Morse symbol inside the word, in place of the O. Tested at small sizes and with the client, the name was harder to read, so I moved the symbol out into a standalone mark beside a clean wordmark. The website went through the same clean-up: simpler sections and more space, so the content leads.',
+            media: {
+              src: 'images/projects/cloudtech-branding/process-iteration.webp',
+              alt: 'Logo iterations: the wordmark with the symbol inside it, then a standalone mark beside a clean wordmark, shown at large and small sizes',
+              width: 1600,
+              height: 1200,
+              aspect: '4 / 3',
+            },
+          },
+        ],
+      },
+      {
+        kind: 'decisions',
+        id: 'solution',
+        label: 'Final design',
+        heading: 'Final design solutions',
+        intro: 'The final identity is a small, consistent system: one mark, one wordmark and one colour story, used the same way everywhere.',
+        items: [
+          {
+            title: 'A mark built from Morse code',
+            rationale:
+              'The symbol combines the Morse code for C (dash, dot, dash, dot) and T (dash). Dashes become rounded bars and dots become circles. The result is simple, technical and has a story the team can tell.',
+            media: {
+              src: 'images/projects/cloudtech-branding/final-mark.webp',
+              alt: 'How the mark is built: the Morse code for C, plus the Morse code for T, equals the Cloudtech mark',
+              width: 1600,
+              height: 1000,
+              aspect: '16 / 10',
+            },
+          },
+          {
+            title: 'A clean wordmark and flexible lockups',
+            rationale:
+              'A bold, wide, all-caps wordmark sits beside the mark. The logo comes in light and dark, horizontal and stacked versions, and the mark works on its own as an app icon or profile picture.',
+            media: {
+              src: 'images/projects/cloudtech-branding/final-lockups.webp',
+              alt: 'Logo lockups on navy, white and blue backgrounds, and the mark on its own',
+              width: 1600,
+              height: 1000,
+              aspect: '16 / 10',
+            },
+          },
+          {
+            title: 'Navy, electric blue and light',
+            rationale:
+              'A near-black navy base with electric blue light and 3D shapes gives the brand a premium, technical feel, and keeps white type easy to read.',
+            media: {
+              src: 'images/projects/cloudtech-branding/final-colour.webp',
+              alt: 'Brand colours Midnight, Indigo, Electric blue and White next to an “Engineering the future today” social post',
+              width: 1600,
+              height: 1000,
+              aspect: '16 / 10',
+            },
+          },
+          {
+            title: 'Social media templates that scale',
+            rationale:
+              'Every service post shares one layout: the mark, a label, a bold title and a large outline icon. New services can be added without starting from scratch, and the feed stays consistent.',
+            media: {
+              src: 'images/projects/cloudtech-branding/final-social.webp',
+              alt: 'Six social media posts, one for each Cloudtech service, sharing the same layout',
+              width: 1600,
+              height: 1000,
+              aspect: '16 / 10',
+            },
+          },
+          {
+            title: 'A website built in Framer',
+            rationale:
+              'The website brings everything together: the logo, the navy and blue palette, the 3D shapes, and clear sections for expertise and services. We built it in Framer, and it is live today.',
+            media: {
+              src: 'images/projects/cloudtech-branding/final-website.webp',
+              alt: 'The Cloudtech website shown on a laptop in a social media post',
+              width: 1600,
+              height: 1000,
+              aspect: '16 / 10',
+            },
+          },
+        ],
+      },
+      {
+        kind: 'gallery',
+        id: 'mockups',
+        label: 'Mockups',
+        heading: 'Mockups',
+        layout: 'stack',
+        images: [
+          {
+            src: 'images/projects/cloudtech-branding/mockups-scene.webp',
+            alt: 'The Cloudtech brand in use: the LinkedIn company page with its banner, the Instagram profile grid and a story on phones, and the Morse code brand card',
+            caption: 'The brand in use across LinkedIn, Instagram and print.',
+            width: 2400,
+            height: 1350,
+            aspect: '16 / 9',
+          },
+          {
+            src: 'images/projects/cloudtech-branding/mockups-posts.webp',
+            alt: 'Three social posts: “Engineering the future today”, the website on a laptop, and “Where innovation meets reliability”',
+            caption: 'Launch posts for social media.',
+            width: 2400,
+            height: 860,
+            aspect: '2400 / 860',
+          },
+          {
+            src: 'images/projects/cloudtech-branding/mockups-banners.webp',
+            alt: 'LinkedIn banner, Facebook cover and profile pictures',
+            caption: 'Banners and profile pictures for LinkedIn, Facebook and Instagram.',
+            width: 1600,
+            height: 780,
+            aspect: '1600 / 780',
+          },
+        ],
+      },
+      {
+        kind: 'outcomes',
+        id: 'outcomes',
+        label: 'Outcomes',
+        heading: 'Outcomes and results',
+        items: [
+          { value: '2 weeks', detail: 'from the first sketches to a complete brand identity' },
+          { value: '15+', detail: 'brand assets: logo versions, social posts, banners and profile pictures' },
+          { detail: 'The new logo and the website are live at cloudtechnology.us.' },
+        ],
+      },
+    ],
   },
   {
     featured: true,

@@ -157,6 +157,8 @@ export interface Project {
   timeline?: string
   platform?: string
   tools?: string[]
+  /** Live product or website, e.g. "https://www.example.com/". Shown as a link in the project details. */
+  website?: string
   thumbnail: MediaAsset
   hero: MediaAsset
   /** Shown as a note at the top of the case study, e.g. for NDA work. */

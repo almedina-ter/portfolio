@@ -35,11 +35,14 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
 
       <Reveal delay={160} className="mt-8 space-y-8 lg:mt-10">
         {section.kind === 'text' && (
-          <div className="max-w-prose space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
-            {section.body.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </div>
+          <>
+            <div className="max-w-prose space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
+              {section.body.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+            {section.media && <ImageGallery images={[section.media]} layout="stack" hintBase={`${assetFolder}/${section.id}`} />}
+          </>
         )}
 
         {section.kind === 'list' && (
@@ -161,6 +164,40 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <div className="max-w-prose">
               <Intro text={section.intro} />
             </div>
+            {section.layout === 'stacked' ? (
+              <ol className="space-y-16 lg:space-y-20">
+                {section.items.map((item, i) => (
+                  <li key={i}>
+                    <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
+                      <div>
+                        <h3 className="text-xl font-medium">
+                          <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
+                            {String(i + 1).padStart(2, '0')}
+                          </span>
+                          {item.title}
+                        </h3>
+                        <p className="mt-3 text-ink-muted">{item.rationale}</p>
+                      </div>
+                      {item.points && item.points.length > 0 && (
+                        <ul className="divide-y divide-line text-[0.9375rem] text-ink-muted">
+                          {item.points.map((point, j) => (
+                            <li key={j} className="flex gap-3 py-2.5 first:pt-0 last:pb-0">
+                              <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                    {item.media && (
+                      <div className="mt-8">
+                        <ImageGallery images={[item.media]} layout="stack" hintBase={`${assetFolder}/${section.id}-${i + 1}`} />
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            ) : (
             <ol className="space-y-12">
               {section.items.map((item, i) => (
                 <li key={i} className={item.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : 'max-w-prose'}>
@@ -172,6 +209,16 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                       {item.title}
                     </h3>
                     <p className="mt-3 text-ink-muted">{item.rationale}</p>
+                    {item.points && item.points.length > 0 && (
+                      <ul className="mt-4 space-y-2 text-[0.9375rem] text-ink-muted">
+                        {item.points.map((point, j) => (
+                          <li key={j} className="flex gap-3">
+                            <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                   {item.media && (
                     <Reveal variant="media" className="overflow-hidden rounded-lg">
@@ -187,6 +234,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                 </li>
               ))}
             </ol>
+            )}
           </>
         )}
 
@@ -206,11 +254,11 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <div className="max-w-prose">
               <Intro text={section.intro} />
             </div>
-            <Reveal as="ul" variant="stagger" className="grid items-end gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            <Reveal as="ul" variant="stagger" className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
               {section.items.map((item, i) => (
                 <li key={i}>
                   {item.value && <p className="font-display text-[2.75rem] leading-none">{item.value}</p>}
-                  <p className={`${item.value ? 'mt-3' : ''} text-ink-muted`}>{item.detail}</p>
+                  <p className={`${item.value ? 'mt-3' : 'sm:pt-14'} text-ink-muted`}>{item.detail}</p>
                 </li>
               ))}
             </Reveal>

@@ -419,17 +419,259 @@ export const projects: Project[] = [
   },
   {
     featured: true,
-    slug: 'project-02',
-    title: 'Project 02',
-    client: '',
-    summary: '',
-    type: '',
+    slug: 'design-system',
+    title: 'Design System',
+    client: '91 Life',
+    summary:
+      'Design Plus, the design system behind a growing healthcare SaaS platform. Built by our design team alongside the product, it gave designers and engineers one shared foundation. I designed the checkboxes, toggles, tooltips, action tooltips, tables and modals.',
+    type: 'Design system · Healthcare SaaS',
     year: '',
     role: 'UI/UX Designer',
-    timeline: '',
-    thumbnail: { alt: 'Project 02 preview', aspect: '4 / 3' },
-    hero: { alt: 'Project 02 hero image', aspect: '16 / 9' },
-    sections: caseStudyStructure(),
+    team: 'Design team',
+    timeline: 'About 1 month',
+    tools: ['Figma'],
+    thumbnail: {
+      src: 'images/projects/design-system/thumbnail.webp',
+      alt: 'Design Plus components: a data table, checkbox states and toggle states',
+      width: 1600,
+      height: 1200,
+      aspect: '4 / 3',
+    },
+    hero: {
+      src: 'images/projects/design-system/hero.webp',
+      alt: 'Design Plus components: a data table, checkbox states, an action tooltip, a confirmation dialog and toggle states',
+      width: 2400,
+      height: 1350,
+      aspect: '16 / 9',
+    },
+    confidentiality:
+      'The product I worked on at 91 Life is under a non-disclosure agreement, so it is not named here, and no product screens, patient data or business information are shown. This case study shares only the design system components I designed, with placeholder content, to show my role and process.',
+    sections: [
+      {
+        kind: 'list',
+        id: 'overview',
+        label: 'Overview',
+        heading: 'Project overview and my role',
+        body: [
+          'Clinical teams use our healthcare SaaS platform every day to review patient data, follow up on alerts and keep patient records up to date. As the product grew, more designers and engineers were building more screens at the same time.',
+          'Design Plus is the design system we built to keep that growth consistent. It was a team effort: several designers each owned different components, and we built the system over about a month, alongside the product rather than ahead of it.',
+        ],
+        intro: 'My contribution:',
+        items: [
+          { title: 'Checkboxes', detail: 'Selection controls in every state and value, with and without labels.' },
+          { title: 'Toggles', detail: 'On and off controls that follow the same states as checkboxes.' },
+          { title: 'Tooltips and action tooltips', detail: 'Short explanations, and quick actions in context, in nine positions.' },
+          { title: 'Tables', detail: 'Data tables in two densities, assembled from existing system components.' },
+          { title: 'Modals', detail: 'Confirmation, warning, feedback and input dialogs that share one structure.' },
+          {
+            title: 'Documentation',
+            detail: 'Component pages and supporting elements that made the system easy for engineers to find, understand and build.',
+          },
+        ],
+      },
+      {
+        kind: 'text',
+        id: 'background',
+        label: 'Background',
+        heading: 'Why the product needed a design system',
+        body: [
+          'The platform was growing quickly. Each new feature, from patient charts to messaging and billing, needed the same building blocks: form controls, tables, tooltips and dialogs.',
+          'Without shared components, these elements were redesigned and rebuilt for each feature, often with small differences in spacing, colour and behaviour. In a clinical product, where people scan dense lists and records under time pressure, those differences add friction and make the interface harder to trust.',
+          'Engineers felt it too. Every new screen raised the same questions: which version of a control to use, what its hover or disabled state looked like, and how it should behave.',
+        ],
+      },
+      {
+        kind: 'challenges',
+        id: 'challenges',
+        label: 'Challenges',
+        heading: 'What the system had to solve',
+        intro: 'Three constraints shaped how we built it.',
+        items: [
+          {
+            challenge: 'Requirements arrived feature by feature, not all at once.',
+            opportunity: 'Grow the system week by week, adding each component when the product first needed it.',
+          },
+          {
+            challenge: 'Several designers were building components in parallel.',
+            opportunity: 'Share one set of foundations and the same interaction states, so separate pieces still feel like one product.',
+          },
+          {
+            challenge: 'Engineers had to interpret each screen on its own.',
+            opportunity: 'Define every variant and state up front, so a component means the same thing in design and in code.',
+          },
+        ],
+      },
+      {
+        kind: 'process',
+        id: 'process',
+        label: 'Process',
+        heading: 'Built alongside the product',
+        intro: 'Instead of one large project planned up front, the system grew with the product over about a month.',
+        steps: [
+          {
+            title: 'Driven by real requirements',
+            detail:
+              'Each week, new product requirements decided which components came next. A component was designed into the system first, then used in the screens that needed it.',
+          },
+          {
+            title: 'Shared ownership',
+            detail:
+              'Each designer owned a set of components, from first exploration to documentation. Shared foundations, the same colours, typography and four interaction states, kept work from different designers consistent.',
+          },
+          {
+            title: 'Published for the whole team',
+            detail:
+              'Finished components were published to a shared Figma library and documented on their own pages, and existing screens were updated to use them.',
+          },
+        ],
+      },
+      {
+        kind: 'decisions',
+        id: 'components',
+        label: 'My contribution',
+        heading: 'The components I designed',
+        intro:
+          'I owned six parts of the system. For each one the goal was the same: cover every state the product needs, behave predictably, and be easy to build.',
+        layout: 'stacked',
+        items: [
+          {
+            title: 'Checkboxes',
+            rationale:
+              'Checkboxes appear everywhere in the product, from forms to selecting rows in tables, so they had to be completely predictable.',
+            points: [
+              'Default, hover, focus and disabled states for unchecked, checked and indeterminate values.',
+              'A clear focus ring, so keyboard users always know where they are.',
+              'An indeterminate value for partial selections, such as selecting all rows in a table.',
+              'Versions with a label and supporting text for forms.',
+              'One Figma component with type, value, label and state options, covering 40 variants.',
+            ],
+            media: {
+              src: 'images/projects/design-system/checkbox.webp',
+              alt: 'Design Plus checkbox sheet: checkbox and radio states in default, hover, focus and disabled, with and without text',
+              width: 2000,
+              height: 1553,
+              aspect: '2000 / 1553',
+            },
+          },
+          {
+            title: 'Toggles',
+            rationale:
+              'Toggles switch a setting on or off. I based them on the same states as the checkbox, so both controls feel like one family.',
+            points: [
+              'On and off in default, hover, focus and disabled states.',
+              'Hover darkens the track, and focus adds the same ring used across the system.',
+              'Disabled toggles keep their shape but lose contrast.',
+              'A version with a label and supporting text for settings.',
+              'One Figma component with 16 variants.',
+            ],
+            media: {
+              src: 'images/projects/design-system/toggle.webp',
+              alt: 'Design Plus toggle sheet: on and off toggles in default, hover, focus and disabled, with and without text',
+              width: 2000,
+              height: 1178,
+              aspect: '2000 / 1178',
+            },
+          },
+          {
+            title: 'Tooltips and action tooltips',
+            rationale:
+              "Dense clinical screens leave little room for explanation. Tooltips add context exactly where it's needed, without crowding the layout.",
+            points: [
+              'Tooltips explain or identify an element, from a one-word label to a heading with a description.',
+              'Action tooltips go a step further, adding an icon and buttons for quick decisions in context.',
+              'Nine arrow positions, so a tooltip can point at an element anywhere on the screen.',
+              'Usage guidance written on the component page, so the team knows when to use each one.',
+            ],
+            media: {
+              src: 'images/projects/design-system/tooltips.webp',
+              alt: 'Design Plus tooltip and action tooltip sheet showing every arrow position, with and without description, icon and buttons',
+              width: 2400,
+              height: 2225,
+              aspect: '2400 / 2225',
+            },
+          },
+          {
+            title: 'Tables',
+            rationale:
+              'Tables are at the centre of the product: patient lists and records depend on them. I designed them as a set of parts rather than one fixed layout.',
+            points: [
+              'Two densities: rich rows with two-line names, status, tags and actions, and compact rows for scanning many records.',
+              'Sortable column headers, a link style for records that open elsewhere, and row actions behind one menu.',
+              'Pagination with a page-size control for long lists.',
+              'Built entirely from existing system components: checkboxes, badges, buttons, pagination and a select input.',
+            ],
+            media: {
+              src: 'images/projects/design-system/tables.webp',
+              alt: 'Design Plus table sheet: a rich table with selection, status, tags and actions, and a compact table, both with pagination',
+              width: 2721,
+              height: 999,
+              aspect: '2721 / 999',
+            },
+          },
+          {
+            title: 'Modals',
+            rationale:
+              'Modals interrupt the user, so in a clinical product they must be clear about what will happen. Every dialog follows the same structure: a title, one line of explanation, the content and the actions.',
+            points: [
+              'One structure for confirmations, warnings, feedback and input.',
+              'A clear primary action, with destructive actions in red.',
+              'The main action stays disabled until required fields are complete.',
+              'Extra required fields appear only when a choice needs them.',
+              'A safeguard for unsaved changes, so edits are never lost by accident.',
+            ],
+            media: {
+              src: 'images/projects/design-system/modals.webp',
+              alt: 'Four dialogs: marking a patient inactive with a required reason, unsaved changes, an archive warning and an archive confirmation',
+              width: 2400,
+              height: 1240,
+              aspect: '2400 / 1240',
+            },
+          },
+        ],
+      },
+      {
+        kind: 'text',
+        id: 'engineering',
+        label: 'Engineering',
+        heading: 'Designed to be built',
+        body: [
+          'A design system is only useful if engineers can build from it with confidence, so I treated every component as a specification, not just a drawing.',
+          'Each component page shows every state side by side, with and without text, so engineers can see exactly how a control looks and behaves before writing code. Clear names for components and their options in the shared library meant designers and engineers could talk about the same thing in the same words.',
+          'Tables show the benefit best. Because they are assembled from existing components, an engineer who has built the checkbox, badge and pagination already has most of a table. Consistent definitions like these help reduce back-and-forth during handoff, duplicated work, and differences between the design and the shipped product.',
+        ],
+        media: {
+          src: 'images/projects/design-system/table-anatomy.webp',
+          alt: 'Table anatomy: a table with labels pointing to the system components it is built from: checkbox, sort and reorder icons, badges, link, more button, pagination and select input',
+          caption: 'Tables are assembled from components already in the system.',
+          width: 2400,
+          height: 1145,
+          aspect: '2400 / 1145',
+        },
+      },
+      {
+        kind: 'outcomes',
+        id: 'impact',
+        label: 'Impact',
+        heading: 'What it brought to the product',
+        intro:
+          'The value of the system showed in how the product could grow. Screens built by different designers and engineers looked and behaved the same, and new features could start from tested components instead of a blank page.',
+        items: [
+          { value: '6', detail: 'component families I designed and documented' },
+          { value: '4', detail: 'interaction states shared by every control: default, hover, focus and disabled' },
+          { detail: 'One shared foundation for designers and engineers, which keeps growing with the product.' },
+        ],
+      },
+      {
+        kind: 'text',
+        id: 'reflection',
+        label: 'Reflection',
+        heading: 'What I learned',
+        body: [
+          "Building a design system alongside a live product taught me to design for what's next as well as what's needed now. Each component had to solve today's feature and stay flexible for the ones we couldn't see yet.",
+          'Working in a team of designers also showed me that consistency comes from shared decisions, not just shared files. Agreeing on states, names and structure mattered as much as the components themselves.',
+        ],
+      },
+    ],
   },
   {
     featured: true,

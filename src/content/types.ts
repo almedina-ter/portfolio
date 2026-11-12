@@ -87,6 +87,8 @@ interface SectionBase {
 export interface TextSection extends SectionBase {
   kind: 'text'
   body: string[]
+  /** Optional full-width image after the text, e.g. a diagram. */
+  media?: MediaAsset
 }
 
 export interface ListSection extends SectionBase {
@@ -108,7 +110,10 @@ export interface InsightsSection extends SectionBase {
 export interface DecisionsSection extends SectionBase {
   kind: 'decisions'
   intro?: string
-  items: { title: string; rationale: string; media?: MediaAsset }[]
+  /** split (default): text beside a smaller image. stacked: text, then a full-width image that opens larger. */
+  layout?: 'split' | 'stacked'
+  /** `points` are short supporting details shown as a list beside or under the rationale. */
+  items: { title: string; rationale: string; points?: string[]; media?: MediaAsset }[]
 }
 
 export interface GallerySection extends SectionBase {

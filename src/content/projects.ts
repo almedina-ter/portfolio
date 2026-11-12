@@ -165,7 +165,7 @@ export const projects: Project[] = [
     tools: ['Figma', 'Framer'],
     thumbnail: {
       src: 'images/projects/cloudtech-branding/thumbnail.webp',
-      alt: 'Cloudtech logo: a mark made of rounded bars and dots above the Cloudtech wordmark, on a dark navy background',
+      alt: 'Cloudtech logo in electric blue: a mark made of rounded bars and dots above the Cloudtech wordmark, on a light background with a soft violet glow',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',

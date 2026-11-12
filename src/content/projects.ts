@@ -172,7 +172,7 @@ export const projects: Project[] = [
     },
     hero: {
       src: 'images/projects/cloudtech-branding/hero.webp',
-      alt: 'Cloudtech logo: a mark made of rounded bars and dots above the Cloudtech wordmark, on a dark navy background',
+      alt: 'Cloudtech logo in electric blue: a mark made of rounded bars and dots above the Cloudtech wordmark, on a light background with a soft violet glow',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',
@@ -546,11 +546,11 @@ export const projects: Project[] = [
               'One Figma component with type, value, label and state options, covering 40 variants.',
             ],
             media: {
-              src: 'images/projects/design-system/checkbox.webp',
-              alt: 'Design Plus checkbox sheet: checkbox and radio states in default, hover, focus and disabled, with and without text',
-              width: 2000,
-              height: 1553,
-              aspect: '2000 / 1553',
+              src: 'images/projects/design-system/checkbox-anatomy.webp',
+              alt: 'Checkbox and radio anatomy: a large checkbox labelled box, check icon and focus ring; a large radio labelled dot and ring; a checkbox and a radio with label and supporting text; and the checkbox and radio state grids, with unchecked, checked, indeterminate, unselected and selected rows',
+              width: 2400,
+              height: 1300,
+              aspect: '2400 / 1300',
             },
           },
           {
@@ -601,11 +601,11 @@ export const projects: Project[] = [
               'Built entirely from existing system components: checkboxes, badges, buttons, pagination and a select input.',
             ],
             media: {
-              src: 'images/projects/design-system/tables.webp',
-              alt: 'Design Plus table sheet: a rich table with selection, status, tags and actions, and a compact table, both with pagination',
-              width: 2721,
-              height: 999,
-              aspect: '2721 / 999',
+              src: 'images/projects/design-system/tables-anatomy.webp',
+              alt: 'Table anatomy for both densities: detailed rows labelled select all, sort, reorder column, name and supporting text, status, role tag, link, type tag and row actions; compact rows labelled single-line row, code tag and plain text, with the results count, pagination and page size',
+              width: 2400,
+              height: 1394,
+              aspect: '2400 / 1394',
             },
           },
           {

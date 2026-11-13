@@ -1,142 +1,4 @@
-import type { CaseStudySection, Project } from './types'
-
-/**
- * The case-study structure every project follows: overview and role, background and
- * problem, research, challenges and opportunities, the previous experience, the design
- * process, the final design, screens and outcomes. Text in [brackets] is a prompt
- * for what to write. Replace it with your own content, and delete any section you
- * don't need.
- */
-function caseStudyStructure(): CaseStudySection[] {
-  return [
-    {
-      kind: 'list',
-      id: 'overview',
-      label: 'Overview',
-      heading: 'Project overview and my role',
-      intro: '[Two or three sentences: what the product is, who it is for and what you were asked to do.]',
-      items: [
-        '[Responsibility, e.g. Led the design from research to hand-off]',
-        '[Responsibility, e.g. Planned and ran user interviews]',
-        '[Responsibility, e.g. Designed and tested the high-fidelity prototype]',
-      ],
-    },
-    {
-      kind: 'text',
-      id: 'background',
-      label: 'Background',
-      heading: 'Background and problem',
-      body: [
-        '[What was happening before this project, and why it mattered to users and to the business.]',
-        '[The problem in one sentence, e.g. "People could not … because …".]',
-      ],
-    },
-    {
-      kind: 'insights',
-      id: 'research',
-      label: 'Research',
-      heading: 'Research and insights',
-      intro: '[The methods you used, e.g. interviews, surveys, competitor review or analytics, and with how many people.]',
-      items: [
-        { title: '[Insight one]', detail: '[What you found and the evidence behind it.]' },
-        { title: '[Insight two]', detail: '[What you found and the evidence behind it.]' },
-        { title: '[Insight three]', detail: '[What you found and the evidence behind it.]' },
-      ],
-    },
-    {
-      kind: 'challenges',
-      id: 'challenges',
-      label: 'Challenges',
-      heading: 'Challenges and opportunities',
-      intro: '[The main obstacles you faced, and the opportunity each one opened.]',
-      items: [
-        { challenge: '[Challenge one]', opportunity: '[The opportunity, e.g. "How might we …?"]' },
-        { challenge: '[Challenge two]', opportunity: '[The opportunity, e.g. "How might we …?"]' },
-        { challenge: '[Challenge three]', opportunity: '[The opportunity, e.g. "How might we …?"]' },
-      ],
-    },
-    {
-      kind: 'decisions',
-      id: 'previous',
-      label: 'Previous experience',
-      heading: 'The previous experience and its issues',
-      intro: '[Show the product before your work and the issues you found in it.]',
-      items: [
-        {
-          title: '[Issue one]',
-          rationale: '[What was wrong, and how you knew, e.g. from research or analytics.]',
-          media: { alt: '[Screenshot of the previous design]', aspect: '16 / 10' },
-        },
-        {
-          title: '[Issue two]',
-          rationale: '[What was wrong, and how you knew, e.g. from research or analytics.]',
-          media: { alt: '[Screenshot of the previous design]', aspect: '16 / 10' },
-        },
-      ],
-    },
-    {
-      kind: 'process',
-      id: 'process',
-      label: 'Process',
-      heading: 'Design process and iterations',
-      intro: '[How the design evolved, from first ideas to the final version.]',
-      steps: [
-        { title: '[Step one, e.g. User flows and sketches]', detail: '[What you did and what you learned.]', media: { alt: '[Sketch or user flow]', aspect: '4 / 3' } },
-        { title: '[Step two, e.g. Wireframes]', detail: '[What you did and what you learned.]', media: { alt: '[Wireframes]', aspect: '4 / 3' } },
-        { title: '[Step three, e.g. Testing and iteration]', detail: '[What changed after testing, and why.]', media: { alt: '[Before and after an iteration]', aspect: '4 / 3' } },
-      ],
-    },
-    {
-      kind: 'decisions',
-      id: 'solution',
-      label: 'Final design',
-      heading: 'Final design solutions',
-      intro: '[Walk through the key parts of the final design and the decision behind each one.]',
-      items: [
-        {
-          title: '[Solution one]',
-          rationale: '[What it does and how it solves the problem.]',
-          media: { alt: '[Final screen]', aspect: '16 / 10' },
-        },
-        {
-          title: '[Solution two]',
-          rationale: '[What it does and how it solves the problem.]',
-          media: { alt: '[Final screen]', aspect: '16 / 10' },
-        },
-        {
-          title: '[Solution three]',
-          rationale: '[What it does and how it solves the problem.]',
-          media: { alt: '[Final screen]', aspect: '16 / 10' },
-        },
-      ],
-    },
-    {
-      kind: 'gallery',
-      id: 'screens',
-      label: 'Screens',
-      heading: 'Screens and mockups',
-      layout: 'grid',
-      images: [
-        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
-        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
-        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
-        { alt: '[Mockup or screen]', caption: '[What to notice]', aspect: '4 / 3' },
-      ],
-    },
-    {
-      kind: 'outcomes',
-      id: 'outcomes',
-      label: 'Outcomes',
-      heading: 'Outcomes and results',
-      intro: '[Only results you can verify. Qualitative feedback is fine when numbers are not available.]',
-      items: [
-        { value: '[Metric]', detail: '[What the number measures and over what period]' },
-        { value: '[Metric]', detail: '[What the number measures and over what period]' },
-        { detail: '[Feedback or another outcome]' },
-      ],
-    },
-  ]
-}
+import type { Project } from './types'
 
 /**
  * Your case studies. The order of this list is the order on the site.
@@ -145,8 +7,7 @@ function caseStudyStructure(): CaseStudySection[] {
  * and put its images in public/images/projects/<slug>/.
  * To hide a project without deleting it, set `draft: true`.
  *
- * Projects 01 to 03 are your three Selected Work slots. Add a description, timeline and
- * images for each, then replace the prompts in caseStudyStructure() with real content.
+ * Projects 01 to 03 are your three Selected Work slots.
  * The SAMPLE projects after them are hidden with `draft: true` and kept as examples.
  */
 export const projects: Project[] = [
@@ -675,17 +536,296 @@ export const projects: Project[] = [
   },
   {
     featured: true,
-    slug: 'project-03',
-    title: 'Project 03',
-    client: '',
-    summary: '',
-    type: '',
+    slug: 'healthcare-saas',
+    title: 'Healthcare SaaS',
+    client: '91 Life',
+    summary:
+      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, billing, external monitoring reports, team messaging and episode reviews. Working within a team of designers, I have designed core workflows across five of its modules for about two years.',
+    type: 'Product design · Healthcare SaaS',
     year: '',
-    role: 'UI/UX Designer',
-    timeline: '',
-    thumbnail: { alt: 'Project 03 preview', aspect: '4 / 3' },
-    hero: { alt: 'Project 03 hero image', aspect: '16 / 9' },
-    sections: caseStudyStructure(),
+    role: 'Product Designer',
+    team: 'Product design team, product and engineering',
+    timeline: 'Ongoing · about 2 years of my involvement',
+    tools: ['Figma'],
+    thumbnail: { alt: 'Healthcare SaaS case study', aspect: '4 / 3' },
+    hero: { alt: 'Healthcare SaaS case study', aspect: '16 / 9' },
+    confidentiality:
+      'This product is under a non-disclosure agreement, so it is not named here, and no product screens, patient data or business information are shown. This case study describes my role, the workflows I designed and how I approached them.',
+    sections: [
+      {
+        kind: 'list',
+        id: 'overview',
+        label: 'Overview',
+        heading: 'Project overview and my role',
+        body: [
+          'A healthcare SaaS platform built at 91 Life for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product.',
+          'The product has around twelve modules, designed by several designers. I have been part of it continuously for about two years as a Product Designer, and the product is still growing.',
+        ],
+        intro: 'At a glance:',
+        items: [
+          { title: 'Company', detail: '91 Life' },
+          { title: 'Product', detail: 'Healthcare SaaS application for clinical teams' },
+          { title: 'Timeline', detail: 'Ongoing product, about two years of my involvement' },
+          { title: 'Role', detail: 'Product Designer, working within a team of designers' },
+          {
+            title: 'My scope',
+            detail: 'Patient Management, Billing, External Monitors, Messaging, and Episodes and Episode History',
+          },
+        ],
+      },
+      {
+        kind: 'text',
+        id: 'context',
+        label: 'Product context',
+        heading: 'A large product, built by many hands',
+        body: [
+          'Clinical teams use the platform every day to review patient data, follow up on alerts, manage billing and coordinate with each other. Much of that work happens in dense tables and detailed records, often under time pressure.',
+          'Because around twelve modules were designed by different designers, every new screen had to fit into an existing system: the same navigation, the same patterns for tabs, filters and tables, and the same components from our shared design system.',
+          'My work sits inside that system. I designed specific modules and workflows, and worked with other designers, product and engineering to keep them consistent with the rest of the product.',
+        ],
+      },
+      {
+        kind: 'list',
+        id: 'contributions',
+        label: 'My contributions',
+        heading: 'What I designed',
+        intro: 'I designed the workflows and screens for five modules:',
+        items: [
+          {
+            title: 'Patient Management',
+            detail: 'The patient view, from the patient overview and transmission history to billing, clinical information and medication, plus editing records and changing a patient’s status.',
+          },
+          {
+            title: 'Billing',
+            detail: 'Billing tables with tabs and subtabs, search, filters, column management, a detail panel, and dismissing and restoring items.',
+          },
+          {
+            title: 'External Monitors',
+            detail: 'Tables for reports from external monitoring providers, with review states, search, filters and column management.',
+          },
+          {
+            title: 'Messaging',
+            detail: 'Search, new messages, group creation, pinging groups, deleting messages, and pinned and archived conversations.',
+          },
+          {
+            title: 'Episodes and Episode History',
+            detail: 'Reviewing current episodes, browsing episode history, selecting episodes to attach, and viewing a single episode.',
+          },
+        ],
+      },
+      {
+        kind: 'decisions',
+        id: 'patient-management',
+        label: 'Patient Management',
+        heading: 'One place for every patient record',
+        intro:
+          'The patient view is where clinicians spend most of their time. It needed to show a lot of information at once, while keeping the key details of the patient always in view.',
+        layout: 'stacked',
+        items: [
+          {
+            title: 'Patient overview',
+            rationale:
+              'A persistent patient header keeps the essentials visible on every tab, so clinicians never lose track of whose record they are in. Below it, information is grouped into clear cards that can each be edited on their own.',
+            points: [
+              'A header that stays in place while moving between tabs.',
+              'Tabs for the patient overview, transmission history, billing, and clinical information and medication.',
+              'Separate cards for each type of information, each with its own edit action.',
+            ],
+            media: { alt: 'Patient overview', aspect: '16 / 9' },
+          },
+          {
+            title: 'Transmission history',
+            rationale:
+              'Device transmissions are listed in one table, so a clinician can scan alerts, status and notes at a glance and open the full report when needed.',
+            points: [
+              'Alerts shown as coloured labels by severity, with a "+ more" count instead of crowding the row.',
+              'Status labels, sortable dates and pagination.',
+              'Alert details open in a panel on top of the table, so clinicians keep their place in the list.',
+            ],
+            media: { alt: 'Transmission history', aspect: '16 / 9' },
+          },
+          {
+            title: 'Billing for one patient',
+            rationale:
+              'The billing tab shows the patient’s billing information inside the patient view, so clinicians can check it without switching modules.',
+            media: { alt: 'Patient billing', aspect: '16 / 9' },
+          },
+          {
+            title: 'Editing records and changing status',
+            rationale:
+              'Each card has its own edit dialog, so changing one type of information does not mean editing the whole record. Changing a patient’s status affects other parts of the product, so it asks for a reason before it can be confirmed.',
+            media: { alt: 'Editing a patient record', aspect: '16 / 9' },
+          },
+        ],
+      },
+      {
+        kind: 'decisions',
+        id: 'billing',
+        label: 'Billing',
+        heading: 'Making billing manageable',
+        intro:
+          'Billing has a lot of states. I organised it into tabs and subtabs, so each table only shows the items that need the same kind of attention.',
+        layout: 'stacked',
+        items: [
+          {
+            title: 'Tabs, subtabs and a dense table',
+            rationale:
+              'Top-level tabs separate the main stages of billing, and subtabs split them further, each with a count. A short note explains what the current view shows.',
+            points: [
+              'Codes and types shown as compact labels to keep long rows scannable.',
+              'Long text is truncated, with a "+" count that reveals the rest.',
+              'Search and column management let people focus on what they need.',
+            ],
+            media: { alt: 'Billing table', aspect: '16 / 9' },
+          },
+          {
+            title: 'Filters and detail panel',
+            rationale:
+              'Filters live in one panel next to the subtabs, with clear and apply actions. Selecting a row opens a side panel with its key points, so the table stays in view while details are checked.',
+            media: { alt: 'Billing filters and detail panel', aspect: '16 / 9' },
+          },
+          {
+            title: 'Dismissing and restoring',
+            rationale:
+              'Dismissing an item needs a written reason, and dismissed items are not lost: they can be shown with a filter and restored straight from the table.',
+            media: { alt: 'Dismissing and restoring a billing item', aspect: '16 / 9' },
+          },
+        ],
+      },
+      {
+        kind: 'decisions',
+        id: 'external-monitors',
+        label: 'External Monitors',
+        heading: 'Monitoring reports in one place',
+        intro:
+          'Clinics receive reports from several external monitoring providers. This module puts them in one place, with the same table patterns as Billing.',
+        layout: 'stacked',
+        items: [
+          {
+            title: 'One table per provider',
+            rationale:
+              'Provider tabs sit above review tabs, so clinicians can move through reports by provider and by review state. Each row has quick actions to open the report and move it forward.',
+            media: { alt: 'External monitors table', aspect: '16 / 9' },
+          },
+          {
+            title: 'Nothing removed by accident',
+            rationale: 'Dismissed reports move to their own tab, where they can be restored.',
+            media: { alt: 'Dismissed reports', aspect: '16 / 9' },
+          },
+        ],
+      },
+      {
+        kind: 'decisions',
+        id: 'messaging',
+        label: 'Messaging',
+        heading: 'Team conversations inside the product',
+        intro: 'Messaging lets clinical teams talk to each other inside the product, one to one or in groups.',
+        layout: 'stacked',
+        items: [
+          {
+            title: 'Inbox',
+            rationale:
+              'Conversations are grouped into pinned, direct and group conversations, with search, unread markers and quick actions. An empty state guides people to pick a conversation or start a new one.',
+            media: { alt: 'Messaging inbox', aspect: '16 / 9' },
+          },
+          {
+            title: 'Groups',
+            rationale:
+              'A group needs a name and at least two members, picked from a searchable list. When too few people are selected, the disabled button explains why instead of failing silently.',
+            media: { alt: 'Creating a group', aspect: '16 / 9' },
+          },
+          {
+            title: 'Conversations and limits',
+            rationale:
+              'Each message shows its sender and time, and archived conversations have their own view. When a message is too long, a counter and an inline error explain the limit before sending.',
+            media: { alt: 'Conversation view', aspect: '16 / 9' },
+          },
+        ],
+      },
+      {
+        kind: 'decisions',
+        id: 'episodes',
+        label: 'Episodes',
+        heading: 'Episodes and Episode History',
+        intro:
+          'Clinicians review the episodes in the current report, and can bring in older episodes from the history when they need them.',
+        layout: 'stacked',
+        items: [
+          {
+            title: 'Current episodes',
+            rationale:
+              'Inside a report, current episodes are listed in a compact table, colour coded by type, with a shortcut to the full history.',
+            media: { alt: 'Current episodes', aspect: '16 / 9' },
+          },
+          {
+            title: 'Episode history',
+            rationale:
+              'The history opens in a large dialog with time filters, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
+            media: { alt: 'Episode history', aspect: '16 / 9' },
+          },
+          {
+            title: 'Single episode',
+            rationale: 'Opening an episode shows its details, with previous and next actions to move through episodes.',
+            media: { alt: 'Single episode', aspect: '16 / 9' },
+          },
+        ],
+      },
+      {
+        kind: 'insights',
+        id: 'considerations',
+        label: 'Design considerations',
+        heading: 'What guided the design',
+        items: [
+          {
+            title: 'Consistency across modules',
+            detail:
+              'Tabs with counts, filter panels, tables, labels and dialogs work the same way in every module I designed, and follow the patterns used by the rest of the product.',
+          },
+          {
+            title: 'Dense, but scannable',
+            detail:
+              'Clinical and billing tables carry a lot of columns. Compact labels, colour coding, truncation with "+ more" and details on demand keep rows readable.',
+          },
+          {
+            title: 'Context without leaving the page',
+            detail:
+              'Side panels, popovers and dialogs show details on top of the table, so people keep their place in the list.',
+          },
+          {
+            title: 'Careful with actions that matter',
+            detail:
+              'Changing a patient’s status or dismissing an item asks for a reason, and dismissed items can always be brought back.',
+          },
+          {
+            title: 'Clear feedback',
+            detail:
+              'Disabled buttons explain what is missing, required fields are marked, and limits such as message length are shown before an error happens.',
+          },
+        ],
+      },
+      {
+        kind: 'text',
+        id: 'collaboration',
+        label: 'Collaboration',
+        heading: 'Collaboration and development',
+        body: [
+          'I work as part of a team of designers, each responsible for different modules. We share one design system, so the product feels like one product even though many people design it.',
+          'I work with product and engineering as features move from design to development, and keep refining my modules as requirements change.',
+        ],
+      },
+      {
+        kind: 'outcomes',
+        id: 'outcome',
+        label: 'Outcome',
+        heading: 'Outcome and ongoing development',
+        intro: 'The product is still in active development, and so is my work on it.',
+        items: [
+          { detail: 'Designed core workflows across five modules of a large healthcare platform.' },
+          { detail: 'Kept those modules consistent with each other and with the rest of the product.' },
+          { detail: 'Continue to extend and refine these modules as the product grows.' },
+        ],
+      },
+    ],
   },
   {
     sample: true,

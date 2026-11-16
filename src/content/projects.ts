@@ -547,10 +547,22 @@ export const projects: Project[] = [
     team: 'Product design team, product and engineering',
     timeline: 'Ongoing',
     tools: ['Figma'],
-    thumbnail: { alt: 'Healthcare SaaS case study', aspect: '4 / 3' },
-    hero: { alt: 'Healthcare SaaS case study', aspect: '16 / 9' },
+    thumbnail: {
+      src: 'images/projects/healthcare-saas/thumbnail.webp',
+      alt: 'Browser windows with blurred screens from a healthcare platform: a billing table, a patient overview and a team conversation',
+      width: 1600,
+      height: 1200,
+      aspect: '4 / 3',
+    },
+    hero: {
+      src: 'images/projects/healthcare-saas/hero.webp',
+      alt: 'Browser windows with blurred screens from a healthcare platform: a billing table, a patient overview and a team conversation',
+      width: 2400,
+      height: 1350,
+      aspect: '16 / 9',
+    },
     confidentiality:
-      'This product is under a non-disclosure agreement, so it is not named here, and no product screens, patient data or business information are shown. This case study describes my role, the workflows I designed and how I approached them.',
+      'This product is under a non-disclosure agreement, so it is not named here. The screens shown are product designs with all patient, clinic and business data blurred or replaced with placeholders. This case study describes my role, the workflows I designed and how I approached them.',
     sections: [
       {
         kind: 'list',
@@ -631,7 +643,13 @@ export const projects: Project[] = [
               'Tabs for the patient overview, transmission history, billing, and clinical information and medication.',
               'Separate cards for each type of information, each with its own edit action.',
             ],
-            media: { alt: 'Patient overview', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/patient-overview.webp',
+              alt: 'Patient overview in a browser window: a patient header, tabs for summary, transmission history, billing, and clinical information and medications, and cards for demographics, contact, notes and monitoring, with all data blurred. Callouts mark the patient header, the section tabs and the edit action on each card',
+              width: 2400,
+              height: 1100,
+              aspect: '2400 / 1100',
+            },
           },
           {
             title: 'Transmission history',
@@ -642,19 +660,37 @@ export const projects: Project[] = [
               'Status labels, sortable dates and pagination.',
               'Alert details open in a panel on top of the table, so clinicians keep their place in the list.',
             ],
-            media: { alt: 'Transmission history', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/transmission-history.webp',
+              alt: 'Transmission history table with alerts, transmission type, status, notes and PDF columns, with all data blurred. An alert details popover sits on top of the table, and callouts mark the alerts by severity, the popover and the status labels',
+              width: 2400,
+              height: 1100,
+              aspect: '2400 / 1100',
+            },
           },
           {
             title: 'Billing for one patient',
             rationale:
               'The billing tab shows the patient’s billing information inside the patient view, so clinicians can check it without switching modules.',
-            media: { alt: 'Patient billing', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/patient-billing.webp',
+              alt: 'The billing tab inside the patient view: a table of billing rows with colour-coded status labels, with all data blurred. A callout marks the billing tab',
+              width: 2400,
+              height: 1100,
+              aspect: '2400 / 1100',
+            },
           },
           {
             title: 'Editing records and changing status',
             rationale:
               'Each card has its own edit dialog, so changing one type of information does not mean editing the whole record. Changing a patient’s status affects other parts of the product, so it asks for a reason before it can be confirmed.',
-            media: { alt: 'Editing a patient record', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/patient-edit.webp',
+              alt: 'Two browser windows: an edit dialog for the demographics card, and on top of it a dialog that asks for a reason before the patient status is changed, with all data blurred. Callouts mark the dialog per card and the required reason',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
+            },
           },
         ],
       },
@@ -676,19 +712,37 @@ export const projects: Project[] = [
               'Long text is truncated, with a "+" count that reveals the rest.',
               'Search and column management let people focus on what they need.',
             ],
-            media: { alt: 'Billing table', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/billing-table.webp',
+              alt: 'Billing table with top-level tabs and counts, subtabs, a filters button and columns for billing cycle, patient, codes, device, physician and reason for review, with all data blurred. Callouts mark the tabs, the subtabs and filters, and long text cut with a plus count',
+              width: 2400,
+              height: 1100,
+              aspect: '2400 / 1100',
+            },
           },
           {
             title: 'Filters and detail panel',
             rationale:
               'Filters live in one panel next to the subtabs, with clear and apply actions. Selecting a row opens a side panel with its key points, so the table stays in view while details are checked.',
-            media: { alt: 'Billing filters and detail panel', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/billing-detail.webp',
+              alt: 'Two browser windows: the billing filter panel open over the table, and a side panel with a cycle overview next to the table, with all data blurred. Callouts mark the filters panel and the side panel',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
+            },
           },
           {
             title: 'Dismissing and restoring',
             rationale:
               'Dismissing an item needs a written reason, and dismissed items are not lost: they can be shown with a filter and restored straight from the table.',
-            media: { alt: 'Dismissing and restoring a billing item', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/billing-dismiss.webp',
+              alt: 'Two browser windows: the billing filter panel with the show dismissed switch on, and the table listing a dismissed cycle with a button to reactivate it, with all data blurred. Callouts mark the show dismissed filter and the restore button',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
+            },
           },
         ],
       },
@@ -705,12 +759,24 @@ export const projects: Project[] = [
             title: 'One table per provider',
             rationale:
               'Provider tabs sit above review tabs, so clinicians can move through reports by provider and by review state. Each row has quick actions to open the report and move it forward.',
-            media: { alt: 'External monitors table', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/monitors-table.webp',
+              alt: 'External monitors table with provider tabs, review tabs for ready to review, signed and dismissed, and columns for patient, study type, report, physician and comments, with all data blurred. Provider names are replaced by Vendor A to D. Callouts mark the provider tabs, the review states and the quick actions on each row',
+              width: 2400,
+              height: 1100,
+              aspect: '2400 / 1100',
+            },
           },
           {
             title: 'Nothing removed by accident',
             rationale: 'Dismissed reports move to their own tab, where they can be restored.',
-            media: { alt: 'Dismissed reports', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/monitors-dismissed.webp',
+              alt: 'The dismissed tab of the external monitors table with one row highlighted and an Un-dismiss button, with all data blurred. Callouts mark the dismissed tab and the restore action',
+              width: 2400,
+              height: 900,
+              aspect: '2400 / 900',
+            },
           },
         ],
       },
@@ -726,19 +792,37 @@ export const projects: Project[] = [
             title: 'Inbox',
             rationale:
               'Conversations are grouped into pinned, direct and group conversations, with search, unread markers and quick actions. An empty state guides people to pick a conversation or start a new one.',
-            media: { alt: 'Messaging inbox', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/messaging-inbox.webp',
+              alt: 'Messaging inbox with a search field and pinned, direct and group conversation lists on the left, and an empty state on the right that asks the user to choose a conversation or start a new chat, with all names blurred. Callouts mark the search, the sections and the empty state',
+              width: 2400,
+              height: 1000,
+              aspect: '2400 / 1000',
+            },
           },
           {
             title: 'Groups',
             rationale:
               'A group needs a name and at least two members, picked from a searchable list. When too few people are selected, the disabled button explains why instead of failing silently.',
-            media: { alt: 'Creating a group', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/messaging-group.webp',
+              alt: 'Create new group dialog with a group name field, a searchable list of members with checkboxes and a Create Group button, with all names blurred. Callouts mark the member list and the primary action',
+              width: 2400,
+              height: 1100,
+              aspect: '2400 / 1100',
+            },
           },
           {
             title: 'Conversations and limits',
             rationale:
               'Each message shows its sender and time, and archived conversations have their own view. When a message is too long, a counter and an inline error explain the limit before sending.',
-            media: { alt: 'Conversation view', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/messaging-conversation.webp',
+              alt: 'A group conversation with a header, messages with sender names and times, and a conversation list, with all names and messages blurred. Callouts mark the sender and time and the group header',
+              width: 2400,
+              height: 900,
+              aspect: '2400 / 900',
+            },
           },
         ],
       },
@@ -755,7 +839,13 @@ export const projects: Project[] = [
             title: 'Current episodes',
             rationale:
               'Inside a report, current episodes are listed in a compact table, colour coded by type, with a shortcut to the full history.',
-            media: { alt: 'Current episodes', aspect: '16 / 9' },
+            media: {
+              src: 'images/projects/healthcare-saas/episodes.webp',
+              alt: 'Two browser windows: a report with a compact table of current episodes and a shortcut to the history, and the episode history dialog with tabs, filters, selected episodes and an attach button, with all data blurred. Callouts mark the history shortcut and the attach action',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
+            },
           },
         ],
       },

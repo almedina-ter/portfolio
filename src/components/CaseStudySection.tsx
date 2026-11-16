@@ -169,7 +169,8 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                 {section.items.map((item, i) => (
                   <li key={i}>
                     <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
-                      <div>
+                      {/* Without points, the text spans the full width of the image below it. */}
+                      <div className={item.points && item.points.length > 0 ? undefined : 'md:col-span-2'}>
                         <h3 className="text-xl font-medium">
                           <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
                             {String(i + 1).padStart(2, '0')}

@@ -540,12 +540,12 @@ export const projects: Project[] = [
     title: 'Healthcare SaaS',
     client: '91 Life',
     summary:
-      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, billing, external monitoring reports, team messaging and episode reviews. Working within a team of designers, I have designed core workflows across five of its modules for about two years.',
+      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, billing, external monitoring reports, team messaging and episode reviews. Working within a team of designers, I design core workflows across five of its modules.',
     type: 'Product design · Healthcare SaaS',
     year: '',
     role: 'Product Designer',
     team: 'Product design team, product and engineering',
-    timeline: 'Ongoing · about 2 years of my involvement',
+    timeline: 'Ongoing',
     tools: ['Figma'],
     thumbnail: { alt: 'Healthcare SaaS case study', aspect: '4 / 3' },
     hero: { alt: 'Healthcare SaaS case study', aspect: '16 / 9' },
@@ -559,13 +559,13 @@ export const projects: Project[] = [
         heading: 'Project overview and my role',
         body: [
           'A healthcare SaaS platform built at 91 Life for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product.',
-          'The product has around twelve modules, designed by several designers. I have been part of it continuously for about two years as a Product Designer, and the product is still growing.',
+          'The product has around twelve modules, designed by several designers. I am part of it as a Product Designer, and the product is still growing.',
         ],
         intro: 'At a glance:',
         items: [
           { title: 'Company', detail: '91 Life' },
           { title: 'Product', detail: 'Healthcare SaaS application for clinical teams' },
-          { title: 'Timeline', detail: 'Ongoing product, about two years of my involvement' },
+          { title: 'Timeline', detail: 'Ongoing' },
           { title: 'Role', detail: 'Product Designer, working within a team of designers' },
           {
             title: 'My scope',
@@ -756,17 +756,6 @@ export const projects: Project[] = [
             rationale:
               'Inside a report, current episodes are listed in a compact table, colour coded by type, with a shortcut to the full history.',
             media: { alt: 'Current episodes', aspect: '16 / 9' },
-          },
-          {
-            title: 'Episode history',
-            rationale:
-              'The history opens in a large dialog with time filters, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
-            media: { alt: 'Episode history', aspect: '16 / 9' },
-          },
-          {
-            title: 'Single episode',
-            rationale: 'Opening an episode shows its details, with previous and next actions to move through episodes.',
-            media: { alt: 'Single episode', aspect: '16 / 9' },
           },
         ],
       },

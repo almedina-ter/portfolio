@@ -757,6 +757,17 @@ export const projects: Project[] = [
               'Inside a report, current episodes are listed in a compact table, colour coded by type, with a shortcut to the full history.',
             media: { alt: 'Current episodes', aspect: '16 / 9' },
           },
+          {
+            title: 'Episode history',
+            rationale:
+              'The history opens in a large dialog with time filters, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
+            media: { alt: 'Episode history', aspect: '16 / 9' },
+          },
+          {
+            title: 'Single episode',
+            rationale: 'Opening an episode shows its details, with previous and next actions to move through episodes.',
+            media: { alt: 'Single episode', aspect: '16 / 9' },
+          },
         ],
       },
       {

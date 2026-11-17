@@ -550,7 +550,7 @@ export const projects: Project[] = [
       { name: 'Engineering Team', count: '20', unit: 'Engineers' },
     ],
     status: 'Ongoing',
-    involvement: 'Ongoing. About 1 year of work shown here',
+    involvement: 'Ongoing.\nAbout 1 year of work shown here',
     fullWidthHeadings: true,
     tools: ['Figma'],
     thumbnail: {
@@ -643,7 +643,6 @@ export const projects: Project[] = [
         ],
         groups: [
           {
-            label: 'Episodes',
             title: 'Episodes and Episode History',
             intro:
               'Current episodes sit in the report, with the full history one step away.',
@@ -690,8 +689,8 @@ export const projects: Project[] = [
         ],
         groups: [
           {
-            label: 'Patient Management',
-            title: 'One place for every patient record',
+            title: 'Patient Management',
+            subtitle: 'One place for every patient record',
             intro:
               'The patient view is where clinicians spend most of their time. It needed to show a lot of information at once, while keeping the key details of the patient always in view.',
             items: [
@@ -756,8 +755,8 @@ export const projects: Project[] = [
             ],
           },
           {
-            label: 'Billing',
-            title: 'Making billing manageable',
+            title: 'Billing',
+            subtitle: 'Making billing manageable',
             intro:
               'Billing has a lot of states. I organised it into tabs and subtabs, so each table only shows the items that need the same kind of attention.',
             items: [
@@ -821,8 +820,8 @@ export const projects: Project[] = [
         ],
         groups: [
           {
-            label: 'External Monitors',
-            title: 'Monitoring reports in one place',
+            title: 'External Monitors',
+            subtitle: 'Monitoring reports in one place',
             intro:
               'Clinics receive reports from several external monitoring providers. This module puts them in one place, with the same table patterns as Billing.',
             items: [
@@ -852,8 +851,8 @@ export const projects: Project[] = [
             ],
           },
           {
-            label: 'Messaging',
-            title: 'Team conversations inside the product',
+            title: 'Messaging',
+            subtitle: 'Team conversations inside the product',
             intro:
               'Messaging lets clinical teams talk to each other inside the product, one to one or in groups.',
             items: [

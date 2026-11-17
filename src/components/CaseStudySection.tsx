@@ -298,12 +298,12 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
-            <div className="space-y-20 pt-6 lg:space-y-28 lg:pt-10">
+            <div className="space-y-20 pt-6 lg:space-y-32 lg:pt-10">
               {section.groups.map((group, g) => (
-                <div key={group.title}>
+                <div key={group.title} className={g > 0 ? 'border-t border-line pt-16 lg:pt-20' : undefined}>
                   <div className="max-w-prose">
-                    {group.label && <p className="eyebrow mb-3">{group.label}</p>}
-                    <h3 className="font-display text-2xl text-balance">{group.title}</h3>
+                    <h3 className="font-display text-heading">{group.title}</h3>
+                    {group.subtitle && <p className="mt-4 text-lede text-ink">{group.subtitle}</p>}
                     {group.intro && <p className="mt-3 text-ink-muted">{group.intro}</p>}
                   </div>
                   <div className="mt-10">

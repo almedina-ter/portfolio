@@ -20,32 +20,34 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
     <ol className="space-y-16 lg:space-y-20">
       {items.map((item, i) => (
         <li key={i}>
-          <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
-            {/* Without points, the text spans the full width of the image below it. */}
-            <div className={item.points && item.points.length > 0 ? undefined : 'md:col-span-2'}>
-              {item.title && (
-                <h3 className="text-xl font-medium">
-                  <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  {item.title}
-                </h3>
+          {(item.title || item.rationale || (item.points && item.points.length > 0)) && (
+            <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
+              {/* Without points, the text spans the full width of the image below it. */}
+              <div className={item.points && item.points.length > 0 ? undefined : 'md:col-span-2'}>
+                {item.title && (
+                  <h3 className="text-xl font-medium">
+                    <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    {item.title}
+                  </h3>
+                )}
+                {item.rationale && <p className={item.title ? 'mt-3 text-ink-muted' : 'text-ink-muted'}>{item.rationale}</p>}
+              </div>
+              {item.points && item.points.length > 0 && (
+                <ul className="divide-y divide-line text-[0.9375rem] text-ink-muted">
+                  {item.points.map((point, j) => (
+                    <li key={j} className="flex gap-3 py-2.5 first:pt-0 last:pb-0">
+                      <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               )}
-              <p className={item.title ? 'mt-3 text-ink-muted' : 'text-ink-muted'}>{item.rationale}</p>
             </div>
-            {item.points && item.points.length > 0 && (
-              <ul className="divide-y divide-line text-[0.9375rem] text-ink-muted">
-                {item.points.map((point, j) => (
-                  <li key={j} className="flex gap-3 py-2.5 first:pt-0 last:pb-0">
-                    <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          )}
           {item.media && (
-            <div className="mt-8">
+            <div className={item.title || item.rationale || item.points?.length ? 'mt-8' : undefined}>
               <ImageGallery images={[item.media]} layout="stack" hintBase={`${hintBase}-${i + 1}`} />
             </div>
           )}

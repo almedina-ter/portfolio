@@ -129,7 +129,7 @@ export function CaseStudy() {
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
               {project.sections.map((section) => (
-                <li key={section.id}>
+                <li key={section.id} className={section.kind === 'timeline' ? 'pl-3' : undefined}>
                   <button
                     type="button"
                     onClick={() => scrollToId(section.id)}
@@ -144,6 +144,11 @@ export function CaseStudy() {
                         activeSection === section.id ? 'w-4 bg-accent' : 'w-0 bg-line-strong group-hover:w-2'
                       }`}
                     />
+                    {section.kind === 'timeline' && (
+                      <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
+                        {section.number}
+                      </span>
+                    )}
                     {section.label ?? section.heading}
                   </button>
                 </li>

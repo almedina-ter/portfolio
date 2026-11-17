@@ -538,14 +538,19 @@ export const projects: Project[] = [
     featured: true,
     slug: 'healthcare-saas',
     title: 'Healthcare SaaS',
-    client: '91 Life',
+    client: '',
     summary:
-      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, billing, external monitoring reports, team messaging and episode reviews. Working within a team of designers, I design core workflows across five of its modules.',
+      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, billing, external monitoring reports, team messaging and episode reviews. As a Product Designer, I spent about a year designing core workflows across five of its modules, together with the product design, product and engineering teams.',
     type: 'Product design · Healthcare SaaS',
     year: '',
     role: 'Product Designer',
-    team: 'Product design team, product and engineering',
-    timeline: 'Ongoing',
+    teams: [
+      { name: 'Product Design Team', count: '3', unit: 'Product Designers' },
+      { name: 'Product Team', count: '4', unit: 'Team Members' },
+      { name: 'Engineering Team', count: '20', unit: 'Engineers' },
+    ],
+    status: 'Ongoing',
+    involvement: '1 year',
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/healthcare-saas/thumbnail.webp',
@@ -570,15 +575,15 @@ export const projects: Project[] = [
         label: 'Overview',
         heading: 'Project overview and my role',
         body: [
-          'A healthcare SaaS platform built at 91 Life for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product.',
-          'The product has around twelve modules, designed by several designers. I am part of it as a Product Designer, and the product is still growing.',
+          'A healthcare SaaS platform for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product.',
+          'The product has around twelve modules, designed by several designers. I worked on it as a Product Designer for approximately one year, and the product is still growing.',
         ],
         intro: 'At a glance:',
         items: [
-          { title: 'Company', detail: '91 Life' },
           { title: 'Product', detail: 'Healthcare SaaS application for clinical teams' },
-          { title: 'Timeline', detail: 'Ongoing' },
-          { title: 'Role', detail: 'Product Designer, working within a team of designers' },
+          { title: 'Project status', detail: 'Ongoing. The product continues to evolve.' },
+          { title: 'My involvement', detail: 'Approximately 1 year' },
+          { title: 'Role', detail: 'Product Designer, working collaboratively with the product design, product and engineering teams' },
           {
             title: 'My scope',
             detail: 'Patient Management, Billing, External Monitors, Messaging, and Episodes and Episode History',
@@ -599,264 +604,294 @@ export const projects: Project[] = [
       {
         kind: 'list',
         id: 'contributions',
-        label: 'My contributions',
-        heading: 'What I designed',
-        intro: 'I designed the workflows and screens for five modules:',
+        label: 'My contribution',
+        heading: 'My contribution across three product areas',
+        body: [
+          'I was involved in this project for approximately one year. My contribution is organised into three timelines, one for each area of the product I designed, in the order I worked on them.',
+          'The periods show how the year was divided rather than exact dates, and the timelines are not equal in length.',
+        ],
+        intro: 'The three timelines:',
         items: [
           {
-            title: 'Patient Management',
-            detail: 'The patient view, from the patient overview and transmission history to billing, clinical information and medication, plus editing records and changing a patient’s status.',
+            title: 'Timeline 01 – Episode',
+            detail: 'Months 1 to 4. Reviewing current episodes, browsing episode history, selecting episodes to attach, and viewing a single episode.',
           },
           {
-            title: 'Billing',
-            detail: 'Billing tables with tabs and subtabs, search, filters, column management, a detail panel, and dismissing and restoring items.',
+            title: 'Timeline 02 – Patient Management & Billing',
+            detail: 'Months 5 to 9. The patient view, from the overview and transmission history to billing, clinical information and medication, plus billing tables with tabs, subtabs, filters and a detail panel.',
           },
           {
-            title: 'External Monitors',
-            detail: 'Tables for reports from external monitoring providers, with review states, search, filters and column management.',
-          },
-          {
-            title: 'Messaging',
-            detail: 'Search, new messages, group creation, pinging groups, deleting messages, and pinned and archived conversations.',
-          },
-          {
-            title: 'Episodes and Episode History',
-            detail: 'Reviewing current episodes, browsing episode history, selecting episodes to attach, and viewing a single episode.',
+            title: 'Timeline 03 – External Monitors & Messages',
+            detail: 'Months 10 to 12. Tables for reports from external monitoring providers, and messaging with search, groups, and pinned and archived conversations.',
           },
         ],
       },
       {
-        kind: 'decisions',
-        id: 'patient-management',
-        label: 'Patient Management',
-        heading: 'One place for every patient record',
-        intro:
-          'The patient view is where clinicians spend most of their time. It needed to show a lot of information at once, while keeping the key details of the patient always in view.',
-        layout: 'stacked',
-        items: [
-          {
-            title: 'Patient overview',
-            rationale:
-              'A persistent patient header keeps the essentials visible on every tab, so clinicians never lose track of whose record they are in. Below it, information is grouped into clear cards that can each be edited on their own.',
-            points: [
-              'A header that stays in place while moving between tabs.',
-              'Tabs for the patient overview, transmission history, billing, and clinical information and medication.',
-              'Separate cards for each type of information, each with its own edit action.',
-            ],
-            media: {
-              src: 'images/projects/healthcare-saas/patient-overview.webp',
-              alt: 'Patient overview in a browser window: a patient header, tabs for summary, transmission history, billing, and clinical information and medications, and cards for demographics, contact, notes and monitoring, with all data blurred. Callouts mark the patient header, the section tabs and the edit action on each card',
-              width: 2400,
-              height: 1100,
-              aspect: '2400 / 1100',
-            },
-          },
-          {
-            title: 'Transmission history',
-            rationale:
-              'Device transmissions are listed in one table, so a clinician can scan alerts, status and notes at a glance and open the full report when needed.',
-            points: [
-              'Alerts shown as coloured labels by severity, with a "+ more" count instead of crowding the row.',
-              'Status labels, sortable dates and pagination.',
-              'Alert details open in a panel on top of the table, so clinicians keep their place in the list.',
-            ],
-            media: {
-              src: 'images/projects/healthcare-saas/transmission-history.webp',
-              alt: 'Transmission history table with alerts, transmission type, status, notes and PDF columns, with all data blurred. An alert details popover sits on top of the table, and callouts mark the alerts by severity, the popover and the status labels',
-              width: 2400,
-              height: 1100,
-              aspect: '2400 / 1100',
-            },
-          },
-          {
-            title: 'Billing for one patient',
-            rationale:
-              'The billing tab shows the patient’s billing information inside the patient view, so clinicians can check it without switching modules.',
-            media: {
-              src: 'images/projects/healthcare-saas/patient-billing.webp',
-              alt: 'The billing tab inside the patient view: a table of billing rows with colour-coded status labels, with all data blurred. A callout marks the billing tab',
-              width: 2400,
-              height: 1100,
-              aspect: '2400 / 1100',
-            },
-          },
-          {
-            title: 'Editing records and changing status',
-            rationale:
-              'Each card has its own edit dialog, so changing one type of information does not mean editing the whole record. Changing a patient’s status affects other parts of the product, so it asks for a reason before it can be confirmed.',
-            media: {
-              src: 'images/projects/healthcare-saas/patient-edit.webp',
-              alt: 'Two browser windows: an edit dialog for the demographics card, and on top of it a dialog that asks for a reason before the patient status is changed, with all data blurred. Callouts mark the dialog per card and the required reason',
-              width: 2400,
-              height: 1350,
-              aspect: '2400 / 1350',
-            },
-          },
-        ],
-      },
-      {
-        kind: 'decisions',
-        id: 'billing',
-        label: 'Billing',
-        heading: 'Making billing manageable',
-        intro:
-          'Billing has a lot of states. I organised it into tabs and subtabs, so each table only shows the items that need the same kind of attention.',
-        layout: 'stacked',
-        items: [
-          {
-            title: 'Tabs, subtabs and a dense table',
-            rationale:
-              'Top-level tabs separate the main stages of billing, and subtabs split them further, each with a count. A short note explains what the current view shows.',
-            points: [
-              'Codes and types shown as compact labels to keep long rows scannable.',
-              'Long text is truncated, with a "+" count that reveals the rest.',
-              'Search and column management let people focus on what they need.',
-            ],
-            media: {
-              src: 'images/projects/healthcare-saas/billing-table.webp',
-              alt: 'Billing table with top-level tabs and counts, subtabs, a filters button and columns for billing cycle, patient, codes, device, physician and reason for review, with all data blurred. Callouts mark the tabs, the subtabs and filters, and long text cut with a plus count',
-              width: 2400,
-              height: 1100,
-              aspect: '2400 / 1100',
-            },
-          },
-          {
-            title: 'Filters and detail panel',
-            rationale:
-              'Filters live in one panel next to the subtabs, with clear and apply actions. Selecting a row opens a side panel with its key points, so the table stays in view while details are checked.',
-            media: {
-              src: 'images/projects/healthcare-saas/billing-detail.webp',
-              alt: 'Two browser windows: the billing filter panel open over the table, and a side panel with a cycle overview next to the table, with all data blurred. Callouts mark the filters panel and the side panel',
-              width: 2400,
-              height: 1350,
-              aspect: '2400 / 1350',
-            },
-          },
-          {
-            title: 'Dismissing and restoring',
-            rationale:
-              'Dismissing an item needs a written reason, and dismissed items are not lost: they can be shown with a filter and restored straight from the table.',
-            media: {
-              src: 'images/projects/healthcare-saas/billing-dismiss.webp',
-              alt: 'Two browser windows: the billing filter panel with the show dismissed switch on, and the table listing a dismissed cycle with a button to reactivate it, with all data blurred. Callouts mark the show dismissed filter and the restore button',
-              width: 2400,
-              height: 1350,
-              aspect: '2400 / 1350',
-            },
-          },
-        ],
-      },
-      {
-        kind: 'decisions',
-        id: 'external-monitors',
-        label: 'External Monitors',
-        heading: 'Monitoring reports in one place',
-        intro:
-          'Clinics receive reports from several external monitoring providers. This module puts them in one place, with the same table patterns as Billing.',
-        layout: 'stacked',
-        items: [
-          {
-            title: 'One table per provider',
-            rationale:
-              'Provider tabs sit above review tabs, so clinicians can move through reports by provider and by review state. Each row has quick actions to open the report and move it forward.',
-            media: {
-              src: 'images/projects/healthcare-saas/monitors-table.webp',
-              alt: 'External monitors table with provider tabs, review tabs for ready to review, signed and dismissed, and columns for patient, study type, report, physician and comments, with all data blurred. Provider names are replaced by Vendor A to D. Callouts mark the provider tabs, the review states and the quick actions on each row',
-              width: 2400,
-              height: 1100,
-              aspect: '2400 / 1100',
-            },
-          },
-          {
-            title: 'Nothing removed by accident',
-            rationale: 'Dismissed reports move to their own tab, where they can be restored.',
-            media: {
-              src: 'images/projects/healthcare-saas/monitors-dismissed.webp',
-              alt: 'The dismissed tab of the external monitors table with one row highlighted and an Un-dismiss button, with all data blurred. Callouts mark the dismissed tab and the restore action',
-              width: 2400,
-              height: 900,
-              aspect: '2400 / 900',
-            },
-          },
-        ],
-      },
-      {
-        kind: 'decisions',
-        id: 'messaging',
-        label: 'Messaging',
-        heading: 'Team conversations inside the product',
-        intro: 'Messaging lets clinical teams talk to each other inside the product, one to one or in groups.',
-        layout: 'stacked',
-        items: [
-          {
-            title: 'Inbox',
-            rationale:
-              'Conversations are grouped into pinned, direct and group conversations, with search, unread markers and quick actions. An empty state guides people to pick a conversation or start a new one.',
-            media: {
-              src: 'images/projects/healthcare-saas/messaging-inbox.webp',
-              alt: 'Messaging inbox with a search field and pinned, direct and group conversation lists on the left, and an empty state on the right that asks the user to choose a conversation or start a new chat, with all names blurred. Callouts mark the search, the sections and the empty state',
-              width: 2400,
-              height: 1000,
-              aspect: '2400 / 1000',
-            },
-          },
-          {
-            title: 'Groups',
-            rationale:
-              'A group needs a name and at least two members, picked from a searchable list. When too few people are selected, the disabled button explains why instead of failing silently.',
-            media: {
-              src: 'images/projects/healthcare-saas/messaging-group.webp',
-              alt: 'Create new group dialog with a group name field, a searchable list of members with checkboxes and a Create Group button, with all names blurred. Callouts mark the member list and the primary action',
-              width: 2400,
-              height: 1100,
-              aspect: '2400 / 1100',
-            },
-          },
-          {
-            title: 'Conversations and limits',
-            rationale:
-              'Each message shows its sender and time, and archived conversations have their own view. When a message is too long, a counter and an inline error explain the limit before sending.',
-            media: {
-              src: 'images/projects/healthcare-saas/messaging-conversation.webp',
-              alt: 'A group conversation with a header, messages with sender names and times, and a conversation list, with all names and messages blurred. Callouts mark the sender and time and the group header',
-              width: 2400,
-              height: 900,
-              aspect: '2400 / 900',
-            },
-          },
-        ],
-      },
-      {
-        kind: 'decisions',
-        id: 'episodes',
-        label: 'Episodes',
-        heading: 'Episodes and Episode History',
-        intro:
+        kind: 'timeline',
+        id: 'timeline-episode',
+        number: '01',
+        label: 'Episode',
+        heading: 'Episode',
+        period: 'Months 1 to 4 of about 12',
+        span: { from: 1, to: 4 },
+        totalMonths: 12,
+        body: [
           'Clinicians review the episodes in the current report, and can bring in older episodes from the history when they need them.',
-        layout: 'stacked',
-        items: [
+          'This timeline covers Episodes and Episode History: reviewing current episodes, browsing episode history, selecting episodes to attach, and viewing a single episode.',
+        ],
+        groups: [
           {
-            title: 'Current episodes',
-            rationale:
-              'Inside a report, current episodes are listed in a compact table, colour coded by type, with a shortcut to the full history.',
-            media: {
-              src: 'images/projects/healthcare-saas/episodes.webp',
-              alt: 'Two browser windows: a report with a compact table of current episodes and a shortcut to the history, and the episode history dialog with tabs, filters, selected episodes and an attach button, with all data blurred. Callouts mark the history shortcut and the attach action',
-              width: 2400,
-              height: 1350,
-              aspect: '2400 / 1350',
-            },
+            label: 'Episodes',
+            title: 'Episodes and Episode History',
+            intro:
+              'Current episodes sit in the report, with the full history one step away.',
+            items: [
+              {
+                title: 'Current episodes',
+                rationale:
+                  'Inside a report, current episodes are listed in a compact table, colour coded by type, with a shortcut to the full history.',
+                media: {
+                  src: 'images/projects/healthcare-saas/episodes.webp',
+                  alt: 'Two browser windows: a report with a compact table of current episodes and a shortcut to the history, and the episode history dialog with tabs, filters, selected episodes and an attach button, with all data blurred. Callouts mark the history shortcut and the attach action',
+                  width: 2400,
+                  height: 1350,
+                  aspect: '2400 / 1350',
+                },
+              },
+              {
+                title: 'Episode history',
+                rationale:
+                  'The history opens in a large dialog with time filters, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
+                media: { alt: 'Episode history', aspect: '16 / 9' },
+              },
+              {
+                title: 'Single episode',
+                rationale: 'Opening an episode shows its details, with previous and next actions to move through episodes.',
+                media: { alt: 'Single episode', aspect: '16 / 9' },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        kind: 'timeline',
+        id: 'timeline-patient-billing',
+        number: '02',
+        label: 'Patient Management & Billing',
+        heading: 'Patient Management & Billing',
+        period: 'Months 5 to 9 of about 12',
+        span: { from: 5, to: 9 },
+        totalMonths: 12,
+        body: [
+          'The patient view is where clinicians spend most of their time, and billing is part of it. This timeline covers both: the patient record and the billing tables.',
+          'Patient Management covers the patient overview, transmission history, billing, clinical information and medication, plus editing records and changing a patient’s status. Billing covers tables with tabs and subtabs, search, filters, column management, a detail panel, and dismissing and restoring items.',
+        ],
+        groups: [
+          {
+            label: 'Patient Management',
+            title: 'One place for every patient record',
+            intro:
+              'The patient view is where clinicians spend most of their time. It needed to show a lot of information at once, while keeping the key details of the patient always in view.',
+            items: [
+              {
+                title: 'Patient overview',
+                rationale:
+                  'A persistent patient header keeps the essentials visible on every tab, so clinicians never lose track of whose record they are in. Below it, information is grouped into clear cards that can each be edited on their own.',
+                points: [
+                  'A header that stays in place while moving between tabs.',
+                  'Tabs for the patient overview, transmission history, billing, and clinical information and medication.',
+                  'Separate cards for each type of information, each with its own edit action.',
+                ],
+                media: {
+                  src: 'images/projects/healthcare-saas/patient-overview.webp',
+                  alt: 'Patient overview in a browser window: a patient header, tabs for summary, transmission history, billing, and clinical information and medications, and cards for demographics, contact, notes and monitoring, with all data blurred. Callouts mark the patient header, the section tabs and the edit action on each card',
+                  width: 2400,
+                  height: 1100,
+                  aspect: '2400 / 1100',
+                },
+              },
+              {
+                title: 'Transmission history',
+                rationale:
+                  'Device transmissions are listed in one table, so a clinician can scan alerts, status and notes at a glance and open the full report when needed.',
+                points: [
+                  'Alerts shown as coloured labels by severity, with a "+ more" count instead of crowding the row.',
+                  'Status labels, sortable dates and pagination.',
+                  'Alert details open in a panel on top of the table, so clinicians keep their place in the list.',
+                ],
+                media: {
+                  src: 'images/projects/healthcare-saas/transmission-history.webp',
+                  alt: 'Transmission history table with alerts, transmission type, status, notes and PDF columns, with all data blurred. An alert details popover sits on top of the table, and callouts mark the alerts by severity, the popover and the status labels',
+                  width: 2400,
+                  height: 1100,
+                  aspect: '2400 / 1100',
+                },
+              },
+              {
+                title: 'Billing for one patient',
+                rationale:
+                  'The billing tab shows the patient’s billing information inside the patient view, so clinicians can check it without switching modules.',
+                media: {
+                  src: 'images/projects/healthcare-saas/patient-billing.webp',
+                  alt: 'The billing tab inside the patient view: a table of billing rows with colour-coded status labels, with all data blurred. A callout marks the billing tab',
+                  width: 2400,
+                  height: 1100,
+                  aspect: '2400 / 1100',
+                },
+              },
+              {
+                title: 'Editing records and changing status',
+                rationale:
+                  'Each card has its own edit dialog, so changing one type of information does not mean editing the whole record. Changing a patient’s status affects other parts of the product, so it asks for a reason before it can be confirmed.',
+                media: {
+                  src: 'images/projects/healthcare-saas/patient-edit.webp',
+                  alt: 'Two browser windows: an edit dialog for the demographics card, and on top of it a dialog that asks for a reason before the patient status is changed, with all data blurred. Callouts mark the dialog per card and the required reason',
+                  width: 2400,
+                  height: 1350,
+                  aspect: '2400 / 1350',
+                },
+              },
+            ],
           },
           {
-            title: 'Episode history',
-            rationale:
-              'The history opens in a large dialog with time filters, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
-            media: { alt: 'Episode history', aspect: '16 / 9' },
+            label: 'Billing',
+            title: 'Making billing manageable',
+            intro:
+              'Billing has a lot of states. I organised it into tabs and subtabs, so each table only shows the items that need the same kind of attention.',
+            items: [
+              {
+                title: 'Tabs, subtabs and a dense table',
+                rationale:
+                  'Top-level tabs separate the main stages of billing, and subtabs split them further, each with a count. A short note explains what the current view shows.',
+                points: [
+                  'Codes and types shown as compact labels to keep long rows scannable.',
+                  'Long text is truncated, with a "+" count that reveals the rest.',
+                  'Search and column management let people focus on what they need.',
+                ],
+                media: {
+                  src: 'images/projects/healthcare-saas/billing-table.webp',
+                  alt: 'Billing table with top-level tabs and counts, subtabs, a filters button and columns for billing cycle, patient, codes, device, physician and reason for review, with all data blurred. Callouts mark the tabs, the subtabs and filters, and long text cut with a plus count',
+                  width: 2400,
+                  height: 1100,
+                  aspect: '2400 / 1100',
+                },
+              },
+              {
+                title: 'Filters and detail panel',
+                rationale:
+                  'Filters live in one panel next to the subtabs, with clear and apply actions. Selecting a row opens a side panel with its key points, so the table stays in view while details are checked.',
+                media: {
+                  src: 'images/projects/healthcare-saas/billing-detail.webp',
+                  alt: 'Two browser windows: the billing filter panel open over the table, and a side panel with a cycle overview next to the table, with all data blurred. Callouts mark the filters panel and the side panel',
+                  width: 2400,
+                  height: 1350,
+                  aspect: '2400 / 1350',
+                },
+              },
+              {
+                title: 'Dismissing and restoring',
+                rationale:
+                  'Dismissing an item needs a written reason, and dismissed items are not lost: they can be shown with a filter and restored straight from the table.',
+                media: {
+                  src: 'images/projects/healthcare-saas/billing-dismiss.webp',
+                  alt: 'Two browser windows: the billing filter panel with the show dismissed switch on, and the table listing a dismissed cycle with a button to reactivate it, with all data blurred. Callouts mark the show dismissed filter and the restore button',
+                  width: 2400,
+                  height: 1350,
+                  aspect: '2400 / 1350',
+                },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        kind: 'timeline',
+        id: 'timeline-monitors-messages',
+        number: '03',
+        label: 'External Monitors & Messages',
+        heading: 'External Monitors & Messages',
+        period: 'Months 10 to 12 of about 12',
+        span: { from: 10, to: 12 },
+        totalMonths: 12,
+        body: [
+          'Clinics receive reports from several external monitoring providers, and clinical teams also need to talk to each other inside the product. This timeline covers both areas.',
+          'External Monitors puts reports from every provider in one place, with the same table patterns as Billing. Messaging lets teams talk one to one or in groups, with search, pinned and archived conversations.',
+        ],
+        groups: [
+          {
+            label: 'External Monitors',
+            title: 'Monitoring reports in one place',
+            intro:
+              'Clinics receive reports from several external monitoring providers. This module puts them in one place, with the same table patterns as Billing.',
+            items: [
+              {
+                title: 'One table per provider',
+                rationale:
+                  'Provider tabs sit above review tabs, so clinicians can move through reports by provider and by review state. Each row has quick actions to open the report and move it forward.',
+                media: {
+                  src: 'images/projects/healthcare-saas/monitors-table.webp',
+                  alt: 'External monitors table with provider tabs, review tabs for ready to review, signed and dismissed, and columns for patient, study type, report, physician and comments, with all data blurred. Provider names are replaced by Vendor A to D. Callouts mark the provider tabs, the review states and the quick actions on each row',
+                  width: 2400,
+                  height: 1100,
+                  aspect: '2400 / 1100',
+                },
+              },
+              {
+                title: 'Nothing removed by accident',
+                rationale: 'Dismissed reports move to their own tab, where they can be restored.',
+                media: {
+                  src: 'images/projects/healthcare-saas/monitors-dismissed.webp',
+                  alt: 'The dismissed tab of the external monitors table with one row highlighted and an Un-dismiss button, with all data blurred. Callouts mark the dismissed tab and the restore action',
+                  width: 2400,
+                  height: 900,
+                  aspect: '2400 / 900',
+                },
+              },
+            ],
           },
           {
-            title: 'Single episode',
-            rationale: 'Opening an episode shows its details, with previous and next actions to move through episodes.',
-            media: { alt: 'Single episode', aspect: '16 / 9' },
+            label: 'Messaging',
+            title: 'Team conversations inside the product',
+            intro:
+              'Messaging lets clinical teams talk to each other inside the product, one to one or in groups.',
+            items: [
+              {
+                title: 'Inbox',
+                rationale:
+                  'Conversations are grouped into pinned, direct and group conversations, with search, unread markers and quick actions. An empty state guides people to pick a conversation or start a new one.',
+                media: {
+                  src: 'images/projects/healthcare-saas/messaging-inbox.webp',
+                  alt: 'Messaging inbox with a search field and pinned, direct and group conversation lists on the left, and an empty state on the right that asks the user to choose a conversation or start a new chat, with all names blurred. Callouts mark the search, the sections and the empty state',
+                  width: 2400,
+                  height: 1000,
+                  aspect: '2400 / 1000',
+                },
+              },
+              {
+                title: 'Groups',
+                rationale:
+                  'A group needs a name and at least two members, picked from a searchable list. When too few people are selected, the disabled button explains why instead of failing silently.',
+                media: {
+                  src: 'images/projects/healthcare-saas/messaging-group.webp',
+                  alt: 'Create new group dialog with a group name field, a searchable list of members with checkboxes and a Create Group button, with all names blurred. Callouts mark the member list and the primary action',
+                  width: 2400,
+                  height: 1100,
+                  aspect: '2400 / 1100',
+                },
+              },
+              {
+                title: 'Conversations and limits',
+                rationale:
+                  'Each message shows its sender and time, and archived conversations have their own view. When a message is too long, a counter and an inline error explain the limit before sending.',
+                media: {
+                  src: 'images/projects/healthcare-saas/messaging-conversation.webp',
+                  alt: 'A group conversation with a header, messages with sender names and times, and a conversation list, with all names and messages blurred. Callouts mark the sender and time and the group header',
+                  width: 2400,
+                  height: 900,
+                  aspect: '2400 / 900',
+                },
+              },
+            ],
           },
         ],
       },
@@ -899,8 +934,8 @@ export const projects: Project[] = [
         label: 'Collaboration',
         heading: 'Collaboration and development',
         body: [
-          'I work as part of a team of designers, each responsible for different modules. We share one design system, so the product feels like one product even though many people design it.',
-          'I work with product and engineering as features move from design to development, and keep refining my modules as requirements change.',
+          'I worked as part of the product design team, where each designer was responsible for different modules. We shared one design system, so the product feels like one product even though many people design it.',
+          'I worked with the product team and engineering as features moved from design to development, and kept refining my modules as requirements changed.',
         ],
       },
       {
@@ -908,11 +943,11 @@ export const projects: Project[] = [
         id: 'outcome',
         label: 'Outcome',
         heading: 'Outcome and ongoing development',
-        intro: 'The product is still in active development, and so is my work on it.',
+        intro: 'The product is still in active development and continues to evolve. My involvement covered approximately one year.',
         items: [
           { detail: 'Designed core workflows across five modules of a large healthcare platform.' },
           { detail: 'Kept those modules consistent with each other and with the rest of the product.' },
-          { detail: 'Continue to extend and refine these modules as the product grows.' },
+          { detail: 'Refined them with the product and engineering teams as requirements changed.' },
         ],
       },
     ],

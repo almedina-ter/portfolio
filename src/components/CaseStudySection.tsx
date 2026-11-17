@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import type { CaseStudySection as Section } from '../content/types'
+import type { CaseStudySection as Section, DesignItem } from '../content/types'
 import { ImageGallery } from './ImageGallery'
 import { Media } from './Media'
 import { Reveal } from './Reveal'
@@ -14,19 +14,88 @@ function Intro({ text }: { text?: string }) {
   return text ? <p className="text-lede text-ink-muted">{text}</p> : null
 }
 
+/** Stacked design items: text and supporting points above a full-width image. */
+function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: string }) {
+  return (
+    <ol className="space-y-16 lg:space-y-20">
+      {items.map((item, i) => (
+        <li key={i}>
+          <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
+            {/* Without points, the text spans the full width of the image below it. */}
+            <div className={item.points && item.points.length > 0 ? undefined : 'md:col-span-2'}>
+              <h3 className="text-xl font-medium">
+                <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                {item.title}
+              </h3>
+              <p className="mt-3 text-ink-muted">{item.rationale}</p>
+            </div>
+            {item.points && item.points.length > 0 && (
+              <ul className="divide-y divide-line text-[0.9375rem] text-ink-muted">
+                {item.points.map((point, j) => (
+                  <li key={j} className="flex gap-3 py-2.5 first:pt-0 last:pb-0">
+                    <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          {item.media && (
+            <div className="mt-8">
+              <ImageGallery images={[item.media]} layout="stack" hintBase={`${hintBase}-${i + 1}`} />
+            </div>
+          )}
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+/** A bar of equal month segments with the timeline's own period highlighted. */
+function PeriodBar({ from, to, total, period }: { from: number; to: number; total: number; period: string }) {
+  return (
+    <div className="max-w-prose">
+      <div aria-hidden="true" className="flex gap-1">
+        {Array.from({ length: total }, (_, i) => (
+          <span key={i} className={`h-1.5 flex-1 rounded-full ${i + 1 >= from && i + 1 <= to ? 'bg-accent' : 'bg-line'}`} />
+        ))}
+      </div>
+      <p className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 text-sm text-ink-muted">
+        <span>
+          <span className="sr-only">Time period: </span>
+          {period}
+        </span>
+        <span className="text-ink-subtle">Part of a {total}-month involvement</span>
+      </p>
+    </div>
+  )
+}
+
 /** One case-study section. The layout adapts to the kind of content. */
 export function CaseStudySection({ section, index, slug }: CaseStudySectionProps) {
   const headingId = `${section.id}-heading`
   const assetFolder = `images/projects/${slug}`
 
   return (
-    <section id={section.id} aria-labelledby={headingId} className="scroll-mt-24">
-      <Reveal variant="stagger" className="rule-draw rule-draw-top pt-8 lg:pt-10">
+    <section
+      id={section.id}
+      aria-labelledby={headingId}
+      className={`scroll-mt-24 ${section.kind === 'timeline' ? 'mt-8 mb-8 lg:mt-16 lg:mb-16' : ''}`}
+    >
+      <Reveal variant="stagger" className={`rule-draw rule-draw-top ${section.kind === 'timeline' ? 'pt-10 lg:pt-14' : 'pt-8 lg:pt-10'}`}>
         <p className="eyebrow flex gap-3">
-          <span aria-hidden="true" className="font-mono">
-            {String(index + 1).padStart(2, '0')}
-          </span>
-          {section.label}
+          {section.kind === 'timeline' ? (
+            <span>Timeline {section.number}</span>
+          ) : (
+            <>
+              <span aria-hidden="true" className="font-mono">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              {section.label}
+            </>
+          )}
         </p>
         <h2 id={headingId} className="mt-4 max-w-[24ch] font-display text-heading text-balance">
           {section.heading}
@@ -165,39 +234,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
               <Intro text={section.intro} />
             </div>
             {section.layout === 'stacked' ? (
-              <ol className="space-y-16 lg:space-y-20">
-                {section.items.map((item, i) => (
-                  <li key={i}>
-                    <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
-                      {/* Without points, the text spans the full width of the image below it. */}
-                      <div className={item.points && item.points.length > 0 ? undefined : 'md:col-span-2'}>
-                        <h3 className="text-xl font-medium">
-                          <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
-                            {String(i + 1).padStart(2, '0')}
-                          </span>
-                          {item.title}
-                        </h3>
-                        <p className="mt-3 text-ink-muted">{item.rationale}</p>
-                      </div>
-                      {item.points && item.points.length > 0 && (
-                        <ul className="divide-y divide-line text-[0.9375rem] text-ink-muted">
-                          {item.points.map((point, j) => (
-                            <li key={j} className="flex gap-3 py-2.5 first:pt-0 last:pb-0">
-                              <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
-                              {point}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                    {item.media && (
-                      <div className="mt-8">
-                        <ImageGallery images={[item.media]} layout="stack" hintBase={`${assetFolder}/${section.id}-${i + 1}`} />
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ol>
+              <StackedItems items={section.items} hintBase={`${assetFolder}/${section.id}`} />
             ) : (
             <ol className="space-y-12">
               {section.items.map((item, i) => (
@@ -236,6 +273,31 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
               ))}
             </ol>
             )}
+          </>
+        )}
+
+        {section.kind === 'timeline' && (
+          <>
+            <PeriodBar from={section.span.from} to={section.span.to} total={section.totalMonths} period={section.period} />
+            <div className="max-w-prose space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
+              {section.body.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="space-y-20 pt-6 lg:space-y-28 lg:pt-10">
+              {section.groups.map((group, g) => (
+                <div key={group.title}>
+                  <div className="max-w-prose">
+                    {group.label && <p className="eyebrow mb-3">{group.label}</p>}
+                    <h3 className="font-display text-2xl text-balance">{group.title}</h3>
+                    {group.intro && <p className="mt-3 text-ink-muted">{group.intro}</p>}
+                  </div>
+                  <div className="mt-10">
+                    <StackedItems items={group.items} hintBase={`${assetFolder}/${section.id}-${g + 1}`} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </>
         )}
 

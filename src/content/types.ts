@@ -113,7 +113,7 @@ export interface DecisionsSection extends SectionBase {
   /** split (default): text beside a smaller image. stacked: text, then a full-width image that opens larger. */
   layout?: 'split' | 'stacked'
   /** `points` are short supporting details shown as a list beside or under the rationale. */
-  items: { title: string; rationale: string; points?: string[]; media?: MediaAsset }[]
+  items: DesignItem[]
 }
 
 export interface GallerySection extends SectionBase {
@@ -144,6 +144,34 @@ export interface ProcessSection extends SectionBase {
   steps: { title: string; detail: string; media?: MediaAsset }[]
 }
 
+/** One item inside a decisions or timeline section: a short write-up with optional points and an image. */
+export interface DesignItem {
+  title: string
+  rationale: string
+  points?: string[]
+  media?: MediaAsset
+}
+
+/**
+ * One chapter of a contribution that is split into stages. Each timeline has its
+ * own heading, period, description and the design work that belongs to it.
+ */
+export interface TimelineSection extends SectionBase {
+  kind: 'timeline'
+  /** Position in the sequence, shown as "Timeline 01". */
+  number: string
+  /** Time period in words, e.g. "Months 1 to 4". Avoid dates you cannot back up. */
+  period: string
+  /** First and last month of the period within the involvement, used to draw the period bar. */
+  span: { from: number; to: number }
+  /** Total months of involvement that the period bar is drawn against. */
+  totalMonths: number
+  /** Description and context. The first paragraph is set larger. */
+  body: string[]
+  /** The product areas and design work inside this timeline. */
+  groups: { label?: string; title: string; intro?: string; items: DesignItem[] }[]
+}
+
 export type CaseStudySection =
   | TextSection
   | ListSection
@@ -153,6 +181,7 @@ export type CaseStudySection =
   | ProcessSection
   | GallerySection
   | OutcomesSection
+  | TimelineSection
 
 export interface Project {
   slug: string
@@ -163,7 +192,13 @@ export interface Project {
   year: string
   role: string
   team?: string
+  /** Separate team categories, shown as distinct blocks. Use instead of `team` when the headcounts differ. */
+  teams?: { name: string; count: string; unit: string }[]
   timeline?: string
+  /** Status of the product or project as a whole, e.g. "Ongoing". Shown as "Project status". */
+  status?: string
+  /** How long you were involved, e.g. "1 year". Shown as "My involvement". */
+  involvement?: string
   platform?: string
   tools?: string[]
   /** Live product or website, e.g. "https://www.example.com/". Shown as a link in the project details. */

@@ -26,6 +26,8 @@ function referencedFiles(): { file: string; where: string }[] {
     for (const section of project.sections) {
       if (section.kind === 'gallery') section.images.forEach((image) => add(image, `${where} section "${section.id}"`))
       if (section.kind === 'decisions') section.items.forEach((item) => add(item.media, `${where} section "${section.id}"`))
+      if (section.kind === 'timeline')
+        section.groups.forEach((group) => group.items.forEach((item) => add(item.media, `${where} section "${section.id}"`)))
       if (section.kind === 'process') section.steps.forEach((step) => add(step.media, `${where} section "${section.id}"`))
       if (section.kind === 'text') add(section.media, `${where} section "${section.id}"`)
     }

@@ -129,7 +129,7 @@ export function CaseStudy() {
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
               {project.sections.map((section) => (
-                <li key={section.id} className={section.kind === 'timeline' ? 'pl-3' : undefined}>
+                <li key={section.id} className={section.kind === 'timeline' || section.nested ? 'pl-3' : undefined}>
                   <button
                     type="button"
                     onClick={() => scrollToId(section.id)}

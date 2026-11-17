@@ -23,13 +23,15 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
           <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
             {/* Without points, the text spans the full width of the image below it. */}
             <div className={item.points && item.points.length > 0 ? undefined : 'md:col-span-2'}>
-              <h3 className="text-xl font-medium">
-                <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                {item.title}
-              </h3>
-              <p className="mt-3 text-ink-muted">{item.rationale}</p>
+              {item.title && (
+                <h3 className="text-xl font-medium">
+                  <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  {item.title}
+                </h3>
+              )}
+              <p className={item.title ? 'mt-3 text-ink-muted' : 'text-ink-muted'}>{item.rationale}</p>
             </div>
             {item.points && item.points.length > 0 && (
               <ul className="divide-y divide-line text-[0.9375rem] text-ink-muted">
@@ -79,12 +81,8 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
   const assetFolder = `images/projects/${slug}`
 
   return (
-    <section
-      id={section.id}
-      aria-labelledby={headingId}
-      className={`scroll-mt-24 ${section.kind === 'timeline' ? 'mt-8 mb-8 lg:mt-16 lg:mb-16' : ''}`}
-    >
-      <Reveal variant="stagger" className={`rule-draw rule-draw-top ${section.kind === 'timeline' ? 'pt-10 lg:pt-14' : 'pt-8 lg:pt-10'}`}>
+    <section id={section.id} aria-labelledby={headingId} className="scroll-mt-24">
+      <Reveal variant="stagger" className="rule-draw rule-draw-top pt-8 lg:pt-10">
         <p className="eyebrow flex gap-3">
           {section.kind === 'timeline' ? (
             <span>Timeline {section.number}</span>
@@ -296,7 +294,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
-            <div className="space-y-20 pt-6 lg:space-y-32 lg:pt-10">
+            <div className="space-y-16 pt-8 lg:space-y-20 lg:pt-10">
               {section.groups.map((group, g) => (
                 <div key={group.title} className={g > 0 ? 'border-t border-line pt-16 lg:pt-20' : undefined}>
                   <div>

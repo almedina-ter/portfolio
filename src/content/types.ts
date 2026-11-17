@@ -82,6 +82,8 @@ interface SectionBase {
   heading: string
   /** Short label shown above the heading, e.g. "Context". */
   label?: string
+  /** Indents the entry in the "On this page" list, to show it belongs to the section above. */
+  nested?: boolean
 }
 
 export interface TextSection extends SectionBase {
@@ -146,7 +148,8 @@ export interface ProcessSection extends SectionBase {
 
 /** One item inside a decisions or timeline section: a short write-up with optional points and an image. */
 export interface DesignItem {
-  title: string
+  /** Leave out when the section heading already names the item. */
+  title?: string
   rationale: string
   points?: string[]
   media?: MediaAsset

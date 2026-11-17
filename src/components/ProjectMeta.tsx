@@ -1,6 +1,14 @@
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '../content/types'
 
+/** One column per detail on wide screens, so the details share the full width. */
+const wideColumns: Record<number, string> = {
+  2: 'xl:grid-cols-2',
+  3: 'xl:grid-cols-3',
+  4: 'xl:grid-cols-4',
+  5: 'xl:grid-cols-5',
+}
+
 export function ProjectMeta({ project }: { project: Project }) {
   const rows = [
     ['Role', project.role],
@@ -16,7 +24,11 @@ export function ProjectMeta({ project }: { project: Project }) {
 
   return (
     <>
-    <dl className="grid grid-cols-2 gap-x-6 gap-y-6 border-y border-line py-8 sm:grid-cols-3 xl:grid-cols-6">
+    <dl
+      className={`grid grid-cols-2 gap-x-6 gap-y-6 border-y border-line py-8 sm:grid-cols-3 ${
+        wideColumns[rows.length + (project.website ? 1 : 0)] ?? 'xl:grid-cols-6'
+      }`}
+    >
       {rows.map(([label, value]) => (
         <div key={label} className="min-w-0">
           <dt className="eyebrow">{label}</dt>
@@ -48,7 +60,7 @@ export function ProjectMeta({ project }: { project: Project }) {
       )}
     </dl>
     {project.teams && project.teams.length > 0 && (
-      <section aria-labelledby="team-structure" className="mt-10">
+      <section aria-labelledby="team-structure" className="mt-12">
         <h2 id="team-structure" className="eyebrow">
           Team structure
         </h2>

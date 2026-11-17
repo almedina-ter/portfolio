@@ -98,7 +98,7 @@ export interface ListSection extends SectionBase {
   /** A lead-in for the list, e.g. "My role covered:". */
   intro?: string
   /** Plain items, or items with a bold label, e.g. { title: 'Logo design', detail: '…' }. */
-  items: (string | { title: string; detail: string })[]
+  items: (string | { title: string; detail: string; list?: string[] })[]
 }
 
 export interface InsightsSection extends SectionBase {
@@ -209,6 +209,8 @@ export interface Project {
   confidentiality?: string
   /** Sections render in the order listed, so each story can have its own shape. */
   sections: CaseStudySection[]
+  /** Let headings use the full content width instead of the default narrow measure. */
+  fullWidthHeadings?: boolean
   /** Show on the homepage. */
   featured?: boolean
   /** Hide without deleting. */

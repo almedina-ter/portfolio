@@ -550,8 +550,7 @@ export const projects: Project[] = [
       { name: 'Engineering Team', count: '20', unit: 'Engineers' },
     ],
     status: 'Ongoing',
-    involvement: 'Ongoing.\nAbout 1 year of work shown here',
-    fullWidthHeadings: true,
+    involvement: 'Ongoing\nAbout 1 year of work shown here',
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/healthcare-saas/thumbnail.webp',

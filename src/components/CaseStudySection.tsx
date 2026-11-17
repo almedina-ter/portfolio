@@ -8,8 +8,6 @@ interface CaseStudySectionProps {
   section: Section
   index: number
   slug: string
-  /** Headings use the full content width and wrap naturally. */
-  fullWidthHeading?: boolean
 }
 
 function Intro({ text }: { text?: string }) {
@@ -58,7 +56,7 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
 /** A bar of equal month segments with the timeline's own period highlighted. */
 function PeriodBar({ from, to, total, period }: { from: number; to: number; total: number; period: string }) {
   return (
-    <div className="max-w-prose">
+    <div>
       <div aria-hidden="true" className="flex gap-1">
         {Array.from({ length: total }, (_, i) => (
           <span key={i} className={`h-1.5 flex-1 rounded-full ${i + 1 >= from && i + 1 <= to ? 'bg-accent' : 'bg-line'}`} />
@@ -76,7 +74,7 @@ function PeriodBar({ from, to, total, period }: { from: number; to: number; tota
 }
 
 /** One case-study section. The layout adapts to the kind of content. */
-export function CaseStudySection({ section, index, slug, fullWidthHeading = false }: CaseStudySectionProps) {
+export function CaseStudySection({ section, index, slug }: CaseStudySectionProps) {
   const headingId = `${section.id}-heading`
   const assetFolder = `images/projects/${slug}`
 
@@ -99,7 +97,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
             </>
           )}
         </p>
-        <h2 id={headingId} className={`mt-4 font-display text-heading ${fullWidthHeading ? '' : 'max-w-[24ch] text-balance'}`}>
+        <h2 id={headingId} className="mt-4 font-display text-heading">
           {section.heading}
         </h2>
       </Reveal>
@@ -107,7 +105,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
       <Reveal delay={160} className="mt-8 space-y-8 lg:mt-10">
         {section.kind === 'text' && (
           <>
-            <div className="max-w-prose space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
+            <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
               {section.body.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
@@ -117,7 +115,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
         )}
 
         {section.kind === 'list' && (
-          <div className="max-w-prose space-y-6">
+          <div className="space-y-6">
             {section.body?.length ? (
               <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
                 {section.body.map((paragraph, i) => (
@@ -159,7 +157,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
 
         {section.kind === 'insights' && (
           <>
-            <div className="max-w-prose">
+            <div>
               <Intro text={section.intro} />
             </div>
             <Reveal
@@ -182,7 +180,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
 
         {section.kind === 'challenges' && (
           <>
-            <div className="max-w-prose">
+            <div>
               <Intro text={section.intro} />
             </div>
             <Reveal as="ol" variant="stagger" className="divide-y divide-line">
@@ -210,7 +208,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
 
         {section.kind === 'process' && (
           <>
-            <div className="max-w-prose">
+            <div>
               <Intro text={section.intro} />
             </div>
             {/* Steps with images run as full-width rows so sketches and wireframes stay large; text-only steps sit in columns. */}
@@ -244,7 +242,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
 
         {section.kind === 'decisions' && (
           <>
-            <div className="max-w-prose">
+            <div>
               <Intro text={section.intro} />
             </div>
             {section.layout === 'stacked' ? (
@@ -252,7 +250,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
             ) : (
             <ol className="space-y-12">
               {section.items.map((item, i) => (
-                <li key={i} className={item.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : 'max-w-prose'}>
+                <li key={i} className={item.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : undefined}>
                   <div>
                     <h3 className="text-xl font-medium">
                       <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
@@ -293,7 +291,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
         {section.kind === 'timeline' && (
           <>
             <PeriodBar from={section.span.from} to={section.span.to} total={section.totalMonths} period={section.period} />
-            <div className="max-w-prose space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
+            <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
               {section.body.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
@@ -301,7 +299,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
             <div className="space-y-20 pt-6 lg:space-y-32 lg:pt-10">
               {section.groups.map((group, g) => (
                 <div key={group.title} className={g > 0 ? 'border-t border-line pt-16 lg:pt-20' : undefined}>
-                  <div className="max-w-prose">
+                  <div>
                     <h3 className="font-display text-heading">{group.title}</h3>
                     {group.subtitle && <p className="mt-4 text-lede text-ink">{group.subtitle}</p>}
                     {group.intro && <p className="mt-3 text-ink-muted">{group.intro}</p>}
@@ -318,7 +316,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
         {section.kind === 'gallery' && (
           <>
             {section.intro && (
-              <div className="max-w-prose">
+              <div>
                 <Intro text={section.intro} />
               </div>
             )}
@@ -328,7 +326,7 @@ export function CaseStudySection({ section, index, slug, fullWidthHeading = fals
 
         {section.kind === 'outcomes' && (
           <>
-            <div className="max-w-prose">
+            <div>
               <Intro text={section.intro} />
             </div>
             <Reveal as="ul" variant="stagger" className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">

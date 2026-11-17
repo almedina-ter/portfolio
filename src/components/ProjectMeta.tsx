@@ -20,7 +20,18 @@ export function ProjectMeta({ project }: { project: Project }) {
       {rows.map(([label, value]) => (
         <div key={label} className="min-w-0">
           <dt className="eyebrow">{label}</dt>
-          <dd className="mt-2 text-[0.9375rem] leading-snug break-words whitespace-pre-line">{value}</dd>
+          <dd className="mt-2 text-[0.9375rem] leading-snug break-words">
+            {value.split('\n').map((line, i) =>
+              i === 0 ? (
+                <span key={i}>{line}</span>
+              ) : (
+                // Lines after the first are supporting detail, set smaller and quieter.
+                <span key={i} className="mt-1 block text-sm text-ink-subtle">
+                  {line}
+                </span>
+              ),
+            )}
+          </dd>
         </div>
       ))}
       {project.website && (

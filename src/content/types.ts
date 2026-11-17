@@ -209,8 +209,6 @@ export interface Project {
   confidentiality?: string
   /** Sections render in the order listed, so each story can have its own shape. */
   sections: CaseStudySection[]
-  /** Let headings use the full content width instead of the default narrow measure. */
-  fullWidthHeadings?: boolean
   /** Show on the homepage. */
   featured?: boolean
   /** Hide without deleting. */

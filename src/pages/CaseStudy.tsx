@@ -87,8 +87,8 @@ export function CaseStudy() {
           <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{project.role}</span>
           <SampleTag show={project.sample === true} />
         </div>
-        <SplitHeading text={project.title} delay={100} className={`mt-5 font-display text-title ${project.fullWidthHeadings ? '' : 'max-w-[20ch] text-balance'}`} />
-        <p className={`mt-6 max-w-prose text-lede load-in ${project.summary ? 'text-ink-muted' : 'text-ink-subtle italic'}`} style={delay(380)}>
+        <SplitHeading text={project.title} delay={100} className="mt-5 font-display text-title" />
+        <p className={`mt-6 text-lede load-in ${project.summary ? 'text-ink-muted' : 'text-ink-subtle italic'}`} style={delay(380)}>
           {project.summary || 'Description coming soon.'}
         </p>
         <div className="mt-12 load-in" style={delay(500)}>
@@ -162,7 +162,7 @@ export function CaseStudy() {
             <Reveal
               as="aside"
               aria-label="Confidentiality"
-              className="flex max-w-prose gap-4 rounded-lg border border-line bg-surface/60 p-5 text-[0.9375rem] text-ink-muted"
+              className="flex gap-4 rounded-lg border border-line bg-surface/60 p-5 text-[0.9375rem] text-ink-muted"
             >
               <Lock aria-hidden="true" className="mt-1 size-4 shrink-0" />
               <p>{project.confidentiality}</p>
@@ -174,7 +174,6 @@ export function CaseStudy() {
               section={section}
               index={index}
               slug={project.slug}
-              fullWidthHeading={project.fullWidthHeadings}
             />
           ))}
         </div>

@@ -27,7 +27,7 @@ export const projects: Project[] = [
       { name: 'Engineering Team', count: '20', unit: 'Engineers' },
     ],
     status: 'Ongoing',
-    involvement: 'Ongoing\nAbout 1 year of work shown here',
+    involvement: 'Ongoing\nContinuing to contribute ideas and improvements',
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/healthcare-saas/thumbnail.webp',
@@ -44,7 +44,7 @@ export const projects: Project[] = [
       aspect: '16 / 9',
     },
     confidentiality:
-      'This product is under a non-disclosure agreement, so it is not named here. The screens shown are product designs with all patient, clinic and business data blurred or replaced with placeholders. This case study describes my role, the workflows I designed and how I approached them.',
+      'The screens in this case study showcase my design work, product design decisions and thought process throughout the project.',
     sections: [
       {
         kind: 'list',
@@ -52,19 +52,19 @@ export const projects: Project[] = [
         label: 'Overview',
         heading: 'Project overview and my role',
         body: [
-          'A healthcare SaaS platform for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product.',
-          'The product has around twelve modules, designed by several designers. I work on it as a Product Designer, and the product is still growing. The work presented across these three areas represents approximately one year of product design and development, and my involvement with the product continues.',
+          'A healthcare SaaS platform for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product. It is used across a healthcare network of 3 hospitals, 27 clinics and more than 60,000 patients.',
+          'The product has around twelve modules, designed by several designers. I work on it as a Product Designer, and the product is still growing. My involvement is ongoing: I continue to contribute ideas and improvements to the product.',
         ],
         intro: 'At a glance:',
         items: [
           { title: 'Product', detail: 'Healthcare SaaS application for clinical teams' },
           { title: 'Project status', detail: 'Ongoing. The product continues to evolve.' },
-          { title: 'My involvement', detail: 'Ongoing. The three areas below represent approximately one year of design work.' },
+          { title: 'My involvement', detail: 'Ongoing. I continue to contribute ideas and remain involved in refining and improving the product experience.' },
           { title: 'Role', detail: 'Product Designer, working collaboratively with the product design, product and engineering teams' },
           {
             title: 'My scope',
             detail: 'Three areas of product work, in the same order as the sidebar and the sections below:',
-            list: ['Episode', 'Patient Management & Billing', 'External Monitors & Messages'],
+            list: ['Patient Management & Billing', 'Episodes', 'External Monitors & Messages'],
           },
         ],
       },
@@ -74,7 +74,7 @@ export const projects: Project[] = [
         label: 'Product context',
         heading: 'A large product, built by many hands',
         body: [
-          'Clinical teams use the platform every day to review patient data, follow up on alerts, manage billing and coordinate with each other. Much of that work happens in dense tables and detailed records, often under time pressure.',
+          'Across those hospitals and clinics, clinical teams use the platform every day to review patient data, follow up on alerts, manage billing and coordinate with each other. Much of that work happens in dense tables and detailed records, often under time pressure.',
           'Because around twelve modules were designed by different designers, every new screen had to fit into an existing system: the same navigation, the same patterns for tabs, filters and tables, and the same components from our shared design system.',
           'My work sits inside that system. I designed specific modules and workflows, and worked with other designers, product and engineering to keep them consistent with the rest of the product.',
         ],
@@ -85,18 +85,18 @@ export const projects: Project[] = [
         label: 'My contribution',
         heading: 'My contribution across three product areas',
         body: [
-          'The work presented across these three areas represents approximately one year of product design and development, while my involvement with the product continues. My contribution is organised into three timelines, one for each area, in the order I worked on them.',
+          'The work presented across these three areas represents approximately one year of product design and development, while my involvement with the product continues. My contribution is organised into three timelines, one for each area, starting with patient management and billing, which are central to the everyday workflow.',
           'The periods show how that year of work was divided rather than exact dates, and the timelines are not equal in length.',
         ],
         intro: 'The three timelines:',
         items: [
           {
-            title: 'Timeline 01 – Episode',
-            detail: 'Months 1 to 4. Reviewing current episodes, browsing episode history, selecting episodes to attach, and viewing a single episode.',
+            title: 'Timeline 01 – Patient Management & Billing',
+            detail: 'Months 1 to 5. The patient summary, transmission history and medications, and billing, with tabs, subtabs, filters and a detail panel.',
           },
           {
-            title: 'Timeline 02 – Patient Management & Billing',
-            detail: 'Months 5 to 9. The patient view, from the overview and transmission history to billing, clinical information and medication, plus billing tables with tabs, subtabs, filters and a detail panel.',
+            title: 'Timeline 02 – Episodes',
+            detail: 'Months 6 to 9. Reviewing current episodes, browsing episode history, selecting episodes to attach, and viewing a single episode.',
           },
           {
             title: 'Timeline 03 – External Monitors & Messages',
@@ -106,72 +106,25 @@ export const projects: Project[] = [
       },
       {
         kind: 'timeline',
-        id: 'timeline-episode',
-        number: '01',
-        label: 'Episode',
-        heading: 'Episode',
-        period: 'Months 1 to 4 of about 12',
-        span: { from: 1, to: 4 },
-        totalMonths: 12,
-        body: [
-          'Clinicians review the episodes in the current report, and can bring in older episodes from the history when they need them.',
-          'This timeline covers Episodes and Episode History: reviewing current episodes, browsing episode history, selecting episodes to attach, and viewing a single episode.',
-        ],
-        groups: [
-          {
-            title: 'Episodes and Episode History',
-            intro:
-              'Current episodes sit in the report, with the full history one step away.',
-            items: [
-              {
-                title: 'Current episodes',
-                rationale:
-                  'Inside a report, current episodes are listed in a compact table, colour coded by type, with a shortcut to the full history.',
-                media: {
-                  src: 'images/projects/healthcare-saas/episodes.webp',
-                  alt: 'Two browser windows: a report with a compact table of current episodes and a shortcut to the history, and the episode history dialog with tabs, filters, selected episodes and an attach button, with all data blurred. Callouts mark the history shortcut and the attach action',
-                  width: 2400,
-                  height: 1350,
-                  aspect: '2400 / 1350',
-                },
-              },
-              {
-                title: 'Episode history',
-                rationale:
-                  'The history opens in a large dialog with time filters, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
-                media: { alt: 'Episode history', aspect: '16 / 9' },
-              },
-              {
-                title: 'Single episode',
-                rationale: 'Opening an episode shows its details, with previous and next actions to move through episodes.',
-                media: { alt: 'Single episode', aspect: '16 / 9' },
-              },
-            ],
-          },
-        ],
-      },
-      {
-        kind: 'timeline',
         id: 'timeline-patient-billing',
-        number: '02',
+        number: '01',
         label: 'Patient Management & Billing',
         heading: 'Patient Management & Billing',
-        period: 'Months 5 to 9 of about 12',
-        span: { from: 5, to: 9 },
+        period: 'Months 1 to 5 of about 12',
+        span: { from: 1, to: 5 },
         totalMonths: 12,
         body: [
-          'The patient view is where clinicians spend most of their time, and billing is part of it. This timeline covers both: the patient record and the billing tables.',
-          'Patient Management covers the patient overview, transmission history, billing, clinical information and medication, plus editing records and changing a patient’s status. Billing covers tables with tabs and subtabs, search, filters, column management, a detail panel, and dismissing and restoring items.',
+          'Patient information and billing are central to the everyday workflow. Users typically open a patient’s record first, then move on to episodes and other functionality, so this timeline starts here.',
+          'Patient Management covers the patient summary, transmission history and medications. Billing covers a patient’s billing information inside the patient view, and billing tables with tabs and subtabs, search, filters, column management, a detail panel, and dismissing and restoring items.',
         ],
         groups: [
           {
-            title: 'Patient Management',
-            subtitle: 'One place for every patient record',
+            title: 'Patient Summary',
+            subtitle: 'A clear overview of each patient',
             intro:
-              'The patient view is where clinicians spend most of their time. It needed to show a lot of information at once, while keeping the key details of the patient always in view.',
+              'A comprehensive summary of an individual patient. It gives healthcare professionals a clear overview of the patient’s essential information and relevant details, while keeping the key details of the patient always in view.',
             items: [
               {
-                title: 'Patient overview',
                 rationale:
                   'A persistent patient header keeps the essentials visible on every tab, so clinicians never lose track of whose record they are in. Below it, information is grouped into clear cards that can each be edited on their own.',
                 points: [
@@ -187,8 +140,15 @@ export const projects: Project[] = [
                   aspect: '2400 / 1100',
                 },
               },
+            ],
+          },
+          {
+            title: 'Device Data History',
+            subtitle: 'Every transmission in one place',
+            intro:
+              'This section lets healthcare professionals review and follow a patient’s historical transmission activity, from the data sent by devices to the alerts and status recorded for each transmission.',
+            items: [
               {
-                title: 'Transmission history',
                 rationale:
                   'Device transmissions are listed in one table, so a clinician can scan alerts, status and notes at a glance and open the full report when needed.',
                 points: [
@@ -204,6 +164,26 @@ export const projects: Project[] = [
                   aspect: '2400 / 1100',
                 },
               },
+            ],
+          },
+          {
+            title: 'Medications',
+            subtitle: 'A patient’s medications, within the patient record',
+            intro:
+              'A dedicated place to review a patient’s medications as part of managing their care. It sits in the patient view next to clinical information, so it can be checked without leaving the patient’s record.',
+            items: [
+              {
+                rationale: '',
+                media: { alt: 'Medications', aspect: '2400 / 1100' },
+              },
+            ],
+          },
+          {
+            title: 'Billing',
+            subtitle: 'Making billing manageable',
+            intro:
+              'Billing connects an individual patient’s account to the healthcare services they receive. It appears inside the patient view and as tables across patients. Billing has a lot of states, so I organised it into tabs and subtabs, and each table only shows the items that need the same kind of attention.',
+            items: [
               {
                 title: 'Billing for one patient',
                 rationale:
@@ -216,26 +196,6 @@ export const projects: Project[] = [
                   aspect: '2400 / 1100',
                 },
               },
-              {
-                title: 'Editing records and changing status',
-                rationale:
-                  'Each card has its own edit dialog, so changing one type of information does not mean editing the whole record. Changing a patient’s status affects other parts of the product, so it asks for a reason before it can be confirmed.',
-                media: {
-                  src: 'images/projects/healthcare-saas/patient-edit.webp',
-                  alt: 'Two browser windows: an edit dialog for the demographics card, and on top of it a dialog that asks for a reason before the patient status is changed, with all data blurred. Callouts mark the dialog per card and the required reason',
-                  width: 2400,
-                  height: 1350,
-                  aspect: '2400 / 1350',
-                },
-              },
-            ],
-          },
-          {
-            title: 'Billing',
-            subtitle: 'Making billing manageable',
-            intro:
-              'Billing has a lot of states. I organised it into tabs and subtabs, so each table only shows the items that need the same kind of attention.',
-            items: [
               {
                 title: 'Tabs, subtabs and a dense table',
                 rationale:
@@ -283,6 +243,72 @@ export const projects: Project[] = [
       },
       {
         kind: 'timeline',
+        id: 'timeline-episode',
+        number: '02',
+        label: 'Episodes',
+        heading: 'Episodes',
+        period: 'Months 6 to 9 of about 12',
+        span: { from: 6, to: 9 },
+        totalMonths: 12,
+        body: [
+          'Clinicians review the episodes in the current report, and can bring in older episodes from the history when they need them.',
+          'This timeline covers three levels of detail: Current Episodes, Episode History and Single Episodes.',
+        ],
+        groups: [
+          {
+            title: 'Reviewing episodes',
+            intro:
+              'From an overview in the report, to the patient’s history, to the detail of one episode.',
+            items: [
+              {
+                title: 'Current Episodes',
+                rationale:
+                  'This view gives an overview of the patient’s current episode and its most relevant clinical information. Inside a report, current episodes are listed in a compact table, colour coded by type, so healthcare professionals can quickly understand the current episode and reach the essential information needed to monitor it.',
+                points: [
+                  'Heart rate.',
+                  'Episode duration.',
+                  'Episode type, colour coded.',
+                  'A shortcut to the full episode history.',
+                ],
+                media: {
+                  src: 'images/projects/healthcare-saas/episodes.webp',
+                  alt: 'Two browser windows: a report with a compact table of current episodes and a shortcut to the history, and the episode history dialog with tabs, filters, selected episodes and an attach button, with all data blurred. Callouts mark the history shortcut and the attach action',
+                  width: 2400,
+                  height: 1350,
+                  aspect: '2400 / 1350',
+                },
+              },
+              {
+                title: 'Episode History',
+                rationale:
+                  'Episode History offers different ways to review a patient’s historical episodes and sessions. It opens in a large dialog, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
+                points: [
+                  'Latest Session: the active or most recent session.',
+                  'Since Previous Session: activity since the previous session.',
+                  'Complete History: every session on record.',
+                  'Custom Range: a specific period or session range.',
+                ],
+                media: { alt: 'Episode history', aspect: '16 / 9' },
+              },
+              {
+                title: 'Single Episodes',
+                rationale:
+                  'Where Current Episodes gives an overview, Single Episodes goes one level deeper. Opening an individual episode lets users review it in depth and understand what happened, with previous and next actions to move through episodes.',
+                points: [
+                  'Detailed episode information.',
+                  'Timing and duration.',
+                  'Episode type.',
+                  'How the episode progressed.',
+                  'Other relevant information tied to that specific episode.',
+                ],
+                media: { alt: 'Single episode', aspect: '16 / 9' },
+              },
+            ],
+          },
+        ],
+      },
+      {
+        kind: 'timeline',
         id: 'timeline-monitors-messages',
         number: '03',
         label: 'External Monitors & Messages',
@@ -299,12 +325,12 @@ export const projects: Project[] = [
             title: 'External Monitors',
             subtitle: 'Monitoring reports in one place',
             intro:
-              'Clinics receive reports from several external monitoring providers. This module puts them in one place, with the same table patterns as Billing.',
+              'Clinics receive reports from several external monitoring providers. This module puts them in one place, with the same table patterns as Billing, so reports from every provider can be reviewed in the same way.',
             items: [
               {
                 title: 'One table per provider',
                 rationale:
-                  'Provider tabs sit above review tabs, so clinicians can move through reports by provider and by review state. Each row has quick actions to open the report and move it forward.',
+                  'Provider tabs sit above review tabs, so clinicians can move through reports by provider and by review state. Each row shows the patient, study type, report, physician and comments, with quick actions to open the report and move it forward.',
                 media: {
                   src: 'images/projects/healthcare-saas/monitors-table.webp',
                   alt: 'External monitors table with provider tabs, review tabs for ready to review, signed and dismissed, and columns for patient, study type, report, physician and comments, with all data blurred. Provider names are replaced by Vendor A to D. Callouts mark the provider tabs, the review states and the quick actions on each row',
@@ -315,7 +341,7 @@ export const projects: Project[] = [
               },
               {
                 title: 'Nothing removed by accident',
-                rationale: 'Dismissed reports move to their own tab, where they can be restored.',
+                rationale: 'Dismissed reports are not deleted. They move to their own tab, where they can be reviewed and restored if needed.',
                 media: {
                   src: 'images/projects/healthcare-saas/monitors-dismissed.webp',
                   alt: 'The dismissed tab of the external monitors table with one row highlighted and an Un-dismiss button, with all data blurred. Callouts mark the dismissed tab and the restore action',
@@ -330,12 +356,12 @@ export const projects: Project[] = [
             title: 'Messaging',
             subtitle: 'Team conversations inside the product',
             intro:
-              'Messaging lets clinical teams talk to each other inside the product, one to one or in groups.',
+              'Messaging lets clinical teams talk to each other inside the product, one to one or in groups, so coordination happens in the same product where the work is done.',
             items: [
               {
                 title: 'Inbox',
                 rationale:
-                  'Conversations are grouped into pinned, direct and group conversations, with search, unread markers and quick actions. An empty state guides people to pick a conversation or start a new one.',
+                  'Conversations are grouped into pinned, direct and group conversations, with search, unread markers and quick actions. It keeps conversations organised so people can find the one they need quickly. An empty state guides people to pick a conversation or start a new one.',
                 media: {
                   src: 'images/projects/healthcare-saas/messaging-inbox.webp',
                   alt: 'Messaging inbox with a search field and pinned, direct and group conversation lists on the left, and an empty state on the right that asks the user to choose a conversation or start a new chat, with all names blurred. Callouts mark the search, the sections and the empty state',
@@ -347,7 +373,7 @@ export const projects: Project[] = [
               {
                 title: 'Groups',
                 rationale:
-                  'A group needs a name and at least two members, picked from a searchable list. When too few people are selected, the disabled button explains why instead of failing silently.',
+                  'A group needs a name and at least two members, picked from a searchable list, so a team can talk together in one conversation. When too few people are selected, the disabled button explains why instead of failing silently.',
                 media: {
                   src: 'images/projects/healthcare-saas/messaging-group.webp',
                   alt: 'Create new group dialog with a group name field, a searchable list of members with checkboxes and a Create Group button, with all names blurred. Callouts mark the member list and the primary action',
@@ -359,7 +385,7 @@ export const projects: Project[] = [
               {
                 title: 'Conversations and limits',
                 rationale:
-                  'Each message shows its sender and time, and archived conversations have their own view. When a message is too long, a counter and an inline error explain the limit before sending.',
+                  'Each message shows its sender and time, and archived conversations have their own view, which keeps the inbox focused. When a message is too long, a counter and an inline error explain the limit before sending.',
                 media: {
                   src: 'images/projects/healthcare-saas/messaging-conversation.webp',
                   alt: 'A group conversation with a header, messages with sender names and times, and a conversation list, with all names and messages blurred. Callouts mark the sender and time and the group header',
@@ -396,7 +422,7 @@ export const projects: Project[] = [
           {
             title: 'Careful with actions that matter',
             detail:
-              'Changing a patient’s status or dismissing an item asks for a reason, and dismissed items can always be brought back.',
+              'Dismissing an item asks for a reason, and dismissed items can always be brought back.',
           },
           {
             title: 'Clear feedback',
@@ -471,9 +497,10 @@ export const projects: Project[] = [
         items: [
           { title: 'Tables', detail: 'Data tables in two densities, assembled from existing system components.' },
           { title: 'Modals', detail: 'Confirmation, warning, feedback and input dialogs that share one structure.' },
-          { title: 'Tooltips', detail: 'Short explanations, and quick actions in context, in nine positions.' },
-          { title: 'Action Toggles', detail: 'On and off controls that follow the same states as checkboxes.' },
-          { title: 'Checkboxes', detail: 'Selection controls in every state and value, with and without labels.' },
+          {
+            title: 'Tooltips, Action Toggles & Checkboxes',
+            detail: 'Short explanations and quick actions in context, on and off controls, and selection controls in every state, all sharing the same interaction states.',
+          },
         ],
       },
       {
@@ -598,15 +625,16 @@ export const projects: Project[] = [
       },
       {
         kind: 'decisions',
-        id: 'tooltips',
-        label: 'Tooltips',
-        heading: 'Tooltips',
+        id: 'tooltips-toggles-checkboxes',
+        label: 'Tooltips, Action Toggles & Checkboxes',
+        heading: 'Tooltips, Action Toggles & Checkboxes',
         nested: true,
+        intro:
+          'Dense clinical screens leave little room for explanation, so tooltips add context exactly where it’s needed without crowding the layout. Checkboxes and toggles cover selection and settings. Checkboxes appear everywhere in the product, from forms to selecting rows in tables, so they had to be completely predictable, and I based toggles on the same states so both controls feel like one family.',
         layout: 'stacked',
         items: [
           {
-            rationale:
-              "Dense clinical screens leave little room for explanation. Tooltips add context exactly where it's needed, without crowding the layout.",
+            title: 'Tooltips',
             points: [
               'Tooltips explain or identify an element, from a one-word label to a heading with a description.',
               'Action tooltips go a step further, adding an icon and buttons for quick decisions in context.',
@@ -621,19 +649,8 @@ export const projects: Project[] = [
               aspect: '2400 / 1300',
             },
           },
-        ],
-      },
-      {
-        kind: 'decisions',
-        id: 'action-toggles',
-        label: 'Action Toggles',
-        heading: 'Action Toggles',
-        nested: true,
-        layout: 'stacked',
-        items: [
           {
-            rationale:
-              'Toggles switch a setting on or off. I based them on the same states as the checkbox, so both controls feel like one family.',
+            title: 'Action Toggles',
             points: [
               'On and off in default, hover, focus and disabled states.',
               'Hover darkens the track, and focus adds the same ring used across the system.',
@@ -649,19 +666,8 @@ export const projects: Project[] = [
               aspect: '2400 / 1260',
             },
           },
-        ],
-      },
-      {
-        kind: 'decisions',
-        id: 'checkboxes',
-        label: 'Checkboxes',
-        heading: 'Checkboxes',
-        nested: true,
-        layout: 'stacked',
-        items: [
           {
-            rationale:
-              'Checkboxes appear everywhere in the product, from forms to selecting rows in tables, so they had to be completely predictable.',
+            title: 'Checkboxes',
             points: [
               'Default, hover, focus and disabled states for unchecked, checked and indeterminate values.',
               'A clear focus ring, so keyboard users always know where they are.',

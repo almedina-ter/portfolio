@@ -150,7 +150,7 @@ export interface ProcessSection extends SectionBase {
 export interface DesignItem {
   /** Leave out when the section heading already names the item. */
   title?: string
-  rationale: string
+  rationale?: string
   points?: string[]
   media?: MediaAsset
 }

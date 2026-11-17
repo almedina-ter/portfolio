@@ -943,7 +943,6 @@ export const projects: Project[] = [
         id: 'outcome',
         label: 'Outcome',
         heading: 'Outcome and ongoing development',
-        intro: 'The product is still in active development and continues to evolve, and so does my work on it.',
         items: [
           { detail: 'Designed core workflows across five modules of a large healthcare platform.' },
           { detail: 'Made dense clinical and billing information easier to scan, with consistent tabs, filters, labels and dialogs across modules.' },

@@ -20,7 +20,7 @@ export function ProjectMeta({ project }: { project: Project }) {
       {rows.map(([label, value]) => (
         <div key={label} className="min-w-0">
           <dt className="eyebrow">{label}</dt>
-          <dd className="mt-2 text-[0.9375rem] leading-snug break-words">{value}</dd>
+          <dd className="mt-2 text-[0.9375rem] leading-snug break-words whitespace-pre-line">{value}</dd>
         </div>
       ))}
       {project.website && (

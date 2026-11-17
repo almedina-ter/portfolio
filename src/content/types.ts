@@ -169,7 +169,7 @@ export interface TimelineSection extends SectionBase {
   /** Description and context. The first paragraph is set larger. */
   body: string[]
   /** The product areas and design work inside this timeline. */
-  groups: { label?: string; title: string; intro?: string; items: DesignItem[] }[]
+  groups: { title: string; subtitle?: string; intro?: string; items: DesignItem[] }[]
 }
 
 export type CaseStudySection =

@@ -8,6 +8,8 @@ interface CaseStudySectionProps {
   section: Section
   index: number
   slug: string
+  /** Headings use the full content width and wrap naturally. */
+  fullWidthHeading?: boolean
 }
 
 function Intro({ text }: { text?: string }) {
@@ -67,14 +69,14 @@ function PeriodBar({ from, to, total, period }: { from: number; to: number; tota
           <span className="sr-only">Time period: </span>
           {period}
         </span>
-        <span className="text-ink-subtle">Part of a {total}-month involvement</span>
+        <span className="text-ink-subtle">Part of about {total} months of work shown</span>
       </p>
     </div>
   )
 }
 
 /** One case-study section. The layout adapts to the kind of content. */
-export function CaseStudySection({ section, index, slug }: CaseStudySectionProps) {
+export function CaseStudySection({ section, index, slug, fullWidthHeading = false }: CaseStudySectionProps) {
   const headingId = `${section.id}-heading`
   const assetFolder = `images/projects/${slug}`
 
@@ -97,7 +99,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             </>
           )}
         </p>
-        <h2 id={headingId} className="mt-4 max-w-[24ch] font-display text-heading text-balance">
+        <h2 id={headingId} className={`mt-4 font-display text-heading ${fullWidthHeading ? '' : 'max-w-[24ch] text-balance'}`}>
           {section.heading}
         </h2>
       </Reveal>
@@ -135,6 +137,18 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                   ) : (
                     <span className="text-ink-muted">
                       <strong className="font-medium text-ink">{item.title}:</strong> {item.detail}
+                      {item.list && (
+                        <ol className="mt-3 space-y-1.5 text-ink">
+                          {item.list.map((entry, j) => (
+                            <li key={j} className="flex gap-3">
+                              <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
+                                {j + 1}.
+                              </span>
+                              {entry}
+                            </li>
+                          ))}
+                        </ol>
+                      )}
                     </span>
                   )}
                 </li>

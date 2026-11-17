@@ -540,7 +540,7 @@ export const projects: Project[] = [
     title: 'Healthcare SaaS',
     client: '',
     summary:
-      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, billing, external monitoring reports, team messaging and episode reviews. As a Product Designer, I spent about a year designing core workflows across five of its modules, together with the product design, product and engineering teams.',
+      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, billing, external monitoring reports, team messaging and episode reviews. As a Product Designer, I design core workflows across five of its modules together with the product design, product and engineering teams. This case study shows about a year of that work.',
     type: 'Product design · Healthcare SaaS',
     year: '',
     role: 'Product Designer',
@@ -550,7 +550,8 @@ export const projects: Project[] = [
       { name: 'Engineering Team', count: '20', unit: 'Engineers' },
     ],
     status: 'Ongoing',
-    involvement: '1 year',
+    involvement: 'Ongoing. About 1 year of work shown here',
+    fullWidthHeadings: true,
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/healthcare-saas/thumbnail.webp',
@@ -576,17 +577,18 @@ export const projects: Project[] = [
         heading: 'Project overview and my role',
         body: [
           'A healthcare SaaS platform for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product.',
-          'The product has around twelve modules, designed by several designers. I worked on it as a Product Designer for approximately one year, and the product is still growing.',
+          'The product has around twelve modules, designed by several designers. I work on it as a Product Designer, and the product is still growing. The work presented across these three areas represents approximately one year of product design and development, and my involvement with the product continues.',
         ],
         intro: 'At a glance:',
         items: [
           { title: 'Product', detail: 'Healthcare SaaS application for clinical teams' },
           { title: 'Project status', detail: 'Ongoing. The product continues to evolve.' },
-          { title: 'My involvement', detail: 'Approximately 1 year' },
+          { title: 'My involvement', detail: 'Ongoing. The three areas below represent approximately one year of design work.' },
           { title: 'Role', detail: 'Product Designer, working collaboratively with the product design, product and engineering teams' },
           {
             title: 'My scope',
-            detail: 'Patient Management, Billing, External Monitors, Messaging, and Episodes and Episode History',
+            detail: 'Three areas of product work, in the same order as the sidebar and the sections below:',
+            list: ['Episode', 'Patient Management & Billing', 'External Monitors & Messages'],
           },
         ],
       },
@@ -607,8 +609,8 @@ export const projects: Project[] = [
         label: 'My contribution',
         heading: 'My contribution across three product areas',
         body: [
-          'I was involved in this project for approximately one year. My contribution is organised into three timelines, one for each area of the product I designed, in the order I worked on them.',
-          'The periods show how the year was divided rather than exact dates, and the timelines are not equal in length.',
+          'The work presented across these three areas represents approximately one year of product design and development, while my involvement with the product continues. My contribution is organised into three timelines, one for each area, in the order I worked on them.',
+          'The periods show how that year of work was divided rather than exact dates, and the timelines are not equal in length.',
         ],
         intro: 'The three timelines:',
         items: [
@@ -934,8 +936,7 @@ export const projects: Project[] = [
         label: 'Collaboration',
         heading: 'Collaboration and development',
         body: [
-          'I worked as part of the product design team, where each designer was responsible for different modules. We shared one design system, so the product feels like one product even though many people design it.',
-          'I worked with the product team and engineering as features moved from design to development, and kept refining my modules as requirements changed.',
+          'I work as part of the product design team, where each designer owns different modules and we share one design system, so the product feels like one product even though many people design it. I work with the product team and engineering as features move from design to development, and keep refining my modules as requirements change.',
         ],
       },
       {
@@ -943,11 +944,11 @@ export const projects: Project[] = [
         id: 'outcome',
         label: 'Outcome',
         heading: 'Outcome and ongoing development',
-        intro: 'The product is still in active development and continues to evolve. My involvement covered approximately one year.',
+        intro: 'The product is still in active development and continues to evolve, and so does my work on it.',
         items: [
           { detail: 'Designed core workflows across five modules of a large healthcare platform.' },
-          { detail: 'Kept those modules consistent with each other and with the rest of the product.' },
-          { detail: 'Refined them with the product and engineering teams as requirements changed.' },
+          { detail: 'Made dense clinical and billing information easier to scan, with consistent tabs, filters, labels and dialogs across modules.' },
+          { detail: 'Keep refining them with the product and engineering teams as requirements change.' },
         ],
       },
     ],

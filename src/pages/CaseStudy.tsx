@@ -87,7 +87,7 @@ export function CaseStudy() {
           <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{project.role}</span>
           <SampleTag show={project.sample === true} />
         </div>
-        <SplitHeading text={project.title} delay={100} className="mt-5 max-w-[20ch] font-display text-title text-balance" />
+        <SplitHeading text={project.title} delay={100} className={`mt-5 font-display text-title ${project.fullWidthHeadings ? '' : 'max-w-[20ch] text-balance'}`} />
         <p className={`mt-6 max-w-prose text-lede load-in ${project.summary ? 'text-ink-muted' : 'text-ink-subtle italic'}`} style={delay(380)}>
           {project.summary || 'Description coming soon.'}
         </p>
@@ -169,7 +169,13 @@ export function CaseStudy() {
             </Reveal>
           )}
           {project.sections.map((section, index) => (
-            <CaseStudySection key={section.id} section={section} index={index} slug={project.slug} />
+            <CaseStudySection
+              key={section.id}
+              section={section}
+              index={index}
+              slug={project.slug}
+              fullWidthHeading={project.fullWidthHeadings}
+            />
           ))}
         </div>
       </div>

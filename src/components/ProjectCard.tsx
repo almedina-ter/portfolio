@@ -37,7 +37,7 @@ export function ProjectCard({ project, index, headingLevel: Heading = 'h3', clas
 
       <div className="flex flex-1 flex-col px-3 pt-6 pb-3">
         <p className="flex items-center justify-between gap-3">
-          <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+          <span className="inline-flex items-center rounded-full bg-ink/5 px-3 py-1 text-xs font-medium text-ink-muted">
             {project.role}
           </span>
           <span className="flex items-center gap-2">

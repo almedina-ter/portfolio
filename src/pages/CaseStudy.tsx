@@ -165,12 +165,7 @@ export function CaseStudy() {
               className="flex gap-4 rounded-lg border border-line bg-surface/60 p-5 text-[0.9375rem] text-ink-muted"
             >
               <Lock aria-hidden="true" className="mt-1 size-4 shrink-0" />
-              <div>
-                <p className="mb-2 inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium tracking-[0.08em] text-accent">
-                  NDA
-                </p>
-                <p>{project.confidentiality}</p>
-              </div>
+              <p>{project.confidentiality}</p>
             </Reveal>
           )}
           {project.sections.map((section, index) => (

@@ -52,7 +52,7 @@ export function Hero() {
         />
         <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="max-w-prose load-in" style={delay(480)}>
-            <p className="text-lede text-ink-muted">{site.intro}</p>
+            <p className="text-lede whitespace-pre-line text-ink-muted">{site.intro}</p>
             <Availability className="mt-5 lg:hidden" />
           </div>
           <div className="flex flex-wrap gap-3 load-in" style={delay(600)}>
@@ -79,8 +79,7 @@ export function Hero() {
                 <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className="text-ink">{project.title}</span>
-                <span className="text-ink-subtle">{project.type.split(' · ')[0]}</span>
+                <span className="text-ink">{project.category ?? project.title}</span>
               </Link>
             </li>
           ))}

@@ -17,8 +17,9 @@ export const projects: Project[] = [
     title: 'Healthcare SaaS',
     client: '',
     summary:
-      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, monitor their activity and communicate with each other. As a Product Designer, I design core workflows across its Management, Monitoring and Communication areas, working alongside the Design Team, Product Team and Engineering Team.',
+      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, monitor their activity and communicate with each other. As a Product Designer, I design core workflows for patient management, working alongside the Design Team, Product Team and Engineering Team.',
     type: 'Product design · Healthcare SaaS',
+    category: 'Product Design',
     year: '',
     role: 'Product Designer',
     teams: [
@@ -71,8 +72,8 @@ export const projects: Project[] = [
           { title: 'Role', detail: 'Product Designer, working alongside the Design Team, Product Team and Engineering Team' },
           {
             title: 'My scope',
-            detail: 'Three areas of product work, in the same order as the sidebar and the sections below:',
-            list: ['Management', 'Monitoring', 'Communication'],
+            detail: 'Two screens at the heart of patient management, in the same order as the sections below:',
+            list: ['Patient Overview', 'Patient Profile'],
           },
         ],
       },
@@ -91,461 +92,202 @@ export const projects: Project[] = [
         kind: 'list',
         id: 'contributions',
         label: 'My contribution',
-        heading: 'My contribution across three product areas',
+        heading: 'Two screens, one workflow',
         body: [
-          'My contribution is organised into three areas that follow how healthcare professionals move through the product: they manage patients, monitor what is happening with them, and communicate with each other about it.',
-          'Each area is its own chapter below, with the screens in the order a user meets them.',
+          'Patient management starts with a population and ends with one person. I focus here on the two screens that make that step: the Patient Overview, where professionals find the right patient, and the Patient Profile, where they read everything about them.',
         ],
-        intro: 'The three areas:',
+        intro: 'What follows:',
         items: [
+          { title: 'Patient Overview', detail: 'The dashboard for the whole patient population.' },
+          { title: 'Patient Profile', detail: 'The essential information about one patient, on one screen.' },
+        ],
+      },
+      {
+        kind: 'annotated',
+        id: 'patient-overview',
+        label: 'Patient Overview',
+        heading: 'Thousands of patients, one list that reads at a glance',
+        body: [
+          'The Patient Overview is where a professional starts. The size and state of the whole patient population sit above one table, built to find the right patient quickly. Selecting a name, or View, opens that patient’s profile.',
+        ],
+        media: {
+          src: 'images/projects/healthcare-saas/management-patient-overview.webp',
+          alt: 'Patient Overview dashboard: three summary figures for total, active and inactive patients, tabs for all, active and inactive patients, filters and search, Export Data and Add patient buttons, and a table of patients with age, patient ID, status, last activity and a View link',
+          width: 1920,
+          height: 1080,
+          aspect: '1920 / 1080',
+        },
+        notes: [
           {
-            title: 'Management',
-            detail: 'A patient overview for the whole population and a profile for each patient, with billing as part of the patient record.',
+            label: 'At a glance',
+            text:
+              'Three figures show total, active and inactive patients, each with a short note such as recent registrations or patients awaiting activation, so the state of the population is clear before a single row is read.',
+            side: 'left',
+            target: { x: 800, y: 221 },
+            via: 229,
+            labelY: 190,
           },
           {
-            title: 'Monitoring',
-            detail: 'From a monitoring overview to ECG & Recordings, individual patient monitoring and single episodes, alongside external monitoring reports.',
+            label: 'Add patient',
+            text:
+              'Export Data and Add patient sit apart from the list, at the top right, so the two main actions are always in reach and never compete with the table.',
+            side: 'right',
+            target: { x: 1896, y: 138 },
           },
           {
-            title: 'Communication',
-            detail: 'Messaging inside the product: notifications, conversations and groups.',
+            label: 'Narrow down',
+            text:
+              'All, Active and Inactive segments carry their counts, with filters and search beside them, so the list can be narrowed from one row.',
+            side: 'left',
+            target: { x: 603, y: 281 },
+            via: 289,
+            labelY: 300,
+          },
+          {
+            label: 'Identity',
+            text:
+              'Name, age and patient ID come first: the three details needed to find and confirm the right person.',
+            side: 'left',
+            target: { x: 100, y: 424 },
+          },
+          {
+            label: 'Status',
+            text:
+              'A colour-coded label marks each patient as active or inactive, so status can be read while scanning down the list.',
+            side: 'right',
+            target: { x: 1066, y: 460 },
+            via: 478,
+            labelY: 440,
+          },
+          {
+            label: 'Open record',
+            text:
+              'Every row has the same View action, which opens the patient’s profile. The next step is never ambiguous.',
+            side: 'right',
+            target: { x: 1792, y: 496 },
+            via: 514,
+            labelY: 560,
+          },
+        ],
+        details: [
+          {
+            src: 'images/projects/healthcare-saas/overview-detail-figures.webp',
+            alt: 'Close-up of the Patient Overview summary: the active and inactive patients figures with their notes and progress bars, the Filters button, and the Patient ID and Status columns of the table',
+            caption: 'Active and inactive figures, filters and status',
+            width: 640,
+            height: 480,
+            aspect: '640 / 480',
+          },
+          {
+            src: 'images/projects/healthcare-saas/overview-detail-status.webp',
+            alt: 'Close-up of the patient table: the Patients and Age columns with patient names and ages in rows',
+            caption: 'Patient names and ages',
+            width: 640,
+            height: 480,
+            aspect: '640 / 480',
+          },
+          {
+            src: 'images/projects/healthcare-saas/overview-detail-actions.webp',
+            alt: 'Close-up of the right side of the Patient Overview: the patient search field and the Activity and View Patient columns with a View link on every row',
+            caption: 'Search and the View link',
+            width: 640,
+            height: 480,
+            aspect: '640 / 480',
           },
         ],
       },
       {
-        kind: 'chapter',
-        id: 'management',
-        number: '01',
-        label: 'Management',
-        heading: 'Management',
+        kind: 'annotated',
+        id: 'patient-profile',
+        label: 'Patient Profile',
+        heading: 'One patient, the essentials on one screen',
         body: [
-          'Management is where care starts. Healthcare professionals need to find the right patient quickly, understand the state of their patient population at a glance, and then open one patient and see everything they need in one place.',
-          'I designed that path in two levels: an overview of the whole patient population, and a profile for the individual patient. Billing sits alongside them as part of the same patient record.',
+          'The profile is the next level of the same workflow. The patient area has three tabs, Patient Profile, Medical history and Care Plan, and this case study shows the profile. Information is grouped into cards by type, so it can be read at a glance instead of pieced together from separate places.',
         ],
-        groups: [
+        media: {
+          src: 'images/projects/healthcare-saas/management-patient-profile.webp',
+          alt: 'Patient Profile screen: a patient header with name, status, age, record number and blood type, tabs for Patient Profile, Medical history and Care Plan, and cards for personal information, contact information, care team, latest vitals, next appointment, medications and a doctor’s note',
+          width: 1920,
+          height: 1080,
+          aspect: '1920 / 1080',
+        },
+        notes: [
           {
-            title: 'From patient population to one patient',
-            subtitle: 'Two levels of the same workflow',
-            intro:
-              'Professionals scan the population first, and open one patient only when they need detail. The two screens are designed to make that step feel like moving closer to the same record, not moving to a different place.',
-            items: [
-              {
-                title: 'Patient Overview',
-                rationale:
-                  'The patient overview is the central place to manage a patient population. Three figures at the top show total, active and inactive patients, each with a short note such as recent registrations or patients awaiting activation, so the size and state of the population is clear before reading a single row. Below, one table lists every patient, and the main decisions are made there: who to look at, and who needs attention.',
-                points: [
-                  'All, Active and Inactive tabs show their counts and narrow the list, with search and filters to narrow it further.',
-                  'Each row shows the patient, age, patient ID, status and last activity, which is enough to scan and choose.',
-                  'Export Data and Add patient sit apart from the list, so the two main actions are always within reach.',
-                  'Sortable columns and pagination with a page-size control keep a list of thousands manageable.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/management-patient-overview.webp',
-                  alt: 'Patient Overview dashboard: three summary figures for total, active and inactive patients, tabs for all, active and inactive patients, filters and search, Export Data and Add patient buttons, and a table of patients with age, patient ID, status, last activity and a View link',
-                  caption: 'Patient Overview: the dashboard for the whole patient population.',
-                  width: 1920,
-                  height: 1080,
-                  aspect: '1920 / 1080',
-                },
-              },
-              {
-                trigger: 'Select a patient’s name, or View',
-                title: 'Patient Profile',
-                rationale:
-                  'Selecting a patient’s name or View opens a deeper level of the same workflow. The patient area has three tabs, Patient Profile, Medical history and Care Plan, and this case study shows the Patient Profile. It brings one patient’s essential information together on a single, structured screen, so a professional does not have to piece it together from disconnected places. Information is grouped into cards by type across three columns, which keeps a dense screen calm.',
-                points: [
-                  'A header with name, status, age, record number and blood type stays in view, with Edit profile and share actions.',
-                  'Personal and contact information, including an emergency contact, answer who the patient is and how to reach them.',
-                  'Care team and next appointment show who is responsible and what happens next.',
-                  'Latest vitals link to the full medical history, and current medications sit next to them.',
-                  'The latest doctor’s note puts the most recent clinical context at the end of the reading path.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/management-patient-profile.webp',
-                  alt: 'Patient Profile screen: a patient header with name, status, age, record number and blood type, tabs for Patient Profile, Medical history and Care Plan, and cards for personal information, contact information, care team, latest vitals, next appointment, medications and a doctor’s note',
-                  caption: 'Patient Profile: one patient, with their information in one place.',
-                  width: 1920,
-                  height: 1080,
-                  aspect: '1920 / 1080',
-                },
-              },
-            ],
+            label: 'Patient header',
+            text:
+              'Name, status, age, record number and blood type sit in a header, so it is clear whose record is open. Edit profile and share stay within reach on the right.',
+            side: 'left',
+            target: { x: 586, y: 134 },
+            via: 169,
+            labelY: 169,
           },
           {
-            title: 'Billing',
-            subtitle: 'Making billing manageable',
-            intro:
-              'Billing connects an individual patient’s account to the healthcare services they receive. It appears inside the patient view and as tables across patients. Billing has a lot of states, so I organised it into tabs and subtabs, and each table only shows the items that need the same kind of attention.',
-            items: [
-              {
-                title: 'Billing for one patient',
-                rationale:
-                  'The billing tab shows the patient’s billing information inside the patient view, so clinicians can check it without switching modules.',
-                media: {
-                  src: 'images/projects/healthcare-saas/patient-billing.webp',
-                  alt: 'The billing tab inside the patient view: a table of billing rows with colour-coded status labels, with all data blurred. A callout marks the billing tab',
-                  width: 2400,
-                  height: 1100,
-                  aspect: '2400 / 1100',
-                },
-              },
-              {
-                title: 'Tabs, subtabs and a dense table',
-                rationale:
-                  'Top-level tabs separate the main stages of billing, and subtabs split them further, each with a count. A short note explains what the current view shows.',
-                points: [
-                  'Codes and types shown as compact labels to keep long rows scannable.',
-                  'Long text is truncated, with a "+" count that reveals the rest.',
-                  'Search and column management let people focus on what they need.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/billing-table.webp',
-                  alt: 'Billing table with top-level tabs and counts, subtabs, a filters button and columns for billing cycle, patient, codes, device, physician and reason for review, with all data blurred. Callouts mark the tabs, the subtabs and filters, and long text cut with a plus count',
-                  width: 2400,
-                  height: 1100,
-                  aspect: '2400 / 1100',
-                },
-              },
-              {
-                title: 'Filters and detail panel',
-                rationale:
-                  'Filters live in one panel next to the subtabs, with clear and apply actions. Selecting a row opens a side panel with its key points, so the table stays in view while details are checked.',
-                media: {
-                  src: 'images/projects/healthcare-saas/billing-detail.webp',
-                  alt: 'Two browser windows: the billing filter panel open over the table, and a side panel with a cycle overview next to the table, with all data blurred. Callouts mark the filters panel and the side panel',
-                  width: 2400,
-                  height: 1350,
-                  aspect: '2400 / 1350',
-                },
-              },
-              {
-                title: 'Dismissing and restoring',
-                rationale:
-                  'Dismissing an item needs a written reason, and dismissed items are not lost: they can be shown with a filter and restored straight from the table.',
-                media: {
-                  src: 'images/projects/healthcare-saas/billing-dismiss.webp',
-                  alt: 'Two browser windows: the billing filter panel with the show dismissed switch on, and the table listing a dismissed cycle with a button to reactivate it, with all data blurred. Callouts mark the show dismissed filter and the restore button',
-                  width: 2400,
-                  height: 1350,
-                  aspect: '2400 / 1350',
-                },
-              },
-            ],
+            label: 'Care team',
+            text:
+              'The professionals responsible for the patient, with their roles, so responsibility is clear at a glance.',
+            side: 'right',
+            target: { x: 1524, y: 350 },
+            via: 383,
+          },
+          {
+            label: 'Appointment',
+            text:
+              'Date, type, time and a confirmation status show what happens next, on the profile itself.',
+            side: 'right',
+            target: { x: 1480, y: 551 },
+            via: 541,
+          },
+          {
+            label: 'Latest vitals',
+            text:
+              'Heart rate, blood pressure and SpO2 give a quick read of the patient’s current state, with a link into the full medical history.',
+            side: 'right',
+            target: { x: 1068, y: 618 },
+            via: 636,
+            labelY: 650,
+          },
+          {
+            label: 'Medications',
+            text:
+              'Current medications with their doses, listed plainly beside the vitals so both can be read together.',
+            side: 'right',
+            target: { x: 1000, y: 912 },
+            via: 894,
+            labelY: 800,
+          },
+          {
+            label: 'Doctor’s note',
+            text:
+              'The latest note, with its author and time, gives the most recent clinical context.',
+            side: 'left',
+            target: { x: 426, y: 762 },
+            via: 744,
           },
         ],
-      },
-      {
-        kind: 'chapter',
-        id: 'monitoring',
-        number: '02',
-        label: 'Monitoring',
-        heading: 'Monitoring',
-        body: [
-          'Monitoring is how healthcare professionals follow what is happening with their patients between visits. The challenge is volume: many patients, many recordings and many detected episodes, only some of which need a clinician’s attention.',
-          'I designed it as a path from broad to specific: an overview of monitoring activity, an ECG & Recordings area for episodes and recording quality, an individual patient view for waveforms and review history, and finally a single episode.',
-        ],
-        groups: [
+        details: [
           {
-            title: 'From activity to recordings',
-            subtitle: 'Seeing the whole picture first',
-            intro:
-              'The overview and ECG & Recordings share the same table and tab patterns, so moving from one to the other keeps the context.',
-            items: [
-              {
-                title: 'Monitoring Overview',
-                rationale:
-                  'The overview gives a broad picture of monitoring activity, so healthcare professionals can see what has changed and what may need attention before opening any record. It answers “what is happening?” and points to where to look next. A heart rate chart for the last 24 hours marks the alert threshold, alert history lists recent alerts by severity, and the latest ECG is one click from its waveform.',
-                points: [
-                  'Heart rate over 24 hours, with the alert threshold and the highest reading marked.',
-                  'Alert history with severity labels, and a link to view all alerts.',
-                  'The latest ECG recording, with a shortcut to its waveform.',
-                  'A table of episodes by patient, with episode type, duration, maximum heart rate and a review status: New, In Review, Reviewed, Escalated or Dismissed.',
-                  'Tabs lead on to ECG & Recordings, Reports, Laboratory Results, and Visits & Appointments.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/monitoring-overview.webp',
-                  alt: 'Monitoring Overview: a 24-hour heart rate chart with an alert threshold, an alert history list with severity labels, the latest ECG recording, and a table of episodes by patient with type, duration, maximum heart rate and review status',
-                  caption: 'Monitoring Overview: a broad view of monitoring activity.',
-                  width: 1920,
-                  height: 1080,
-                  aspect: '1920 / 1080',
-                },
-              },
-              {
-                trigger: 'Open the ECG & Recordings tab',
-                title: 'ECG & Recordings',
-                rationale:
-                  'ECG & Recordings goes one level deeper into the same data. It summarises detected episodes and recording quality, and shows where episodes stand in the clinical review workflow. Episodes found automatically stay “detected” until a clinician reviews and confirms them, and the screen says so, so nobody mistakes a detection for a decision.',
-                points: [
-                  'Detected episodes: how many, how often per day, total duration and patients affected, broken down by type.',
-                  'Recording quality: how many recordings are good, poor or incomplete, with a daily chart.',
-                  'Review & monitoring: average review time, the oldest open episode and how many episodes sit in each review status.',
-                  'A patient table with episode, duration and maximum heart rate, to find a patient and open their record.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/monitoring-ecg-recordings.webp',
-                  alt: 'ECG and Recordings screen: detected episodes with totals and a breakdown by type, a recording quality panel with good, poor and incomplete recordings and a daily chart, a review and monitoring panel with review statuses, and a patient table with episode, duration and maximum heart rate',
-                  caption: 'ECG & Recordings: detected episodes, recording quality and review status.',
-                  width: 1920,
-                  height: 1080,
-                  aspect: '1920 / 1080',
-                },
-              },
-            ],
+            src: 'images/projects/healthcare-saas/profile-detail-header.webp',
+            alt: 'Close-up of the patient header with name, Active label, gender, age, record number and blood type, the Patient Profile, Medical history and Care Plan tabs, and the start of the Personal Information card',
+            caption: 'Patient header and personal information',
+            width: 640,
+            height: 480,
+            aspect: '640 / 480',
           },
           {
-            title: 'From a patient to a single episode',
-            subtitle: 'Narrowing down to one case',
-            intro:
-              'The table leads to one patient, and the patient’s episode list leads to one episode. Each step shows more detail about less data.',
-            items: [
-              {
-                trigger: 'Select a patient from the table',
-                title: 'Individual patient monitoring',
-                rationale:
-                  'Selecting a patient from the table opens their monitoring record, with the same patient header as the profile so it is always clear whose record it is. Four tabs separate the work: Waveform & episodes, Heart Rate, Recordings & quality and Review history. A row of figures at the top summarises the patient before any waveform is read: recordings, detected episodes, episodes awaiting review, escalations, heart rate and poor-quality recordings.',
-                points: [
-                  'A list of detected episodes on the left, each with its type, time, duration and review status.',
-                  'The ECG waveform of the selected episode, with the detected section highlighted and a 10 s or 30 s view.',
-                  'A review note that shows who confirmed an episode and when, linked to the full review history.',
-                  'Message patient and Export report, so the next step is one click away.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/monitoring-patient.webp',
-                  alt: 'Individual patient monitoring: a patient header with Message patient and Export report buttons, tabs for waveform and episodes, heart rate, recordings and quality, and review history, summary figures, a list of detected episodes and an ECG waveform with the detected episode highlighted',
-                  caption: 'Individual patient monitoring: waveforms, episodes and review history for one patient.',
-                  width: 1920,
-                  height: 1080,
-                  aspect: '1920 / 1080',
-                },
-              },
-              {
-                trigger: 'Select an episode from the list',
-                title: 'Individual episode',
-                rationale:
-                  'Selecting an episode turns the screen into an investigation. Healthcare professionals see the waveform around the detected section, when the episode started, how long it lasted, its average, minimum and maximum heart rate, and its review status. This is a different job from the overview: the overview shows that something was detected, and the episode view lets a clinician look at how it progressed.',
-                points: [
-                  'Start time, duration, average heart rate and minimum / maximum heart rate.',
-                  'The detected section is highlighted on the waveform, so the episode is read in context.',
-                  'Review status and, once reviewed, who confirmed it and when.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/monitoring-episode.webp',
-                  alt: 'The selected episode in the individual patient monitoring view: a list of detected episodes beside an atrial flutter waveform with the detected section highlighted, and its start time, duration, average heart rate and minimum and maximum heart rate',
-                  caption: 'Individual episode: the selected episode, shown in the same screen. The waveform in this design is illustrative.',
-                  width: 1800,
-                  height: 524,
-                  aspect: '1800 / 524',
-                },
-              },
-            ],
+            src: 'images/projects/healthcare-saas/profile-detail-care.webp',
+            alt: 'Close-up of the Care Team card with two professionals and their roles, and the Next Appointment card with a confirmed follow-up consultation',
+            caption: 'Care team and next appointment',
+            width: 640,
+            height: 480,
+            aspect: '640 / 480',
           },
           {
-            title: 'Device Data History',
-            subtitle: 'Every transmission in one place',
-            intro:
-              'This section lets healthcare professionals review and follow a patient’s historical transmission activity, from the data sent by devices to the alerts and status recorded for each transmission.',
-            items: [
-              {
-                rationale:
-                  'Device transmissions are listed in one table, so a clinician can scan alerts, status and notes at a glance and open the full report when needed.',
-                points: [
-                  'Alerts shown as coloured labels by severity, with a "+ more" count instead of crowding the row.',
-                  'Status labels, sortable dates and pagination.',
-                  'Alert details open in a panel on top of the table, so clinicians keep their place in the list.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/transmission-history.webp',
-                  alt: 'Transmission history table with alerts, transmission type, status, notes and PDF columns, with all data blurred. An alert details popover sits on top of the table, and callouts mark the alerts by severity, the popover and the status labels',
-                  width: 2400,
-                  height: 1100,
-                  aspect: '2400 / 1100',
-                },
-              },
-            ],
-          },
-          {
-            title: 'Episodes in clinical reports',
-            intro:
-              'From an overview in the report, to the patient’s history, to the detail of one episode.',
-            items: [
-              {
-                title: 'Current Episodes',
-                rationale:
-                  'This view gives an overview of the patient’s current episode and its most relevant clinical information. Inside a report, current episodes are listed in a compact table, colour coded by type, so healthcare professionals can quickly understand the current episode and reach the essential information needed to monitor it.',
-                points: [
-                  'Heart rate.',
-                  'Episode duration.',
-                  'Episode type, colour coded.',
-                  'A shortcut to the full episode history.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/episodes.webp',
-                  alt: 'Two browser windows: a report with a compact table of current episodes and a shortcut to the history, and the episode history dialog with tabs, filters, selected episodes and an attach button, with all data blurred. Callouts mark the history shortcut and the attach action',
-                  width: 2400,
-                  height: 1350,
-                  aspect: '2400 / 1350',
-                },
-              },
-              {
-                title: 'Episode History',
-                rationale:
-                  'Episode History offers different ways to review a patient’s historical episodes and sessions. It opens in a large dialog, so clinicians can look further back without leaving the report. Selecting rows enables attaching them, with a selection bar that shows the count.',
-                points: [
-                  'Latest Session: the active or most recent session.',
-                  'Since Previous Session: activity since the previous session.',
-                  'Complete History: every session on record.',
-                  'Custom Range: a specific period or session range.',
-                ],
-                media: { alt: 'Episode history', aspect: '16 / 9' },
-              },
-              {
-                title: 'Single Episodes',
-                rationale:
-                  'Where Current Episodes gives an overview, Single Episodes goes one level deeper. Opening an individual episode lets users review it in depth and understand what happened, with previous and next actions to move through episodes.',
-                points: [
-                  'Detailed episode information.',
-                  'Timing and duration.',
-                  'Episode type.',
-                  'How the episode progressed.',
-                  'Other relevant information tied to that specific episode.',
-                ],
-                media: { alt: 'Single episode', aspect: '16 / 9' },
-              },
-            ],
-          },
-          {
-            title: 'External Monitors',
-            subtitle: 'Monitoring reports in one place',
-            intro:
-              'Clinics receive reports from several external monitoring providers. This module puts them in one place, with the same table patterns as Billing, so reports from every provider can be reviewed in the same way.',
-            items: [
-              {
-                title: 'One table per provider',
-                rationale:
-                  'Provider tabs sit above review tabs, so clinicians can move through reports by provider and by review state. Each row shows the patient, study type, report, physician and comments, with quick actions to open the report and move it forward.',
-                media: {
-                  src: 'images/projects/healthcare-saas/monitors-table.webp',
-                  alt: 'External monitors table with provider tabs, review tabs for ready to review, signed and dismissed, and columns for patient, study type, report, physician and comments, with all data blurred. Provider names are replaced by Vendor A to D. Callouts mark the provider tabs, the review states and the quick actions on each row',
-                  width: 2400,
-                  height: 1100,
-                  aspect: '2400 / 1100',
-                },
-              },
-              {
-                title: 'Nothing removed by accident',
-                rationale: 'Dismissed reports are not deleted. They move to their own tab, where they can be reviewed and restored if needed.',
-                media: {
-                  src: 'images/projects/healthcare-saas/monitors-dismissed.webp',
-                  alt: 'The dismissed tab of the external monitors table with one row highlighted and an Un-dismiss button, with all data blurred. Callouts mark the dismissed tab and the restore action',
-                  width: 2400,
-                  height: 900,
-                  aspect: '2400 / 900',
-                },
-              },
-            ],
-          },
-        ],
-      },
-      {
-        kind: 'chapter',
-        id: 'communication',
-        number: '03',
-        label: 'Communication',
-        heading: 'Communication',
-        body: [
-          'Clinical work depends on conversation. Communication keeps messaging inside the product, so a question or a hand-off does not have to leave the platform where the work happens.',
-          'I designed the experience around three needs: knowing when someone has written, getting to the right conversation quickly, and keeping the history in view while replying. The patient monitoring view links in with a Message patient action, so a conversation can start from the data that prompted it.',
-        ],
-        groups: [
-          {
-            title: 'From notification to conversation',
-            subtitle: 'Organised, visible and quick to reach',
-            intro:
-              'The same two screens cover the whole exchange: a new message appears, the user opens it, reads the history and replies.',
-            items: [
-              {
-                title: 'Inbox and notifications',
-                rationale:
-                  'Conversations are listed in a sidebar, split into individual messages and groups, with search, an archive and a button to start a new chat. Each row shows who it is with, when they last wrote and an unread marker. When a new message arrives, a notification appears with a preview and two choices, View Conversation or Dismiss, so a message is seen without pulling anyone away from what they were doing. With nothing selected, an empty state invites the user to pick a conversation or start a new one.',
-                points: [
-                  'Search by name, an archive and a new chat button at the top of the sidebar.',
-                  'Messages and Groups as separate sections, with unread markers and time since the last message.',
-                  'A notification with the sender, a preview and a direct link into the conversation.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/communication-notification.webp',
-                  alt: 'Messaging with a conversation list on the left split into messages and groups, an empty state saying no conversation is selected, and a notification with a message preview and View Conversation and Dismiss options',
-                  caption: 'Inbox and notification: conversations in a sidebar, and new messages announced without interrupting the work.',
-                  width: 1920,
-                  height: 1080,
-                  aspect: '1920 / 1080',
-                },
-              },
-              {
-                trigger: 'Select View Conversation, or a conversation in the sidebar',
-                title: 'Conversation',
-                rationale:
-                  'Selecting the notification opens the conversation with the sidebar still in place, so users can move to another conversation without losing their place. The header shows who they are talking to and whether they are active, the history is grouped by day with sender and time, and the composer at the bottom supports attachments, text formatting and sending. The same view serves both reading and replying, which keeps a short exchange short.',
-                points: [
-                  'Search, pin and more actions in the conversation header.',
-                  'Messages grouped by day, with sender and time, and a check mark on sent messages.',
-                  'A composer with attachments, text formatting and send.',
-                ],
-                media: {
-                  src: 'images/projects/healthcare-saas/communication-conversation.webp',
-                  alt: 'An open conversation: a header with the person’s name and active status, messages grouped under today with sender names and times, a composer with attach, format and send, and the conversation list on the left',
-                  caption: 'Conversation: history, reply and the conversation list in one view.',
-                  width: 1920,
-                  height: 1080,
-                  aspect: '1920 / 1080',
-                },
-              },
-            ],
-          },
-          {
-            title: 'Messaging',
-            subtitle: 'Team conversations inside the product',
-            intro:
-              'Messaging lets clinical teams talk to each other inside the product, one to one or in groups, so coordination happens in the same product where the work is done.',
-            items: [
-              {
-                title: 'Inbox',
-                rationale:
-                  'Conversations are grouped into pinned, direct and group conversations, with search, unread markers and quick actions. It keeps conversations organised so people can find the one they need quickly. An empty state guides people to pick a conversation or start a new one.',
-                media: {
-                  src: 'images/projects/healthcare-saas/messaging-inbox.webp',
-                  alt: 'Messaging inbox with a search field and pinned, direct and group conversation lists on the left, and an empty state on the right that asks the user to choose a conversation or start a new chat, with all names blurred. Callouts mark the search, the sections and the empty state',
-                  width: 2400,
-                  height: 1000,
-                  aspect: '2400 / 1000',
-                },
-              },
-              {
-                title: 'Groups',
-                rationale:
-                  'A group needs a name and at least two members, picked from a searchable list, so a team can talk together in one conversation. When too few people are selected, the disabled button explains why instead of failing silently.',
-                media: {
-                  src: 'images/projects/healthcare-saas/messaging-group.webp',
-                  alt: 'Create new group dialog with a group name field, a searchable list of members with checkboxes and a Create Group button, with all names blurred. Callouts mark the member list and the primary action',
-                  width: 2400,
-                  height: 1100,
-                  aspect: '2400 / 1100',
-                },
-              },
-              {
-                title: 'Conversations and limits',
-                rationale:
-                  'Each message shows its sender and time, and archived conversations have their own view, which keeps the inbox focused. When a message is too long, a counter and an inline error explain the limit before sending.',
-                media: {
-                  src: 'images/projects/healthcare-saas/messaging-conversation.webp',
-                  alt: 'A group conversation with a header, messages with sender names and times, and a conversation list, with all names and messages blurred. Callouts mark the sender and time and the group header',
-                  width: 2400,
-                  height: 900,
-                  aspect: '2400 / 900',
-                },
-              },
-            ],
+            src: 'images/projects/healthcare-saas/profile-detail-vitals.webp',
+            alt: 'Close-up of the Latest Vitals card with heart rate, blood pressure and SpO2, a link to the medical history, and the Medications card with four medications and doses',
+            caption: 'Latest vitals and medications',
+            width: 640,
+            height: 480,
+            aspect: '640 / 480',
           },
         ],
       },
@@ -558,27 +300,17 @@ export const projects: Project[] = [
           {
             title: 'Consistency across modules',
             detail:
-              'Tabs with counts, filter panels, tables, labels and dialogs work the same way in every module I designed, and follow the patterns used by the rest of the product.',
+              'Tabs with counts, filters, tables, labels and cards work the same way in every module I designed, and follow the patterns used by the rest of the product.',
           },
           {
             title: 'Dense, but scannable',
             detail:
-              'Clinical and billing tables carry a lot of columns. Compact labels, colour coding, truncation with "+ more" and details on demand keep rows readable.',
+              'Patient lists and profiles carry a lot of information. Clear columns, colour-coded labels and cards grouped by type keep them readable.',
           },
           {
-            title: 'Context without leaving the page',
+            title: 'One step at a time',
             detail:
-              'Side panels, popovers and dialogs show details on top of the table, so people keep their place in the list.',
-          },
-          {
-            title: 'Careful with actions that matter',
-            detail:
-              'Dismissing an item asks for a reason, and dismissed items can always be brought back.',
-          },
-          {
-            title: 'Clear feedback',
-            detail:
-              'Disabled buttons explain what is missing, required fields are marked, and limits such as message length are shown before an error happens.',
+              'A population leads to one patient, and one patient leads to their details. Each screen shows more about less.',
           },
         ],
       },
@@ -588,7 +320,7 @@ export const projects: Project[] = [
         label: 'Collaboration',
         heading: 'Collaboration and development',
         body: [
-          'I work alongside the Design Team, where each designer owns different modules and we share one design system, so the product feels like one product even though many people design it. I work with the Product Team and the Engineering Team as features move from design to development, and keep refining my areas as requirements change.',
+          'I work alongside the Design Team, where each designer owns different modules and we share one design system, so the product feels like one product even though many people design it. I work with the Product Team and the Engineering Team as features move from design to development, and keep refining my screens as requirements change.',
         ],
       },
       {
@@ -597,8 +329,8 @@ export const projects: Project[] = [
         label: 'Outcome',
         heading: 'Outcome and ongoing development',
         items: [
-          { detail: 'Designed core workflows across three product areas of a large healthcare platform: Management, Monitoring and Communication.' },
-          { detail: 'Made dense clinical and billing information easier to scan, with consistent tabs, filters, labels and dialogs across modules.' },
+          { detail: 'Designed the Patient Overview and Patient Profile, the two screens that take a professional from a whole population to one patient.' },
+          { detail: 'Made dense patient information easier to scan, with consistent tabs, filters, labels and cards.' },
           { detail: 'Keep refining them with the Product Team and Engineering Team as requirements change.' },
         ],
       },
@@ -612,6 +344,7 @@ export const projects: Project[] = [
     summary:
       'Design Plus, the design system behind a growing healthcare SaaS platform. Built by our Design Team alongside the product, it gave designers and engineers one shared foundation. I designed the tables, modals, tooltips, action tooltips, toggles and checkboxes.',
     type: 'Design system · Healthcare SaaS',
+    category: 'Design System',
     year: '',
     role: 'UI/UX Designer',
     team: 'Design Team',
@@ -888,6 +621,7 @@ export const projects: Project[] = [
     summary:
       'A complete brand identity for Cloudtech, a technology company. The project included a Morse code-inspired logo, a visual language for digital platforms, and a company website designed and built in Framer.',
     type: 'Brand identity · Website',
+    category: 'Brand Identity',
     year: '',
     role: 'Graphic Designer',
     timeline: '2 weeks',

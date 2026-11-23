@@ -129,7 +129,7 @@ export function CaseStudy() {
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
               {project.sections.map((section) => (
-                <li key={section.id} className={section.kind === 'timeline' || section.nested ? 'pl-3' : undefined}>
+                <li key={section.id} className={section.kind === 'chapter' || section.nested ? 'pl-3' : undefined}>
                   <button
                     type="button"
                     onClick={() => scrollToId(section.id)}
@@ -144,7 +144,7 @@ export function CaseStudy() {
                         activeSection === section.id ? 'w-4 bg-accent' : 'w-0 bg-line-strong group-hover:w-2'
                       }`}
                     />
-                    {section.kind === 'timeline' && (
+                    {section.kind === 'chapter' && (
                       <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
                         {section.number}
                       </span>
@@ -165,7 +165,12 @@ export function CaseStudy() {
               className="flex gap-4 rounded-lg border border-line bg-surface/60 p-5 text-[0.9375rem] text-ink-muted"
             >
               <Lock aria-hidden="true" className="mt-1 size-4 shrink-0" />
-              <p>{project.confidentiality}</p>
+              <div>
+                <p className="mb-2 inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium tracking-[0.08em] text-accent">
+                  NDA
+                </p>
+                <p>{project.confidentiality}</p>
+              </div>
             </Reveal>
           )}
           {project.sections.map((section, index) => (

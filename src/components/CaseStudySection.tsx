@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowDown, ArrowRight } from 'lucide-react'
 import type { CaseStudySection as Section, DesignItem } from '../content/types'
 import { ImageGallery } from './ImageGallery'
 import { Media } from './Media'
@@ -20,6 +20,13 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
     <ol className="space-y-16 lg:space-y-20">
       {items.map((item, i) => (
         <li key={i}>
+          {item.trigger && (
+            <p className="mb-8 flex items-center gap-3 text-sm text-ink-muted">
+              <ArrowDown aria-hidden="true" className="size-4 shrink-0 text-accent" />
+              {item.trigger}
+              <span aria-hidden="true" className="h-px flex-1 bg-line" />
+            </p>
+          )}
           {(item.title || item.rationale || (item.points && item.points.length > 0)) && (
             <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
               {/* Without points, the text spans the full width of the image below it. */}
@@ -57,26 +64,6 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
   )
 }
 
-/** A bar of equal month segments with the timeline's own period highlighted. */
-function PeriodBar({ from, to, total, period }: { from: number; to: number; total: number; period: string }) {
-  return (
-    <div>
-      <div aria-hidden="true" className="flex gap-1">
-        {Array.from({ length: total }, (_, i) => (
-          <span key={i} className={`h-1.5 flex-1 rounded-full ${i + 1 >= from && i + 1 <= to ? 'bg-accent' : 'bg-line'}`} />
-        ))}
-      </div>
-      <p className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 text-sm text-ink-muted">
-        <span>
-          <span className="sr-only">Time period: </span>
-          {period}
-        </span>
-        <span className="text-ink-subtle">Part of about {total} months of work shown</span>
-      </p>
-    </div>
-  )
-}
-
 /** One case-study section. The layout adapts to the kind of content. */
 export function CaseStudySection({ section, index, slug }: CaseStudySectionProps) {
   const headingId = `${section.id}-heading`
@@ -86,8 +73,8 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
     <section id={section.id} aria-labelledby={headingId} className="scroll-mt-24">
       <Reveal variant="stagger" className="rule-draw rule-draw-top pt-8 lg:pt-10">
         <p className="eyebrow flex gap-3">
-          {section.kind === 'timeline' ? (
-            <span>Timeline {section.number}</span>
+          {section.kind === 'chapter' ? (
+            <span>Part {section.number}</span>
           ) : (
             <>
               <span aria-hidden="true" className="font-mono">
@@ -123,6 +110,16 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                 ))}
               </div>
             ) : null}
+            {section.stats && (
+              <ul className="grid grid-cols-3 gap-3 sm:gap-4">
+                {section.stats.map((stat) => (
+                  <li key={stat.label} className="rounded-lg border border-line bg-surface/60 p-4 sm:p-6">
+                    <p className="font-display text-[2rem] leading-none tabular-nums sm:text-[2.75rem]">{stat.value}</p>
+                    <p className="mt-3 text-sm font-medium text-ink-muted">{stat.label}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
             {section.body?.length ? section.intro && <p className="font-medium">{section.intro}</p> : <Intro text={section.intro} />}
             <ul className="divide-y divide-line">
               {section.items.map((item, i) => (
@@ -288,9 +285,8 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
           </>
         )}
 
-        {section.kind === 'timeline' && (
+        {section.kind === 'chapter' && (
           <>
-            <PeriodBar from={section.span.from} to={section.span.to} total={section.totalMonths} period={section.period} />
             <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
               {section.body.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>

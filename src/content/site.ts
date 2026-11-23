@@ -13,9 +13,9 @@ export const site: SiteConfig = {
   timeZone: null,
   availability: 'Open to remote and international product design roles',
 
-  headline: 'Designing healthcare products where *workflow, system and brand* hold together.',
+  headline: 'Digital stories, *clearly told*.',
   intro:
-    'I’m Almedina, a Product Designer. I start from how people actually work, then shape structured, functional interfaces and the design systems behind them, so each screen is simple to use and consistent with the rest of the product. My work spans complex healthcare SaaS workflows, the component library that supports them, and the visual identity that gives a product its voice.',
+    'I am Almedina, Product Designer.\nMy work spans complex healthcare SaaS workflows and the component libraries that support them, alongside the visual identities that give products their voice.',
 
   // e.g. 'hello@yourname.com'
   email: 'termkollialmedina01@gmail.com',

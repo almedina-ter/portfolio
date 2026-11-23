@@ -173,6 +173,36 @@ export interface ChapterSection extends SectionBase {
   groups: { title: string; subtitle?: string; intro?: string; items: DesignItem[] }[]
 }
 
+/** One callout on an annotated screen. Positions are in pixels of the screen image. */
+export interface ScreenNote {
+  /** Short label drawn on the screen, e.g. "Add patient". */
+  label: string
+  /** The design decision it points to, written below the screen. */
+  text: string
+  /** Which side margin the label sits in. */
+  side: 'left' | 'right'
+  /** Where the arrow ends, on the interface element it explains. */
+  target: { x: number; y: number }
+  /** Height of the line's horizontal run. Choose a gap between rows or cards so the arrow never crosses content. Defaults to the target's height. */
+  via?: number
+  /** Height of the label in the margin. Defaults to `via`. Labels closer than about 90px are pushed apart automatically. */
+  labelY?: number
+}
+
+/**
+ * One main screen explained with callouts, followed by closer looks at selected
+ * parts of it. Every annotated section uses the same presentation.
+ */
+export interface AnnotatedSection extends SectionBase {
+  kind: 'annotated'
+  body: string[]
+  /** The full screen. Needs width and height so callouts can be placed on it. */
+  media: MediaAsset
+  notes: ScreenNote[]
+  /** Closer looks, each a crop of the screen. Keep them the same shape. */
+  details: MediaAsset[]
+}
+
 export type CaseStudySection =
   | TextSection
   | ListSection
@@ -183,6 +213,7 @@ export type CaseStudySection =
   | GallerySection
   | OutcomesSection
   | ChapterSection
+  | AnnotatedSection
 
 export interface Project {
   slug: string
@@ -190,6 +221,8 @@ export interface Project {
   client: string
   summary: string
   type: string
+  /** Short discipline label shown on the homepage, e.g. "Product Design". */
+  category?: string
   year: string
   role: string
   team?: string

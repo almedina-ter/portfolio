@@ -16,6 +16,7 @@
   --color-line-strong: #b9b2a6;
   --color-accent: #a83f1c; /* 5.6:1 on paper */
   --color-positive: #2f7a4b;
+  --color-annotation: #108d8c; /* callouts on annotated screens, matching the existing annotated mockups */
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;

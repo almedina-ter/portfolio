@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowRight } from 'lucide-react'
 import type { CaseStudySection as Section, DesignItem } from '../content/types'
+import { AnnotatedMockup } from './AnnotatedMockup'
 import { ImageGallery } from './ImageGallery'
 import { Media } from './Media'
 import { Reveal } from './Reveal'
@@ -305,6 +306,21 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                   </div>
                 </div>
               ))}
+            </div>
+          </>
+        )}
+
+        {section.kind === 'annotated' && (
+          <>
+            <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
+              {section.body.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+            <AnnotatedMockup media={section.media} notes={section.notes} hintBase={`${assetFolder}/${section.id}`} />
+            <div className="pt-4">
+              <p className="eyebrow mb-4">Closer look</p>
+              <ImageGallery images={section.details} layout="triptych" iconPosition="bottom" hintBase={`${assetFolder}/${section.id}-detail`} />
             </div>
           </>
         )}

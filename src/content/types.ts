@@ -97,6 +97,8 @@ export interface ListSection extends SectionBase {
   kind: 'list'
   /** Optional paragraphs before the list. The first one is set larger. */
   body?: string[]
+  /** Key figures shown as cards between the paragraphs and the list. */
+  stats?: { value: string; label: string }[]
   /** A lead-in for the list, e.g. "My role covered:". */
   intro?: string
   /** Plain items, or items with a bold label, e.g. { title: 'Logo design', detail: '…' }. */
@@ -146,32 +148,28 @@ export interface ProcessSection extends SectionBase {
   steps: { title: string; detail: string; media?: MediaAsset }[]
 }
 
-/** One item inside a decisions or timeline section: a short write-up with optional points and an image. */
+/** One item inside a decisions or chapter section: a short write-up with optional points and an image. */
 export interface DesignItem {
   /** Leave out when the section heading already names the item. */
   title?: string
   rationale?: string
   points?: string[]
   media?: MediaAsset
+  /** The action that leads into this item from the one before it, e.g. "Select a patient". Shown as a connector. */
+  trigger?: string
 }
 
 /**
- * One chapter of a contribution that is split into stages. Each timeline has its
- * own heading, period, description and the design work that belongs to it.
+ * One chapter of a contribution. Each chapter has its own heading, introduction
+ * and groups of related screens, and gets its own entry in "On this page".
  */
-export interface TimelineSection extends SectionBase {
-  kind: 'timeline'
-  /** Position in the sequence, shown as "Timeline 01". */
+export interface ChapterSection extends SectionBase {
+  kind: 'chapter'
+  /** Position in the sequence, shown above the heading as "Part 01". */
   number: string
-  /** Time period in words, e.g. "Months 1 to 4". Avoid dates you cannot back up. */
-  period: string
-  /** First and last month of the period within the involvement, used to draw the period bar. */
-  span: { from: number; to: number }
-  /** Total months of involvement that the period bar is drawn against. */
-  totalMonths: number
-  /** Description and context. The first paragraph is set larger. */
+  /** Introduction. The first paragraph is set larger. */
   body: string[]
-  /** The product areas and design work inside this timeline. */
+  /** The screens and design work inside this chapter. */
   groups: { title: string; subtitle?: string; intro?: string; items: DesignItem[] }[]
 }
 
@@ -184,7 +182,7 @@ export type CaseStudySection =
   | ProcessSection
   | GallerySection
   | OutcomesSection
-  | TimelineSection
+  | ChapterSection
 
 export interface Project {
   slug: string

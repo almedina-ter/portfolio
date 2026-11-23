@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router'
 import { ArrowDown, ArrowRight } from 'lucide-react'
-import { about } from '../content/about'
+import { publishedProjects } from '../content/projects'
 import { site } from '../content/site'
 import { clamp, subscribeScroll } from '../lib/motion'
 import { scrollToId } from '../lib/scroll'
@@ -18,6 +18,8 @@ const delay = (ms: number) => ({ '--load-delay': `${ms}ms` }) as CSSProperties
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
   const [scrolled, setScrolled] = useState(false)
+  const featured = publishedProjects.filter((project) => project.featured)
+  const work = featured.length ? featured : publishedProjects
 
   useEffect(() => {
     const section = sectionRef.current
@@ -66,17 +68,20 @@ export function Hero() {
 
       <div className="relative mt-16 lg:mt-20">
         <ul
-          aria-label="Disciplines"
+          aria-label="Selected projects"
           className="rule-draw rule-draw-top flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm text-ink-muted lg:pr-28"
           data-revealed=""
           style={{ '--reveal-delay': '500ms' } as CSSProperties}
         >
-          {about.capabilities.map((capability, index) => (
-            <li key={capability.title} className="flex items-center gap-3 load-in" style={delay(760 + index * 70)}>
-              <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              {capability.title}
+          {work.map((project, index) => (
+            <li key={project.slug} className="load-in" style={delay(760 + index * 70)}>
+              <Link to={`/work/${project.slug}`} className="group flex items-center gap-3 transition-colors hover:text-ink">
+                <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className="text-ink">{project.title}</span>
+                <span className="text-ink-subtle">{project.type.split(' · ')[0]}</span>
+              </Link>
             </li>
           ))}
         </ul>

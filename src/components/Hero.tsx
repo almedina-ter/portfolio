@@ -38,7 +38,7 @@ export function Hero() {
       className="relative container-page pt-14 pb-16 sm:pt-20 lg:flex lg:min-h-[max(100dvh,54rem)] lg:flex-col lg:justify-between lg:pt-28 lg:pb-20"
     >
       <div className="hero-drift grid items-stretch gap-x-10 min-[1440px]:grid-cols-[minmax(0,1fr)_auto]">
-        <div>
+        <div className="flex flex-col min-[1440px]:min-h-[16.5rem] min-[1440px]:justify-center">
           <p className="eyebrow load-in">
             {site.role}
             {site.location ? ` · ${site.location}` : ''}

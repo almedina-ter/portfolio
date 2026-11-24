@@ -128,20 +128,12 @@ export function CaseStudy() {
             <p className="mt-1 font-display text-xl leading-tight">{project.title}</p>
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
-              {project.sections.map((section, i) => {
-                const first = section.nested && !project.sections[i - 1]?.nested
-                const last = section.nested && !project.sections[i + 1]?.nested
+              {project.sections.map((section) => {
                 return (
                 <li key={section.id} className={section.nested ? 'relative ml-1.5 pl-4' : undefined}>
                   {section.nested && (
-                    <>
-                      {/* Branch: a vertical line down the group with a short tick into each entry. */}
-                      <span
-                        aria-hidden="true"
-                        className={`absolute left-0 w-px bg-line-strong ${first ? 'top-1/2' : '-top-0.5'} ${last ? 'bottom-1/2' : '-bottom-0.5'}`}
-                      />
-                      <span aria-hidden="true" className="absolute top-1/2 left-0 h-px w-3 bg-line-strong" />
-                    </>
+                    /* A small elbow marking this entry as a sub-section of the one above. */
+                    <span aria-hidden="true" className="absolute top-1/2 left-0 size-2 -translate-y-2 rounded-bl-[2px] border-b border-l border-ink-subtle/70" />
                   )}
                   <button
                     type="button"

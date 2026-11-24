@@ -92,7 +92,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
   const assetFolder = `images/projects/${slug}`
 
   return (
-    <section id={section.id} aria-labelledby={headingId} className="scroll-mt-24">
+    <section id={section.id} aria-labelledby={headingId} className="scroll-mt-32 lg:scroll-mt-24">
       <Reveal variant="fade" className="rule-draw rule-draw-top pt-8 lg:pt-10">
         <p className="eyebrow flex gap-3">
           <span aria-hidden="true" className="font-mono">

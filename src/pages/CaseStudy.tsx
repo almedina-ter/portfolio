@@ -6,6 +6,7 @@ import { CaseStudySection } from '../components/CaseStudySection'
 import { ContactSection } from '../components/ContactSection'
 import { HeroOrbit } from '../components/HeroOrbit'
 import { Media } from '../components/Media'
+import { ProjectBar } from '../components/ProjectBar'
 import { ProjectMeta } from '../components/ProjectMeta'
 import { ReadingProgress } from '../components/ReadingProgress'
 import { Reveal } from '../components/Reveal'
@@ -34,56 +35,9 @@ export function CaseStudy() {
   return (
     <article>
       <ReadingProgress target={storyRef} />
-      <header className="container-page pt-6 lg:pt-12">
-        <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
-          <nav aria-label="Breadcrumb">
-            <ol className="flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
-              <li>
-                <Link to="/" className="inline-flex min-h-11 items-center transition-colors hover:text-ink">
-                  Portfolio
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-line-strong">
-                /
-              </li>
-              <li>
-                <Link to="/" state={{ scrollTo: 'work' }} className="inline-flex min-h-11 items-center transition-colors hover:text-ink">
-                  Selected work
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-line-strong">
-                /
-              </li>
-              <li aria-current="page" className="text-ink">
-                {project.title}
-              </li>
-            </ol>
-          </nav>
-          {publishedProjects.length > 1 && (
-            <nav aria-label="Projects" className="flex items-center gap-1.5">
-              <span className="mr-2 text-sm text-ink-subtle tabular-nums">
-                Project {number(position)} of {String(publishedProjects.length).padStart(2, '0')}
-              </span>
-              {publishedProjects.map((item, i) => {
-                const current = item.slug === project.slug
-                return (
-                  <Link
-                    key={item.slug}
-                    to={`/work/${item.slug}`}
-                    aria-label={item.title}
-                    aria-current={current ? 'page' : undefined}
-                    className={`inline-flex size-10 items-center justify-center rounded-full border font-mono text-xs transition-colors duration-(--duration-micro) ${
-                      current ? 'border-ink bg-ink text-paper' : 'border-line-strong text-ink-muted hover:border-ink hover:text-ink'
-                    }`}
-                  >
-                    {number(i)}
-                  </Link>
-                )
-              })}
-            </nav>
-          )}
-        </div>
-        <div className="mt-10 flex flex-wrap items-center gap-3 load-in">
+      <ProjectBar project={project} projects={publishedProjects} position={position} />
+      <header className="container-page">
+        <div className="mt-8 flex flex-wrap items-center gap-3 load-in">
           <p className="eyebrow">{subtitle || `Case study ${number(position)}`}</p>
           <SampleTag show={project.sample === true} />
         </div>
@@ -123,7 +77,7 @@ export function CaseStudy() {
 
       <div ref={storyRef} className="container-page mt-16 grid gap-12 lg:mt-24 lg:grid-cols-[11rem_minmax(0,1fr)] xl:gap-16">
         <nav aria-label="On this page" className="hidden lg:block">
-          <div className="sticky top-10">
+          <div className="sticky top-20">
             <p className="font-mono text-xs text-ink-subtle">{number(position)}</p>
             <p className="mt-1 font-display text-xl leading-tight">{project.title}</p>
             <p className="eyebrow mt-8 mb-4">On this page</p>

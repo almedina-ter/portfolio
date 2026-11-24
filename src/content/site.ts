@@ -13,7 +13,7 @@ export const site: SiteConfig = {
   timeZone: null,
   availability: 'Open to remote and international product design roles',
 
-  headline: 'Designing clear products\nfor complex problems.',
+  headline: 'Designing *clear* products\nfor complex problems.',
   intro:
     'I am Almedina, a Product Designer, specialising in healthcare software design, design systems, brand identities and creating your digital story.',
 

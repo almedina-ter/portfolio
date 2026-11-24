@@ -23,9 +23,9 @@ export function SiteNav() {
   return (
     <aside className="sticky top-0 hidden h-dvh flex-col justify-between overflow-y-auto border-r border-line px-8 py-10 lg:flex">
       <div>
-        <Link to="/" className="group flex items-center gap-3">
-          <LogoMark className="logo-wipe h-9 w-auto shrink-0 text-ink transition-transform duration-(--duration-ui) ease-(--ease-out) group-hover:-rotate-6" />
-          <span className="min-w-0">
+        <Link to="/" className="group flex items-start gap-3">
+          <LogoMark className="logo-wipe h-[2.35rem] w-auto shrink-0 text-ink transition-transform duration-(--duration-ui) ease-(--ease-out) group-hover:-rotate-6" />
+          <span className="min-w-0 -mt-px">
             <span className="block font-display text-[1.2rem] leading-none tracking-tight">{site.name}</span>
             <span className="mt-1.5 block text-sm text-ink-muted">{site.role}</span>
           </span>

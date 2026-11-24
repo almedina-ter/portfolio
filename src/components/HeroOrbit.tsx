@@ -32,8 +32,9 @@ export function HeroOrbit({ className = '', delay = 0 }: { className?: string; d
   )
 
   return (
-    <div aria-hidden="true" className={`aspect-square ${className}`} style={{ '--load-delay': `${delay}ms` } as CSSProperties}>
+    <div aria-hidden="true" className={`aspect-square ${className}`} data-orbit style={{ '--load-delay': `${delay}ms` } as CSSProperties}>
       <div className="relative size-full">
+      <div aria-hidden="true" className="orbit-glow absolute inset-[22%]" />
       <svg viewBox="0 0 400 400" className="absolute inset-0 size-full overflow-visible">
         <defs>
           <path id="orbit-wide" d={wide} />

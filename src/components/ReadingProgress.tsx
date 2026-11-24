@@ -24,7 +24,7 @@ export function ReadingProgress({ target }: { target: RefObject<HTMLElement | nu
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-x-0 top-0 z-50 h-0.5">
-      <div ref={barRef} className="h-full origin-left bg-accent [transform:scaleX(0)]" />
+      <div ref={barRef} className="bg-gradient-brand h-full origin-left [transform:scaleX(0)]" />
     </div>
   )
 }

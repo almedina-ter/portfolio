@@ -16,6 +16,7 @@
   --color-line-strong: #b9b2a6;
   --color-accent: #a83f1c; /* 5.6:1 on paper */
   --color-positive: #2f7a4b;
+  --gradient-brand: linear-gradient(120deg, #ff4de3 0%, #a77dff 50%, #4fb0ff 100%);
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -511,9 +512,9 @@ html.motion #mobile-menu:not([hidden]) .menu-item {
 /* Hero orbit: the mark floats gently and its spark twinkles. */
 .orbit-text {
   font-family: var(--font-sans);
-  font-size: 19px;
+  font-size: 26px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   fill: var(--color-ink-muted);
 }
 .orbit-text-soft {
@@ -553,4 +554,24 @@ html.motion .orbit-mark .logo-spark {
   transform-box: fill-box;
   transform-origin: center;
   animation: spark-twinkle 5.5s ease-in-out infinite;
+}
+
+/* Brand gradient (pink to blue). Used sparingly: one word, a glow, the progress line and active markers. */
+.text-gradient {
+  background-image: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-gradient-brand {
+  background-image: var(--gradient-brand);
+}
+.orbit-glow {
+  background: var(--gradient-brand);
+  filter: blur(46px);
+  opacity: 0.32;
+  border-radius: 9999px;
+}
+:root[data-theme='dark'] .orbit-glow {
+  opacity: 0.4;
 }

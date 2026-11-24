@@ -39,20 +39,17 @@ export function Hero() {
     <section
       ref={sectionRef}
       aria-labelledby="hero-heading"
-      className="relative container-page pt-14 pb-16 sm:pt-20 lg:flex lg:min-h-[96dvh] lg:flex-col lg:justify-between lg:pt-28 lg:pb-20"
+      className="relative container-page pt-14 pb-16 sm:pt-20 lg:flex lg:min-h-[max(100dvh,54rem)] lg:flex-col lg:justify-between lg:pt-28 lg:pb-20"
     >
-      <div className="hero-drift relative">
-        <HeroOrbit className="load-in absolute top-0 right-0 hidden w-[17rem] min-[1440px]:block" delay={650} />
-        <p className="eyebrow load-in">
-          {site.role}
-          {site.location ? ` · ${site.location}` : ''}
-        </p>
-        <SplitHeading
-          id="hero-heading"
-          text={site.headline}
-          delay={120}
-          className="mt-6 font-display text-display"
-        />
+      <div className="hero-drift grid items-stretch gap-x-10 min-[1440px]:grid-cols-[minmax(0,1fr)_auto]">
+        <div>
+          <p className="eyebrow load-in">
+            {site.role}
+            {site.location ? ` · ${site.location}` : ''}
+          </p>
+          <SplitHeading id="hero-heading" text={site.headline} delay={120} className="mt-6 font-display text-display leading-[1.16]" />
+        </div>
+        <HeroOrbit className="load-in hidden h-full min-[1440px]:block" delay={650} />
       </div>
 
       <div className="hero-drift mt-14 lg:mt-0">

@@ -77,7 +77,7 @@ export function ProjectBar({ project, projects, position }: { project: Project; 
                   to={`/work/${item.slug}`}
                   aria-label={`${item.title}${current ? ' (current project)' : ''}`}
                   aria-current={current ? 'page' : undefined}
-                  className={`inline-flex size-10 items-center justify-center rounded-full border font-mono text-xs transition-colors duration-(--duration-micro) ${
+                  className={`inline-flex size-10 items-center justify-center rounded-full border font-number text-xs transition-colors duration-(--duration-micro) ${
                     current ? 'border-ink bg-ink text-paper' : 'border-line-strong text-ink-muted hover:border-ink hover:text-ink'
                   }`}
                 >

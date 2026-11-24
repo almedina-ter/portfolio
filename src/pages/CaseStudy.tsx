@@ -78,7 +78,7 @@ export function CaseStudy() {
       <div ref={storyRef} className="container-page mt-16 grid gap-12 lg:mt-24 lg:grid-cols-[11rem_minmax(0,1fr)] xl:gap-16">
         <nav aria-label="On this page" className="hidden lg:block">
           <div className="sticky top-20">
-            <p className="font-mono text-xs text-ink-subtle">{number(position)}</p>
+            <p className="font-number text-xs text-ink-subtle">{number(position)}</p>
             <p className="mt-1 font-display text-xl leading-tight">{project.title}</p>
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">

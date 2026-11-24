@@ -40,7 +40,7 @@ export function ImageGallery({ images, layout = 'grid', hintBase }: ImageGallery
           return (
             <li key={index} className={wide ? 'sm:col-span-2' : undefined}>
               <figure>
-                <Reveal variant="media" delay={layout === 'grid' ? (index % 2) * 120 : 0} className="rounded-lg">
+                <Reveal variant="media" delay={layout === 'grid' ? (index % 2) * 120 : 0} className="overflow-hidden rounded-lg">
                   <div className="reveal-zoom">
                     {image.src ? (
                       <button

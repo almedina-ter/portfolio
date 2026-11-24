@@ -28,7 +28,7 @@ export function CaseStudy() {
   const next = publishedProjects.length > 1 ? publishedProjects[(position + 1) % publishedProjects.length] : null
   const delay = (ms: number) => ({ '--load-delay': `${ms}ms` }) as CSSProperties
   const number = (index: number) => String(index + 1).padStart(2, '0')
-  const subtitle = [project.client, project.type].filter(Boolean).join(' · ')
+  const subtitle = project.type
 
   return (
     <article>
@@ -84,7 +84,6 @@ export function CaseStudy() {
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-3 load-in">
           <p className="eyebrow">{subtitle || `Case study ${number(position)}`}</p>
-          <span className="inline-flex items-center rounded-full bg-ink/5 px-3 py-1 text-xs font-medium text-ink-muted">{project.role}</span>
           <SampleTag show={project.sample === true} />
         </div>
         <SplitHeading text={project.title} delay={100} className="mt-5 font-display text-title" />

@@ -13,9 +13,9 @@ export const site: SiteConfig = {
   timeZone: null,
   availability: 'Open to remote and international product design roles',
 
-  headline: 'Designing *clear, considered* products for complex problems.',
+  headline: 'Designing *clear* products for complex problems.',
   intro:
-    'I am Almedina, Product Designer.\nI design healthcare software, design systems and brand identities.',
+    'I am Almedina, a Product Designer, specialising in healthcare software design, design systems, brand identities and creating your digital story.',
 
   // e.g. 'hello@yourname.com'
   email: 'termkollialmedina01@gmail.com',

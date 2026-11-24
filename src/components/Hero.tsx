@@ -6,6 +6,7 @@ import { site } from '../content/site'
 import { clamp, subscribeScroll } from '../lib/motion'
 import { scrollToId } from '../lib/scroll'
 import { SplitHeading } from './SplitHeading'
+import { ToolsMarquee } from './ToolsMarquee'
 import { Availability } from './SiteNav'
 
 const delay = (ms: number) => ({ '--load-delay': `${ms}ms` }) as CSSProperties
@@ -66,7 +67,9 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative mt-16 lg:mt-20">
+      <ToolsMarquee className="mt-14 lg:mt-0" />
+
+      <div className="relative mt-14 lg:mt-0">
         <ul
           aria-label="Selected projects"
           className="rule-draw rule-draw-top flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm text-ink-muted lg:pr-28"

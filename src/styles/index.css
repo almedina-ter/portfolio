@@ -590,3 +590,11 @@ html.motion .orbit-mark .logo-spark {
 .orbit-inverse .orbit-text-soft {
   fill: color-mix(in srgb, var(--color-paper) 75%, transparent);
 }
+
+.ring-label {
+  font-family: var(--font-sans);
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  fill: var(--color-ink);
+}

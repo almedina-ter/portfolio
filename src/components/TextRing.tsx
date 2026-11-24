@@ -9,7 +9,7 @@ const circle = `M${200 - R},200 a${R},${R} 0 1,1 ${2 * R},0 a${R},${R} 0 1,1 ${-
  * A single ring of slowly turning text, without the centre mark. A small accent for corners.
  * Decorative, so hidden from assistive technology. It stands still with reduced motion.
  */
-export function TextRing({ className = '' }: { className?: string }) {
+export function TextRing({ className = '', label }: { className?: string; label?: string }) {
   const [still, setStill] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
   useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -29,6 +29,11 @@ export function TextRing({ className = '' }: { className?: string }) {
         </textPath>
         {!still && <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="60s" repeatCount="indefinite" />}
       </text>
+      {label && (
+        <text x="200" y="200" textAnchor="middle" dominantBaseline="central" className="ring-label">
+          {label}
+        </text>
+      )}
     </svg>
   )
 }

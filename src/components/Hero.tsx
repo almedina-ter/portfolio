@@ -73,7 +73,16 @@ export function Hero() {
       <ToolsMarquee className="mt-14 lg:mt-0" />
 
       <div className="relative mt-14 lg:mt-0">
-        <TextRing className="load-in absolute right-0 bottom-full mb-1 hidden w-[5.5rem] lg:block" />
+        <button
+          type="button"
+          aria-label="Scroll to selected work"
+          onClick={() => scrollToId('work')}
+          data-hidden={scrolled ? '' : undefined}
+          className="scroll-cue load-in absolute right-0 bottom-full mb-1 hidden w-[6rem] rounded-full lg:block"
+          style={delay(1100)}
+        >
+          <TextRing label="SCROLL" className="w-full" />
+        </button>
         <ul
           aria-label="Selected projects"
           className="rule-draw rule-draw-top flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm text-ink-muted lg:pr-28"
@@ -92,15 +101,6 @@ export function Hero() {
           ))}
         </ul>
 
-        <div
-          aria-hidden="true"
-          data-hidden={scrolled ? '' : undefined}
-          className="scroll-cue load-in absolute right-0 bottom-0 hidden items-center gap-3 text-xs tracking-[0.08em] text-ink-subtle uppercase lg:flex"
-          style={delay(1100)}
-        >
-          Scroll
-          <span className="scroll-cue-line block h-10 w-px" />
-        </div>
       </div>
     </section>
   )

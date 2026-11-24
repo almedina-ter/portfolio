@@ -17,7 +17,7 @@ export function ContactSection({ className = '' }: { className?: string }) {
         variant="panel"
         className="relative rounded-lg bg-ink px-6 py-14 text-paper [&_:focus-visible]:outline-paper sm:px-12 lg:px-16 lg:py-20"
       >
-        <HeroOrbit inverse className="absolute top-8 right-8 hidden w-44 sm:block lg:top-10 lg:right-12 lg:w-52" />
+        <HeroOrbit inverse className="absolute top-8 right-8 hidden w-28 sm:block lg:top-10 lg:right-12 lg:w-36" />
         <Reveal variant="stagger" delay={200}>
           <p className="eyebrow text-paper/70">Contact</p>
           <h2 id="contact-cta-heading" className="mt-4 max-w-[18ch] font-display text-title text-balance">

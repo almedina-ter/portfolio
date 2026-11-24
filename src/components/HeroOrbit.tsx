@@ -2,7 +2,7 @@ import { useEffect, useState, type CSSProperties } from 'react'
 import { LogoMark } from './LogoMark'
 
 const PHRASE = 'CREATING DIGITAL STORIES  ·  '
-const REPEATS = 2
+const REPEATS = 3
 // Two crossing ellipses. Their perimeter (Ramanujan's approximation) sets how far the text travels per loop.
 const A = 190
 const B = 104
@@ -25,7 +25,7 @@ export function HeroOrbit({ className = '', delay = 0, inverse = false }: { clas
     return () => query.removeEventListener('change', onChange)
   }, [])
 
-  const text = PHRASE.repeat(REPEATS * 2)
+  const text = PHRASE.repeat(Math.round(REPEATS * 2))
   const textLength = PERIMETER * 2
   const motion = (
     <animate attributeName="startOffset" from={-PERIMETER} to={0} dur="70s" repeatCount="indefinite" />

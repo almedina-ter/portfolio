@@ -28,7 +28,7 @@
   --container-prose: 40rem;
   --sidebar-width: 17.5rem;
 
-  --text-display: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+  --text-display: clamp(2.5rem, 1.5rem + 3.4vw, 5rem);
   --text-display--line-height: 1;
   --text-display--letter-spacing: -0.02em;
   --text-title: clamp(1.875rem, 1.3rem + 2vw, 3.25rem);
@@ -593,8 +593,8 @@ html.motion .orbit-mark .logo-spark {
 
 .ring-label {
   font-family: var(--font-sans);
-  font-size: 46px;
+  font-size: 36px;
   font-weight: 400;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   fill: var(--color-ink);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, type CSSProperties } from 'react'
 import { Link } from 'react-router'
 import { ArrowDown, ArrowRight } from 'lucide-react'
 import { site } from '../content/site'
@@ -19,7 +19,6 @@ const delay = (ms: number) => ({ '--load-delay': `${ms}ms` }) as CSSProperties
  */
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
-  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -27,7 +26,6 @@ export function Hero() {
     const drift = window.matchMedia('(min-width: 48rem) and (prefers-reduced-motion: no-preference)')
     return subscribeScroll(() => {
       const y = window.scrollY
-      setScrolled(y > 24)
       if (drift.matches) section.style.setProperty('--hero-out', clamp(y / (section.offsetHeight * 0.9), 0, 1).toFixed(4))
       else section.style.removeProperty('--hero-out')
     })
@@ -51,7 +49,7 @@ export function Hero() {
       </div>
 
       <div className="hero-drift mt-14 lg:mt-0">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
           <div className="max-w-prose load-in" style={delay(480)}>
             <p className="text-lede whitespace-pre-line text-ink-muted">{site.intro}</p>
             <Availability className="mt-5 lg:hidden" />
@@ -74,8 +72,7 @@ export function Hero() {
           type="button"
           aria-label="Scroll to selected work"
           onClick={() => scrollToId('work')}
-          data-hidden={scrolled ? '' : undefined}
-          className="scroll-cue load-in w-[6rem] rounded-full"
+          className="load-in w-[6.5rem] rounded-full"
           style={delay(1100)}
         >
           <TextRing label="SCROLL" className="w-full" />

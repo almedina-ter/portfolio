@@ -134,6 +134,20 @@ export const projects: Project[] = [
             ],
           },
         ],
+        challenges: [
+          {
+            challenge: 'A clinic can have thousands of patients, and the right one has to be easy to find.',
+            opportunity: 'Summary figures, tabs with counts, filters and search narrow the list from one place.',
+          },
+          {
+            challenge: 'Each patient comes with many details, but a list can only show a few.',
+            opportunity: 'The table keeps to name, age, ID, status and activity, and View opens the rest.',
+          },
+          {
+            challenge: 'A patient’s information spans personal details, care team, vitals, medication and notes.',
+            opportunity: 'The details screen groups it into cards by type on one screen, with tabs for medical history and care plan.',
+          },
+        ],
       },
       {
         kind: 'screens',
@@ -195,6 +209,20 @@ export const projects: Project[] = [
               'Selecting an episode, such as the atrial flutter shown, opens it with its waveform, duration and other details.',
               'Message patient and Export report sit at the top of the screen.',
             ],
+          },
+        ],
+        challenges: [
+          {
+            challenge: 'Many patients produce a lot of heart rate, alert and recording data at once.',
+            opportunity: 'The overview leads with the heart rate chart, alert history and latest ECG, with one table for every patient.',
+          },
+          {
+            challenge: 'Detected episodes are only useful if the recordings behind them can be trusted.',
+            opportunity: 'Recording quality and review status sit beside the detected episodes.',
+          },
+          {
+            challenge: 'Going deeper should never mean getting lost.',
+            opportunity: 'Each step narrows the view, from all patients to one patient to one episode, with the episode list always on the side.',
           },
         ],
       },
@@ -259,6 +287,20 @@ export const projects: Project[] = [
             ],
           },
         ],
+        challenges: [
+          {
+            challenge: 'Doctors need to reach each other quickly without leaving the product.',
+            opportunity: 'Messaging lives inside the platform, with conversations and groups in one sidebar.',
+          },
+          {
+            challenge: 'A new message should be noticed without interrupting the work.',
+            opportunity: 'A notification shows who wrote and a preview, with a direct link to the conversation.',
+          },
+          {
+            challenge: 'Conversations often concern a specific patient.',
+            opportunity: 'A patient can be shared in a conversation as a card with a link to their profile.',
+          },
+        ],
       },
       {
         kind: 'insights',
@@ -317,7 +359,7 @@ export const projects: Project[] = [
     year: '',
     role: 'UI/UX Designer',
     team: 'Design Team',
-    timeline: 'About 1 month',
+    timeline: '1 month',
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/design-system/thumbnail.webp',
@@ -334,7 +376,7 @@ export const projects: Project[] = [
       aspect: '16 / 9',
     },
     confidentiality:
-      'The product I worked on at 91 Life is under a non-disclosure agreement, so it is not named here, and no product screens, patient data or business information are shown. This case study shares only the design system components I designed, with placeholder content, to show my role and process.',
+      'This product is under NDA, so it is not named here and its information stays confidential. This case study shares only the design system components I designed, with placeholder content, to show my role and process.',
     sections: [
       {
         kind: 'list',
@@ -589,7 +631,7 @@ export const projects: Project[] = [
     client: 'Cloudtech',
     summary:
       'A complete brand identity for Cloudtech, a technology company. The project included a Morse code-inspired logo, a visual language for digital platforms, and a company website designed and built in Framer.',
-    type: 'Brand identity · Website',
+    type: 'Brand design · Brand identity',
     category: 'Brand Identity',
     year: '',
     role: 'Graphic Designer',

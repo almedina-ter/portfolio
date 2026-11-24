@@ -57,6 +57,32 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
   )
 }
 
+/** Challenges, each paired with the opportunity it opened. */
+function ChallengeItems({ items }: { items: { challenge: string; opportunity: string }[] }) {
+  return (
+    <Reveal as="ol" variant="stagger" className="divide-y divide-line">
+      {items.map((item, i) => (
+        <li key={i} className="grid gap-4 py-6 first:pt-0 last:pb-0 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-8">
+          <div>
+            <p className="eyebrow">
+              <span aria-hidden="true" className="mr-3 font-mono">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              Challenge
+            </p>
+            <p className="mt-2 text-lg">{item.challenge}</p>
+          </div>
+          <ArrowRight aria-hidden="true" className="hidden size-5 text-accent md:mt-7 md:block" />
+          <div className="rounded-lg bg-surface/60 p-4 md:-my-1">
+            <p className="eyebrow">Opportunity</p>
+            <p className="mt-2 text-lg text-ink-muted">{item.opportunity}</p>
+          </div>
+        </li>
+      ))}
+    </Reveal>
+  )
+}
+
 /** One case-study section. The layout adapts to the kind of content. */
 export function CaseStudySection({ section, index, slug }: CaseStudySectionProps) {
   const headingId = `${section.id}-heading`
@@ -167,26 +193,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <div>
               <Intro text={section.intro} />
             </div>
-            <Reveal as="ol" variant="stagger" className="divide-y divide-line">
-              {section.items.map((item, i) => (
-                <li key={i} className="grid gap-4 py-6 first:pt-0 last:pb-0 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-8">
-                  <div>
-                    <p className="eyebrow">
-                      <span aria-hidden="true" className="mr-3 font-mono">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      Challenge
-                    </p>
-                    <p className="mt-2 text-lg">{item.challenge}</p>
-                  </div>
-                  <ArrowRight aria-hidden="true" className="hidden size-5 text-accent md:mt-7 md:block" />
-                  <div className="rounded-lg bg-surface/60 p-4 md:-my-1">
-                    <p className="eyebrow">Opportunity</p>
-                    <p className="mt-2 text-lg text-ink-muted">{item.opportunity}</p>
-                  </div>
-                </li>
-              ))}
-            </Reveal>
+            <ChallengeItems items={section.items} />
           </>
         )}
 
@@ -306,6 +313,12 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                 </li>
               ))}
             </ol>
+            {section.challenges && (
+              <div className="border-t border-line pt-10 lg:pt-12">
+                <h3 className="mb-8 text-xl font-medium">Challenges</h3>
+                <ChallengeItems items={section.challenges} />
+              </div>
+            )}
           </>
         )}
 
@@ -329,7 +342,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
               {section.items.map((item, i) => (
                 <li key={i}>
                   {item.value && <p className="font-display text-[2.75rem] leading-none">{item.value}</p>}
-                  <p className={`${item.value ? 'mt-3' : 'sm:pt-14'} text-ink-muted`}>{item.detail}</p>
+                  <p className={`${item.value ? 'mt-3' : section.items.some((entry) => entry.value) ? 'sm:pt-14' : ''} text-ink-muted`}>{item.detail}</p>
                 </li>
               ))}
             </Reveal>

@@ -173,6 +173,8 @@ export interface ScreensSection extends SectionBase {
     /** Short notes shown beside the screen. */
     notes: string[]
   }[]
+  /** Simple, to-the-point challenges for this area, each paired with how the design answers it. */
+  challenges?: { challenge: string; opportunity: string }[]
 }
 
 export type CaseStudySection =

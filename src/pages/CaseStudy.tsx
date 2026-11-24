@@ -84,7 +84,7 @@ export function CaseStudy() {
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-3 load-in">
           <p className="eyebrow">{subtitle || `Case study ${number(position)}`}</p>
-          <span className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">{project.role}</span>
+          <span className="inline-flex items-center rounded-full bg-ink/5 px-3 py-1 text-xs font-medium text-ink-muted">{project.role}</span>
           <SampleTag show={project.sample === true} />
         </div>
         <SplitHeading text={project.title} delay={100} className="mt-5 font-display text-title" />
@@ -129,7 +129,7 @@ export function CaseStudy() {
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
               {project.sections.map((section) => (
-                <li key={section.id} className={section.kind === 'chapter' || section.nested ? 'pl-3' : undefined}>
+                <li key={section.id} className={section.nested ? 'pl-3' : undefined}>
                   <button
                     type="button"
                     onClick={() => scrollToId(section.id)}
@@ -144,11 +144,6 @@ export function CaseStudy() {
                         activeSection === section.id ? 'w-4 bg-accent' : 'w-0 bg-line-strong group-hover:w-2'
                       }`}
                     />
-                    {section.kind === 'chapter' && (
-                      <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
-                        {section.number}
-                      </span>
-                    )}
                     {section.label ?? section.heading}
                   </button>
                 </li>

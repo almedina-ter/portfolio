@@ -1,6 +1,5 @@
 import { ArrowDown, ArrowRight } from 'lucide-react'
 import type { CaseStudySection as Section, DesignItem } from '../content/types'
-import { AnnotatedMockup } from './AnnotatedMockup'
 import { ImageGallery } from './ImageGallery'
 import { Media } from './Media'
 import { Reveal } from './Reveal'
@@ -21,13 +20,6 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
     <ol className="space-y-16 lg:space-y-20">
       {items.map((item, i) => (
         <li key={i}>
-          {item.trigger && (
-            <p className="mb-8 flex items-center gap-3 text-sm text-ink-muted">
-              <ArrowDown aria-hidden="true" className="size-4 shrink-0 text-accent" />
-              {item.trigger}
-              <span aria-hidden="true" className="h-px flex-1 bg-line" />
-            </p>
-          )}
           {(item.title || item.rationale || (item.points && item.points.length > 0)) && (
             <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10">
               {/* Without points, the text spans the full width of the image below it. */}
@@ -74,16 +66,10 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
     <section id={section.id} aria-labelledby={headingId} className="scroll-mt-24">
       <Reveal variant="stagger" className="rule-draw rule-draw-top pt-8 lg:pt-10">
         <p className="eyebrow flex gap-3">
-          {section.kind === 'chapter' ? (
-            <span>Part {section.number}</span>
-          ) : (
-            <>
-              <span aria-hidden="true" className="font-mono">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              {section.label}
-            </>
-          )}
+          <span aria-hidden="true" className="font-mono">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          {section.label}
         </p>
         <h2 id={headingId} className="mt-4 font-display text-heading">
           {section.heading}
@@ -286,42 +272,40 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
           </>
         )}
 
-        {section.kind === 'chapter' && (
+        {section.kind === 'screens' && (
           <>
             <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
               {section.body.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
-            <div className="space-y-16 pt-8 lg:space-y-20 lg:pt-10">
-              {section.groups.map((group, g) => (
-                <div key={group.title} className={g > 0 ? 'border-t border-line pt-16 lg:pt-20' : undefined}>
-                  <div>
-                    <h3 className="font-display text-heading">{group.title}</h3>
-                    {group.subtitle && <p className="mt-4 text-lede text-ink">{group.subtitle}</p>}
-                    {group.intro && <p className="mt-3 text-ink-muted">{group.intro}</p>}
+            <ol className="space-y-16 pt-4 lg:space-y-20">
+              {section.screens.map((screen, i) => (
+                <li key={i}>
+                  {screen.trigger && (
+                    <p className="mb-8 flex items-center gap-3 text-sm text-ink-muted">
+                      <ArrowDown aria-hidden="true" className="size-4 shrink-0 text-accent" />
+                      {screen.trigger}
+                      <span aria-hidden="true" className="h-px flex-1 bg-line" />
+                    </p>
+                  )}
+                  <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_14rem] lg:items-start lg:gap-10">
+                    <ImageGallery images={[screen.media]} layout="stack" hintBase={`${assetFolder}/${section.id}-${i + 1}`} />
+                    <div>
+                      <h3 className="text-xl font-medium">{screen.title}</h3>
+                      <ul className="mt-4 divide-y divide-line text-[0.9375rem] text-ink-muted">
+                        {screen.notes.map((note, j) => (
+                          <li key={j} className="flex gap-3 py-2.5 first:pt-0 last:pb-0">
+                            <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
+                            {note}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div className="mt-10">
-                    <StackedItems items={group.items} hintBase={`${assetFolder}/${section.id}-${g + 1}`} />
-                  </div>
-                </div>
+                </li>
               ))}
-            </div>
-          </>
-        )}
-
-        {section.kind === 'annotated' && (
-          <>
-            <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
-              {section.body.map((paragraph, i) => (
-                <p key={i}>{paragraph}</p>
-              ))}
-            </div>
-            <AnnotatedMockup media={section.media} notes={section.notes} hintBase={`${assetFolder}/${section.id}`} />
-            <div className="pt-4">
-              <p className="eyebrow mb-4">Closer look</p>
-              <ImageGallery images={section.details} layout="triptych" iconPosition="bottom" hintBase={`${assetFolder}/${section.id}-detail`} />
-            </div>
+            </ol>
           </>
         )}
 

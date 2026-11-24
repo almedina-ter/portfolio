@@ -7,9 +7,7 @@ import { Reveal } from './Reveal'
 
 interface ImageGalleryProps {
   images: MediaAsset[]
-  layout?: 'grid' | 'stack' | 'triptych'
-  /** Where the enlarge icon sits on each image. Use "bottom" when the top right of the image matters. */
-  iconPosition?: 'top' | 'bottom'
+  layout?: 'grid' | 'stack'
   hintBase?: string
 }
 
@@ -17,7 +15,7 @@ interface ImageGalleryProps {
  * Captioned project images. Real images open in a full-size viewer so detailed
  * UI can be inspected; placeholders are not clickable.
  */
-export function ImageGallery({ images, layout = 'grid', hintBase, iconPosition = 'top' }: ImageGalleryProps) {
+export function ImageGallery({ images, layout = 'grid', hintBase }: ImageGalleryProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const viewable = images.map((image, index) => ({ image, index })).filter(({ image }) => image.src)
@@ -36,7 +34,7 @@ export function ImageGallery({ images, layout = 'grid', hintBase, iconPosition =
 
   return (
     <>
-      <ul className={layout === 'grid' ? 'grid gap-6 sm:grid-cols-2' : layout === 'triptych' ? 'grid gap-6 md:grid-cols-3 md:gap-4' : 'grid gap-10'}>
+      <ul className={layout === 'grid' ? 'grid gap-6 sm:grid-cols-2' : 'grid gap-10'}>
         {images.map((image, index) => {
           const wide = layout === 'grid' && images.length % 2 === 1 && index === images.length - 1
           return (
@@ -55,7 +53,7 @@ export function ImageGallery({ images, layout = 'grid', hintBase, iconPosition =
                           sizes={layout === 'grid' && !wide ? '(min-width: 640px) 40vw, 100vw' : '80vw'}
                           imgClassName="transition-[scale] duration-(--duration-large) ease-out motion-safe:group-hover:scale-[1.03]"
                         />
-                        <span className={`absolute right-3 ${iconPosition === 'top' ? 'top-3' : 'bottom-3'} inline-flex size-9 items-center justify-center rounded-full bg-paper/90 text-ink shadow-sm transition-[scale] duration-(--duration-micro) ease-out group-hover:scale-110`}>
+                        <span className="absolute top-3 right-3 inline-flex size-9 items-center justify-center rounded-full bg-paper/90 text-ink shadow-sm transition-[scale] duration-(--duration-micro) ease-out group-hover:scale-110">
                           <Maximize2 aria-hidden="true" className="size-4" />
                         </span>
                         <span className="sr-only">View larger: {image.alt}</span>

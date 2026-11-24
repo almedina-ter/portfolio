@@ -148,59 +148,31 @@ export interface ProcessSection extends SectionBase {
   steps: { title: string; detail: string; media?: MediaAsset }[]
 }
 
-/** One item inside a decisions or chapter section: a short write-up with optional points and an image. */
+/** One item inside a decisions section: a short write-up with optional points and an image. */
 export interface DesignItem {
   /** Leave out when the section heading already names the item. */
   title?: string
   rationale?: string
   points?: string[]
   media?: MediaAsset
-  /** The action that leads into this item from the one before it, e.g. "Select a patient". Shown as a connector. */
-  trigger?: string
 }
 
 /**
- * One chapter of a contribution. Each chapter has its own heading, introduction
- * and groups of related screens, and gets its own entry in "On this page".
+ * A part of the product shown as a short sequence of screens. Each screen is displayed
+ * large, with a few plain notes beside it.
  */
-export interface ChapterSection extends SectionBase {
-  kind: 'chapter'
-  /** Position in the sequence, shown above the heading as "Part 01". */
-  number: string
+export interface ScreensSection extends SectionBase {
+  kind: 'screens'
   /** Introduction. The first paragraph is set larger. */
   body: string[]
-  /** The screens and design work inside this chapter. */
-  groups: { title: string; subtitle?: string; intro?: string; items: DesignItem[] }[]
-}
-
-/** One callout on an annotated screen. Positions are in pixels of the screen image. */
-export interface ScreenNote {
-  /** Short label drawn on the screen, e.g. "Add patient". */
-  label: string
-  /** The design decision it points to, written below the screen. */
-  text: string
-  /** Which side margin the label sits in. */
-  side: 'left' | 'right'
-  /** Where the arrow ends, on the interface element it explains. */
-  target: { x: number; y: number }
-  /** Height of the line's horizontal run. Choose a gap between rows or cards so the arrow never crosses content. Defaults to the target's height. */
-  via?: number
-  /** Height of the label in the margin. Defaults to `via`. Labels closer than about 90px are pushed apart automatically. */
-  labelY?: number
-}
-
-/**
- * One main screen explained with callouts, followed by closer looks at selected
- * parts of it. Every annotated section uses the same presentation.
- */
-export interface AnnotatedSection extends SectionBase {
-  kind: 'annotated'
-  body: string[]
-  /** The full screen. Needs width and height so callouts can be placed on it. */
-  media: MediaAsset
-  notes: ScreenNote[]
-  /** Closer looks, each a crop of the screen. Keep them the same shape. */
-  details: MediaAsset[]
+  screens: {
+    title: string
+    /** The action that leads to this screen from the one before, e.g. "Select View on a patient". */
+    trigger?: string
+    media: MediaAsset
+    /** Short notes shown beside the screen. */
+    notes: string[]
+  }[]
 }
 
 export type CaseStudySection =
@@ -212,8 +184,7 @@ export type CaseStudySection =
   | ProcessSection
   | GallerySection
   | OutcomesSection
-  | ChapterSection
-  | AnnotatedSection
+  | ScreensSection
 
 export interface Project {
   slug: string

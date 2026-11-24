@@ -32,14 +32,14 @@ export const projects: Project[] = [
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/healthcare-saas/thumbnail.webp',
-      alt: 'A clinician seen from behind, face not shown, reviewing a patient ECG waveform on a monitor',
+      alt: 'Browser windows with blurred screens from a healthcare platform: a billing table, a patient overview and a team conversation',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',
     },
     hero: {
-      src: 'images/projects/healthcare-saas/hero.webp',
-      alt: 'A clinician seen from behind, face not shown, reviewing a patient ECG waveform and its detected episodes on a monitor',
+      src: 'images/projects/healthcare-saas/cover.webp',
+      alt: 'A tilted board of screens from a healthcare platform: the patient overview and patient details, the monitoring overview, ECG recordings and a patient ECG, and messaging with a one-to-one conversation and a group chat',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',

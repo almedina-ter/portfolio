@@ -50,7 +50,7 @@ export function HeroOrbit({ className = '', delay = 0 }: { className?: string; d
         ))}
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <LogoMark animated className="orbit-mark h-[2.75rem] w-auto text-ink" />
+        <LogoMark animated className="orbit-mark h-[3.5rem] w-auto text-ink" />
       </div>
       </div>
     </div>

@@ -49,7 +49,7 @@ export function Hero() {
           </p>
           <SplitHeading id="hero-heading" text={site.headline} delay={120} className="mt-6 font-display text-display leading-[1.16]" />
         </div>
-        <HeroOrbit className="load-in hidden h-full min-[1440px]:block" delay={650} />
+        <HeroOrbit className="load-in hidden w-[16.5rem] self-start min-[1440px]:block" delay={650} />
       </div>
 
       <div className="hero-drift mt-14 lg:mt-0">

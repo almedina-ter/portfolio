@@ -61,8 +61,8 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 border-b backdrop-blur-md transition-[background-color,border-color] duration-(--duration-ui) lg:hidden ${
-          scrolled || open ? 'border-line bg-paper/90' : 'border-transparent bg-paper/0'
+        className={`sticky top-0 z-40 border-b transition-[background-color,border-color] duration-(--duration-ui) lg:hidden ${
+          scrolled || open ? 'border-line bg-paper' : 'border-transparent bg-paper/0'
         }`}
       >
         <div className="flex h-16 items-center justify-between px-gutter">

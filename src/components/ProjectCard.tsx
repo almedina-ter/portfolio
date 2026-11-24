@@ -67,7 +67,7 @@ export function ProjectCard({ project, index, headingLevel: Heading = 'h3', clas
           </span>
           <span className="flex items-center gap-2">
             <SampleTag show={project.sample === true} />
-            <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
+            <span aria-hidden="true" className="font-number text-xs text-ink-subtle">
               {String(index + 1).padStart(2, '0')}
             </span>
           </span>

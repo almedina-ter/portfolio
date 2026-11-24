@@ -5,6 +5,7 @@
 @theme {
   --font-sans: 'Inter Tight Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-display: 'Playfair Display', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-number: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
 
   --color-paper: #f5f3ef;
   --color-surface: #ebe8e2;
@@ -608,4 +609,9 @@ html.motion .orbit-mark .logo-spark {
 .card-badge {
   background-color: color-mix(in srgb, var(--card-accent) 13%, transparent);
   color: color-mix(in srgb, var(--card-accent) 72%, var(--color-ink));
+}
+
+/* Index numbers (01, 02, 03) are set in Montserrat, with even-width lining figures so they line up. */
+.font-number {
+  font-variant-numeric: lining-nums tabular-nums;
 }

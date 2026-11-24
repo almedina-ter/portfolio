@@ -29,7 +29,7 @@ function StackedItems({ items, hintBase }: { items: DesignItem[]; hintBase: stri
               <div className={item.points && item.points.length > 0 ? undefined : 'md:col-span-2'}>
                 {item.title && (
                   <h3 className="text-xl font-medium">
-                    <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
+                    <span aria-hidden="true" className="mr-3 font-number text-xs text-ink-subtle">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     {item.title}
@@ -68,7 +68,7 @@ function ChallengeItems({ items }: { items: { challenge: string; opportunity: st
         <li key={i} className="grid gap-4 py-6 first:pt-0 last:pb-0 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-8">
           <div>
             <p className="eyebrow">
-              <span aria-hidden="true" className="mr-3 font-mono">
+              <span aria-hidden="true" className="mr-3 font-number">
                 {String(i + 1).padStart(2, '0')}
               </span>
               Challenge
@@ -95,7 +95,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
     <section id={section.id} aria-labelledby={headingId} className="scroll-mt-32 lg:scroll-mt-24">
       <Reveal variant="fade" className="rule-draw rule-draw-top pt-8 lg:pt-10">
         <p className="eyebrow flex gap-3">
-          <span aria-hidden="true" className="font-mono">
+          <span aria-hidden="true" className="font-number">
             {String(index + 1).padStart(2, '0')}
           </span>
           {section.label}
@@ -140,7 +140,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             <ul className="divide-y divide-line">
               {section.items.map((item, i) => (
                 <li key={i} className="flex gap-4 py-4 first:pt-0 last:pb-0">
-                  <span aria-hidden="true" className="mt-1 font-mono text-xs text-ink-subtle">
+                  <span aria-hidden="true" className="mt-1 font-number text-xs text-ink-subtle">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   {typeof item === 'string' ? (
@@ -152,7 +152,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                         <ol className="mt-3 space-y-1.5 text-ink">
                           {item.list.map((entry, j) => (
                             <li key={j} className="flex gap-3">
-                              <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
+                              <span aria-hidden="true" className="font-number text-xs text-ink-subtle">
                                 {j + 1}.
                               </span>
                               {entry}
@@ -180,7 +180,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
             >
               {section.items.map((item, i) => (
                 <li key={i} className="bg-paper p-6">
-                  <p aria-hidden="true" className="font-mono text-xs text-ink-subtle">
+                  <p aria-hidden="true" className="font-number text-xs text-ink-subtle">
                     {String(i + 1).padStart(2, '0')}
                   </p>
                   <h3 className="mt-6 text-lg font-medium">{item.title}</h3>
@@ -217,7 +217,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                   className={step.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : ''}
                 >
                   <div>
-                    <p className="font-mono text-xs text-ink-subtle">Step {String(i + 1).padStart(2, '0')}</p>
+                    <p className="font-number text-xs text-ink-subtle">Step {String(i + 1).padStart(2, '0')}</p>
                     <h3 className="mt-3 text-xl font-medium">{step.title}</h3>
                     <p className="mt-2 text-ink-muted">{step.detail}</p>
                   </div>
@@ -247,7 +247,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                 <li key={i} className={item.media ? 'grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-10' : undefined}>
                   <div>
                     <h3 className="text-xl font-medium">
-                      <span aria-hidden="true" className="mr-3 font-mono text-xs text-ink-subtle">
+                      <span aria-hidden="true" className="mr-3 font-number text-xs text-ink-subtle">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       {item.title}

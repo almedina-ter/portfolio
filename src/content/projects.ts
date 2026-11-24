@@ -115,7 +115,7 @@ export const projects: Project[] = [
             name: 'Monitoring',
             to: 'monitoring',
             screens: [
-              { name: 'Monitoring overview', views: ['Analytics', 'Patient table'] },
+              { name: 'Overview', views: ['Analytics', 'Patient table'] },
               { name: 'ECG & Recordings', views: ['Analytics', 'Patient table'] },
               {
                 name: 'Patient ECG',

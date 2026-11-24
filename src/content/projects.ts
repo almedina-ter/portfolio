@@ -32,14 +32,14 @@ export const projects: Project[] = [
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/healthcare-saas/thumbnail.webp',
-      alt: 'Browser windows with blurred screens from a healthcare platform: a billing table, a patient overview and a team conversation',
+      alt: 'The word Healthcare in large type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',
     },
     hero: {
       src: 'images/projects/healthcare-saas/cover.webp',
-      alt: 'The word Healthcare set in large serif type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes',
+      alt: 'The word Healthcare in large type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',
@@ -366,14 +366,14 @@ export const projects: Project[] = [
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/design-system/thumbnail.webp',
-      alt: 'Design Plus components arranged as cards: tables, modals, checkboxes, toggles, tooltips and a teal colour palette',
+      alt: 'The words Design system inside a selection box labelled Design Plus, above a device frame with the Tables, Modals and colour cards from the design system',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',
     },
     hero: {
       src: 'images/projects/design-system/hero.webp',
-      alt: 'Design Plus components arranged as cards: tables, modals, checkboxes, toggles, tooltips and a teal colour palette',
+      alt: 'The words Design system in large type inside a selection box labelled Design Plus, above a device frame with the Tables, Modals and colour cards from the design system',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',

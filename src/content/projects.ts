@@ -373,7 +373,7 @@ export const projects: Project[] = [
     },
     hero: {
       src: 'images/projects/design-system/hero.webp',
-      alt: 'Design Plus components arranged as cards: tables, modals, checkboxes, toggles, tooltips and a teal colour palette',
+      alt: 'The words Design system in large type inside a selection box labelled Design Plus, above a device frame with the Tables, Modals and colour cards from the design system',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',

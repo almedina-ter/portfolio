@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Lock } from 'lucide-react'
 import { getProject, publishedProjects } from '../content/projects'
 import { CaseStudySection } from '../components/CaseStudySection'
 import { ContactSection } from '../components/ContactSection'
+import { HeroOrbit } from '../components/HeroOrbit'
 import { Media } from '../components/Media'
 import { ProjectMeta } from '../components/ProjectMeta'
 import { ReadingProgress } from '../components/ReadingProgress'
@@ -148,6 +149,7 @@ export function CaseStudy() {
                 </li>
               ))}
             </ul>
+            <HeroOrbit className="mt-14 w-[10.5rem]" markClass="h-[2.4rem]" />
           </div>
         </nav>
 

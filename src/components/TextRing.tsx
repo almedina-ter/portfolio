@@ -30,9 +30,16 @@ export function TextRing({ className = '', label }: { className?: string; label?
         {!still && <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="60s" repeatCount="indefinite" />}
       </text>
       {label && (
-        <text x="200" y="200" textAnchor="middle" dominantBaseline="central" className="ring-label">
-          {label}
-        </text>
+        <>
+          <text x="250" y="200" textAnchor="end" dominantBaseline="central" className="ring-label">
+            {label}
+          </text>
+          {/* Arrow down, drawn like the arrows beside Resume. */}
+          <g transform="translate(262 186) scale(1.15)" fill="none" stroke="var(--color-ink)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 3v16" transform="translate(-12 0)" />
+            <path d="m6 13-6 6-6-6" transform="translate(0 0)" />
+          </g>
+        </>
       )}
     </svg>
   )

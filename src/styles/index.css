@@ -513,7 +513,7 @@ html.motion #mobile-menu:not([hidden]) .menu-item {
 .orbit-text {
   font-family: var(--font-sans);
   font-size: 21px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 0.14em;
   fill: var(--color-ink-muted);
 }
@@ -574,4 +574,13 @@ html.motion .orbit-mark .logo-spark {
 }
 :root[data-theme='dark'] .orbit-glow {
   opacity: 0.4;
+}
+
+/* Small ring of turning text, used as a corner accent. */
+.ring-text {
+  font-family: var(--font-sans);
+  font-size: 34px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  fill: var(--color-ink-muted);
 }

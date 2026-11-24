@@ -6,6 +6,7 @@ import { site } from '../content/site'
 import { clamp, subscribeScroll } from '../lib/motion'
 import { scrollToId } from '../lib/scroll'
 import { HeroOrbit } from './HeroOrbit'
+import { TextRing } from './TextRing'
 import { SplitHeading } from './SplitHeading'
 import { ToolsMarquee } from './ToolsMarquee'
 import { Availability } from './SiteNav'
@@ -72,6 +73,7 @@ export function Hero() {
       <ToolsMarquee className="mt-14 lg:mt-0" />
 
       <div className="relative mt-14 lg:mt-0">
+        <TextRing className="load-in absolute right-0 bottom-full mb-3 hidden w-[4.5rem] lg:block" />
         <ul
           aria-label="Selected projects"
           className="rule-draw rule-draw-top flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm text-ink-muted lg:pr-28"

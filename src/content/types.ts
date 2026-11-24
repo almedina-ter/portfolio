@@ -194,6 +194,8 @@ export interface Project {
   client: string
   summary: string
   type: string
+  /** Colour of the card's badge and button, picked to match its cover. A hex such as "#5b3df5". */
+  accent?: string
   /** Short discipline label shown on the homepage, e.g. "Product Design". */
   category?: string
   year: string

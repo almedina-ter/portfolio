@@ -604,17 +604,8 @@ html.motion .orbit-mark .logo-spark {
   opacity: 0.4;
 }
 
-/* Project cards take their colour from the cover: a tinted badge and a solid button. */
+/* Project cards take their badge colour from the cover. */
 .card-badge {
   background-color: color-mix(in srgb, var(--card-accent) 13%, transparent);
   color: color-mix(in srgb, var(--card-accent) 72%, var(--color-ink));
-}
-.card-button {
-  background-color: var(--card-accent);
-  transition:
-    filter var(--duration-micro) var(--ease-out),
-    background-color var(--duration-micro) var(--ease-out);
-}
-.group:hover .card-button {
-  filter: brightness(0.88);
 }

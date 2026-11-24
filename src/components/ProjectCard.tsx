@@ -84,7 +84,7 @@ export function ProjectCard({ project, index, headingLevel: Heading = 'h3', clas
         </p>
 
         <div aria-hidden="true" className="mt-auto pt-6">
-          <span className="btn card-button text-white">
+          <span className="btn-primary group-hover:bg-ink/85">
             View project
             <ArrowRight className="size-4 transition-transform duration-(--duration-micro) ease-(--ease-out) group-hover:translate-x-0.5" />
           </span>

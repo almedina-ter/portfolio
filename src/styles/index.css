@@ -598,3 +598,8 @@ html.motion .orbit-mark .logo-spark {
   letter-spacing: 0.1em;
   fill: var(--color-ink);
 }
+
+/* On the dark contact card the glow is the deeper purple used in the dark theme. */
+.orbit-inverse .orbit-glow {
+  opacity: 0.4;
+}

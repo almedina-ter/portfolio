@@ -93,6 +93,7 @@ export const projects: Project[] = [
         id: 'patient-overview',
         label: 'Patient Overview',
         heading: 'Thousands of patients, one list that reads at a glance',
+        nested: true,
         body: [
           'The Patient Overview is where a healthcare professional sees their whole patient population in one place: how many patients the clinic has, how many are active and how many are inactive, with a table that holds what they need to find any one of them.',
           'From there, one click on View opens the patient’s details, where everything about that individual is gathered on a single screen.',
@@ -154,6 +155,7 @@ export const projects: Project[] = [
         id: 'monitoring',
         label: 'Monitoring',
         heading: 'From an overview to a single episode',
+        nested: true,
         body: [
           'Monitoring shows a doctor how their patients are doing. It starts with an overview of everything at first glance, then goes into ECG recordings for all patients, then into one patient, and finally into a single episode.',
           'At each step the screen shows more detail about fewer patients, so a doctor always knows where their patients are heading.',
@@ -231,6 +233,7 @@ export const projects: Project[] = [
         id: 'communication',
         label: 'Communication',
         heading: 'Messaging inside the product',
+        nested: true,
         body: [
           'Communication works like a messenger built into the platform. Doctors can talk to each other one to one or in groups, without leaving the product.',
           'Patient information can be shared inside a conversation too, and transmissions and episodes can be sent in the same way.',

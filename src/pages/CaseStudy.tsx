@@ -128,8 +128,21 @@ export function CaseStudy() {
             <p className="mt-1 font-display text-xl leading-tight">{project.title}</p>
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
-              {project.sections.map((section) => (
-                <li key={section.id} className={section.nested ? 'pl-3' : undefined}>
+              {project.sections.map((section, i) => {
+                const first = section.nested && !project.sections[i - 1]?.nested
+                const last = section.nested && !project.sections[i + 1]?.nested
+                return (
+                <li key={section.id} className={section.nested ? 'relative ml-1.5 pl-4' : undefined}>
+                  {section.nested && (
+                    <>
+                      {/* Branch: a vertical line down the group with a short tick into each entry. */}
+                      <span
+                        aria-hidden="true"
+                        className={`absolute left-0 w-px bg-line-strong ${first ? 'top-1/2' : '-top-0.5'} ${last ? 'bottom-1/2' : '-bottom-0.5'}`}
+                      />
+                      <span aria-hidden="true" className="absolute top-1/2 left-0 h-px w-3 bg-line-strong" />
+                    </>
+                  )}
                   <button
                     type="button"
                     onClick={() => scrollToId(section.id)}
@@ -147,9 +160,10 @@ export function CaseStudy() {
                     {section.label ?? section.heading}
                   </button>
                 </li>
-              ))}
+                )
+              })}
             </ul>
-            <HeroOrbit className="mt-14 w-[10.5rem]" markClass="h-[2.4rem]" />
+            <HeroOrbit className="mt-12 w-[7.5rem]" markClass="h-[1.7rem]" />
           </div>
         </nav>
 

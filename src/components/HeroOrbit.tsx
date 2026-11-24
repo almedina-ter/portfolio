@@ -34,7 +34,7 @@ export function HeroOrbit({ className = '', delay = 0, inverse = false, markClas
   return (
     <div aria-hidden="true" className={`aspect-square ${inverse ? 'orbit-inverse' : ''} ${className}`} data-orbit style={{ '--load-delay': `${delay}ms` } as CSSProperties}>
       <div className="relative size-full">
-      {!inverse && <div aria-hidden="true" className="orbit-glow absolute inset-[22%]" />}
+      <div aria-hidden="true" className="orbit-glow absolute inset-[22%]" />
       <svg viewBox="0 0 400 400" className="absolute inset-0 size-full overflow-visible">
         <defs>
           <path id="orbit-wide" d={wide} />

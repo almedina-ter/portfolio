@@ -3,6 +3,7 @@ import { site } from '../content/site'
 import { EmailLink, LinkedInLink, OtherLinks, ResumeLink } from '../components/ContactLinks'
 import { ContactForm } from '../components/ContactForm'
 import { CopyEmailButton } from '../components/CopyEmailButton'
+import { HeroOrbit } from '../components/HeroOrbit'
 import { LocalTime } from '../components/LocalTime'
 import { Reveal } from '../components/Reveal'
 import { SplitHeading } from '../components/SplitHeading'
@@ -13,7 +14,8 @@ export function Contact() {
   useDocumentMeta('Contact', `Get in touch with ${site.name} about product design roles and projects.`)
 
   return (
-    <div className="container-page pt-14 pb-section lg:pt-24">
+    <div className="container-page relative pt-14 pb-section lg:pt-24">
+      <HeroOrbit className="load-in absolute top-24 right-[var(--spacing-gutter)] hidden w-[8.5rem] lg:block" markClass="h-[1.9rem]" delay={500} />
       <p className="eyebrow load-in">Contact</p>
       <SplitHeading text="Let’s talk." className="mt-6 max-w-[16ch] font-display text-display text-balance" />
       <p className="mt-8 max-w-prose text-lede text-ink-muted load-in" style={{ '--load-delay': '300ms' } as CSSProperties}>

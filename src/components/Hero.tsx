@@ -38,12 +38,12 @@ export function Hero() {
       className="relative container-page pt-14 pb-16 sm:pt-20 lg:flex lg:min-h-[max(100dvh,54rem)] lg:flex-col lg:justify-between lg:pt-28 lg:pb-20"
     >
       <div className="hero-drift grid items-stretch gap-x-10 min-[1440px]:grid-cols-[minmax(0,1fr)_auto]">
-        <div>
+        <div className="flex flex-col justify-between min-[1440px]:min-h-[16.5rem]">
           <p className="eyebrow load-in">
             {site.role}
             {site.location ? ` · ${site.location}` : ''}
           </p>
-          <SplitHeading id="hero-heading" text={site.headline} delay={120} className="mt-6 font-display text-display leading-[1.16]" />
+          <SplitHeading id="hero-heading" text={site.headline} delay={120} className="mt-6 font-display text-display leading-[1.16] min-[1440px]:mt-0" />
         </div>
         <HeroOrbit className="load-in hidden w-[16.5rem] self-start min-[1440px]:block" delay={650} />
       </div>

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router'
 import { ArrowDown, ArrowRight } from 'lucide-react'
-import { publishedProjects } from '../content/projects'
 import { site } from '../content/site'
 import { clamp, subscribeScroll } from '../lib/motion'
 import { scrollToId } from '../lib/scroll'
 import { HeroOrbit } from './HeroOrbit'
+import { TextRing } from './TextRing'
 import { SplitHeading } from './SplitHeading'
 import { ToolsMarquee } from './ToolsMarquee'
 import { Availability } from './SiteNav'
@@ -20,8 +20,6 @@ const delay = (ms: number) => ({ '--load-delay': `${ms}ms` }) as CSSProperties
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
   const [scrolled, setScrolled] = useState(false)
-  const featured = publishedProjects.filter((project) => project.featured)
-  const work = featured.length ? featured : publishedProjects
 
   useEffect(() => {
     const section = sectionRef.current
@@ -39,21 +37,21 @@ export function Hero() {
     <section
       ref={sectionRef}
       aria-labelledby="hero-heading"
-      className="relative container-page pt-14 pb-16 sm:pt-20 lg:flex lg:min-h-[88dvh] lg:flex-col lg:justify-between lg:pt-28 lg:pb-20"
+      className="relative container-page pt-14 pb-16 sm:pt-20 lg:flex lg:min-h-[max(100dvh,54rem)] lg:flex-col lg:justify-between lg:pt-28 lg:pb-20"
     >
-      <div className="hero-drift relative">
-        <HeroOrbit className="load-in absolute top-0 right-0 hidden w-[15rem] min-[1440px]:block" delay={650} />
-        <p className="eyebrow load-in">
-          {site.role}
-          {site.location ? ` · ${site.location}` : ''}
-        </p>
-        <SplitHeading
-          id="hero-heading"
-          text={site.headline}
-          delay={120}
-          className="mt-6 font-display text-display"
-        />
-        <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+      <div className="hero-drift grid items-stretch gap-x-10 min-[1440px]:grid-cols-[minmax(0,1fr)_auto]">
+        <div>
+          <p className="eyebrow load-in">
+            {site.role}
+            {site.location ? ` · ${site.location}` : ''}
+          </p>
+          <SplitHeading id="hero-heading" text={site.headline} delay={120} className="mt-6 font-display text-display leading-[1.16]" />
+        </div>
+        <HeroOrbit className="load-in hidden w-[16.5rem] self-start min-[1440px]:block" delay={650} />
+      </div>
+
+      <div className="hero-drift mt-14 lg:mt-0">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="max-w-prose load-in" style={delay(480)}>
             <p className="text-lede whitespace-pre-line text-ink-muted">{site.intro}</p>
             <Availability className="mt-5 lg:hidden" />
@@ -71,34 +69,17 @@ export function Hero() {
 
       <ToolsMarquee className="mt-14 lg:mt-0" />
 
-      <div className="relative mt-14 lg:mt-0">
-        <ul
-          aria-label="Selected projects"
-          className="rule-draw rule-draw-top flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm text-ink-muted lg:pr-28"
-          data-revealed=""
-          style={{ '--reveal-delay': '500ms' } as CSSProperties}
-        >
-          {work.map((project, index) => (
-            <li key={project.slug} className="load-in" style={delay(760 + index * 70)}>
-              <Link to={`/work/${project.slug}`} className="group flex items-center gap-3 transition-colors hover:text-ink">
-                <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="text-ink">{project.category ?? project.title}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <div
-          aria-hidden="true"
+      <div className="mt-14 flex justify-center lg:mt-0">
+        <button
+          type="button"
+          aria-label="Scroll to selected work"
+          onClick={() => scrollToId('work')}
           data-hidden={scrolled ? '' : undefined}
-          className="scroll-cue load-in absolute right-0 bottom-0 hidden items-center gap-3 text-xs tracking-[0.08em] text-ink-subtle uppercase lg:flex"
+          className="scroll-cue load-in w-[6rem] rounded-full"
           style={delay(1100)}
         >
-          Scroll
-          <span className="scroll-cue-line block h-10 w-px" />
-        </div>
+          <TextRing label="SCROLL" className="w-full" />
+        </button>
       </div>
     </section>
   )

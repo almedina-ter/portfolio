@@ -140,7 +140,7 @@ export function CaseStudy() {
                     <span
                       aria-hidden="true"
                       className={`h-px transition-all duration-(--duration-ui) ease-out ${
-                        activeSection === section.id ? 'w-4 bg-accent' : 'w-0 bg-line-strong group-hover:w-2'
+                        activeSection === section.id ? 'bg-gradient-brand w-4' : 'w-0 bg-line-strong group-hover:w-2'
                       }`}
                     />
                     {section.label ?? section.heading}

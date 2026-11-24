@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import { site } from '../content/site'
 import { EmailLink, LinkedInLink, ResumeLink } from './ContactLinks'
 import { Reveal } from './Reveal'
+import { HeroOrbit } from './HeroOrbit'
 
 /**
  * Closing call to action used on the homepage and case studies.
@@ -14,8 +15,9 @@ export function ContactSection({ className = '' }: { className?: string }) {
     <section aria-labelledby="contact-cta-heading" className={`container-page pb-section ${className}`}>
       <Reveal
         variant="panel"
-        className="rounded-lg bg-ink px-6 py-14 text-paper [&_:focus-visible]:outline-paper sm:px-12 lg:px-16 lg:py-20"
+        className="relative rounded-lg bg-ink px-6 py-14 text-paper [&_:focus-visible]:outline-paper sm:px-12 lg:px-16 lg:py-20"
       >
+        <HeroOrbit inverse markClass="h-[2.1rem]" className="absolute top-8 right-8 hidden w-28 sm:block lg:top-10 lg:right-12 lg:w-36" />
         <Reveal variant="stagger" delay={200}>
           <p className="eyebrow text-paper/70">Contact</p>
           <h2 id="contact-cta-heading" className="mt-4 max-w-[18ch] font-display text-title text-balance">

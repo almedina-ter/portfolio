@@ -3,7 +3,7 @@ import { useReveal } from '../lib/useReveal'
 
 interface SplitHeadingProps {
   as?: ElementType
-  /** The heading text. A new line (\n) forces a line break. */
+  /** The heading text. A new line (\n) forces a line break. *Words* between asterisks get the brand gradient. */
   text: string
   id?: string
   className?: string
@@ -22,19 +22,23 @@ export function SplitHeading({ as: Heading = 'h1', text, id, className = '', del
   const ref = useReveal<HTMLElement>()
   let wordIndex = 0
   const plain = text.replaceAll('*', '')
-  const lines = plain.split('\n').map((line, lineIndex) => (
+  const lines = text.split('\n').map((line, lineIndex) => (
     <span key={lineIndex}>
       {lineIndex > 0 && <br />}
-      {line.split(/(\s+)/).map((word, i) => {
-        if (!word) return null
-        if (/^\s+$/.test(word)) return ' '
-        const style = { '--word-delay': `${delay + wordIndex++ * 55}ms` } as CSSProperties
-        return (
-          <span key={`${lineIndex}-${i}`} className="split-word">
-            <span style={style}>{word}</span>
-          </span>
-        )
-      })}
+      {line.split('*').map((segment, segmentIndex) =>
+        segment.split(/(\s+)/).map((word, i) => {
+          if (!word) return null
+          if (/^\s+$/.test(word)) return ' '
+          const style = { '--word-delay': `${delay + wordIndex++ * 55}ms` } as CSSProperties
+          return (
+            <span key={`${lineIndex}-${segmentIndex}-${i}`} className="split-word">
+              <span className={segmentIndex % 2 === 1 ? 'text-gradient' : undefined} style={style}>
+                {word}
+              </span>
+            </span>
+          )
+        }),
+      )}
     </span>
   ))
 

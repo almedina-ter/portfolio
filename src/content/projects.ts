@@ -363,14 +363,14 @@ export const projects: Project[] = [
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/design-system/thumbnail.webp',
-      alt: 'Design Plus component sheets on a tilted board: tables, checkboxes, toggles, tooltips and dialogs',
+      alt: 'Design Plus components arranged as cards: tables, modals, checkboxes, toggles, tooltips and a teal colour palette',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',
     },
     hero: {
       src: 'images/projects/design-system/hero.webp',
-      alt: 'Design Plus component sheets on a tilted board: tables, checkboxes, toggles, tooltips, action tooltips and dialogs',
+      alt: 'Design Plus components arranged as cards: tables, modals, checkboxes, toggles, tooltips and a teal colour palette',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',

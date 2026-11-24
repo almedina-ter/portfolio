@@ -128,25 +128,17 @@ export function CaseStudy() {
             <p className="mt-1 font-display text-xl leading-tight">{project.title}</p>
             <p className="eyebrow mt-8 mb-4">On this page</p>
             <ul className="space-y-1 text-sm">
-              {project.sections.map((section, i) => {
-                const first = section.nested && !project.sections[i - 1]?.nested
-                const last = section.nested && !project.sections[i + 1]?.nested
+              {project.sections.map((section) => {
                 return (
                 <li key={section.id} className={section.nested ? 'relative ml-1.5 pl-4' : undefined}>
                   {section.nested && (
-                    <>
-                      {/* Branch: a vertical line down the group with a short tick into each entry. */}
-                      <span
-                        aria-hidden="true"
-                        className={`absolute left-0 w-px bg-line-strong ${first ? 'top-1/2' : '-top-0.5'} ${last ? 'bottom-1/2' : '-bottom-0.5'}`}
-                      />
-                      <span
-                        aria-hidden="true"
-                        className={`absolute top-1/2 left-0 h-px w-3 transition-colors duration-(--duration-ui) ${
-                          activeSection === section.id ? 'bg-gradient-brand' : 'bg-line-strong'
-                        }`}
-                      />
-                    </>
+                    /* A small elbow marking this entry as a sub-section of the one above. It darkens when active. */
+                    <span
+                      aria-hidden="true"
+                      className={`absolute top-1/2 left-0 size-1.5 -translate-y-[0.55rem] rounded-bl-[2px] border-b border-l transition-colors duration-(--duration-ui) ${
+                        activeSection === section.id ? 'border-ink' : 'border-line-strong'
+                      }`}
+                    />
                   )}
                   <button
                     type="button"
@@ -156,15 +148,17 @@ export function CaseStudy() {
                       activeSection === section.id ? 'text-ink' : 'text-ink-muted hover:text-ink'
                     }`}
                   >
-                    {/* Top-level entries get a growing dash. Sub-sections use their tick on the tree instead. */}
-                    {!section.nested && (
-                      <span
-                        aria-hidden="true"
-                        className={`h-px transition-all duration-(--duration-ui) ease-out ${
-                          activeSection === section.id ? 'bg-gradient-brand w-4' : 'w-0 bg-line-strong group-hover:w-2'
-                        }`}
-                      />
-                    )}
+                    {/* Top-level entries get a growing dash. Sub-sections keep the same spacing but use their elbow as the marker. */}
+                    <span
+                      aria-hidden="true"
+                      className={`h-px transition-all duration-(--duration-ui) ease-out ${
+                        section.nested
+                          ? 'w-0'
+                          : activeSection === section.id
+                            ? 'bg-gradient-brand w-4'
+                            : 'w-0 bg-line-strong group-hover:w-2'
+                      }`}
+                    />
                     {section.label ?? section.heading}
                   </button>
                 </li>

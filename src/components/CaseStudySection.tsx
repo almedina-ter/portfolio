@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowRight } from 'lucide-react'
 import type { CaseStudySection as Section, DesignItem } from '../content/types'
 import { CountUp } from './CountUp'
+import { FlowChart } from './FlowChart'
 import { ImageGallery } from './ImageGallery'
 import { Media } from './Media'
 import { Reveal } from './Reveal'
@@ -278,6 +279,19 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
               ))}
             </ol>
             )}
+          </>
+        )}
+
+        {section.kind === 'flow' && (
+          <>
+            {section.body && (
+              <div className="space-y-5 text-ink-muted [&>p:first-child]:text-lede [&>p:first-child]:text-ink">
+                {section.body.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
+            )}
+            <FlowChart root={section.root} areas={section.areas} />
           </>
         )}
 

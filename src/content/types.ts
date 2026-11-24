@@ -177,6 +177,29 @@ export interface ScreensSection extends SectionBase {
   challenges?: { challenge: string; opportunity: string }[]
 }
 
+/** One area of a product map: its screens, and the views or tabs inside each screen. */
+export interface FlowArea {
+  name: string
+  /** Id of the section on this page that shows the area. The name then scrolls to it. */
+  to?: string
+  /** A short note under the name, e.g. the tabs the area has. */
+  note?: string
+  screens: {
+    name: string
+    /** The action that leads here from the screen above it. */
+    trigger?: string
+    views?: string[]
+  }[]
+}
+
+/** A map of how the product is organised, drawn as a flow chart. */
+export interface FlowSection extends SectionBase {
+  kind: 'flow'
+  body?: string[]
+  root: string
+  areas: FlowArea[]
+}
+
 export type CaseStudySection =
   | TextSection
   | ListSection
@@ -187,6 +210,7 @@ export type CaseStudySection =
   | GallerySection
   | OutcomesSection
   | ScreensSection
+  | FlowSection
 
 export interface Project {
   slug: string

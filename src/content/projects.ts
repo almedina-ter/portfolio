@@ -90,6 +90,49 @@ export const projects: Project[] = [
         ],
       },
       {
+        kind: 'flow',
+        id: 'product-map',
+        label: 'Product map',
+        heading: 'How the product fits together',
+        body: [
+          'The product is organised into three areas: Patient Overview, Monitoring and Communication. This map shows how a healthcare professional moves through them, from a list or an overview, down to one patient, one recording or one conversation.',
+        ],
+        root: 'Healthcare SaaS',
+        areas: [
+          {
+            name: 'Patient Overview',
+            to: 'patient-overview',
+            screens: [
+              { name: 'Patient overview', views: ['All patients', 'Active', 'Inactive'] },
+              {
+                name: 'Patient details',
+                trigger: 'Select a patient’s name, or View',
+                views: ['Patient Profile', 'Medical history', 'Care Plan'],
+              },
+            ],
+          },
+          {
+            name: 'Monitoring',
+            to: 'monitoring',
+            note: 'Tabs: Overview, ECG & Recordings, Reports, Laboratory Results, Visits & Appointments',
+            screens: [
+              { name: 'Monitoring overview', views: ['Analytics', 'Patient table'] },
+              { name: 'ECG & Recordings', views: ['Analytics', 'Patient table'] },
+              {
+                name: 'Patient ECG',
+                trigger: 'Select a patient’s name in either patient table',
+                views: ['Waveform & episodes', 'Heart rate', 'Recordings & quality', 'Review history'],
+              },
+            ],
+          },
+          {
+            name: 'Communication',
+            to: 'communication',
+            screens: [{ name: 'Messages', views: ['Chat messages', 'Group chat messages'] }],
+          },
+        ],
+      },
+      {
         kind: 'screens',
         id: 'patient-overview',
         label: 'Patient Overview',

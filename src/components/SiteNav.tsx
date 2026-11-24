@@ -24,8 +24,8 @@ export function SiteNav() {
     <aside className="sticky top-0 hidden h-dvh flex-col justify-between overflow-y-auto border-r border-line px-8 py-10 lg:flex">
       <div>
         <Link to="/" className="group block">
-          <LogoMark className="logo-wipe mb-5 h-10 w-auto text-ink transition-transform duration-(--duration-ui) ease-(--ease-out) group-hover:-rotate-6" />
-          <span className="block font-display text-[1.75rem] leading-none tracking-tight">{site.name}</span>
+          <LogoMark className="logo-wipe mb-4 h-7 w-auto text-ink transition-transform duration-(--duration-ui) ease-(--ease-out) group-hover:-rotate-6" />
+          <span className="block font-display text-[1.5rem] leading-none tracking-tight">{site.name}</span>
           <span className="mt-2 block text-sm text-ink-muted">{site.role}</span>
         </Link>
 
@@ -66,11 +66,11 @@ export function SiteNav() {
 
       <div className="space-y-5 pt-10 text-sm">
         <ThemeToggle />
-        <Availability />
         <div className="space-y-1 text-ink-muted">
           {site.location && <p>{site.location}</p>}
           <LocalTime />
         </div>
+        <Availability />
         <ul className="space-y-1.5">
           <li>
             <EmailLink className="link-underline break-all" />

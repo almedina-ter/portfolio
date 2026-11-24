@@ -4,7 +4,7 @@
    Change colours, fonts and spacing here; components use these names. */
 @theme {
   --font-sans: 'Inter Tight Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-display: 'Playfair Display', ui-serif, Georgia, 'Times New Roman', serif;
 
   --color-paper: #f5f3ef;
   --color-surface: #ebe8e2;
@@ -27,13 +27,13 @@
   --container-prose: 40rem;
   --sidebar-width: 17.5rem;
 
-  --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 6.25rem);
+  --text-display: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
   --text-display--line-height: 1;
   --text-display--letter-spacing: -0.02em;
-  --text-title: clamp(2rem, 1.4rem + 2.4vw, 3.75rem);
+  --text-title: clamp(1.875rem, 1.3rem + 2vw, 3.25rem);
   --text-title--line-height: 1.05;
   --text-title--letter-spacing: -0.015em;
-  --text-heading: clamp(1.625rem, 1.3rem + 1.2vw, 2.375rem);
+  --text-heading: clamp(1.5rem, 1.2rem + 1vw, 2.125rem);
   --text-heading--line-height: 1.12;
   --text-lede: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
   --text-lede--line-height: 1.55;
@@ -461,6 +461,16 @@ html.motion #mobile-menu:not([hidden]) .menu-item {
     fill 350ms var(--ease-out) !important;
 }
 
+/* Playfair Display defaults to old-style numerals. Lining figures read better in stats and counters. */
+.font-display {
+  font-feature-settings: 'lnum' 1;
+}
+
+/* Dark logos get a thin gray outline in the dark theme, so they stay visible on the dark page. */
+:root[data-theme='dark'] .tool-icon[data-dark] {
+  filter: drop-shadow(0.9px 0 0 #8d8a85) drop-shadow(-0.9px 0 0 #8d8a85) drop-shadow(0 0.9px 0 #8d8a85) drop-shadow(0 -0.9px 0 #8d8a85);
+}
+
 /* Tools row: drifts right to left, seamless because the list is repeated once. */
 @keyframes marquee-drift {
   from {
@@ -496,4 +506,48 @@ html.motion #mobile-menu:not([hidden]) .menu-item {
   .marquee-track .marquee-row:last-child {
     display: none;
   }
+}
+
+/* Hero orbit: the mark floats gently and its spark twinkles. */
+.orbit-text {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  fill: var(--color-ink-muted);
+}
+@keyframes orbit-float {
+  0%,
+  100% {
+    translate: 0 -0.2rem;
+  }
+  50% {
+    translate: 0 0.2rem;
+  }
+}
+@keyframes spark-twinkle {
+  0%,
+  100% {
+    scale: 1;
+    rotate: 0deg;
+    opacity: 1;
+  }
+  45% {
+    scale: 1.35;
+    rotate: 45deg;
+    opacity: 0.85;
+  }
+  60% {
+    scale: 0.9;
+    rotate: 90deg;
+    opacity: 1;
+  }
+}
+html.motion .orbit-mark {
+  animation: orbit-float 7s ease-in-out infinite;
+}
+html.motion .orbit-mark .logo-spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spark-twinkle 5.5s ease-in-out infinite;
 }

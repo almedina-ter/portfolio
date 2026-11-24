@@ -140,7 +140,12 @@ export function CaseStudy() {
                         aria-hidden="true"
                         className={`absolute left-0 w-px bg-line-strong ${first ? 'top-1/2' : '-top-0.5'} ${last ? 'bottom-1/2' : '-bottom-0.5'}`}
                       />
-                      <span aria-hidden="true" className="absolute top-1/2 left-0 h-px w-3 bg-line-strong" />
+                      <span
+                        aria-hidden="true"
+                        className={`absolute top-1/2 left-0 h-px w-3 transition-colors duration-(--duration-ui) ${
+                          activeSection === section.id ? 'bg-gradient-brand' : 'bg-line-strong'
+                        }`}
+                      />
                     </>
                   )}
                   <button
@@ -151,12 +156,15 @@ export function CaseStudy() {
                       activeSection === section.id ? 'text-ink' : 'text-ink-muted hover:text-ink'
                     }`}
                   >
-                    <span
-                      aria-hidden="true"
-                      className={`h-px transition-all duration-(--duration-ui) ease-out ${
-                        activeSection === section.id ? 'bg-gradient-brand w-4' : 'w-0 bg-line-strong group-hover:w-2'
-                      }`}
-                    />
+                    {/* Top-level entries get a growing dash. Sub-sections use their tick on the tree instead. */}
+                    {!section.nested && (
+                      <span
+                        aria-hidden="true"
+                        className={`h-px transition-all duration-(--duration-ui) ease-out ${
+                          activeSection === section.id ? 'bg-gradient-brand w-4' : 'w-0 bg-line-strong group-hover:w-2'
+                        }`}
+                      />
+                    )}
                     {section.label ?? section.heading}
                   </button>
                 </li>

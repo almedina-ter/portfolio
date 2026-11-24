@@ -512,9 +512,9 @@ html.motion #mobile-menu:not([hidden]) .menu-item {
 /* Hero orbit: the mark floats gently and its spark twinkles. */
 .orbit-text {
   font-family: var(--font-sans);
-  font-size: 21px;
-  font-weight: 300;
-  letter-spacing: 0.14em;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 0.16em;
   fill: var(--color-ink-muted);
 }
 .orbit-text-soft {
@@ -579,8 +579,14 @@ html.motion .orbit-mark .logo-spark {
 /* Small ring of turning text, used as a corner accent. */
 .ring-text {
   font-family: var(--font-sans);
-  font-size: 34px;
+  font-size: 44px;
   font-weight: 300;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   fill: var(--color-ink-muted);
+}
+
+/* On a dark card the text is light. */
+.orbit-inverse .orbit-text,
+.orbit-inverse .orbit-text-soft {
+  fill: color-mix(in srgb, var(--color-paper) 75%, transparent);
 }

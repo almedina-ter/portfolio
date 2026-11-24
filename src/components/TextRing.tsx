@@ -25,7 +25,7 @@ export function TextRing({ className = '' }: { className?: string }) {
       </defs>
       <text className="ring-text" dy="0.36em">
         <textPath href="#text-ring-path" textLength={CIRCUMFERENCE} lengthAdjust="spacing">
-          {PHRASE.repeat(2)}
+          {PHRASE}
         </textPath>
         {!still && <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="60s" repeatCount="indefinite" />}
       </text>

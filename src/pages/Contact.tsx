@@ -15,7 +15,7 @@ export function Contact() {
   return (
     <div className="container-page pt-14 pb-section lg:pt-24">
       <p className="eyebrow load-in">Contact</p>
-      <SplitHeading text="Let’s *talk*." className="mt-6 max-w-[16ch] font-display text-display text-balance" />
+      <SplitHeading text="Let’s talk." className="mt-6 max-w-[16ch] font-display text-display text-balance" />
       <p className="mt-8 max-w-prose text-lede text-ink-muted load-in" style={{ '--load-delay': '300ms' } as CSSProperties}>
         I&rsquo;m glad to hear about product design roles and collaborations. Email is the quickest way to reach me.
       </p>

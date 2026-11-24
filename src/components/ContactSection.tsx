@@ -19,7 +19,7 @@ export function ContactSection({ className = '' }: { className?: string }) {
         <Reveal variant="stagger" delay={200}>
           <p className="eyebrow text-paper/70">Contact</p>
           <h2 id="contact-cta-heading" className="mt-4 max-w-[18ch] font-display text-title text-balance">
-            Hiring for a product design role? <em>Let&rsquo;s talk.</em>
+            Hiring for a product design role? Let&rsquo;s talk.
           </h2>
           <p className="mt-6 max-w-prose text-lede text-paper/75">
             {site.availability ? `${site.availability}.` : ''} The quickest way to reach me is by email.

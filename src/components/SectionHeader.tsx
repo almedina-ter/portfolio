@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Reveal } from './Reveal'
+import { SplitHeading } from './SplitHeading'
 
 interface SectionHeaderProps {
   id: string
@@ -11,12 +12,16 @@ interface SectionHeaderProps {
 /** Eyebrow, title and aside rise in sequence while the rule beneath draws across. */
 export function SectionHeader({ id, eyebrow, title, aside }: SectionHeaderProps) {
   return (
-    <Reveal variant="stagger" className="rule-draw mb-10 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 pb-6 lg:mb-14">
+    <Reveal variant="fade" className="rule-draw mb-10 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 pb-6 lg:mb-14">
       <div>
         <p className="eyebrow">{eyebrow}</p>
-        <h2 id={id} className="mt-3 font-display text-heading text-balance">
-          {title}
-        </h2>
+        {typeof title === 'string' ? (
+          <SplitHeading as="h2" id={id} text={title} delay={60} inView className="mt-3 font-display text-heading text-balance" />
+        ) : (
+          <h2 id={id} className="mt-3 font-display text-heading text-balance">
+            {title}
+          </h2>
+        )}
       </div>
       {aside && <div>{aside}</div>}
     </Reveal>

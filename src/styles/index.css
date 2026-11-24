@@ -285,7 +285,7 @@ html.motion .load-in {
   animation: reveal-up var(--duration-reveal) var(--ease-out) var(--load-delay, 0ms) backwards;
 }
 
-/* Words rise out of a mask. Padding keeps italic overhangs and descenders unclipped. */
+/* Words rise out of a mask. Padding keeps descenders unclipped. */
 .split-word {
   display: inline-block;
   overflow: clip;
@@ -297,6 +297,25 @@ html.motion .load-in {
 }
 html.motion .split-word > span {
   animation: word-rise 950ms var(--ease-out) var(--word-delay, 0ms) backwards;
+}
+/* Headings that start on scroll wait, hidden, until they come into view. */
+html.motion [data-split='view']:not([data-revealed]) .split-word > span {
+  animation-play-state: paused;
+}
+
+/* The "a" mark wipes in from the top once, on first load. */
+@keyframes logo-wipe {
+  from {
+    clip-path: inset(0 0 100% 0);
+    translate: 0 0.4rem;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    translate: 0 0;
+  }
+}
+html.motion .logo-wipe {
+  animation: logo-wipe 1100ms var(--ease-out) 150ms backwards;
 }
 
 /* Availability dot: a soft ring that pulses a few times, then rests. */
@@ -413,13 +432,42 @@ html.motion #mobile-menu:not([hidden]) .menu-item {
 }
 
 
-/* Tools row: drifts left to right, seamless because the list is repeated once. */
+/* Dark theme. Same tokens, new values, so every component follows without changes. */
+:root {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-paper: #131211;
+  --color-surface: #1d1c1a;
+  --color-surface-strong: #272624;
+  --color-ink: #f1eee8;
+  --color-ink-muted: #b6b0a6; /* 8.4:1 on paper */
+  --color-ink-subtle: #9b958b; /* 6.1:1 on paper */
+  --color-line: #2e2c29;
+  --color-line-strong: #4b4741;
+  --color-accent: #ea8c60; /* 7.2:1 on paper */
+  --color-positive: #5fbf86;
+}
+/* Colours ease over when the theme is switched by hand. */
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition:
+    background-color 350ms var(--ease-out),
+    border-color 350ms var(--ease-out),
+    color 350ms var(--ease-out),
+    fill 350ms var(--ease-out) !important;
+}
+
+/* Tools row: drifts right to left, seamless because the list is repeated once. */
 @keyframes marquee-drift {
   from {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 .marquee {

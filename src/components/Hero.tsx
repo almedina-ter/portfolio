@@ -49,7 +49,7 @@ export function Hero() {
           id="hero-heading"
           text={site.headline}
           delay={120}
-          className="mt-6 max-w-[16ch] font-display text-display text-balance"
+          className="mt-6 font-display text-display"
         />
         <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="max-w-prose load-in" style={delay(480)}>

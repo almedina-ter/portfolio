@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { ArrowUp } from 'lucide-react'
 import { site } from '../content/site'
+import { LogoMark } from './LogoMark'
 import { EmailLink, LinkedInLink, OtherLinks, ResumeLink } from './ContactLinks'
 import { navItems } from './navigation'
 
@@ -16,6 +17,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-line">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
+          <LogoMark className="mb-5 h-10 w-auto text-ink" />
           <p className="font-display text-3xl leading-none">{site.name}</p>
           <p className="mt-2 text-sm text-ink-muted">
             {site.role}

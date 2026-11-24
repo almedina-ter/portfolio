@@ -182,8 +182,6 @@ export interface FlowArea {
   name: string
   /** Id of the section on this page that shows the area. The name then scrolls to it. */
   to?: string
-  /** A short note under the name, e.g. the tabs the area has. */
-  note?: string
   screens: {
     name: string
     /** The action that leads here from the screen above it. */

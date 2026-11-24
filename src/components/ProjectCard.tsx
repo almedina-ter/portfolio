@@ -1,4 +1,4 @@
-import { useRef, type PointerEvent } from 'react'
+import { useRef, type CSSProperties, type PointerEvent } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import type { Project } from '../content/types'
@@ -41,7 +41,12 @@ export function ProjectCard({ project, index, headingLevel: Heading = 'h3', clas
       ref={cardRef}
       onPointerMove={tilt}
       onPointerLeave={settle}
-      style={{ transform: 'perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))' }}
+      style={
+        {
+          transform: 'perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))',
+          '--card-accent': project.accent ?? 'var(--color-ink)',
+        } as CSSProperties
+      }
       className={`group relative flex h-full flex-col rounded-[1.25rem] border border-line bg-surface/40 p-3 transition-[translate,transform,box-shadow,border-color,background-color] duration-(--duration-ui) ease-(--ease-out) hover:border-line-strong hover:bg-surface/70 hover:shadow-[0_28px_50px_-30px_rgba(22,21,19,0.45)] motion-safe:hover:-translate-y-1 ${className}`}
     >
       <Reveal variant="media" className="overflow-hidden rounded-lg">
@@ -57,7 +62,7 @@ export function ProjectCard({ project, index, headingLevel: Heading = 'h3', clas
 
       <div className="flex flex-1 flex-col px-3 pt-6 pb-3">
         <p className="flex items-center justify-between gap-3">
-          <span className="inline-flex items-center rounded-full bg-ink/5 px-3 py-1 text-xs font-medium text-ink-muted">
+          <span className="card-badge inline-flex items-center rounded-full px-3 py-1 text-xs font-medium">
             {project.role}
           </span>
           <span className="flex items-center gap-2">

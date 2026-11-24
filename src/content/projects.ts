@@ -14,6 +14,7 @@ export const projects: Project[] = [
   {
     featured: true,
     slug: 'healthcare-saas',
+    accent: '#5b3df5',
     title: 'Healthcare SaaS',
     client: '',
     summary:
@@ -32,14 +33,14 @@ export const projects: Project[] = [
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/healthcare-saas/thumbnail.webp',
-      alt: 'The word Healthcare in large type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes',
+      alt: 'The words Healthcare SaaS in large type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes, and the a mark in the corner',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',
     },
     hero: {
       src: 'images/projects/healthcare-saas/cover.webp',
-      alt: 'The word Healthcare in large type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes',
+      alt: 'The words Healthcare SaaS in large type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',
@@ -353,6 +354,7 @@ export const projects: Project[] = [
   {
     featured: true,
     slug: 'design-system',
+    accent: '#007a7b',
     title: 'Design System',
     client: '91 Life',
     summary:
@@ -366,7 +368,7 @@ export const projects: Project[] = [
     tools: ['Figma'],
     thumbnail: {
       src: 'images/projects/design-system/thumbnail.webp',
-      alt: 'The words Design system inside a selection box labelled Design Plus, above a device frame with the Tables, Modals and colour cards from the design system',
+      alt: 'The words Design system inside a selection box labelled Design Plus, above a device frame with the Tables, Modals and colour cards, and the a mark in the corner',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',
@@ -630,6 +632,7 @@ export const projects: Project[] = [
   {
     featured: true,
     slug: 'cloudtech-branding',
+    accent: '#2a36cd',
     title: 'Branding',
     client: 'Cloudtech',
     summary:
@@ -643,14 +646,14 @@ export const projects: Project[] = [
     tools: ['Figma', 'Framer'],
     thumbnail: {
       src: 'images/projects/cloudtech-branding/thumbnail.webp',
-      alt: 'Cloudtech logo in white: a mark made of rounded bars and dots above the Cloudtech wordmark, on a dark background with a soft violet glow',
+      alt: 'The Cloudtech logo in white on a blue gradient, with the a mark in the corner',
       width: 1600,
       height: 1200,
       aspect: '4 / 3',
     },
     hero: {
       src: 'images/projects/cloudtech-branding/hero.webp',
-      alt: 'Cloudtech logo in white: a mark made of rounded bars and dots above the Cloudtech wordmark, on a dark background with a soft violet glow',
+      alt: 'The Cloudtech logo in white on a blue gradient',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',

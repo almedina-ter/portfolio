@@ -9,8 +9,8 @@ import { navItems } from './navigation'
 export function Availability({ className = '' }: { className?: string }) {
   if (!site.availability) return null
   return (
-    <p className={`flex items-start gap-2 text-sm leading-snug text-ink-muted ${className}`}>
-      <span aria-hidden="true" className="pulse-dot mt-[0.4em] size-2 shrink-0 rounded-full bg-positive" />
+    <p className={`text-sm leading-snug text-ink-muted ${className}`}>
+      <span aria-hidden="true" className="pulse-dot mr-2 inline-block size-2 rounded-full bg-positive align-[0.05em]" />
       {site.availability}
     </p>
   )
@@ -23,10 +23,12 @@ export function SiteNav() {
   return (
     <aside className="sticky top-0 hidden h-dvh flex-col justify-between overflow-y-auto border-r border-line px-8 py-10 lg:flex">
       <div>
-        <Link to="/" className="group block">
-          <LogoMark className="logo-wipe mb-4 h-7 w-auto text-ink transition-transform duration-(--duration-ui) ease-(--ease-out) group-hover:-rotate-6" />
-          <span className="block font-display text-[1.5rem] leading-none tracking-tight">{site.name}</span>
-          <span className="mt-2 block text-sm text-ink-muted">{site.role}</span>
+        <Link to="/" className="group flex items-center gap-3">
+          <LogoMark className="logo-wipe h-9 w-auto shrink-0 text-ink transition-transform duration-(--duration-ui) ease-(--ease-out) group-hover:-rotate-6" />
+          <span className="min-w-0">
+            <span className="block font-display text-[1.2rem] leading-none tracking-tight">{site.name}</span>
+            <span className="mt-1.5 block text-sm text-ink-muted">{site.role}</span>
+          </span>
         </Link>
 
         <nav aria-label="Primary" className="mt-14">
@@ -66,11 +68,11 @@ export function SiteNav() {
 
       <div className="space-y-5 pt-10 text-sm">
         <ThemeToggle />
-        <div className="space-y-1 text-ink-muted">
+        <div className="space-y-1.5 text-ink-muted">
           {site.location && <p>{site.location}</p>}
           <LocalTime />
+          <Availability />
         </div>
-        <Availability />
         <ul className="space-y-1.5">
           <li>
             <EmailLink className="link-underline break-all" />

@@ -511,10 +511,13 @@ html.motion #mobile-menu:not([hidden]) .menu-item {
 /* Hero orbit: the mark floats gently and its spark twinkles. */
 .orbit-text {
   font-family: var(--font-sans);
-  font-size: 14.5px;
+  font-size: 19px;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   fill: var(--color-ink-muted);
+}
+.orbit-text-soft {
+  fill: var(--color-ink-subtle);
 }
 @keyframes orbit-float {
   0%,

@@ -7,11 +7,9 @@ const REPEATS = 2
 const A = 190
 const B = 104
 const PERIMETER = Math.PI * (3 * (A + B) - Math.sqrt((3 * A + B) * (A + 3 * B)))
-const TRACK = 12
 
 const wide = `M${200 - A},200 a${A},${B} 0 1,1 ${2 * A},0 a${A},${B} 0 1,1 ${-2 * A},0`
 const tall = `M${200 - B},200 a${B},${A} 0 1,0 ${2 * B},0 a${B},${A} 0 1,0 ${-2 * B},0`
-const ellipse = (rx: number, ry: number) => `M${200 - rx},200 a${rx},${ry} 0 1,1 ${2 * rx},0 a${rx},${ry} 0 1,1 ${-2 * rx},0`
 
 /**
  * The "a" mark at the centre of two crossing tracks that carry "Creating digital stories",
@@ -41,14 +39,8 @@ export function HeroOrbit({ className = '', delay = 0 }: { className?: string; d
           <path id="orbit-wide" d={wide} />
           <path id="orbit-tall" d={tall} />
         </defs>
-        {[ellipse(A + TRACK, B + TRACK), ellipse(A - TRACK, B - TRACK)].map((d, i) => (
-          <path key={`w${i}`} d={d} fill="none" stroke="var(--color-line-strong)" strokeWidth="1" />
-        ))}
-        {[ellipse(B + TRACK, A + TRACK), ellipse(B - TRACK, A - TRACK)].map((d, i) => (
-          <path key={`t${i}`} d={d} fill="none" stroke="var(--color-line-strong)" strokeWidth="1" />
-        ))}
         {(['wide', 'tall'] as const).map((id) => (
-          <text key={id} className="orbit-text" dy="0.36em">
+          <text key={id} className={`orbit-text ${id === 'tall' ? 'orbit-text-soft' : ''}`} dy="0.36em">
             <textPath href={`#orbit-${id}`} startOffset={still ? 0 : -PERIMETER} textLength={textLength} lengthAdjust="spacing">
               {text}
               {!still && motion}
@@ -57,7 +49,7 @@ export function HeroOrbit({ className = '', delay = 0 }: { className?: string; d
         ))}
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <LogoMark animated className="orbit-mark h-[4.25rem] w-auto text-ink" />
+        <LogoMark animated className="orbit-mark h-[2.75rem] w-auto text-ink" />
       </div>
       </div>
     </div>

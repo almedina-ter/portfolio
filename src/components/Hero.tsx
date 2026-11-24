@@ -5,6 +5,7 @@ import { publishedProjects } from '../content/projects'
 import { site } from '../content/site'
 import { clamp, subscribeScroll } from '../lib/motion'
 import { scrollToId } from '../lib/scroll'
+import { HeroOrbit } from './HeroOrbit'
 import { SplitHeading } from './SplitHeading'
 import { ToolsMarquee } from './ToolsMarquee'
 import { Availability } from './SiteNav'
@@ -40,7 +41,8 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative container-page pt-14 pb-16 sm:pt-20 lg:flex lg:min-h-[88dvh] lg:flex-col lg:justify-between lg:pt-28 lg:pb-20"
     >
-      <div className="hero-drift">
+      <div className="hero-drift relative">
+        <HeroOrbit className="load-in absolute top-0 right-0 hidden w-[15rem] min-[1440px]:block" delay={650} />
         <p className="eyebrow load-in">
           {site.role}
           {site.location ? ` · ${site.location}` : ''}

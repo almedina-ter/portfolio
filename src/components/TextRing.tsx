@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const PHRASE = 'CREATING DIGITAL STORIES  ·  '
-const R = 168
+const R = 146
 const CIRCUMFERENCE = 2 * Math.PI * R
 const circle = `M${200 - R},200 a${R},${R} 0 1,1 ${2 * R},0 a${R},${R} 0 1,1 ${-2 * R},0`
 
@@ -31,13 +31,13 @@ export function TextRing({ className = '', label }: { className?: string; label?
       </text>
       {label && (
         <>
-          <text x="250" y="200" textAnchor="end" dominantBaseline="central" className="ring-label">
+          <text x="106" y="200" textAnchor="start" dominantBaseline="central" className="ring-label">
             {label}
           </text>
-          {/* Arrow down, drawn like the arrows beside Resume. */}
-          <g transform="translate(262 186) scale(1.15)" fill="none" stroke="var(--color-ink)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 3v16" transform="translate(-12 0)" />
-            <path d="m6 13-6 6-6-6" transform="translate(0 0)" />
+          {/* Arrow down, in the same line style as the arrow beside Resume. */}
+          <g transform="translate(284 200)" fill="none" stroke="var(--color-ink)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M0 -15v30" />
+            <path d="m-11 6 11 11 11 -11" />
           </g>
         </>
       )}

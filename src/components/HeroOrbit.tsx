@@ -16,7 +16,7 @@ const tall = `M${200 - B},200 a${B},${A} 0 1,0 ${2 * B},0 a${B},${A} 0 1,0 ${-2 
  * turning in opposite directions. Decorative, so it is hidden from assistive technology.
  * With reduced motion everything stands still.
  */
-export function HeroOrbit({ className = '', delay = 0, inverse = false }: { className?: string; delay?: number; inverse?: boolean }) {
+export function HeroOrbit({ className = '', delay = 0, inverse = false, markClass = 'h-[3.5rem]' }: { className?: string; delay?: number; inverse?: boolean; markClass?: string }) {
   const [still, setStill] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
   useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -50,7 +50,7 @@ export function HeroOrbit({ className = '', delay = 0, inverse = false }: { clas
         ))}
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <LogoMark animated className={`orbit-mark h-[3.5rem] w-auto ${inverse ? 'text-paper' : 'text-ink'}`} />
+        <LogoMark animated className={`orbit-mark ${markClass} w-auto ${inverse ? 'text-paper' : 'text-ink'}`} />
       </div>
       </div>
     </div>

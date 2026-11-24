@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router'
 import { ArrowDown, ArrowRight } from 'lucide-react'
-import { publishedProjects } from '../content/projects'
 import { site } from '../content/site'
 import { clamp, subscribeScroll } from '../lib/motion'
 import { scrollToId } from '../lib/scroll'
@@ -21,8 +20,6 @@ const delay = (ms: number) => ({ '--load-delay': `${ms}ms` }) as CSSProperties
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
   const [scrolled, setScrolled] = useState(false)
-  const featured = publishedProjects.filter((project) => project.featured)
-  const work = featured.length ? featured : publishedProjects
 
   useEffect(() => {
     const section = sectionRef.current
@@ -72,35 +69,17 @@ export function Hero() {
 
       <ToolsMarquee className="mt-14 lg:mt-0" />
 
-      <div className="relative mt-14 lg:mt-0">
+      <div className="mt-14 flex justify-center lg:mt-0">
         <button
           type="button"
           aria-label="Scroll to selected work"
           onClick={() => scrollToId('work')}
           data-hidden={scrolled ? '' : undefined}
-          className="scroll-cue load-in absolute right-0 bottom-full mb-1 hidden w-[6rem] rounded-full lg:block"
+          className="scroll-cue load-in w-[6rem] rounded-full"
           style={delay(1100)}
         >
           <TextRing label="SCROLL" className="w-full" />
         </button>
-        <ul
-          aria-label="Selected projects"
-          className="rule-draw rule-draw-top flex flex-wrap gap-x-8 gap-y-3 pt-6 text-sm text-ink-muted lg:pr-28"
-          data-revealed=""
-          style={{ '--reveal-delay': '500ms' } as CSSProperties}
-        >
-          {work.map((project, index) => (
-            <li key={project.slug} className="load-in" style={delay(760 + index * 70)}>
-              <Link to={`/work/${project.slug}`} className="group flex items-center gap-3 transition-colors hover:text-ink">
-                <span aria-hidden="true" className="font-mono text-xs text-ink-subtle">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="text-ink">{project.category ?? project.title}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
       </div>
     </section>
   )

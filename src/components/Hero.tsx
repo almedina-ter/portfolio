@@ -72,7 +72,7 @@ export function Hero() {
           type="button"
           aria-label="Scroll to selected work"
           onClick={() => scrollToId('work')}
-          className="load-in w-[7.5rem] rounded-full"
+          className="load-in w-[10rem] rounded-full"
           style={delay(1100)}
         >
           <TextRing label="SCROLL" className="w-full" />

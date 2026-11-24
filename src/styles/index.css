@@ -579,7 +579,7 @@ html.motion .orbit-mark .logo-spark {
 /* Small ring of turning text, used as a corner accent. */
 .ring-text {
   font-family: var(--font-sans);
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 300;
   letter-spacing: 0.1em;
   fill: var(--color-ink-muted);

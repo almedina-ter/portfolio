@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const PHRASE = 'CREATING DIGITAL STORIES  ·  '
-const R = 138
+const R = 146
 const CIRCUMFERENCE = 2 * Math.PI * R
 const circle = `M${200 - R},200 a${R},${R} 0 1,1 ${2 * R},0 a${R},${R} 0 1,1 ${-2 * R},0`
 

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link, useLocation } from 'react-router'
 import { Menu, X } from 'lucide-react'
 import { site } from '../content/site'
+import { LogoMark } from './LogoMark'
+import { ThemeToggle } from './ThemeToggle'
 import { subscribeScroll } from '../lib/motion'
 import { EmailLink, LinkedInLink, ResumeLink } from './ContactLinks'
 import { Availability } from './SiteNav'
@@ -64,10 +66,15 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
         }`}
       >
         <div className="flex h-16 items-center justify-between px-gutter">
-          <Link to="/" onClick={close} className="flex min-h-11 min-w-0 flex-col justify-center">
-            <span className="truncate font-display text-xl leading-none">{site.name}</span>
-            <span className="mt-1 truncate text-xs text-ink-muted">{site.role}</span>
+          <Link to="/" onClick={close} className="flex min-h-11 min-w-0 items-center gap-3">
+            <LogoMark className="logo-wipe h-8 w-auto shrink-0 text-ink" />
+            <span className="flex min-w-0 flex-col">
+              <span className="truncate font-display text-xl leading-none">{site.name}</span>
+              <span className="mt-1 truncate text-xs text-ink-muted">{site.role}</span>
+            </span>
           </Link>
+          <div className="flex items-center gap-1">
+            <ThemeToggle className="size-10 border-transparent" />
           <button
             ref={toggleRef}
             type="button"
@@ -79,6 +86,7 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
             {open ? <X aria-hidden="true" className="size-5" /> : <Menu aria-hidden="true" className="size-5" />}
             {open ? 'Close' : 'Menu'}
           </button>
+          </div>
         </div>
       </header>
 

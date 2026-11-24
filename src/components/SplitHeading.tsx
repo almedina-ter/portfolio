@@ -1,13 +1,16 @@
 import type { CSSProperties, ElementType } from 'react'
+import { useReveal } from '../lib/useReveal'
 
 interface SplitHeadingProps {
   as?: ElementType
-  /** Text with *asterisks* around words for italic display emphasis. */
+  /** The heading text. A new line (\n) forces a line break. */
   text: string
   id?: string
   className?: string
   /** Delay before the first word, in ms. */
   delay?: number
+  /** Start when the heading scrolls into view, instead of on load. */
+  inView?: boolean
 }
 
 /**
@@ -15,27 +18,29 @@ interface SplitHeadingProps {
  * readers get the plain text through aria-label; the split words are hidden
  * from them. With reduced motion the words are simply there.
  */
-export function SplitHeading({ as: Heading = 'h1', text, id, className = '', delay = 80 }: SplitHeadingProps) {
+export function SplitHeading({ as: Heading = 'h1', text, id, className = '', delay = 80, inView = false }: SplitHeadingProps) {
+  const ref = useReveal<HTMLElement>()
   let wordIndex = 0
-  const segments = text.split('*').map((segment, segmentIndex) => {
-    const italic = segmentIndex % 2 === 1
-    return segment.split(/(\s+)/).map((word, i) => {
-      if (!word) return null
-      if (/^\s+$/.test(word)) return ' '
-      const style = { '--word-delay': `${delay + wordIndex++ * 55}ms` } as CSSProperties
-      return (
-        <span key={`${segmentIndex}-${i}`} className="split-word">
-          <span className={italic ? 'italic' : undefined} style={style}>
-            {word}
+  const plain = text.replaceAll('*', '')
+  const lines = plain.split('\n').map((line, lineIndex) => (
+    <span key={lineIndex}>
+      {lineIndex > 0 && <br />}
+      {line.split(/(\s+)/).map((word, i) => {
+        if (!word) return null
+        if (/^\s+$/.test(word)) return ' '
+        const style = { '--word-delay': `${delay + wordIndex++ * 55}ms` } as CSSProperties
+        return (
+          <span key={`${lineIndex}-${i}`} className="split-word">
+            <span style={style}>{word}</span>
           </span>
-        </span>
-      )
-    })
-  })
+        )
+      })}
+    </span>
+  ))
 
   return (
-    <Heading id={id} aria-label={text.replaceAll('*', '')} className={className}>
-      <span aria-hidden="true">{segments}</span>
+    <Heading ref={ref} id={id} data-split={inView ? 'view' : undefined} aria-label={plain.replaceAll('\n', ' ')} className={className}>
+      <span aria-hidden="true">{lines}</span>
     </Heading>
   )
 }

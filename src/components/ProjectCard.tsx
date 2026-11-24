@@ -1,3 +1,4 @@
+import { useRef, type PointerEvent } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import type { Project } from '../content/types'
@@ -20,9 +21,28 @@ interface ProjectCardProps {
  * Nothing essential depends on hover.
  */
 export function ProjectCard({ project, index, headingLevel: Heading = 'h3', className = '' }: ProjectCardProps) {
+  const cardRef = useRef<HTMLElement>(null)
+  // A very small tilt that follows the pointer, mouse only and only with motion allowed.
+  const tilt = (event: PointerEvent<HTMLElement>) => {
+    const card = cardRef.current
+    if (!card || event.pointerType !== 'mouse' || !document.documentElement.classList.contains('motion')) return
+    const rect = card.getBoundingClientRect()
+    const x = (event.clientX - rect.left) / rect.width - 0.5
+    const y = (event.clientY - rect.top) / rect.height - 0.5
+    card.style.setProperty('--tilt-x', `${(-y * 2.5).toFixed(2)}deg`)
+    card.style.setProperty('--tilt-y', `${(x * 2.5).toFixed(2)}deg`)
+  }
+  const settle = () => {
+    cardRef.current?.style.setProperty('--tilt-x', '0deg')
+    cardRef.current?.style.setProperty('--tilt-y', '0deg')
+  }
   return (
     <article
-      className={`group relative flex h-full flex-col rounded-[1.25rem] border border-line bg-surface/40 p-3 transition-[translate,box-shadow,border-color,background-color] duration-(--duration-ui) ease-(--ease-out) hover:border-line-strong hover:bg-surface/70 hover:shadow-[0_28px_50px_-30px_rgba(22,21,19,0.45)] motion-safe:hover:-translate-y-1 ${className}`}
+      ref={cardRef}
+      onPointerMove={tilt}
+      onPointerLeave={settle}
+      style={{ transform: 'perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))' }}
+      className={`group relative flex h-full flex-col rounded-[1.25rem] border border-line bg-surface/40 p-3 transition-[translate,transform,box-shadow,border-color,background-color] duration-(--duration-ui) ease-(--ease-out) hover:border-line-strong hover:bg-surface/70 hover:shadow-[0_28px_50px_-30px_rgba(22,21,19,0.45)] motion-safe:hover:-translate-y-1 ${className}`}
     >
       <Reveal variant="media" className="overflow-hidden rounded-lg">
         <div className="reveal-zoom">
@@ -54,7 +74,7 @@ export function ProjectCard({ project, index, headingLevel: Heading = 'h3', clas
           </Link>
         </Heading>
 
-        <p className={`mt-2 text-[0.9375rem] ${project.summary ? 'text-ink-muted' : 'text-ink-subtle italic'}`}>
+        <p className={`mt-2 text-[0.9375rem] ${project.summary ? 'text-ink-muted' : 'text-ink-subtle'}`}>
           {project.summary || 'Description coming soon.'}
         </p>
 

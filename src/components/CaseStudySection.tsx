@@ -1,8 +1,10 @@
 import { ArrowDown, ArrowRight } from 'lucide-react'
 import type { CaseStudySection as Section, DesignItem } from '../content/types'
+import { CountUp } from './CountUp'
 import { ImageGallery } from './ImageGallery'
 import { Media } from './Media'
 import { Reveal } from './Reveal'
+import { SplitHeading } from './SplitHeading'
 
 interface CaseStudySectionProps {
   section: Section
@@ -90,16 +92,14 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
 
   return (
     <section id={section.id} aria-labelledby={headingId} className="scroll-mt-24">
-      <Reveal variant="stagger" className="rule-draw rule-draw-top pt-8 lg:pt-10">
+      <Reveal variant="fade" className="rule-draw rule-draw-top pt-8 lg:pt-10">
         <p className="eyebrow flex gap-3">
           <span aria-hidden="true" className="font-mono">
             {String(index + 1).padStart(2, '0')}
           </span>
           {section.label}
         </p>
-        <h2 id={headingId} className="mt-4 font-display text-heading">
-          {section.heading}
-        </h2>
+        <SplitHeading as="h2" id={headingId} text={section.heading} delay={60} inView className="mt-4 font-display text-heading" />
       </Reveal>
 
       <Reveal delay={160} className="mt-8 space-y-8 lg:mt-10">
@@ -127,7 +127,9 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
               <ul className="grid grid-cols-3 gap-3 sm:gap-4">
                 {section.stats.map((stat) => (
                   <li key={stat.label} className="rounded-lg border border-line bg-surface/60 p-4 sm:p-6">
-                    <p className="font-display text-[2rem] leading-none tabular-nums sm:text-[2.75rem]">{stat.value}</p>
+                    <p className="font-display text-[2rem] leading-none tabular-nums sm:text-[2.75rem]">
+                      <CountUp value={stat.value} />
+                    </p>
                     <p className="mt-3 text-sm font-medium text-ink-muted">{stat.label}</p>
                   </li>
                 ))}
@@ -296,20 +298,16 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                       <span aria-hidden="true" className="h-px flex-1 bg-line" />
                     </p>
                   )}
-                  <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_14rem] lg:items-start lg:gap-10">
-                    <ImageGallery images={[screen.media]} layout="stack" hintBase={`${assetFolder}/${section.id}-${i + 1}`} />
-                    <div>
-                      <h3 className="text-xl font-medium">{screen.title}</h3>
-                      <ul className="mt-4 divide-y divide-line text-[0.9375rem] text-ink-muted">
-                        {screen.notes.map((note, j) => (
-                          <li key={j} className="flex gap-3 py-2.5 first:pt-0 last:pb-0">
-                            <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
-                            {note}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                  <h3 className="mb-6 text-xl font-medium">{screen.title}</h3>
+                  <ImageGallery images={[screen.media]} layout="stack" hintBase={`${assetFolder}/${section.id}-${i + 1}`} />
+                  <ul className="mt-8 grid gap-x-12 gap-y-3 text-[0.9375rem] text-ink-muted sm:grid-cols-2">
+                    {screen.notes.map((note, j) => (
+                      <li key={j} className="flex gap-3">
+                        <span aria-hidden="true" className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-accent" />
+                        {note}
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
             </ol>

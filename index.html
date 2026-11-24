@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5f3ef" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      // Set the theme before the page paints, so there is no flash of the wrong one.
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('theme')
+          var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (dark) {
+            document.documentElement.dataset.theme = 'dark'
+            var meta = document.querySelector('meta[name="theme-color"]')
+            if (meta) meta.setAttribute('content', '#131211')
+          }
+        } catch (e) {}
+      })()
+    </script>
     <!--portfolio-meta-->
   </head>
   <body>

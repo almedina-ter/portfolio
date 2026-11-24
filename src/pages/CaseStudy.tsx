@@ -87,7 +87,7 @@ export function CaseStudy() {
           <SampleTag show={project.sample === true} />
         </div>
         <SplitHeading text={project.title} delay={100} className="mt-5 font-display text-title" />
-        <p className={`mt-6 text-lede load-in ${project.summary ? 'text-ink-muted' : 'text-ink-subtle italic'}`} style={delay(380)}>
+        <p className={`mt-6 text-lede load-in ${project.summary ? 'text-ink-muted' : 'text-ink-subtle'}`} style={delay(380)}>
           {project.summary || 'Description coming soon.'}
         </p>
         <div className="mt-12 load-in" style={delay(500)}>

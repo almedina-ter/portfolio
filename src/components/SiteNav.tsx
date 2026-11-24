@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router'
 import { site } from '../content/site'
+import { LogoMark } from './LogoMark'
 import { EmailLink, LinkedInLink, OtherLinks, ResumeLink } from './ContactLinks'
 import { LocalTime } from './LocalTime'
+import { ThemeToggle } from './ThemeToggle'
 import { navItems } from './navigation'
 
 export function Availability({ className = '' }: { className?: string }) {
@@ -22,6 +24,7 @@ export function SiteNav() {
     <aside className="sticky top-0 hidden h-dvh flex-col justify-between overflow-y-auto border-r border-line px-8 py-10 lg:flex">
       <div>
         <Link to="/" className="group block">
+          <LogoMark className="logo-wipe mb-5 h-10 w-auto text-ink transition-transform duration-(--duration-ui) ease-(--ease-out) group-hover:-rotate-6" />
           <span className="block font-display text-[1.75rem] leading-none tracking-tight">{site.name}</span>
           <span className="mt-2 block text-sm text-ink-muted">{site.role}</span>
         </Link>
@@ -62,6 +65,7 @@ export function SiteNav() {
       </div>
 
       <div className="space-y-5 pt-10 text-sm">
+        <ThemeToggle />
         <Availability />
         <div className="space-y-1 text-ink-muted">
           {site.location && <p>{site.location}</p>}

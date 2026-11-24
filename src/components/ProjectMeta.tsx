@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '../content/types'
+import { CountUp } from './CountUp'
 
 /** One column per detail on wide screens, so the details share the full width. */
 const wideColumns: Record<number, string> = {
@@ -67,7 +68,9 @@ export function ProjectMeta({ project }: { project: Project }) {
         <ul className="mt-4 grid gap-4 sm:grid-cols-3">
           {project.teams.map((team) => (
             <li key={team.name} className="rounded-lg border border-line bg-surface/60 p-6">
-              <p className="font-display text-[2.75rem] leading-none">{team.count}</p>
+              <p className="font-display text-[2.75rem] leading-none tabular-nums">
+                <CountUp value={team.count} duration={900} />
+              </p>
               <p className="mt-3 text-sm text-ink-muted">{team.unit}</p>
               <p className="mt-6 border-t border-line pt-4 font-medium">{team.name}</p>
             </li>

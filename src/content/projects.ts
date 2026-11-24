@@ -101,11 +101,11 @@ export const projects: Project[] = [
           {
             title: 'Patient overview',
             media: {
-              src: 'images/projects/healthcare-saas/management-patient-overview.webp',
-              alt: 'Patient Overview: three summary figures for total, active and inactive patients, tabs and filters, Export Data and Add patient buttons, and a table of patients with age, patient ID, status, last activity and a View link',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-patient-overview.webp',
+              alt: 'Patient list screen with labelled parts: Patient counts, Export data, Add patient, Tabs with counts, Patient name, Patient ID, Status, Search, View patient, Pagination. Patient Overview: three summary figures for total, active and inactive patients, tabs and filters, Export Data and Add patient buttons, and a table of patients with age, patient ID, status, last activity and a View link',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'Three figures show the total, active and inactive patients in the clinic.',
@@ -119,11 +119,11 @@ export const projects: Project[] = [
             title: 'Patient details',
             trigger: 'Select View on a patient',
             media: {
-              src: 'images/projects/healthcare-saas/management-patient-profile.webp',
-              alt: 'Patient details: a patient header, tabs for Patient Profile, Medical history and Care Plan, and cards for personal information, contact information, care team, latest vitals, next appointment, medications and a doctor’s note',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-patient-details.webp',
+              alt: 'Patient profile screen with labelled parts: Patient header, Contact information, Edit profile, Tabs, Personal information, Doctor’s note, Care team, Next appointment, Latest vitals, Medications. Patient details: a patient header, tabs for Patient Profile, Medical history and Care Plan, and cards for personal information, contact information, care team, latest vitals, next appointment, medications and a doctor’s note',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'Three tabs organise the patient area: Patient Profile, Medical history and Care Plan. The Patient Profile is shown here.',
@@ -162,11 +162,11 @@ export const projects: Project[] = [
           {
             title: 'Monitoring overview',
             media: {
-              src: 'images/projects/healthcare-saas/monitoring-overview.webp',
-              alt: 'Monitoring overview: tabs for Overview, ECG and Recordings, Reports, Laboratory Results and Visits and Appointments, a 24-hour heart rate chart, an alert history, the latest ECG, and a table of patients with episode, duration, maximum heart rate and status',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-monitoring-overview.webp',
+              alt: 'Monitoring overview screen with labelled parts: Tabs and filters, Alert history, Latest ECG, Heart rate chart, Patient name, Episode type, Export data, Status, Details, Pagination. Monitoring overview: tabs for Overview, ECG and Recordings, Reports, Laboratory Results and Visits and Appointments, a 24-hour heart rate chart, an alert history, the latest ECG, and a table of patients with episode, duration, maximum heart rate and status',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'Tabs move between Overview, ECG & Recordings, Reports, Laboratory Results, and Visits & Appointments, with filters and Export Data beside them.',
@@ -180,11 +180,11 @@ export const projects: Project[] = [
             title: 'ECG & Recordings',
             trigger: 'Open the ECG & Recordings tab',
             media: {
-              src: 'images/projects/healthcare-saas/monitoring-ecg-recordings.webp',
-              alt: 'ECG and Recordings: detected episodes with totals and types, recording quality, review and monitoring status, and a table of patients with episode, duration and maximum heart rate',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-ecg-recordings.webp',
+              alt: 'ECG & Recordings screen with labelled parts: Tabs, Detected episodes, Recording quality, Episodes by type, Patient table, Export data, Quality by day, Review status, Pagination. ECG and Recordings: detected episodes with totals and types, recording quality, review and monitoring status, and a table of patients with episode, duration and maximum heart rate',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'Detected episodes shows how many episodes were found, how often and of which type.',
@@ -197,11 +197,11 @@ export const projects: Project[] = [
             title: 'Patient ECG',
             trigger: 'Select Details for a patient',
             media: {
-              src: 'images/projects/healthcare-saas/monitoring-patient.webp',
-              alt: 'Patient ECG: a patient header with Message patient and Export report buttons, tabs for waveform and episodes, heart rate, recordings and quality, and review history, a list of episodes and an ECG waveform of the selected episode',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-patient-ecg.webp',
+              alt: 'Patient ECG screen with labelled parts: Patient header, Summary figures, Message and export, Tabs, Episode list, Waveform, Episode details, Review note, Detected section. Patient ECG: a patient header with Message patient and Export report buttons, tabs for waveform and episodes, heart rate, recordings and quality, and review history, a list of episodes and an ECG waveform of the selected episode',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'The ECG recordings for one patient, with tabs for Waveform & episodes, Heart Rate, Recordings & quality and Review history.',
@@ -239,11 +239,11 @@ export const projects: Project[] = [
           {
             title: 'Messages',
             media: {
-              src: 'images/projects/healthcare-saas/communication-overview.webp',
-              alt: 'Messages: a conversation list on the left split into messages and groups, a notification with a message preview and View Conversation and Dismiss options, and an empty state saying no conversation is selected',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-messages.webp',
+              alt: 'Messages screen with labelled parts: Search, Notification, Conversations, Groups, Unread marker, Empty state. Messages: a conversation list on the left split into messages and groups, a notification with a message preview and View Conversation and Dismiss options, and an empty state saying no conversation is selected',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'All conversations sit in a sidebar, with search, an archive and a button to start a new chat.',
@@ -256,11 +256,11 @@ export const projects: Project[] = [
             title: 'One-to-one conversation',
             trigger: 'Select View Conversation',
             media: {
-              src: 'images/projects/healthcare-saas/communication-chat.webp',
-              alt: 'A one-to-one conversation: a message asking for a patient link, and a reply that shares the patient as a card with name, record number, status and a View profile button',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-one-to-one.webp',
+              alt: 'One-to-one chat screen with labelled parts: Person and status, Search, pin and more, Conversation list, Message, Shared patient card, Read marker, Attach, Composer, Send. A one-to-one conversation: a message asking for a patient link, and a reply that shares the patient as a card with name, record number, status and a View profile button',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'The conversation opens beside the list, with the person’s name and status at the top.',
@@ -273,11 +273,11 @@ export const projects: Project[] = [
             title: 'Group chat',
             trigger: 'Select a group',
             media: {
-              src: 'images/projects/healthcare-saas/communication-group.webp',
-              alt: 'A group chat named CareSync with its members listed under the name, and messages from several people grouped under today',
-              width: 1920,
-              height: 1080,
-              aspect: '1920 / 1080',
+              src: 'images/projects/healthcare-saas/showcase-group-chat.webp',
+              alt: 'Group chat screen with labelled parts: Group and members, Search, pin and more, Groups, Your message, Sender and time, Composer, Send. A group chat named CareSync with its members listed under the name, and messages from several people grouped under today',
+              width: 2400,
+              height: 1350,
+              aspect: '2400 / 1350',
             },
             notes: [
               'Groups bring several colleagues into one conversation.',

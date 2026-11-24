@@ -39,7 +39,7 @@ export const projects: Project[] = [
     },
     hero: {
       src: 'images/projects/healthcare-saas/cover.webp',
-      alt: 'A tilted board of screens from a healthcare platform: the patient overview and patient details, the monitoring overview, ECG recordings and a patient ECG, and messaging with a one-to-one conversation and a group chat',
+      alt: 'The word Healthcare set in large serif type over a pink to blue gradient, with a laptop showing a patient ECG waveform and its detected episodes',
       width: 2400,
       height: 1350,
       aspect: '16 / 9',

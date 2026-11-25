@@ -151,7 +151,7 @@ export function CaseStudySection({ section, index, slug }: CaseStudySectionProps
                       {item.list && (
                         <ol className="mt-3 space-y-1.5 text-ink">
                           {item.list.map((entry, j) => (
-                            <li key={j} className="flex gap-3">
+                            <li key={j} className="flex items-baseline gap-3">
                               <span aria-hidden="true" className="font-number text-xs text-ink-subtle">
                                 {j + 1}.
                               </span>

@@ -201,7 +201,7 @@ export const projects: Project[] = [
         nested: true,
         body: [
           'How a doctor sees where their patients are heading: an overview, then ECG recordings for all patients, then one patient, then a single episode.',
-          'Each step shows more detail about fewer patients.',
+          'Each step shows more detail about each patient.',
         ],
         screens: [
           {
@@ -399,8 +399,8 @@ export const projects: Project[] = [
     title: 'Design System',
     client: '91 Life',
     summary:
-      'Design Plus is the shared component library behind a healthcare platform. I designed its tables, modals, tooltips, toggles and checkboxes.',
-    type: 'Design system · Healthcare SaaS',
+      'Design Plus is the shared component library behind a platform. I designed its tables, modals, tooltips, toggles and checkboxes.',
+    type: 'Design system · Component library',
     category: 'Design System',
     year: '',
     role: 'UI/UX Designer',
@@ -430,7 +430,7 @@ export const projects: Project[] = [
         label: 'Overview',
         heading: 'Project overview and my role',
         body: [
-          'A healthcare SaaS platform used daily by clinical teams was growing fast, with more designers and engineers building more screens at once.',
+          'A fast-growing SaaS platform had more designers and engineers building more screens at once.',
           'Design Plus is the design system we built to keep it consistent: several designers each owned components, and we built it in about a month, alongside the product.',
           'I also wrote the component documentation engineers use to find, understand and build each part.',
         ],
@@ -450,8 +450,8 @@ export const projects: Project[] = [
         label: 'Background',
         heading: 'Why the product needed a design system',
         body: [
-          'Every new feature, from patient charts to messaging and billing, needed the same building blocks: form controls, tables, tooltips and dialogs.',
-          'Without shared components, each feature redesigned and rebuilt them, with small differences in spacing, colour and behaviour. In a clinical product, where people scan dense records under time pressure, those differences add friction and erode trust.',
+          'Every new feature, from data charts to messaging and billing, needed the same building blocks: form controls, tables, tooltips and dialogs.',
+          'Without shared components, each feature redesigned and rebuilt them, with small differences in spacing, colour and behaviour. In a data-heavy product, where people scan dense records under time pressure, those differences add friction and erode trust.',
           'Engineers felt it too: which version to use, what the hover or disabled state looked like, how it should behave.',
         ],
       },
@@ -519,7 +519,7 @@ export const projects: Project[] = [
         items: [
           {
             rationale:
-              'Patient lists and records depend on tables, so I designed them as a set of parts, not one fixed layout.',
+              'Lists and records depend on tables, so I designed them as a set of parts, not one fixed layout.',
             points: [
               'Two densities: rich rows with status, tags and actions, and compact rows for scanning many records.',
               'Sortable headers, a link style for records that open elsewhere, and row actions in one menu.',
@@ -571,7 +571,7 @@ export const projects: Project[] = [
         heading: 'Tooltips, Action Toggles & Checkboxes',
         nested: true,
         intro:
-          'Dense clinical screens leave little room to explain, so tooltips add context only where needed. Checkboxes appear everywhere, from forms to table rows, so they had to be predictable. Toggles share their states, so both feel like one family.',
+          'Dense screens leave little room to explain, so tooltips add context only where needed. Checkboxes appear everywhere, from forms to table rows, so they had to be predictable. Toggles share their states, so both feel like one family.',
         layout: 'stacked',
         items: [
           {
@@ -716,12 +716,12 @@ export const projects: Project[] = [
             detail: 'A new mark that reflects the company’s technical background and stands apart.',
           },
           {
-            title: 'Website structure',
-            detail: 'Wireframes for content hierarchy, layout and user experience.',
-          },
-          {
             title: 'Brand system',
             detail: 'Logo variations, colour palette, social templates, banners and profile assets.',
+          },
+          {
+            title: 'Website structure',
+            detail: 'Wireframes for content hierarchy, layout and user experience.',
           },
           {
             title: 'Website design and development',

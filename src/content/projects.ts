@@ -18,7 +18,7 @@ export const projects: Project[] = [
     title: 'Healthcare SaaS',
     client: '',
     summary:
-      'An ongoing healthcare SaaS platform that clinical teams use to manage patients, monitor their activity and communicate with each other. As a Product Designer, I design core workflows across patient management, monitoring and communication, working alongside the Design Team, Product Team and Engineering Team.',
+      'One platform for patients, ECG monitoring and clinical messaging, used across 3 hospitals and 27 clinics. I design the core workflows.',
     type: 'Product design · Healthcare SaaS',
     category: 'Product Design',
     year: '',
@@ -54,8 +54,8 @@ export const projects: Project[] = [
         label: 'Overview',
         heading: 'Project overview and my role',
         body: [
-          'A healthcare SaaS platform for clinical teams who follow up patients remotely. It brings patient records, device data, billing, external monitoring reports and team messaging into one product.',
-          'The platform serves a large healthcare network, across 3 hospitals, 27 clinics and more than 60,000 patients. These figures describe the scale of the product, not the result of my work, but they shape every decision: screens have to stay clear and consistent for many teams in many places.',
+          'A healthcare SaaS platform that helps clinical teams follow up with patients remotely. Patient records, device data, monitoring reports and messaging live in one product.',
+          'It serves a large healthcare network. These figures show the platform’s scale, not my results, and they shape every decision: clear, consistent screens for many teams.',
         ],
         stats: [
           { value: '03', label: 'Hospitals' },
@@ -64,16 +64,16 @@ export const projects: Project[] = [
         ],
         intro: 'At a glance:',
         items: [
-          { title: 'Product', detail: 'Healthcare SaaS application for clinical teams' },
-          { title: 'Project status', detail: 'Ongoing. The product continues to evolve.' },
+          { title: 'Product', detail: 'Healthcare SaaS for clinical teams' },
+          { title: 'Project status', detail: 'Ongoing' },
           {
             title: 'My involvement',
-            detail: 'Ongoing. I continue to contribute to the product, refine existing experiences and explore improvements.',
+            detail: 'Ongoing. I keep refining existing screens and exploring improvements.',
           },
-          { title: 'Role', detail: 'Product Designer, working alongside the Design Team, Product Team and Engineering Team' },
+          { title: 'Role', detail: 'Product Designer, working with the Design Team, Product Team and Engineering Team' },
           {
             title: 'My scope',
-            detail: 'Three areas of product work, in the same order as the sidebar and the sections below:',
+            detail: 'Three product areas:',
             list: ['Patient Overview', 'Monitoring', 'Communication'],
           },
         ],
@@ -84,9 +84,9 @@ export const projects: Project[] = [
         label: 'Product context',
         heading: 'A large product, built by many hands',
         body: [
-          'Across those hospitals and clinics, clinical teams use the platform every day to review patient data, follow up on alerts, manage billing and coordinate with each other. Much of that work happens in dense tables and detailed records, often under time pressure.',
-          'Because around twelve modules were designed by different designers, every new screen had to fit into an existing system: the same navigation, the same patterns for tabs, filters and tables, and the same components from our shared design system.',
-          'My work sits inside that system. I designed specific modules and workflows, and worked with the Design Team, Product Team and Engineering Team to keep them consistent with the rest of the product.',
+          'Clinical teams use it daily to review patient data, act on alerts and coordinate care. Much of the work happens in dense tables and detailed records, often under time pressure.',
+          'Around twelve modules were designed by different designers, so every new screen had to fit the same navigation, the same tab, filter and table patterns, and the shared design system.',
+          'I designed specific modules and workflows inside that system, working with the Design Team, Product Team and Engineering Team to keep them consistent.',
         ],
       },
       {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
         label: 'Product map',
         heading: 'How the product fits together',
         body: [
-          'The product is organised into three areas: Patient Overview, Monitoring and Communication. This map shows how a healthcare professional moves through them, from a list or an overview, down to one patient, one recording or one conversation.',
+          'Three areas, each moving from an overview down to one patient, one recording or one conversation.',
         ],
         root: 'Healthcare SaaS',
         areas: [
@@ -138,8 +138,8 @@ export const projects: Project[] = [
         heading: 'Thousands of patients, one list that reads at a glance',
         nested: true,
         body: [
-          'The Patient Overview is where a healthcare professional sees their whole patient population in one place: how many patients the clinic has, how many are active and how many are inactive, with a table that holds what they need to find any one of them.',
-          'From there, one click on View opens the patient’s details, where everything about that individual is gathered on a single screen.',
+          'The whole patient population at a glance, and one table to find anyone in it.',
+          'View opens a patient’s details on a single screen.',
         ],
         screens: [
           {
@@ -152,10 +152,10 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'Three figures show the total, active and inactive patients in the clinic.',
-              'Export Data and Add patient sit at the top right of the page.',
+              'Total, active and inactive patients at the top.',
+              'Export Data and Add patient, top right.',
               'Tabs with counts, filters and search narrow the list.',
-              'The table shows each patient’s name, age, patient ID, status and last activity.',
+              'Each row: name, age, ID, status and last activity.',
               'View opens the patient’s details.',
             ],
           },
@@ -170,26 +170,26 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'Three tabs organise the patient area: Patient Profile, Medical history and Care Plan. The Patient Profile is shown here.',
+              'Tabs: Patient Profile (shown), Medical history and Care Plan.',
               'Personal and contact information, including an emergency contact.',
-              'The care team and the next appointment.',
-              'Latest vitals, with a link to the full medical history.',
+              'Care team and next appointment.',
+              'Latest vitals, linked to the full medical history.',
               'Current medication and the doctor’s note.',
             ],
           },
         ],
         challenges: [
           {
-            challenge: 'A clinic can have thousands of patients, and the right one has to be easy to find.',
-            opportunity: 'Summary figures, tabs with counts, filters and search narrow the list from one place.',
+            challenge: 'Finding one patient among thousands.',
+            opportunity: 'Counts, tabs, filters and search narrow the list in one place.',
           },
           {
-            challenge: 'Each patient comes with many details, but a list can only show a few.',
-            opportunity: 'The table keeps to name, age, ID, status and activity, and View opens the rest.',
+            challenge: 'Many details, little room in a list.',
+            opportunity: 'The table shows name, age, ID, status and activity. View opens the rest.',
           },
           {
-            challenge: 'A patient’s information spans personal details, care team, vitals, medication and notes.',
-            opportunity: 'The details screen groups it into cards by type on one screen, with tabs for medical history and care plan.',
+            challenge: 'Patient information spread across many areas.',
+            opportunity: 'Cards grouped by type on one screen, with tabs for medical history and care plan.',
           },
         ],
       },
@@ -200,8 +200,8 @@ export const projects: Project[] = [
         heading: 'From an overview to a single episode',
         nested: true,
         body: [
-          'Monitoring shows a doctor how their patients are doing. It starts with an overview of everything at first glance, then goes into ECG recordings for all patients, then into one patient, and finally into a single episode.',
-          'At each step the screen shows more detail about fewer patients, so a doctor always knows where their patients are heading.',
+          'How a doctor sees where their patients are heading: an overview, then ECG recordings for all patients, then one patient, then a single episode.',
+          'Each step shows more detail about fewer patients.',
         ],
         screens: [
           {
@@ -214,11 +214,10 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'Tabs move between Overview, ECG & Recordings, Reports, Laboratory Results, and Visits & Appointments, with filters and Export Data beside them.',
-              'A chart shows the heart rate over the last 24 hours.',
-              'Alert history lists the latest alerts.',
-              'The latest ECG is one click from its waveform.',
-              'The table lists each patient with ID, activity, episode, duration, max heart rate, status and details.',
+              'Tabs: Overview, ECG & Recordings, Reports, Laboratory Results, Visits & Appointments.',
+              'Heart rate over the last 24 hours.',
+              'Alert history and the latest ECG, one click from its waveform.',
+              'A table of every patient: ID, activity, episode, duration, max heart rate, status.',
             ],
           },
           {
@@ -232,10 +231,10 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'Detected episodes shows how many episodes were found, how often and of which type.',
-              'Recording quality shows how many recordings are good, poor or incomplete.',
-              'Review & monitoring shows where episodes stand in the review process.',
-              'A table of all patients lists patient ID, episode, duration and max heart rate, with a details link.',
+              'Detected episodes: how many, how often, which type.',
+              'Recording quality: good, poor or incomplete.',
+              'Review status: where each episode stands.',
+              'A patient table with episode, duration and max heart rate.',
             ],
           },
           {
@@ -249,25 +248,25 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'The ECG recordings for one patient, with tabs for Waveform & episodes, Heart Rate, Recordings & quality and Review history.',
-              'All of the patient’s episodes are listed on the side.',
-              'Selecting an episode, such as the atrial flutter shown, opens it with its waveform, duration and other details.',
-              'Message patient and Export report sit at the top of the screen.',
+              'One patient’s recordings, in four tabs: Waveform & episodes, Heart Rate, Recordings & quality, Review history.',
+              'Every episode listed on the side.',
+              'Select an episode, such as the atrial flutter shown, to see its waveform, duration and details.',
+              'Message patient and Export report at the top.',
             ],
           },
         ],
         challenges: [
           {
-            challenge: 'Many patients produce a lot of heart rate, alert and recording data at once.',
-            opportunity: 'The overview leads with the heart rate chart, alert history and latest ECG, with one table for every patient.',
+            challenge: 'A lot of heart rate, alert and recording data at once.',
+            opportunity: 'Lead with the 24-hour chart, alert history and latest ECG, then one table for every patient.',
           },
           {
-            challenge: 'Detected episodes are only useful if the recordings behind them can be trusted.',
-            opportunity: 'Recording quality and review status sit beside the detected episodes.',
+            challenge: 'Detections are only useful if the recordings can be trusted.',
+            opportunity: 'Recording quality and review status sit beside detected episodes.',
           },
           {
             challenge: 'Going deeper should never mean getting lost.',
-            opportunity: 'Each step narrows the view, from all patients to one patient to one episode, with the episode list always on the side.',
+            opportunity: 'Each step narrows the view, with the episode list always in sight.',
           },
         ],
       },
@@ -278,8 +277,8 @@ export const projects: Project[] = [
         heading: 'Messaging inside the product',
         nested: true,
         body: [
-          'Communication works like a messenger built into the platform. Doctors can talk to each other one to one or in groups, without leaving the product.',
-          'Patient information can be shared inside a conversation too, and transmissions and episodes can be sent in the same way.',
+          'A messenger built into the platform. Doctors talk one to one or in groups without leaving the product.',
+          'Patient information, transmissions and episodes can be shared in a conversation.',
         ],
         screens: [
           {
@@ -292,10 +291,10 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'All conversations sit in a sidebar, with search, an archive and a button to start a new chat.',
-              'Messages and Groups are separate sections, with the time of the last message and an unread marker.',
-              'A notification shows who has written, with a preview and the choice to dismiss it or view the conversation.',
-              'With nothing selected, the screen invites the user to choose a conversation or start a new chat.',
+              'All conversations in one sidebar, with search, an archive and a new chat button.',
+              'Messages and Groups are separate, with last-message time and an unread marker.',
+              'A notification shows who wrote, with a preview and the choice to view or dismiss.',
+              'With nothing selected, the screen prompts you to pick a conversation or start a chat.',
             ],
           },
           {
@@ -309,10 +308,10 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'The conversation opens beside the list, with the person’s name and status at the top.',
-              'Messages are grouped by day, with sender and time.',
-              'A patient can be shared as a card with their key details and a link to their profile.',
-              'The composer supports attachments, text formatting and sending.',
+              'Opens beside the list, with the person’s name and status on top.',
+              'Messages grouped by day, with sender and time.',
+              'A patient shared as a card with key details and a link to their profile.',
+              'Composer with attachments, text formatting and send.',
             ],
           },
           {
@@ -326,25 +325,25 @@ export const projects: Project[] = [
               aspect: '2400 / 1350',
             },
             notes: [
-              'Groups bring several colleagues into one conversation.',
-              'The group’s members are listed under its name.',
+              'Several colleagues in one conversation.',
+              'Members listed under the group name.',
               'Each message shows who sent it and when.',
-              'Search, pin and more actions sit in the header.',
+              'Search, pin and more actions in the header.',
             ],
           },
         ],
         challenges: [
           {
-            challenge: 'Doctors need to reach each other quickly without leaving the product.',
-            opportunity: 'Messaging lives inside the platform, with conversations and groups in one sidebar.',
+            challenge: 'Reaching colleagues without leaving the product.',
+            opportunity: 'Conversations and groups live in one sidebar inside the platform.',
           },
           {
-            challenge: 'A new message should be noticed without interrupting the work.',
-            opportunity: 'A notification shows who wrote and a preview, with a direct link to the conversation.',
+            challenge: 'Noticing a new message without breaking focus.',
+            opportunity: 'A notification shows who wrote, with a preview and a direct link to the conversation.',
           },
           {
-            challenge: 'Conversations often concern a specific patient.',
-            opportunity: 'A patient can be shared in a conversation as a card with a link to their profile.',
+            challenge: 'Conversations are often about a specific patient.',
+            opportunity: 'A patient can be shared as a card linking to their profile.',
           },
         ],
       },
@@ -357,17 +356,17 @@ export const projects: Project[] = [
           {
             title: 'Consistency across modules',
             detail:
-              'Tabs with counts, filters, tables, labels and cards work the same way in every module I designed, and follow the patterns used by the rest of the product.',
+              'Tabs, filters, tables, labels and cards behave the same in every module I designed, and match the rest of the product.',
           },
           {
             title: 'Dense, but scannable',
             detail:
-              'Patient lists, monitoring tables and profiles carry a lot of information. Clear columns, colour-coded labels and cards grouped by type keep them readable.',
+              'Clear columns, colour-coded labels and cards grouped by type keep dense lists and profiles readable.',
           },
           {
             title: 'One step at a time',
             detail:
-              'A population leads to one patient, and an overview leads to one recording or one conversation. Each screen shows more about less.',
+              'A population leads to one patient, an overview to one recording or conversation. Each screen shows more about less.',
           },
         ],
       },
@@ -377,18 +376,18 @@ export const projects: Project[] = [
         label: 'Collaboration',
         heading: 'Collaboration and development',
         body: [
-          'I work alongside the Design Team, where each designer owns different modules and we share one design system, so the product feels like one product even though many people design it. I work with the Product Team and the Engineering Team as features move from design to development, and keep refining my screens as requirements change.',
+          'I work with the Design Team, where each designer owns different modules and we share one design system. As features move from design to development, I work with the Product Team and Engineering Team, and keep refining my screens as requirements change.',
         ],
       },
       {
         kind: 'outcomes',
         id: 'outcome',
         label: 'Outcome',
-        heading: 'Outcome and ongoing development',
+        heading: 'Outcome',
         items: [
-          { detail: 'Designed core workflows across three areas of a large healthcare platform: Patient Overview, Monitoring and Communication.' },
-          { detail: 'Made dense patient and monitoring information easier to scan, with consistent tabs, filters, labels and cards.' },
-          { detail: 'Keep refining them with the Product Team and Engineering Team as requirements change.' },
+          { detail: 'Core workflows across three areas: Patient Overview, Monitoring and Communication.' },
+          { detail: 'Dense patient and monitoring data made easier to scan, with consistent tabs, filters, labels and cards.' },
+          { detail: 'Ongoing refinement with the Product Team and Engineering Team.' },
         ],
       },
     ],
@@ -400,7 +399,7 @@ export const projects: Project[] = [
     title: 'Design System',
     client: '91 Life',
     summary:
-      'Design Plus, the design system behind a growing healthcare SaaS platform. Built by our Design Team alongside the product, it gave designers and engineers one shared foundation. I designed the tables, modals, tooltips, action tooltips, toggles and checkboxes.',
+      'Design Plus is the shared component library behind a healthcare platform. I designed its tables, modals, tooltips, toggles and checkboxes.',
     type: 'Design system · Healthcare SaaS',
     category: 'Design System',
     year: '',
@@ -431,17 +430,17 @@ export const projects: Project[] = [
         label: 'Overview',
         heading: 'Project overview and my role',
         body: [
-          'Clinical teams use our healthcare SaaS platform every day to review patient data, follow up on alerts and keep patient records up to date. As the product grew, more designers and engineers were building more screens at the same time.',
-          'Design Plus is the design system we built to keep that growth consistent. It was a team effort: several designers each owned different components, and we built the system over about a month, alongside the product rather than ahead of it.',
-          'Alongside the components, I wrote the documentation that made the system easy for engineers to find, understand and build: component pages and supporting elements.',
+          'A healthcare SaaS platform used daily by clinical teams was growing fast, with more designers and engineers building more screens at once.',
+          'Design Plus is the design system we built to keep it consistent: several designers each owned components, and we built it in about a month, alongside the product.',
+          'I also wrote the component documentation engineers use to find, understand and build each part.',
         ],
-        intro: 'My contribution, by component:',
+        intro: 'My components:',
         items: [
-          { title: 'Tables', detail: 'Data tables in two densities, assembled from existing system components.' },
-          { title: 'Modals', detail: 'Confirmation, warning, feedback and input dialogs that share one structure.' },
+          { title: 'Tables', detail: 'Data tables in two densities, built from existing components.' },
+          { title: 'Modals', detail: 'Confirmation, warning, feedback and input dialogs on one structure.' },
           {
             title: 'Tooltips, Action Toggles & Checkboxes',
-            detail: 'Short explanations and quick actions in context, on and off controls, and selection controls in every state, all sharing the same interaction states.',
+            detail: 'Explanations, on/off controls and selection controls, designed as one family.',
           },
         ],
       },
@@ -451,9 +450,9 @@ export const projects: Project[] = [
         label: 'Background',
         heading: 'Why the product needed a design system',
         body: [
-          'The platform was growing quickly. Each new feature, from patient charts to messaging and billing, needed the same building blocks: form controls, tables, tooltips and dialogs.',
-          'Without shared components, these elements were redesigned and rebuilt for each feature, often with small differences in spacing, colour and behaviour. In a clinical product, where people scan dense lists and records under time pressure, those differences add friction and make the interface harder to trust.',
-          'Engineers felt it too. Every new screen raised the same questions: which version of a control to use, what its hover or disabled state looked like, and how it should behave.',
+          'Every new feature, from patient charts to messaging and billing, needed the same building blocks: form controls, tables, tooltips and dialogs.',
+          'Without shared components, each feature redesigned and rebuilt them, with small differences in spacing, colour and behaviour. In a clinical product, where people scan dense records under time pressure, those differences add friction and erode trust.',
+          'Engineers felt it too: which version to use, what the hover or disabled state looked like, how it should behave.',
         ],
       },
       {
@@ -465,15 +464,15 @@ export const projects: Project[] = [
         items: [
           {
             challenge: 'Requirements arrived feature by feature, not all at once.',
-            opportunity: 'Grow the system week by week, adding each component when the product first needed it.',
+            opportunity: 'Grow week by week, adding each component when the product first needed it.',
           },
           {
             challenge: 'Several designers were building components in parallel.',
-            opportunity: 'Share one set of foundations and the same interaction states, so separate pieces still feel like one product.',
+            opportunity: 'One set of foundations and interaction states, so separate pieces feel like one product.',
           },
           {
             challenge: 'Engineers had to interpret each screen on its own.',
-            opportunity: 'Define every variant and state up front, so a component means the same thing in design and in code.',
+            opportunity: 'Define every variant and state up front, so a component means the same in design and code.',
           },
         ],
       },
@@ -482,22 +481,22 @@ export const projects: Project[] = [
         id: 'process',
         label: 'Process',
         heading: 'Built alongside the product',
-        intro: 'Instead of one large project planned up front, the system grew with the product over about a month.',
+        intro: 'Not one big project planned up front: the system grew with the product over about a month.',
         steps: [
           {
             title: 'Driven by real requirements',
             detail:
-              'Each week, new product requirements decided which components came next. A component was designed into the system first, then used in the screens that needed it.',
+              'Each week, product requirements decided the next components. A component joined the system first, then went into the screens that needed it.',
           },
           {
             title: 'Shared ownership',
             detail:
-              'Each designer owned a set of components, from first exploration to documentation. Shared foundations, the same colours, typography and four interaction states, kept work from different designers consistent.',
+              'Each designer owned a set of components, from first exploration to documentation. Shared colours, typography and four interaction states kept the work consistent.',
           },
           {
             title: 'Published for the whole team',
             detail:
-              'Finished components were published to a shared Figma library and documented on their own pages, and existing screens were updated to use them.',
+              'Finished components were published to a shared Figma library with their own documentation pages, and existing screens were updated to use them.',
           },
         ],
       },
@@ -507,7 +506,7 @@ export const projects: Project[] = [
         label: 'My contribution',
         heading: 'The components I designed',
         body: [
-          'I owned six parts of the system, five component families and their documentation. For each one the goal was the same: cover every state the product needs, behave predictably, and be easy to build.',
+          'I designed and documented six component families: tables, modals, tooltips, action tooltips, toggles and checkboxes. The goal for each: cover every state the product needs, behave predictably, and be easy to build.',
         ],
       },
       {
@@ -520,12 +519,12 @@ export const projects: Project[] = [
         items: [
           {
             rationale:
-              'Tables are at the centre of the product: patient lists and records depend on them. I designed them as a set of parts rather than one fixed layout.',
+              'Patient lists and records depend on tables, so I designed them as a set of parts, not one fixed layout.',
             points: [
-              'Two densities: rich rows with two-line names, status, tags and actions, and compact rows for scanning many records.',
-              'Sortable column headers, a link style for records that open elsewhere, and row actions behind one menu.',
+              'Two densities: rich rows with status, tags and actions, and compact rows for scanning many records.',
+              'Sortable headers, a link style for records that open elsewhere, and row actions in one menu.',
               'Pagination with a page-size control for long lists.',
-              'Built entirely from existing system components: checkboxes, badges, buttons, pagination and a select input.',
+              'Built from existing components: checkboxes, badges, buttons, pagination and a select.',
             ],
             media: {
               src: 'images/projects/design-system/tables-anatomy.webp',
@@ -547,13 +546,13 @@ export const projects: Project[] = [
         items: [
           {
             rationale:
-              'Modals interrupt the user, so in a clinical product they must be clear about what will happen. Every dialog follows the same structure: a title, one line of explanation, the content and the actions.',
+              'Modals interrupt, so they must be clear about what happens next. Every dialog follows one structure: title, one line of explanation, content, actions.',
             points: [
               'One structure for confirmations, warnings, feedback and input.',
               'A clear primary action, with destructive actions in red.',
               'The main action stays disabled until required fields are complete.',
               'Extra required fields appear only when a choice needs them.',
-              'A safeguard for unsaved changes, so edits are never lost by accident.',
+              'An unsaved-changes safeguard, so edits are never lost by accident.',
             ],
             media: {
               src: 'images/projects/design-system/modal-anatomy.webp',
@@ -572,16 +571,16 @@ export const projects: Project[] = [
         heading: 'Tooltips, Action Toggles & Checkboxes',
         nested: true,
         intro:
-          'Dense clinical screens leave little room for explanation, so tooltips add context exactly where it’s needed without crowding the layout. Checkboxes and toggles cover selection and settings. Checkboxes appear everywhere in the product, from forms to selecting rows in tables, so they had to be completely predictable, and I based toggles on the same states so both controls feel like one family.',
+          'Dense clinical screens leave little room to explain, so tooltips add context only where needed. Checkboxes appear everywhere, from forms to table rows, so they had to be predictable. Toggles share their states, so both feel like one family.',
         layout: 'stacked',
         items: [
           {
             title: 'Tooltips',
             points: [
-              'Tooltips explain or identify an element, from a one-word label to a heading with a description.',
-              'Action tooltips go a step further, adding an icon and buttons for quick decisions in context.',
-              'Nine arrow positions, so a tooltip can point at an element anywhere on the screen.',
-              'Usage guidance written on the component page, so the team knows when to use each one.',
+              'Explain or identify an element, from a one-word label to a heading with a description.',
+              'Action tooltips add an icon and buttons for quick decisions in context.',
+              'Nine arrow positions, to point at any element on screen.',
+              'Usage guidance on the component page, so the team knows when to use each.',
             ],
             media: {
               src: 'images/projects/design-system/tooltip-anatomy.webp',
@@ -595,7 +594,7 @@ export const projects: Project[] = [
             title: 'Action Toggles',
             points: [
               'On and off in default, hover, focus and disabled states.',
-              'Hover darkens the track, and focus adds the same ring used across the system.',
+              'Hover darkens the track; focus adds the system’s shared ring.',
               'Disabled toggles keep their shape but lose contrast.',
               'A version with a label and supporting text for settings.',
               'One Figma component with 16 variants.',
@@ -613,9 +612,9 @@ export const projects: Project[] = [
             points: [
               'Default, hover, focus and disabled states for unchecked, checked and indeterminate values.',
               'A clear focus ring, so keyboard users always know where they are.',
-              'An indeterminate value for partial selections, such as selecting all rows in a table.',
+              'An indeterminate value for partial selections, such as select-all in a table.',
               'Versions with a label and supporting text for forms.',
-              'One Figma component with type, value, label and state options, covering 40 variants.',
+              'One Figma component covering 40 variants: type, value, label and state.',
             ],
             media: {
               src: 'images/projects/design-system/checkbox-anatomy.webp',
@@ -633,9 +632,9 @@ export const projects: Project[] = [
         label: 'Documentation',
         heading: 'Designed to be built',
         body: [
-          'A design system is only useful if engineers can build from it with confidence, so I treated every component as a specification, not just a drawing.',
-          'Each component page shows every state side by side, with and without text, so engineers can see exactly how a control looks and behaves before writing code. Clear names for components and their options in the shared library meant designers and engineers could talk about the same thing in the same words.',
-          'Tables show the benefit best. Because they are assembled from existing components, an engineer who has built the checkbox, badge and pagination already has most of a table. Consistent definitions like these help reduce back-and-forth during handoff, duplicated work, and differences between the design and the shipped product.',
+          'A design system only works if engineers can build from it with confidence, so I treated every component as a specification, not just a drawing.',
+          'Each component page shows every state side by side, and clear names in the shared library let designers and engineers speak the same language.',
+          'Tables show it best: built from components engineers already have, they help reduce back-and-forth at handoff and differences between the design and the shipped product.',
         ],
         media: {
           src: 'images/projects/design-system/table-anatomy.webp',
@@ -652,11 +651,11 @@ export const projects: Project[] = [
         label: 'Impact',
         heading: 'What it brought to the product',
         intro:
-          'The value of the system showed in how the product could grow. Screens built by different designers and engineers looked and behaved the same, and new features could start from tested components instead of a blank page.',
+          'The system let the product grow without drifting: screens from different designers and engineers looked and behaved the same, and new features started from tested components.',
         items: [
           { value: '6', detail: 'component families I designed and documented' },
-          { value: '4', detail: 'interaction states shared by every control: default, hover, focus and disabled' },
-          { detail: 'One shared foundation for designers and engineers, which keeps growing with the product.' },
+          { value: '4', detail: 'interaction states shared by every control' },
+          { detail: 'One shared foundation for designers and engineers, growing with the product.' },
         ],
       },
       {
@@ -665,8 +664,8 @@ export const projects: Project[] = [
         label: 'Reflection',
         heading: 'What I learned',
         body: [
-          "Building a design system alongside a live product taught me to design for what's next as well as what's needed now. Each component had to solve today's feature and stay flexible for the ones we couldn't see yet.",
-          'Working in the Design Team also showed me that consistency comes from shared decisions, not just shared files. Agreeing on states, names and structure mattered as much as the components themselves.',
+          "Building a system alongside a live product taught me to design for what’s next as well as what’s needed now: each component solved today’s feature and stayed flexible for the ones we couldn’t see yet.",
+          'It also showed me that consistency comes from shared decisions, not just shared files. Agreeing on states, names and structure mattered as much as the components.',
         ],
       },
     ],
@@ -678,7 +677,7 @@ export const projects: Project[] = [
     title: 'Branding',
     client: 'Cloudtech',
     summary:
-      'A complete brand identity for Cloudtech, a technology company. The project included a Morse code-inspired logo, a visual language for digital platforms, and a company website designed and built in Framer.',
+      'A Morse code–inspired logo and brand identity for Cloudtech, plus its Framer website. Two weeks from first sketch to live.',
     type: 'Brand design · Brand identity',
     category: 'Brand Identity',
     year: '',
@@ -707,26 +706,26 @@ export const projects: Project[] = [
         label: 'Overview',
         heading: 'Project overview and my role',
         body: [
-          'Cloudtech is a technology company with offices in New York, Düsseldorf, Tirana, and Prishtina. It provides software development, cloud, DevOps, mobile, security, AI, and consulting services to businesses navigating digital transformation.',
-          'The company needed a visual identity that better represented its expertise and established a consistent presence across its digital platforms.',
+          'Cloudtech is a technology company with offices in New York, Düsseldorf, Tirana and Prishtina, offering software development, cloud, DevOps, mobile, security, AI and consulting.',
+          'It needed an identity that reflected its expertise and looked consistent across digital platforms.',
         ],
-        intro: 'My role covered the full branding process:',
+        intro: 'My role, end to end:',
         items: [
           {
             title: 'Logo design',
-            detail: "Developed a new visual mark that reflected the company's technical background while giving it a distinctive identity.",
+            detail: 'A new mark that reflects the company’s technical background and stands apart.',
           },
           {
             title: 'Website structure',
-            detail: 'Created wireframes to establish the content hierarchy, layout, and overall user experience.',
+            detail: 'Wireframes for content hierarchy, layout and user experience.',
           },
           {
             title: 'Brand system',
-            detail: 'Defined the visual direction, including logo variations, colour palette, social media templates, banners, and profile assets.',
+            detail: 'Logo variations, colour palette, social templates, banners and profile assets.',
           },
           {
             title: 'Website design and development',
-            detail: 'Applied the new identity to the company website and brought it to life using Framer.',
+            detail: 'Applied the identity to the company website and built it in Framer.',
           },
         ],
       },
@@ -736,9 +735,9 @@ export const projects: Project[] = [
         label: 'Background',
         heading: 'The starting point',
         body: [
-          "Cloudtech had an established team and a range of services, but its visual identity didn't communicate the full scope of what the company offered.",
-          'There was no recognisable logo or consistent visual language across its website and social media channels.',
-          'The main challenge was to create an identity that positioned Cloudtech as a modern technology company without relying on the visual conventions already common in the industry.',
+          "Cloudtech had an established team and a wide range of services, but its visual identity didn’t show the full scope.",
+          'There was no recognisable logo or consistent visual language across its website and social channels.',
+          'The challenge: position Cloudtech as a modern technology company without leaning on industry clichés.',
         ],
       },
       {
@@ -747,19 +746,19 @@ export const projects: Project[] = [
         label: 'Research',
         heading: 'Research and key insights',
         intro:
-          'I started by reviewing competitors and exploring how technology companies communicate their services visually. I looked at common logo styles, colour choices, and visual elements to identify opportunities for Cloudtech to take a different direction.',
+          'I reviewed competitors and how technology companies present themselves, looking at logo styles, colours and visual elements for a different direction.',
         items: [
           {
             title: 'Everyone looks the same',
-            detail: 'Most brands in the space use abstract geometric marks, clouds, circuits and blue gradients. Looking technical was not enough to be remembered.',
+            detail: 'Abstract geometric marks, clouds, circuits and blue gradients everywhere. Looking technical wasn’t enough to be remembered.',
           },
           {
             title: 'Clean marks travel further',
-            detail: 'The logo had to work everywhere, from a website favicon to a LinkedIn banner. Simple, bold shapes stay readable at every size.',
+            detail: 'From favicon to LinkedIn banner, simple, bold shapes stay readable at every size.',
           },
           {
             title: 'A story makes it stick',
-            detail: 'A mark with an idea behind it is easier to remember and easier for the team to explain. Cloudtech needed a meaning, not just a shape.',
+            detail: 'A mark with an idea is easier to remember and to explain. Cloudtech needed a meaning, not just a shape.',
           },
         ],
       },
@@ -785,12 +784,12 @@ export const projects: Project[] = [
         id: 'process',
         label: 'Process',
         heading: 'Design process and iterations',
-        intro: 'The design moved from sketches and research, to wireframes, to a cleaner final version after testing.',
+        intro: 'From sketches to wireframes, then a cleaner final version after testing.',
         steps: [
           {
             title: 'Sketches',
             detail:
-              'I sketched ideas and collected inspiration from technology brands online. Morse code stood out: one of the first ways people sent messages electronically, built from just dots and dashes. I studied how it works and wrote out Cloudtech’s initials. C is dash, dot, dash, dot. T is a single dash.',
+              'I sketched ideas and collected inspiration. Morse code stood out: one of the first electronic messaging systems, built from just dots and dashes. Written out, C is dash, dot, dash, dot, and T is a single dash.',
             media: {
               src: 'images/projects/cloudtech-branding/process-sketches.webp',
               alt: 'Hand-drawn sketches in blue pen: rounded bars and dots combined into early versions of the Cloudtech mark',
@@ -802,7 +801,7 @@ export const projects: Project[] = [
           {
             title: 'Wireframes',
             detail:
-              'Once the logo was settled, I wireframed the website. The wireframes brought the idea to life as a page: a bold hero with one clear message, the company’s expertise as cards, its services at a glance, and its offices to build trust.',
+              'With the logo settled, I wireframed the website: a bold hero with one clear message, expertise as cards, services at a glance, and the offices to build trust.',
             media: {
               src: 'images/projects/cloudtech-branding/process-wireframes.webp',
               alt: 'Low-fidelity desktop wireframe of the Cloudtech homepage: hero, partners, expertise cards and services',
@@ -814,7 +813,7 @@ export const projects: Project[] = [
           {
             title: 'Testing and iteration',
             detail:
-              'The first logos placed the Morse symbol inside the word, in place of the O. Tested at small sizes and with the client, the name was harder to read, so I moved the symbol out into a standalone mark beside a clean wordmark. The website went through the same clean-up: simpler sections and more space, so the content leads.',
+              'The first logos put the Morse symbol inside the word, in place of the O. Tested at small sizes and with the client, the name was harder to read, so I moved the symbol out into a standalone mark beside a clean wordmark. The website got the same clean-up: simpler sections, more space.',
             media: {
               src: 'images/projects/cloudtech-branding/process-iteration.webp',
               alt: 'Logo iterations: the wordmark with the symbol inside it, then a standalone mark beside a clean wordmark, shown at large and small sizes',
@@ -830,12 +829,12 @@ export const projects: Project[] = [
         id: 'solution',
         label: 'Final design',
         heading: 'Final design solutions',
-        intro: 'The final identity is a small, consistent system: one mark, one wordmark and one colour story, used the same way everywhere.',
+        intro: 'A small, consistent system: one mark, one wordmark, one colour story, used the same way everywhere.',
         items: [
           {
             title: 'A mark built from Morse code',
             rationale:
-              'The symbol combines the Morse code for C (dash, dot, dash, dot) and T (dash). Dashes become rounded bars and dots become circles. The result is simple, technical and has a story the team can tell.',
+              'The symbol combines the Morse code for C (dash, dot, dash, dot) and T (dash): dashes become rounded bars, dots become circles. Simple, technical, with a story the team can tell.',
             media: {
               src: 'images/projects/cloudtech-branding/final-mark.webp',
               alt: 'How the mark is built: the Morse code for C, plus the Morse code for T, equals the Cloudtech mark',
@@ -847,7 +846,7 @@ export const projects: Project[] = [
           {
             title: 'A clean wordmark and flexible lockups',
             rationale:
-              'A bold, wide, all-caps wordmark sits beside the mark. The logo comes in light and dark, horizontal and stacked versions, and the mark works on its own as an app icon or profile picture.',
+              'A bold, wide, all-caps wordmark beside the mark, in light and dark, horizontal and stacked versions. The mark also works alone as an app icon or profile picture.',
             media: {
               src: 'images/projects/cloudtech-branding/final-lockups.webp',
               alt: 'Logo lockups on navy, white and blue backgrounds, and the mark on its own',
@@ -859,7 +858,7 @@ export const projects: Project[] = [
           {
             title: 'Navy, electric blue and light',
             rationale:
-              'A near-black navy base with electric blue light and 3D shapes gives the brand a premium, technical feel, and keeps white type easy to read.',
+              'A near-black navy base with electric blue light and 3D shapes feels premium and technical, and keeps white type easy to read.',
             media: {
               src: 'images/projects/cloudtech-branding/final-colour.webp',
               alt: 'Brand colours Midnight, Indigo, Electric blue and White next to an “Engineering the future today” social post',
@@ -871,7 +870,7 @@ export const projects: Project[] = [
           {
             title: 'Social media templates that scale',
             rationale:
-              'Every service post shares one layout: the mark, a label, a bold title and a large outline icon. New services can be added without starting from scratch, and the feed stays consistent.',
+              'Every service post shares one layout: mark, label, bold title and a large outline icon. New services slot in without starting over, and the feed stays consistent.',
             media: {
               src: 'images/projects/cloudtech-branding/final-social.webp',
               alt: 'Six social media posts, one for each Cloudtech service, sharing the same layout',
@@ -883,7 +882,7 @@ export const projects: Project[] = [
           {
             title: 'A website built in Framer',
             rationale:
-              'The website brings everything together: the logo, the navy and blue palette, the 3D shapes, and clear sections for expertise and services. We built it in Framer, and it is live today.',
+              'The website brings it together: logo, navy and blue palette, 3D shapes, and clear sections for expertise and services. Built in Framer and live today.',
             media: {
               src: 'images/projects/cloudtech-branding/final-website.webp',
               alt: 'The Cloudtech website shown on a laptop in a social media post',
@@ -931,7 +930,7 @@ export const projects: Project[] = [
         kind: 'outcomes',
         id: 'outcomes',
         label: 'Outcomes',
-        heading: 'Outcomes and results',
+        heading: 'Outcomes',
         items: [
           { value: '2 weeks', detail: 'from the first sketches to a complete brand identity' },
           { value: '15+', detail: 'brand assets: logo versions, social posts, banners and profile pictures' },

@@ -11,11 +11,11 @@ export const site: SiteConfig = {
   location: 'Prishtine, Kosovo',
   // e.g. 'Europe/Berlin'. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   timeZone: null,
-  availability: 'Open to remote and international product design roles',
+  availability: 'Open to remote opportunities',
 
   headline: 'Thoughtful design.\nMeaningful solutions.',
   intro:
-    'I am Almedina, a Product Designer, specialising in healthcare software design, design systems, brand identities and creating your digital story.',
+    'I am Almedina, a Product Designer, specialising in digital product design, design systems, brand identities and creating your digital story.',
 
   // e.g. 'hello@yourname.com'
   email: 'termkollialmedina01@gmail.com',
@@ -40,5 +40,5 @@ export const site: SiteConfig = {
   },
 
   description:
-    'Portfolio of Almedina Termkolli, a product designer working across UX research, interaction design, visual design and design systems.',
+    'Portfolio of Almedina Termkolli, a product designer working across SaaS and healthcare products, design systems and brand identities.',
 }
